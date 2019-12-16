@@ -1,0 +1,137 @@
+.blocProgress{
+	/*background-image: url('../images/travka.jpeg');*/
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	z-index: 1000;
+}
+.blocProgressStart{
+	/*background-image: url('../images/travka.jpeg');*/
+	position:relative;
+	background-color: #ffffffdd;
+	z-index: 1000;
+}
+.checkbox{
+	position:absolute;
+	left:0px;
+	top:0px;
+	transform:scale(2.0);
+}
+.startButtcl{
+	position:relative;
+	z-index: 1000005;
+}
+
+.progress{
+	position:relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;
+	margin:10px;
+	background-color: #ffffffdd
+}
+.progress-nenorm{
+	position:relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;
+	margin:10px;
+	background-color: #ff9999dd
+}
+.progress-otkluch{
+	position:relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;
+	margin:10px;
+	background-color: #ff555555
+}
+.textProgress{
+	text-align:center;
+	
+	font-family: "Crimson Text script=latin rev=4"; 
+	font-size: 24px; 
+	font-style: normal; 
+	font-weight: 400; 
+	line-height: 1.33333;
+}
+.balance{
+	
+	font-family: "Anton script=latin rev=2"; 
+	font-size: 24px; 
+	font-style: normal; 
+	font-weight: 400; 
+	line-height: 1.33333;
+	text-align:center;
+}
+.progressbar{
+	/*background-image: url('../images/oduv/travka.png');*/
+	background-repeat: no-repeat;
+	background-size:contain;
+	text-align:center;
+}
+html{
+   background: #808080;
+}
+.particles-js1{
+  position: fixed;
+  z-index: 0;
+  left:0;
+  top:0;
+  height:100%;
+  width: 100%;
+  background: linear-gradient(0deg,#000000  ,#210055 );
+}
+.particles-js2{
+  position: fixed;
+  z-index: 0;
+  left:0;
+  top:0;
+  height:100%;
+  width: 100%;
+  background: linear-gradient(0deg,#000000  ,#550021 );
+}
+.count-particles{
+  box-sizing: border-box;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  z-index: 2;
+  margin: 50px auto;
+  text-align:center;
+  font-size: 29px;
+  background: linear-gradient(90deg,#808080  ,#E6E6E6 );
+  border-radius:10px;
+  padding: 31px;
+  color:green;
+  box-shadow:0 0 30px #fff,
+    0 0 50px #fff inset;
+  cursor: pointer;
+  &:hover{
+    box-shadow:0 0 50px #44C1EB,
+      0 0 50px #44C1EB inset;
+    color:#44C1EB;
+  }
+  
+}
+.summUsd{
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	padding:20px;
+	background-color: #ffffffdd;
+	z-index:1010;
+	font-family: "Anton script=latin rev=2"; 
+	font-size: 24px; 
+	font-style: normal; 
+	font-weight: 400; 
+	line-height: 1.33333;
+	text-align:center;
+	color: #000000;
+}
+.balanceUSD{
+	font-family: "Anton script=latin rev=2"; 
+	font-size: 12px; 
+	font-style: normal; 
+	font-weight: 400; 
+	line-height: 1.33333;
+	text-align:center;
+}

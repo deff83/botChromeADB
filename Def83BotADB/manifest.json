@@ -1,0 +1,40 @@
+{
+    "name": "HelloChromeAPI",
+    "version": "1.0.0.0",
+ 
+    "manifest_version": 2,
+	"icons": {"128": "Deff83.png"},
+	"browser_action": {
+		"default_icon": "Deff83.png",
+		"default_popup": "popup.html"
+	},
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>" ],
+            "js": [ "content_scripts/content.js" ],
+            "run_at": "document_end"
+        },
+		{
+            "matches": [ "<all_urls>" ],
+            "js": [ "content_scripts/function.js", "content_scripts/contentstart.js" ]
+            
+        }
+    ],
+	
+	"options_page": "options.html",
+	"background": {
+		"page": "background.html",
+		  
+		  "persistent": true
+	 },
+	 "permissions": [
+        "tabs",
+		"activeTab",
+        "background",
+		"downloads",
+		"http://*/",
+		"https://*/",
+		"<all_urls>"
+    ]
+	 
+}
