@@ -57,6 +57,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				var login = frag.querySelectorAll('div')[0].getElementsByClassName('signup-container-heading')[0];
 				if(login != null){
+					
+					
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/XRPfreeinput2.js'});
 					return;
@@ -79,19 +81,24 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				
 				
-				
-				
 				var claimdiv = frag.getElementById('get-free'); 
 				
-				if (claimdiv != null && claimdiv.getAttribute('style')==""){
+				if (claimdiv != null && claimdiv.getAttribute('style')=="cursor: pointer;"){
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/XRPfree.js'});
 					
 				}else{
-					Programms[indexPrXRPfree].boolStartingDOGE = false;
-					block = false;
-					if(tabidXRPfree.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-					tabidXRPfree.remove(sender.tab.id);
+					
+					
+					if ( claimdiv.getAttribute('style')=='display: none; cursor: pointer;'){
+						Programms[indexPrXRPfree].boolStartingDOGE = false;
+						block = false;
+						if(tabidXRPfree.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+						tabidXRPfree.remove(sender.tab.id);
+					} else{
+						f_callback('reload2'); 
+						console.log('reload');
+					}
 				}
 				/*
 				

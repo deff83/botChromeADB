@@ -83,15 +83,20 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				var claimdiv = frag.getElementById('get-free'); 
 				
-				if (claimdiv != null && claimdiv.getAttribute('style')==""){
+				if (claimdiv != null && claimdiv.getAttribute('style')=="cursor: pointer;"){
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/BTCfree.js'});
 					
 				}else{
-					Programms[indexPrBTCfree].boolStartingDOGE = false;
-					block = false;
-					if(tabidBTCfree.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-					tabidBTCfree.remove(sender.tab.id);
+					if ( claimdiv.getAttribute('style')=='display: none; cursor: pointer;'){
+						Programms[indexPrBTCfree].boolStartingDOGE = false;
+						block = false;
+						if(tabidBTCfree.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+						tabidBTCfree.remove(sender.tab.id);
+					} else{
+						f_callback('reload2'); 
+						console.log('reload');
+					}
 				}
 				/*
 				
