@@ -21,32 +21,31 @@ var Programms = [];
 //-----------------------------------------massiv TAB--------------------------------------------//
 massivTabid.push(tabidDOGE);
 massivTabid.push(tabidBCH);
-massivTabid.push(tabidDash);
+//massivTabid.push(tabidDash);	Proxy
 massivTabid.push(tabidLTC);
 massivTabid.push(tabidBTC);
 massivTabid.push(tabidfreeLTC);
 massivTabid.push(tabidfreeETH);
 massivTabid.push(tabidfreeBCH);
 massivTabid.push(tabidfreeDOGE);
-massivTabid.push(tabidfreeETHxyz);
-massivTabid.push(tabidfreeDGBxyz);
-massivTabid.push(tabidfreeZECxyz);
+//massivTabid.push(tabidfreeETHxyz);
+//massivTabid.push(tabidfreeDGBxyz);
+//massivTabid.push(tabidfreeZECxyz);
 massivTabid.push(tabidfreeBTXxyz);
-massivTabid.push(tabidfreeBTCxyz);
-massivTabid.push(tabidMario);
+//massivTabid.push(tabidfreeBTCxyz);
 massivTabid.push(tabidBestcom);
 
 massivTabid.push(tabidBonusBitcoin);
 massivTabid.push(tabidEarnfreeLTC);
 massivTabid.push(tabidEarnfreeETH);
-massivTabid.push(tabidEarnfreeDOGE);
+//massivTabid.push(tabidEarnfreeDOGE);
 massivTabid.push(tabidEarnfreeDASH);
 massivTabid.push(tabidEarnfreeETC);
 massivTabid.push(tabidEarnfreeZEC);
 massivTabid.push(tabidEarnfreeETHSky);
 massivTabid.push(tabidEarnfreeBCH);
 massivTabid.push(tabidLTCfree);
-massivTabid.push(tabidETHfree);
+//massivTabid.push(tabidETHfree);
 massivTabid.push(tabidDOGEfree);
 massivTabid.push(tabidXRPfree);
 massivTabid.push(tabidBTCfree);
@@ -69,14 +68,13 @@ massivTabid.push(tabidClaimFreeBTC);
 
 //-----------------------------------------Programm start--------------------------------------------//ф
 Programms.push(new Programm('moonDoge', 905, -20+905, 320, false, moonDoge, 1, 0.00287));
-Programms.push(new Programm('moonDash', 905, -40+905, 320, false, moonDash, 1, 106));
+//Programms.push(new Programm('moonDash', 905, -40+905, 320, false, moonDash, 1, 106));
 Programms.push(new Programm('moonLTC', 905, -60+905, 320, false, moonLTC, 100000000, 98));
 Programms.push(new Programm('moonBTC', 905, -80+905, 320, false, moonBTC, 100000000, 10000)) ;
 Programms.push(new Programm('moonBCH', 905, -80+905, 320, false, moonBCH, 1, 324)) ;
 Programms.push(new Programm('BonusBitcoin', 905, -15+905, 320, false, moonBonusBitcoin, 100000000, 0));
-Programms.push(new Programm('Mario', 905, -5+905, 320, false, moonMario, 1, 10000));
 Programms.push(new Programm('LTCfree', 305, -5+305, 320, false, moonLTCfree, 1, 98));
-Programms.push(new Programm('ETHfree', 305, -5+305, 320, false, moonETHfree, 1, 215));
+//Programms.push(new Programm('ETHfree', 305, -5+305, 320, false, moonETHfree, 1, 215));
 Programms.push(new Programm('DOGEfree', 305, -5+305, 320, false, moonDOGEfree, 1, 0.00287));
 Programms.push(new Programm('XRPfree', 305, -5+305, 320, false, moonXRPfree, 1, 0.305));
 Programms.push(new Programm('BTCfree', 305, -5+305, 320, false, moonBTCfree, 1, 10000));
@@ -89,14 +87,14 @@ Programms.push(new Programm('freeLTC', 3605, -100+3605, 320, false, moonfreeLTC,
 Programms.push(new Programm('freeETH', 3605, -120+3605, 320, false, moonfreeETH, 1, 215));
 Programms.push(new Programm('freeBCH', 3605, -140+3605, 320, false, moonfreeBCH, 1, 324));
 Programms.push(new Programm('freeDOGE', 3605, -150+3605, 320, false, moonfreeDOGE, 1, 0.00287));
-Programms.push(new Programm('freeETHxyz', 3605, -300+3605, 320, false, moonfreeETHxyz, 1, 215));
-Programms.push(new Programm('freeDGBxyz', 3605, -320+3605, 320, false, moonfreeDGBxyz, 1, 0.0098));
-Programms.push(new Programm('freeZECxyz', 3605, -340+3605, 320, false, moonfreeZECxyz, 1, 67));
+//Programms.push(new Programm('freeETHxyz', 3605, -300+3605, 320, false, moonfreeETHxyz, 1, 215));
+//Programms.push(new Programm('freeDGBxyz', 3605, -320+3605, 320, false, moonfreeDGBxyz, 1, 0.0098));
+//Programms.push(new Programm('freeZECxyz', 3605, -340+3605, 320, false, moonfreeZECxyz, 1, 67));
 Programms.push(new Programm('freeBTXxyz', 3605, -360+3605, 320, false, moonfreeBTXxyz, 1, 0.00164));
-Programms.push(new Programm('freeBTCxyz', 3605, -380+3605, 320, false, moonfreeBTCxyz, 1, 10000));
+//Programms.push(new Programm('freeBTCxyz', 3605, -380+3605, 320, false, moonfreeBTCxyz, 1, 10000));
 Programms.push(new Programm('EarnfreeLTC', 3605, -0+3605, 320, false, moonEarnfreeLTC, 1, 98));
 Programms.push(new Programm('EarnfreeETH', 3605, -5+3605, 320, false, moonEarnfreeETH, 1, 215));
-Programms.push(new Programm('EarnfreeDOGE', 3605, -5+3605, 320, false, moonEarnfreeDOGE, 1, 215));	//non work
+//Programms.push(new Programm('EarnfreeDOGE', 3605, -5+3605, 320, false, moonEarnfreeDOGE, 1, 215));	//non work
 Programms.push(new Programm('EarnfreeDASH', 3605, -5+3605, 320, false, moonEarnfreeDASH, 1, 106));
 Programms.push(new Programm('EarnfreeETC', 3605, -5+3605, 320, false, moonEarnfreeETC, 1, 6.10));
 Programms.push(new Programm('EarnfreeZEC', 3605, -5+3605, 320, false, moonEarnfreeZEC, 1, 57));
@@ -121,6 +119,22 @@ Programms.push(new Programm('BitFaucet', 1805, -5+1805, 320, false, moonBitFauce
 
 Programms.push(new Programm('ClaimFreeBTC-FaucetHub', 25, -5+25, 360, false, moonClaimFreeBTC, 100000000, 10000));	//MAX CLAIM
 
+function getCountTabs(){
+	chrome.tabs.query( {currentWindow: true }, 
+			function(tabs) { 
+				console.log("tabCount", tabs.length);
+				if (tabs.length == 1){
+					block = false;
+					for(var i = 0; i < Programms.length; i++){
+						if (Programms[i].name == "ClaimFreeBTC-FaucetHub"){
+							Programms[i].boolStartingDOGE = false;
+						}
+					}
+				}
+			 }
+	 );
+	return 0;
+}
 
 
 var op = 0;
@@ -130,7 +144,8 @@ var boolStarting = false;
 
 // начать повторы с интервалом 2 сек
 var timerId = setInterval(function() {
-	if (boolStarting){
+	getCountTabs();
+	if (boolStarting){	//старт кнопкой
 		op++;
 		if(boolTimerUnBlock){ unBlockTimer ++;}
 		for(var i = 0; i < Programms.length; i++){
