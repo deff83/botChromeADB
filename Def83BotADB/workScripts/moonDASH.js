@@ -1,6 +1,7 @@
-var indexPrDash;	//новый индекс
+var indexPrDASH;
 
-var tabidDash = [];	//новый массив
+
+var tabidDASH = [];
 
 var ObjPage = function(message, html, src){
 	this.html = html;
@@ -8,36 +9,39 @@ var ObjPage = function(message, html, src){
 	this.message = message;
 }
 
-async  function moonDash(indexPrDashog){
+async  function moonDASH(indexPrDASHog){
 	block = true;
-	indexPrDash = indexPrDashog;
-	Programms[indexPrDash].boolStartingDOGE = true;
-	for (var i = 0; i < tabidDash.length; i++) { 
+	indexPrDASH = indexPrDASHog;
+	Programms[indexPrDASH].boolStartingDASH = true;
+	for (var i = 0; i < tabidDASH.length; i++) { 
 		try{
-			chrome.tabs.remove(tabidDash[i]);
+			chrome.tabs.remove(tabidDASH[i]);
 		}catch(Exc){} 
 	}
-	console.log("moonDash start");
-	injectScriptDash('http:///moondash.co.in');
-	console.log("moonDash end");
+	console.log("moonDASH start");
+	injectScriptDASH('http://moondash.co.in');
+	console.log("moonDASH end");
 }
 
 
 
-function injectScriptDash(url) {	//новая функция
+function injectScriptDASH(url) {
   chrome.tabs.create({url : url}, function(tab) {
-	tabidDash.push(tab.id);
+	tabidDASH.push(tab.id);
   });
 };
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	if(request.src == 'moondash.co.in'){	//новый адрес
+	if(request.src == 'moondash.co.in'){
 		//console.log('startMes');
-		if(!tabidDash.contains(sender.tab.id))tabidDash.push(sender.tab.id);
+		if(!tabidDASH.contains(sender.tab.id))tabidDASH.push(sender.tab.id);
 			try{
-				//console.log('Deff83 moonDash', request);
+				//console.log('Deff83 moonDASH', request);
 				let frag = document.createRange().createContextualFragment(request.html);
+				
+				
+				
 				var authoriz = frag.getElementById('PageContent_AuthorisedButtons');
 				if(authoriz != null){
 					console.log('authoriz');
@@ -58,34 +62,46 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				if(succses!=null){
 					//если успешно
 					console.log(succses.getElementsByTagName('b')[0].innerHTML);
-					if(tabidDash.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id))  chrome.tabs.remove(sender.tab.id);
-					tabidDash.remove(sender.tab.id);
+					if(tabidDASH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id))  chrome.tabs.remove(sender.tab.id);
+					tabidDASH.remove(sender.tab.id);
 					console.log('succses');
-					Programms[indexPrDash].boolStartingDOGE = false;
+					Programms[indexPrDASH].boolStartingDASH = false;
 					block = false;
 					return;
 				}
 				//Timer
 				var timer = frag.getElementById('PageLayout').getElementsByClassName('faucetValue')[0];
+				if(timer == null){};
 				//console.log('timer'+timer.innerHTML);
-				if(! (timer.innerHTML == 'masleey@mail.ru')){
-					f_callback('reload'); 
-					console.log('reload');
+				
+				try {
+				
+					if(! (timer.innerHTML == 'masleey@mail.ru')){
+						f_callback('reload'); 
+						console.log('reload');
+						return;
+					}
+				}catch(Exc){
+					console.log(Exc);
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/noScrit.js'});
 					return;
 				}
+				
 				//выход по баланс
 				var balance = frag.getElementById('Navigation').getElementsByTagName('span')[1].getElementsByTagName('a')[0].textContent; 
-				if(Programms[indexPrDash].balance != 0 && Programms[indexPrDash].balance < parseFloat(balance)){
-					console.log(parseFloat(balance) - Programms[indexPrDash].balance);
-					Programms[indexPrDash].balance = parseFloat(balance);
-					Programms[indexPrDash].boolStartingDOGE = false;
+				if(Programms[indexPrDASH].balance != 0 && Programms[indexPrDASH].balance < parseFloat(balance)){
+					console.log(parseFloat(balance) - Programms[indexPrDASH].balance);
+					Programms[indexPrDASH].balance = parseFloat(balance);
+					Programms[indexPrDASH].boolStartingDASH = false;
 					block = false;
-					if(tabidDash.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-					tabidDash.remove(sender.tab.id);
+					if(tabidDASH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+					tabidDASH.remove(sender.tab.id);
 					return;
 				}
-				Programms[indexPrDash].balance = parseFloat(balance);
-				console.log(Programms[indexPrDash].balance);
+				
+				console.log(Programms[indexPrDASH].balance);
+				Programms[indexPrDASH].balance = parseFloat(balance);
+				console.log(Programms[indexPrDASH].balance);
 				
 				
 				//проверка ненулевого клейма
@@ -108,29 +124,30 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		
 				}else{
 					
-					if(tabidDash.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-					tabidDash.remove(sender.tab.id);
-					Programms[indexPrDash].boolStartingDOGE = false;
+					if(tabidDASH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+					tabidDASH.remove(sender.tab.id);
+					Programms[indexPrDASH].boolStartingDASH = false;
 					block = false;
 				}
 			}catch(Exc){
-				Programms[indexPrDash].boolStartingDOGE = false;
+				Programms[indexPrDASH].boolStartingDASH = false;
 				block = false;
-				console.log(Programms[indexPrDash].boolStartingDOGE);
+				console.log(Programms[indexPrDASH].boolStartingDASH);
 				console.log(Exc);
-				if(tabidDash.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-				tabidDash.remove(sender.tab.id);
+				if(tabidDASH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+				tabidDASH.remove(sender.tab.id);
 				
 			}
+			
 	}
-	if(tabidDash.contains(sender.tab.id)){	//если во вкладке другой адрес 
-		if(request.src != 'moondash.co.in'){ //новый адрес
-			tabidDash.remove(sender.tab.id);
+	if(tabidDASH.contains(sender.tab.id)){	//если во вкладке другой адрес
+		if(request.src != 'moondash.co.in'){
+			tabidDASH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
-			if(tabidDash.length == 0){
+			if(tabidDASH.length == 0){
 				setTimeout(function() {
-					if(tabidDash.length == 0){
-						Programms[indexPrDash].boolStartingDOGE = false;
+					if(tabidDASH.length == 0){
+						Programms[indexPrDASH].boolStartingDASH = false;
 						block = false;
 					}
 				}, 5000);
@@ -138,8 +155,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		}
 	}
 });
-//chrome.tabs.onUpdated.addListener(function(tabidDash, changeInfo, tab){
-//	console.log(tab);console.log(tabidDash);
+//chrome.tabs.onUpdated.addListener(function(tabidDASH, changeInfo, tab){
+//	console.log(tab);console.log(tabidDASH);
 //});
 
 

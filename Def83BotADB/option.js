@@ -205,8 +205,13 @@ chrome.extension.sendMessage('Deff83-test', function(backMessage){
 	var appBanneres = document.getElementById("infotestStart"); 
 	appBanneres.innerHTML += "<ul>";
 		for(var i=0; i< backMessage.length; i++){
-
-			appBanneres.innerHTML += "<div id='checkboxSt"+i+"'><input type='checkbox'>"+backMessage[i].name+"</input></div>";
+			
+			var bool_boolStart = backMessage[i].boolStart;
+			if (bool_boolStart){
+				appBanneres.innerHTML += "<div id='checkboxSt"+i+"'><input type='checkbox' checked>"+backMessage[i].name+"</input></div>";
+			}else{
+				appBanneres.innerHTML += "<div id='checkboxSt"+i+"'><input type='checkbox'>"+backMessage[i].name+"</input></div>";
+			}
 			
 			
 		}

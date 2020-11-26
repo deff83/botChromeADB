@@ -1,35 +1,23 @@
 //скрипт подключаемый
 try{
 
-	clickButton("Id", "SubmitButton", 0);
-	hideDiv("TagName", "h1", -1);
+	clickButton("ClassName", "btn btn-coin btn-lg", 0);
+	hideDiv("ClassName", "flexContainer", -1);
+	hideDiv("ClassName", "footer", -1);
+	hideDiv("Id", "ProgressModal", -1);
+	hideDiv("ClassName", "modal-header", -1);
+	hideDiv("TagName", "p", -1);
 	hideDiv("TagName", "a", -1);
+	hideDiv("TagName", "small", -1);
+	hideDiv("TagName", "label", -1);
 	hideDiv("TagName", "input", -1);
-	hideDiv("ClassName", "aspNetHidden", -1);
-	hideDiv("ClassName", "captchaAd", -1);
-	hideDiv("ClassName", "navbar", -1);
-	hideDiv("ClassName", "col-sm-3 hidden-xs", -1);
-	hideDiv("ClassName", "col-sm-6 semi-trans", -1);
-	hideDiv("Id", "LoyaltyBonusPopup", -1);
-	hideDiv("Id", "PaymentOptionsPopup", -1);
-	hideDiv("Id", "WeeklyPaymentPopup", -1);
-	hideDiv("Id", "PrivacyPolicyPopup", -1);
-	hideDiv("Id", "ContactPopup", -1);
-	hideDiv("Id", "ReferPopup", -1);
-	hideDiv("Id", "AlertSettingsPopup", -1);
-	hideDiv("Id", "ClaimTablePopup", -1);
-	hideDiv("Id", "MysteryBonusPopup", -1);
+	hideDiv("ClassName", "modal-footer", -1);
 	hideDiv("Id", "skrit", -1);
 
+	drawDIVUser('1', "clickButton('ClassName', 'btn btn-coin d-none', 0); setTimeout(function() {	location.reload()}, 1000);");
 	
+
 	
-	
-	
-	
-	
-	
-	
-	drawDIVUser('1', "clickButtonInDIV('Id', 'CaptchaPopup', 0, 'TagName', 'input', 2);");
 }catch(Exc){alert(Exc);};
 
 

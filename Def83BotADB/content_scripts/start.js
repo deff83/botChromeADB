@@ -1,4 +1,4 @@
-var Programm = function (name, intervalDOGE, startintervalDOGE, boolingTime, boolStartingDOGE, startf, delited, multUSD){
+var Programm = function (name, intervalDOGE, startintervalDOGE, boolingTime, boolStartingDOGE, startf, delited, multUSD, boolStart){
 	this.name = name;
 	this.intervalDOGE = intervalDOGE;
 	this.startintervalDOGE = startintervalDOGE;
@@ -11,6 +11,7 @@ var Programm = function (name, intervalDOGE, startintervalDOGE, boolingTime, boo
 	this.delited = delited;
 	this.multUSD = multUSD;
 	this.userBool = true;
+	this.boolStart = boolStart;
 }
 
 var block = false;
@@ -21,7 +22,7 @@ var Programms = [];
 //-----------------------------------------massiv TAB--------------------------------------------//
 massivTabid.push(tabidDOGE);
 massivTabid.push(tabidBCH);
-//massivTabid.push(tabidDash);	Proxy
+massivTabid.push(tabidDASH);	
 massivTabid.push(tabidLTC);
 massivTabid.push(tabidBTC);
 massivTabid.push(tabidfreeLTC);
@@ -67,19 +68,21 @@ massivTabid.push(tabidBitFaucet);
 massivTabid.push(tabidClaimFreeBTC);
 
 //-----------------------------------------Programm start--------------------------------------------//ф
-Programms.push(new Programm('moonDoge', 905, -20+905, 320, false, moonDoge, 1, 0.00287));
-//Programms.push(new Programm('moonDash', 905, -40+905, 320, false, moonDash, 1, 106));
-Programms.push(new Programm('moonLTC', 905, -60+905, 320, false, moonLTC, 100000000, 98));
-Programms.push(new Programm('moonBTC', 905, -80+905, 320, false, moonBTC, 100000000, 10000)) ;
-Programms.push(new Programm('moonBCH', 905, -80+905, 320, false, moonBCH, 1, 324)) ;
-Programms.push(new Programm('BonusBitcoin', 905, -15+905, 320, false, moonBonusBitcoin, 100000000, 0));
+Programms.push(new Programm('moonDOGE', 905, -20+905, 320, false, moonDOGE, 1, 0.00287, true));
+Programms.push(new Programm('moonDASH', 905, -40+905, 320, false, moonDASH, 1, 106, true));
+Programms.push(new Programm('moonLTC', 905, -60+905, 320, false, moonLTC, 1, 98, true));
+Programms.push(new Programm('moonBTC', 905, -80+905, 320, false, moonBTC, 1, 10000, true)) ;
+Programms.push(new Programm('moonBCH', 905, -80+905, 320, false, moonBCH, 1, 324, true)) ;
+Programms.push(new Programm('BonusBitcoin', 905, -15+905, 320, false, moonBonusBitcoin, 100000000, 0, true));
+
 Programms.push(new Programm('LTCfree', 305, -5+305, 320, false, moonLTCfree, 1, 98));
 //Programms.push(new Programm('ETHfree', 305, -5+305, 320, false, moonETHfree, 1, 215));
 Programms.push(new Programm('DOGEfree', 305, -5+305, 320, false, moonDOGEfree, 1, 0.00287));
 Programms.push(new Programm('XRPfree', 305, -5+305, 320, false, moonXRPfree, 1, 0.305));
 Programms.push(new Programm('BTCfree', 305, -5+305, 320, false, moonBTCfree, 1, 10000));
-Programms.push(new Programm('BitFun', 905, -5+905, 320, false, moonBitFun, 100000000, 0));
-Programms.push(new Programm('changeBest.com', 3205, -10+3205, 320, false, moonBestcom, 1, 10000));
+
+Programms.push(new Programm('BitFun', 905, -5+905, 320, false, moonBitFun, 100000000, 0, true));
+Programms.push(new Programm('changeBest.com', 3205, -10+3205, 320, false, moonBestcom, 1, 10000, true));
 
 
 
@@ -119,6 +122,29 @@ Programms.push(new Programm('BitFaucet', 1805, -5+1805, 320, false, moonBitFauce
 
 Programms.push(new Programm('ClaimFreeBTC-FaucetHub', 25, -5+25, 360, false, moonClaimFreeBTC, 100000000, 10000));	//MAX CLAIM
 
+massivremove = ["https://www.bitcoincasino.io/?stag=5483_5fbe7780e4c32ec18cfa0e4d", "00"];
+
+function checkurlTabs(){
+	
+	var boolpip = true;
+	
+	chrome.tabs.query( {currentWindow: true }, 
+			function(tabs) { 
+				for(var i = 0; i < Programms.length; i++){
+					console.log("boolpip", tabs[i].url);
+					if (massivremove.indexOf(tabs[i].url)>-1){
+						chrome.tabs.remove(tabs[i].id);
+					}
+				}
+				
+			 }
+	 );
+	
+	
+	
+	return true;
+}
+
 function getCountTabs(){
 	chrome.tabs.query( {currentWindow: true }, 
 			function(tabs) { 
@@ -144,6 +170,11 @@ var boolStarting = false;
 
 // начать повторы с интервалом 2 сек
 var timerId = setInterval(function() {
+	if (checkurlTabs()){
+		
+	}else{
+		return;
+	}
 	getCountTabs();
 	if (boolStarting){	//старт кнопкой
 		op++;

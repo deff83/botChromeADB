@@ -36,7 +36,8 @@ try{
 	// hideDiv("TagName", "footer", -1);
 	// hideDiv("TagName", "span", -1);
 	// hideDiv("TagName", "nav", -1);
-	
+	height = document.body.scrollHeight;
+    window.scrollTo(0, height);
 
 	drawDIVUser('1', "clickButtonInDIV('Id', 'FaucetForm', 0, 'TagName', 'button', 1); setTimeout(function() {	location.reload()}, 5000); ");
 	

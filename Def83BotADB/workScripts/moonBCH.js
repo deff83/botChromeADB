@@ -1,5 +1,6 @@
 var indexPrBCH;
 
+var poschetBCH;
 
 var tabidBCH = [];
 
@@ -12,13 +13,14 @@ var ObjPage = function(message, html, src){
 async  function moonBCH(indexPrBCHog){
 	block = true;
 	indexPrBCH = indexPrBCHog;
-	Programms[indexPrBCH].boolStartingDOGE = true;
+	Programms[indexPrBCH].boolStartingBCH = true;
 	for (var i = 0; i < tabidBCH.length; i++) { 
 		try{
 			chrome.tabs.remove(tabidBCH[i]);
 		}catch(Exc){} 
 	}
 	console.log("moonBCH start");
+	poschetBCH = 0;
 	injectScriptBCH('http://moonbitcoin.cash');
 	console.log("moonBCH end");
 }
@@ -65,7 +67,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					if(tabidBCH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id))  chrome.tabs.remove(sender.tab.id);
 					tabidBCH.remove(sender.tab.id);
 					console.log('succses');
-					Programms[indexPrBCH].boolStartingDOGE = false;
+					Programms[indexPrBCH].boolStartingBCH = false;
 					block = false;
 					return;
 				}
@@ -73,9 +75,24 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				var timer = frag.getElementById('PageLayout').getElementsByClassName('faucetValue')[0];
 				if(timer == null){};
 				//console.log('timer'+timer.innerHTML);
-				if(! (timer.innerHTML == 'masleey@mail.ru')){
-					f_callback('reload'); 
-					console.log('reload');
+				try {
+				
+					if(! (timer.innerHTML == 'masleey@mail.ru')){
+						poschetBCH = poschetBCH + 1;
+						if (poschetBCH<20){
+							f_callback('reload'); 
+							console.log('reload');
+						}else{
+							Programms[indexPrBTC].boolStartingBTC = false;
+							block = false;
+							if(tabidBTC.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+							tabidBTC.remove(sender.tab.id);
+						}
+						return;
+					}
+				}catch(Exc){
+					console.log(Exc);
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/noScrit.js'});
 					return;
 				}
 				//выход по баланс
@@ -83,7 +100,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				if(Programms[indexPrBCH].balance != 0 && Programms[indexPrBCH].balance < parseFloat(balance)){
 					console.log(parseFloat(balance) - Programms[indexPrBCH].balance);
 					Programms[indexPrBCH].balance = parseFloat(balance);
-					Programms[indexPrBCH].boolStartingDOGE = false;
+					Programms[indexPrBCH].boolStartingBCH = false;
 					block = false;
 					if(tabidBCH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 					tabidBCH.remove(sender.tab.id);
@@ -117,13 +134,13 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					
 					if(tabidBCH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 					tabidBCH.remove(sender.tab.id);
-					Programms[indexPrBCH].boolStartingDOGE = false;
+					Programms[indexPrBCH].boolStartingBCH = false;
 					block = false;
 				}
 			}catch(Exc){
-				Programms[indexPrBCH].boolStartingDOGE = false;
+				Programms[indexPrBCH].boolStartingBCH = false;
 				block = false;
-				console.log(Programms[indexPrBCH].boolStartingDOGE);
+				console.log(Programms[indexPrBCH].boolStartingBCH);
 				console.log(Exc);
 				if(tabidBCH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 				tabidBCH.remove(sender.tab.id);
@@ -138,7 +155,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 			if(tabidBCH.length == 0){
 				setTimeout(function() {
 					if(tabidBCH.length == 0){
-						Programms[indexPrBCH].boolStartingDOGE = false;
+						Programms[indexPrBCH].boolStartingBCH = false;
 						block = false;
 					}
 				}, 5000);
