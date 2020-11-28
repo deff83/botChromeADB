@@ -49,7 +49,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				if(nologin != null){
 					var nologintext = nologin.textContent;
 					console.log('Deff83 freeETHSky', nologintext);
-					if (nologintext == 'Earn Free Ethereum Every 60 minutes'){
+					if (nologintext == 'Claim Free Ethereum Every 60 minutes'){
 						console.log('Deff83 freeETHSky', nologintext);
 						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/EarnfreeETHSkyinput.js'});

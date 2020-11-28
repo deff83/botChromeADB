@@ -1,5 +1,6 @@
 var indexPrDOGE;
 
+var poschetDOGE;
 
 var tabidDOGE = [];
 
@@ -19,6 +20,7 @@ async  function moonDOGE(indexPrDOGEog){
 		}catch(Exc){} 
 	}
 	console.log("moonDOGE start");
+	poschetDOGE = 0;
 	injectScriptDOGE('http://moondoge.co.in');
 	console.log("moonDOGE end");
 }
@@ -33,8 +35,19 @@ function injectScriptDOGE(url) {
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (request.message == 'content') {
+		
+		//console.log('Deff83 content');
+	}else{
+		if (request.message == 'preload') {
+			//console.log('Deff83 preload');
+		}
+		return;
+	}
+	
 	if(request.src == 'moondoge.co.in'){
-		//console.log('startMes');
+		console.log('startMes');
 		if(!tabidDOGE.contains(sender.tab.id))tabidDOGE.push(sender.tab.id);
 			try{
 				//console.log('Deff83 moonDOGE', request);
@@ -106,10 +119,20 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				var claimnow = frag.getElementById('Faucet').getElementsByTagName('span')[0].textContent;
 				console.log(claimnow);
 				if(claimnow == "0.00000000"){
-					f_callback('reload'); 
-					console.log('reload');
+					poschetDOGE = poschetDOGE + 1;
+					if (poschetDOGE<20){
+						f_callback('reload'); 
+						console.log('reload');
+					}else{
+						Programms[indexPrDOGE].boolStartingDOGE = false;
+						block = false;
+						if(tabidDOGE.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+						tabidDOGE.remove(sender.tab.id);
+					}
+					
 					return;
 				}
+				poschetDOGE = 0;
 				//доступность кнопки
 				console.log(request.html);
 				var divClaim = frag.getElementById('Faucet').getElementsByClassName('btn btn-coin btn-lg')[0];

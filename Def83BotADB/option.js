@@ -109,11 +109,15 @@ elementProgressBar.appendChild(progress.el);
 }
 
 var startButt = document.getElementById("startButt");
+var clearButt = document.getElementById("clearButt");
+var clearInfo = document.getElementById("clearInfo");
+
 
 
 chrome.extension.sendMessage('getBoolStartingTrue', function(backMessage){
 	if(backMessage){
 		startButt.setAttribute("Style", "display:none");
+		clearButt.setAttribute("Style", "display:none");
 		document.getElementById("infotestStart").setAttribute("Style", "display:none");
 		doTimerForrs();
 	}
@@ -127,6 +131,7 @@ startButt.onclick = function (){
 	document.getElementById("infotestStart").setAttribute("Style", "display:none");
 
 	startButt.setAttribute("Style", "display:none");
+	clearButt.setAttribute("Style", "display:none");
 	
 	chrome.extension.sendMessage('setBoolStartingTrue', function(backMessage){});
 	for(var i=0; i< proccesesforSt.length; i++){
@@ -142,6 +147,21 @@ startButt.onclick = function (){
 
 }
 
+clearButt.onclick = function (){
+	chrome.extension.sendMessage('setBoolAllFalse', function(backMessage){
+		
+		location.reload();
+	});
+	
+}
+
+clearInfo.onclick = function (){
+	chrome.extension.sendMessage('clearinfo', function(backMessage){
+		
+		location.reload();
+	});
+	
+}
 
 function doTimerForrs(){
 	
@@ -164,6 +184,8 @@ function doTimerForrs(){
 					console.log(elementProgressBar);
 				}else{
 					
+					
+					
 					updatePage(backMessage);
 					for(var i=0; i< backMessage.length; i++){
 						updateDivForProgress(backMessage[i], i);
@@ -171,12 +193,30 @@ function doTimerForrs(){
 					
 				}
 			});
+			
+		chrome.extension.sendMessage('Deff83-infortest', function(backMessage){
+				updateRemoveUrl(backMessage);
+			});
+			
 	}, 5000);
+	
+	
 
 }
 
 
-
+function updateRemoveUrl(backMassage){
+	var removeUrl = document.getElementById('removeUrl');
+	
+	var removeUrltext = "";
+	
+	for(var i = 0; i < backMassage.length; i++){
+		removeUrltext = removeUrltext + '"' + backMassage[i] + '"' + ", ";
+	}
+	
+	
+	removeUrl.innerHTML =  removeUrltext;
+}
 
 
 function updatePage(backMessage){

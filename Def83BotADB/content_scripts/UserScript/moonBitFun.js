@@ -1,7 +1,9 @@
 //скрипт подключаемый
 try{
-
 	clickButtonInDIV("Id", "faucet", 0, "TagName", "button", 0);
+	
+	
+	
 	/*hideDiv("TagName", "h1", -1);
 	hideDiv("TagName", "a", -1);
 	hideDiv("TagName", "input", -1);

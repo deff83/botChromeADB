@@ -9,8 +9,9 @@ try{
 	hideDiv("ClassName", "col-lg-2", 0);
 	hideDiv("ClassName", "col-lg-2", 1);
 	hideDiv("ClassName", "col-lg-12", 1);
-	hideDiv("ClassName", "col-lg-12", 3);
-	//hideDiv("ClassName", "col-lg-12", 4);
+	hideDiv("TagName", "center", -1);
+	//hideDiv("TagName", "center", 3);
+	hideDiv("ClassName", "col-lg-12", 4);
 	hideDiv("TagName", "nav", -1);
 	
 	

@@ -135,3 +135,23 @@ html{
 	line-height: 1.33333;
 	text-align:center;
 }
+.blocInforRemoveUrl{
+	position:relative;
+	font-family: "Anton script=latin rev=2"; 
+	font-size: 12px; 
+	font-style: normal; 
+	font-weight: 400; 
+	line-height: 1.33333;
+	background-color: #ffffffdd;
+	color: #000000;
+}
+.clearInfoClass{
+	position:relative;
+}
+hr {
+	position:relative;
+    border: none; /* Убираем границу */
+    background-color: #ff5555dd; /* Цвет линии */
+    color: red; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+}

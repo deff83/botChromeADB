@@ -1,5 +1,6 @@
 var indexPrLTC;
 
+var poschetLTC;
 
 var tabidLTC = [];
 
@@ -19,6 +20,7 @@ async  function moonLTC(indexPrLTCog){
 		}catch(Exc){} 
 	}
 	console.log("moonLTC start");
+	poschetLTC = 0;
 	injectScriptLTC('http://moonliteco.in');
 	console.log("moonLTC end");
 }
@@ -106,10 +108,20 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				var claimnow = frag.getElementById('Faucet').getElementsByTagName('span')[0].textContent;
 				console.log(claimnow);
 				if(claimnow == "0.00000000"){
-					f_callback('reload'); 
-					console.log('reload');
+					poschetLTC = poschetLTC + 1;
+					if (poschetLTC<20){
+						f_callback('reload'); 
+						console.log('reload');
+					}else{
+						Programms[indexPrLTC].boolStartingLTC = false;
+						block = false;
+						if(tabidLTC.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+						tabidLTC.remove(sender.tab.id);
+					}
+					
 					return;
 				}
+				poschetLTC = 0;
 				//доступность кнопки
 				console.log(request.html);
 				var divClaim = frag.getElementById('Faucet').getElementsByClassName('btn btn-coin btn-lg')[0];

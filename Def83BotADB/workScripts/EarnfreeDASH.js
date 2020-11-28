@@ -51,7 +51,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				if(nologin != null){
 					var nologintext = nologin.textContent;
 					console.log('Deff83 freeDASH', nologintext);
-					if (nologintext == 'Earn Free Dash Every 60 Minutes'){
+					if (nologintext == 'Earn Free DASH Every 60 Minutes'){
 						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/EarnfreeDASHinput.js'});
 						return;
@@ -159,6 +159,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 			
 	}
 	if(tabidEarnfreeDASH.contains(sender.tab.id)){	//если во вкладке другой адрес
+		console.log('close ', request.src);
 		if(request.src != 'earnfree-dash.xyz'){
 			tabidEarnfreeDASH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);

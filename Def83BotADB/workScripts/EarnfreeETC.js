@@ -45,6 +45,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				
 				var nologin = frag.querySelectorAll('div')[2].getElementsByTagName('h1')[0];
+				
+				console.log(frag.querySelectorAll('div')[2]);
+				console.log(nologin);
+				
 				if(nologin != null){
 					var nologintext = nologin.textContent;
 					console.log(nologintext);
