@@ -1,5 +1,6 @@
 var indexPrEarnfreeETH;
 
+var boolht2 = false;
 
 var tabidEarnfreeETH = [];
 
@@ -19,6 +20,7 @@ async  function moonEarnfreeETH(indexPrfree){
 		}catch(Exc){} 
 	}
 	console.log("EarnfreeETH start");
+	boolht2 = false;
 	injectScriptEarnfreeETH('https://earnfree-eth.xyz/dashboard');
 	console.log("EarnfreeETH end");
 }
@@ -95,6 +97,11 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/EarnfreeETH.js'});
+				if(boolht2){
+					
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
+				}
+				boolht2  = true;
 				
 				
 				/*if(nologin != null && nologin.textContent == 'Free Bitcoin it is real'){

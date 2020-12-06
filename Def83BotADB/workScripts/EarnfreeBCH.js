@@ -1,5 +1,6 @@
 var indexPrEarnfreeBCH;
 
+var boolht6;
 
 var tabidEarnfreeBCH = [];
 
@@ -19,6 +20,7 @@ async  function moonEarnfreeBCH(indexPrfree){
 		}catch(Exc){} 
 	}
 	console.log("EarnfreeBCH start");
+	boolht6 = false;
 	injectScriptEarnfreeBCH('https://earnfree-bch.xyz/dashboard');
 	console.log("EarnfreeBCH end");
 }
@@ -96,6 +98,11 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/EarnfreeBCH.js'});
+				if(boolht6){
+					
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
+				}
+				boolht6  = true;
 				
 				/*if(nologin != null && nologin.textContent == 'Free Bitcoin it is real'){
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});

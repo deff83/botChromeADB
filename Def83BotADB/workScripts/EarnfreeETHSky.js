@@ -1,5 +1,6 @@
 var indexPrEarnfreeETHSky;
 
+var boolht5 = false;
 
 var tabidEarnfreeETHSky = [];
 
@@ -19,6 +20,7 @@ async  function moonEarnfreeETHSky(indexPrfree){
 		}catch(Exc){} 
 	}
 	console.log("EarnfreeETHSky start");
+	boolht5 = false;
 	injectScriptEarnfreeETHSky('https://sky-eth.com/dashboard');
 	console.log("EarnfreeETHSky end");
 }
@@ -97,6 +99,11 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/EarnfreeETHSky.js'});
+				if(boolht5){
+					
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
+				}
+				boolht5  = true;
 				
 				/*if(nologin != null && nologin.textContent == 'Free Bitcoin it is real'){
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});

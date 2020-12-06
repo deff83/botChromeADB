@@ -1,5 +1,6 @@
 var indexPrBestcom;
 
+var boolsoundCB;
 
 var tabidBestcom = [];
 
@@ -19,6 +20,7 @@ async  function moonBestcom(indexPrfree){
 	}
 	Programms[indexPrBestcom].boolStartingDOGE = true;
 	console.log("Bestcom start");
+	boolsoundCB = true;
 	injectScriptBestcom('https://www.bestchange.com');
 	console.log("Bestcom end");
 }
@@ -78,6 +80,11 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/Bestcom.js'});
+				if (boolsoundCB) {
+					boolsoundCB = false;
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
+				}
+				
 				f_callback('reload'); 
 				console.log('reload');
 				return;

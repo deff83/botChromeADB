@@ -127,7 +127,7 @@ Programms.push(new Programm('BitFaucet', 1805, -5+1805, 320, false, moonBitFauce
 Programms.push(new Programm('ClaimFreeBTC-FaucetHub', 25, -5+25, 360, false, moonClaimFreeBTC, 100000000, 10000));	//MAX CLAIM
 
 massivremove = ["https://www.bitcoincasino.io/?stag=5483_5fbe7780e4c32ec18cfa0e4d", 
-				"https://luckyfish.io/?c=getstarted",
+				"https://luckyfish.io/?c=getstarted","https://binance-charity.co/", "https://www.newsofcd.com/",
 				"https://cdn4ads.com/kj.aspx?x=6583778&r=1120218787&d=1606500124&j=1597407272&g=493&p=%21grQoNQIYe21n5iYLJO3aRv3C4bStViA%2BddOuIjEUHDmh2JUIsNO0o1SBI%2F2cbXrWUDwx5xHFMSoLMaMEZneZyVxDYVTfPS7wtdHCutmbgWY%2FMI8NoqDQjqEvaqMpMBCWttpf8pY8yZctAh801nzILLC6pSc5Xr74MB0SzzRo7u3NDzR98u2IQnPiyrKFtuWA5%2BrkdR%2BYwDSFxh0ICwWbVxk040cf6iZvkpeSkF3QpNmYF3H%2F2lnOzGMq1lA3iCoPdn0IzqruGOPt3HMHgpQ3EczKWcojkMoeqZh%2FWj9VK74nN3x%2FjCTa%2FK8KV25xJA6OGjKRgDv7ZwLDWYSxp6G8d2MEtiRqH8S50UJsGHBHUk205Hp%2FdAtWi91MNHodXhRlqXqKDf%2BSKtGtk%2Fo%2FEIvcO92WuOZgoI3REVBpS%2FrDS9TDMpF9d%2BntUCCIkIk%2FQhj41pK2priDlvCtv9KgEBO2E%2BSCOnBNvkki2E7E74%2FroQ0%3D&s=1536,864,1.02,1566.72,881.28,0&v=&m="
 				];
 
@@ -159,12 +159,7 @@ massivremovef = [
 				"searchsecurer.com",
 				"bet1-x28746.com",
 				"bitstarz1.eu",
-				"99airdrops.com",
-				"rt.bongacams13.com",
-				"www.purplemining.ltd",
-				"belaya2shu1ba1.com",
-				"link.securewebservices.ch", "www.gaming-adult.com",
-				"starcontent.monster", "grtposh.com", "www.cuntempire.com", "apps6.cointraffic.io", "mellowads.com", "todaybrings.ru", "unicom24.ru", "rt.pornhubpremium.com", "www.myincomeclub.com", "nexo.io", "m2mdonations2.com", "ruvi.tv", "betfury.io", "www.watermine.io", "bet1-x00495.com", "track.adsplay.in", "eu.4game.com", "disturbedaccruesurfaces.com", "rtyznd.com", "gilc.ru", "ivnx.ru", "btb88.com", "vidox.net", "smartme.cash","prpops.com"
+				"99airdrops.com","accounts.binance.com", "rt.bongacams13.com","srsly.ru", "www.vokrug.tv", "bet1-x62651.com", "www.catala-reinon.es", "www.xm.com", "beklefkiom.com", "euphe-gun.com", "crawlarchive1120.com", "theonlygames.com", "www.google.com", "spbinvestment.ru", "bit-sitess.com", "crsed.net", "bet1-x31759.com", "www.purplemining.ltd","artisany.net", "bet1-x78464.com", "cryptotabbrowser.com", "newsurveyrus.typeform.com", "cryptoware.biz", "rsafrwd.com", "adverdirect.com", "fb.ru", "www.youtube.com", "kto-chto-gde.ru", "hyip.money", "p.1ts18.top", "code4us.com", "prizebox.org", "inbound.trilema.com", "epicmotoring.com","pegloang.com", "www.aaxpro.com", "belaya2shu1ba1.com", "rabota-doma.org", "cryptocoinsad.com","bet1-x24022.com", "mediasama.com", "see.xxx", "www.toprevenuecpmnetwork.com", "adbtc.io", "twndo77864.com", "ru.4game.com", "united-family.org", "cretgate.com", "cointools.info", "catermich.pro", "r.rips.icu", "pinednews.ru", "tq.adventurefeeds.com", "bet1-x99511.com",	"link.securewebservices.ch", "www.gaming-adult.com","best.aliexpress.ru", "hq-sex-tube.com", "ru.leon9c7as1no.com", "www.bestrevenuenetwork.com", "www.pornofrant.com", "ws.exchange", "best2020-games-web1.com", "starcontent.monster", "grtposh.com", "www.cuntempire.com", "apps6.cointraffic.io", "mellowads.com", "todaybrings.ru", "unicom24.ru", "rt.pornhubpremium.com", "www.myincomeclub.com", "nexo.io", "m2mdonations2.com", "ruvi.tv", "betfury.io", "www.watermine.io", "bet1-x00495.com", "track.adsplay.in", "eu.4game.com", "disturbedaccruesurfaces.com", "rtyznd.com", "gilc.ru", "ivnx.ru", "btb88.com", "vidox.net", "smartme.cash","prpops.com"
 				];
 
 function checkurlTabs(){

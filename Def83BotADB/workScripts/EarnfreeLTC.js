@@ -1,5 +1,6 @@
 var indexPrEarnfreeLTC;
 
+var boolht = false;
 
 var tabidEarnfreeLTC = [];
 
@@ -19,6 +20,7 @@ async  function moonEarnfreeLTC(indexPrfree){
 		}catch(Exc){} 
 	}
 	console.log("EarnfreeLTC start");
+	boolht = false;
 	injectScriptEarnfreeLTC('https://earnfree-ltc.xyz/dashboard');
 	console.log("EarnfreeLTC end");
 }
@@ -96,6 +98,11 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/EarnfreeLTC.js'});
 				
+				if(boolht){
+					
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
+				}
+				boolht  = true;
 				
 				/*if(nologin != null && nologin.textContent == 'Free Bitcoin it is real'){
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});

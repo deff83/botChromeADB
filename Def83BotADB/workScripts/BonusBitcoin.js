@@ -1,6 +1,6 @@
 var indexPrBonusBitcoin;
 
-
+var boolsoundBB = true;
 
 var tabidBonusBitcoin = [];
 
@@ -21,6 +21,7 @@ async  function moonBonusBitcoin(indexPrBonusBitcoinog){
 	Programms[indexPrBonusBitcoin].boolStartingDOGE = true;
 	booleanExecuteScripteBonusBitcoin = false
 	console.log("BonusBitcoin start");
+	boolsoundBB = true;
 	injectScriptBonusBitcoin('http://bonusbitcoin.co/faucet');
 	console.log("BonusBitcoin end");
 }
@@ -39,7 +40,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		//console.log('startMes');
 		if(!tabidBonusBitcoin.contains(sender.tab.id))tabidBonusBitcoin.push(sender.tab.id);
 			try{
-				//console.log('Deff83 moonBonusBitcoin', request);
+				console.log('Deff83 moonBonusBitcoin', request);
 				let frag = document.createRange().createContextualFragment(request.html);
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/pokaz.js'});
@@ -63,6 +64,12 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/BonusBitcoinog.js'});
+					
+					if (boolsoundBB) {
+						boolsoundBB = false;
+						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
+					}
+					
 					booleanExecuteScripteBonusBitcoin = true;
 				
 				

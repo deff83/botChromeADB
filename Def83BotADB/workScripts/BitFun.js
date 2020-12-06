@@ -121,6 +121,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					//если кнопка доступна
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/moonBitFun.js'});
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
 		
 				}else{
 					
