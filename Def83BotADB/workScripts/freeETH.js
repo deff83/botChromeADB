@@ -76,7 +76,25 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				if(stylecaptcha == 'display: none;'){
 					var clock = frag.getElementById('clock').textContent;
 					console.log(clock);
+					
+					var minute = (frag.getElementById('cislo1').textContent)*1; 
+					var second = minute*60+(frag.getElementById('cislo2').textContent)*1-10; 
+					
+					if (second < 0) {second = 0};
+					if (second == 0) {
+						f_callback('reload'); 
+						console.log('reload');
+						return;
+					}
+					
+					console.log(second);
+					
 					Programms[indexPrfreeETH].boolStartingDOGE = false;
+					Programms[indexPrfreeETH].startintervalDOGE = Programms[indexPrfreeETH].intervalDOGE - second;
+					
+					
+					
+					
 					block = false;
 					if(tabidfreeETH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 					tabidfreeETH.remove(sender.tab.id);
