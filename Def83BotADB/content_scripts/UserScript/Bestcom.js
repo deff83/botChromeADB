@@ -9,7 +9,11 @@ try{
 	hideDiv("ClassName", "header", -1);
 	
 	hideDiv("Id", "bonus_button", -1);
-	writeField("Name", "bonus_purse", 0, "3HaimfxYgsjXwqpYcQK1entSm2HyMJx39E")
+	
+	//
+	//3HaimfxYgsjXwqpYcQK1entSm2HyMJx39E
+	
+	writeField("Name", "bonus_purse", 0, "17Mu4RdaMczu1jLmCSp2QXBAt1QHE1p9Ym")
 	
 	document.getElementsByClassName('g-recaptcha-inner')[0].setAttribute("style", "width: 304px; height: 85px;");
 	// 
