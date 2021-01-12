@@ -14,117 +14,39 @@ var Programm = function (name, intervalDOGE, startintervalDOGE, boolingTime, boo
 	this.boolStart = boolStart;
 }
 
+var tekSbor = -1;
+
 var block = false;
 
-var tabidSave = [];
-var massivTabid= [];
+var unClose = false;
+var nameOpen = 'no';
+var nameOpen2 = 'no';
+
+
+var tabidSave = []; //важные вкладки чтоб не закрывались option.html
+var massivTabid= [];//массив массивов вкладок скриптов
 var Programms = [];
 //-----------------------------------------massiv TAB--------------------------------------------//
-massivTabid.push(tabidDOGE);
-massivTabid.push(tabidBCH);
-massivTabid.push(tabidDASH);	
-massivTabid.push(tabidLTC);
-massivTabid.push(tabidBTC);
-massivTabid.push(tabidfreeLTC);
-massivTabid.push(tabidfreeETH);
-massivTabid.push(tabidfreeBCH);
-massivTabid.push(tabidfreeDOGE);
-//massivTabid.push(tabidfreeETHxyz);
-//massivTabid.push(tabidfreeDGBxyz);
-//massivTabid.push(tabidfreeZECxyz);
-massivTabid.push(tabidfreeBTXxyz);
-//massivTabid.push(tabidfreeBTCxyz);
-massivTabid.push(tabidBestcom);
+massivTabid.push(tabidADB);
+massivTabid.push(tabidADLTC);
+massivTabid.push(tabidADBCH);
+massivTabid.push(tabidADETH);
+massivTabid.push(tabidADXRP);
+massivTabid.push(tabidADDASH);
+massivTabid.push(tabidADDOGGE);
 
-massivTabid.push(tabidBonusBitcoin);
-massivTabid.push(tabidEarnfreeLTC);
-massivTabid.push(tabidEarnfreeETH);
-massivTabid.push(tabidEarnfreeDOGE);
-massivTabid.push(tabidEarnfreeDASH);
-massivTabid.push(tabidEarnfreeETC);
-massivTabid.push(tabidEarnfreeZEC);
-massivTabid.push(tabidEarnfreeETHSky);
-massivTabid.push(tabidEarnfreeBCH);
-massivTabid.push(tabidLTCfree);
-//massivTabid.push(tabidETHfree);
-massivTabid.push(tabidDOGEfree);
-massivTabid.push(tabidXRPfree);
-massivTabid.push(tabidBTCfree);
-massivTabid.push(tabidBitFun);
-massivTabid.push(tabidDOGEfaucet);
-massivTabid.push(tabidDASHfaucet);
-massivTabid.push(tabidLTCfaucet);
-massivTabid.push(tabidETHfaucet);
-massivTabid.push(tabidBLKfaucet);
-massivTabid.push(tabidDGBfaucet);
-massivTabid.push(tabidPPCfaucet);
-massivTabid.push(tabidPOTfaucet);
-massivTabid.push(tabidTRXfaucet);
-massivTabid.push(tabidXMRfaucet);
-massivTabid.push(tabidZECfaucet);
-massivTabid.push(tabidHourlyAds);
-massivTabid.push(tabidFreeBTCW);
-massivTabid.push(tabidBitFaucet);
-massivTabid.push(tabidClaimFreeBTC);
 
 //-----------------------------------------Programm start--------------------------------------------//ф
-Programms.push(new Programm('moonDOGE', 905, -20+905, 320, false, moonDOGE, 1, 0.00287, true));
-Programms.push(new Programm('moonDASH', 905, -40+905, 320, false, moonDASH, 1, 106, true));
-Programms.push(new Programm('moonLTC', 905, -60+905, 320, false, moonLTC, 1, 98, true));
-Programms.push(new Programm('moonBTC', 905, -80+905, 320, false, moonBTC, 1, 10000, true)) ;
-Programms.push(new Programm('moonBCH', 905, -80+905, 320, false, moonBCH, 1, 324, true)) ;
-Programms.push(new Programm('BonusBitcoin', 905, -15+905, 320, false, moonBonusBitcoin, 100000000, 0, true));
-
-Programms.push(new Programm('LTCfree', 305, -5+305, 320, false, moonLTCfree, 1, 98));
-//Programms.push(new Programm('ETHfree', 305, -5+305, 320, false, moonETHfree, 1, 215));
-Programms.push(new Programm('DOGEfree', 305, -5+305, 320, false, moonDOGEfree, 1, 0.00287));
-Programms.push(new Programm('XRPfree', 305, -5+305, 320, false, moonXRPfree, 1, 0.305));
-Programms.push(new Programm('BTCfree', 305, -5+305, 320, false, moonBTCfree, 1, 10000));
-
-Programms.push(new Programm('BitFun', 3675, -5+3675, 320, false, moonBitFun, 100000000, 0, true));
-Programms.push(new Programm('changeBest.com', 3275, -10+3275, 320, false, moonBestcom, 1, 10000, true));
+Programms.push(new Programm('adb', 10805, -7060+10805, 320, false, startADB, 100000000, 10000, false));
+Programms.push(new Programm('adLTC', 10805, -6050+10805, 320, false, startADLTC, 1, 98, true));
+Programms.push(new Programm('adBCH', 10805, -5040+10805, 320, false, startADBCH, 1, 324, true));
+Programms.push(new Programm('adETH', 10805, -4030+10805, 320, false, startADETH, 1, 215, true));
+Programms.push(new Programm('adXRP', 10805, -3035+10805, 320, false, startADXRP, 1, 0.305, true));
+Programms.push(new Programm('adDASH', 10805, -2030+10805, 320, false, startADDASH, 1, 106, true));
+Programms.push(new Programm('adDOGE', 10805, -1025+10805, 320, false, startADDOGGE, 1, 0.00287, true));
 
 
 
-Programms.push(new Programm('freeLTC', 3605, -100+3605, 320, false, moonfreeLTC, 1, 98, true));
-Programms.push(new Programm('freeETH', 3605, -120+3605, 320, false, moonfreeETH, 1, 215, true));
-Programms.push(new Programm('freeBCH', 3605, -140+3605, 320, false, moonfreeBCH, 1, 324));
-Programms.push(new Programm('freeDOGE', 3605, -150+3605, 320, false, moonfreeDOGE, 1, 0.00287));
-//Programms.push(new Programm('freeETHxyz', 3605, -300+3605, 320, false, moonfreeETHxyz, 1, 215));
-//Programms.push(new Programm('freeDGBxyz', 3605, -320+3605, 320, false, moonfreeDGBxyz, 1, 0.0098));
-//Programms.push(new Programm('freeZECxyz', 3605, -340+3605, 320, false, moonfreeZECxyz, 1, 67));
-Programms.push(new Programm('freeBTXxyz', 3605, -360+3605, 320, false, moonfreeBTXxyz, 1, 0.00164));
-//Programms.push(new Programm('freeBTCxyz', 3605, -380+3605, 320, false, moonfreeBTCxyz, 1, 10000));
-
-
-Programms.push(new Programm('EarnfreeLTC', 3605, -0+3605, 320, false, moonEarnfreeLTC, 1, 98, true));
-Programms.push(new Programm('EarnfreeETH', 3605, -5+3605, 320, false, moonEarnfreeETH, 1, 215, true));
-Programms.push(new Programm('EarnfreeDOGE', 3605, -5+3605, 320, false, moonEarnfreeDOGE, 1, 0.00287, true));	
-Programms.push(new Programm('EarnfreeDASH', 3605, -5+3605, 320, false, moonEarnfreeDASH, 1, 106, true));
-
-Programms.push(new Programm('EarnfreeETC', 3605, -5+3605, 320, false, moonEarnfreeETC, 1, 6.10));
-Programms.push(new Programm('EarnfreeZEC', 3605, -5+3605, 320, false, moonEarnfreeZEC, 1, 57));
-
-Programms.push(new Programm('EarnfreeETHSky', 3605, -5+3605, 320, false, moonEarnfreeETHSky, 1, 215, true));
-Programms.push(new Programm('EarnfreeBCH', 3605, -5+3605, 320, false, moonEarnfreeBCH, 1, 324, true));
-
-Programms.push(new Programm('DOGEfaucet', 14405, -5+14405, 320, false, moonDOGEfaucet, 1, 0.00287));	//return timer
-Programms.push(new Programm('DASHfaucet', 14405, -5+14405, 320, false, moonDASHfaucet, 1, 106));	//return timer
-Programms.push(new Programm('LTCfaucet', 14405, -5+14405, 320, false, moonLTCfaucet, 1, 98));	//return timer
-Programms.push(new Programm('ETHfaucet', 14405, -5+14405, 320, false, moonETHfaucet, 1, 215));	//return timer
-Programms.push(new Programm('BLKfaucet', 14405, -5+14405, 320, false, moonBLKfaucet, 1, 0.063));	//return timer
-Programms.push(new Programm('DGBfaucet', 14405, -5+14405, 320, false, moonDGBfaucet, 1, 0.0098));	//return timer
-Programms.push(new Programm('PPCfaucet', 14405, -5+14405, 320, false, moonPPCfaucet, 1, 0.49));	//return timer
-Programms.push(new Programm('POTfaucet', 14405, -5+14405, 320, false, moonPOTfaucet, 1, 0.0079));	//return timer
-Programms.push(new Programm('TRXfaucet', 14405, -5+14405, 320, false, moonTRXfaucet, 1, 0.02));	//return timer
-Programms.push(new Programm('XMRfaucet', 14405, -5+14405, 320, false, moonXMRfaucet, 1, 91));	//return timer
-Programms.push(new Programm('ZECfaucet', 14405, -5+14405, 320, false, moonZECfaucet, 1, 57));	//return timer
-Programms.push(new Programm('HourlyAds', 3605, -5+3605, 320, false, moonHourlyAds, 1, 10000));	//return timer
-Programms.push(new Programm('Freeb.tc', 1805, -5+1805, 320, false, moonFreeBTCW, 1, 10000));	//return timer
-Programms.push(new Programm('BitFaucet', 1805, -5+1805, 320, false, moonBitFaucet, 1, 10000));
-
-
-Programms.push(new Programm('ClaimFreeBTC-FaucetHub', 25, -5+25, 360, false, moonClaimFreeBTC, 100000000, 10000));	//MAX CLAIM
 
 massivremove = ["https://www.bitcoincasino.io/?stag=5483_5fbe7780e4c32ec18cfa0e4d", 
 				"https://luckyfish.io/?c=getstarted","https://binance-charity.co/", "https://www.newsofcd.com/", "https://tfbitcoin.com/", "https://www.bitcoincasino.io/?stag=5483_5fe65eab9f965850e0d12a6b", "https://refpakrtsb.top/L?tag=d_755089m_18639c_c04dbfb7&r=user%2Fregistration.php&pb=2fd0f6616e444e95be6305e0fb3ea477&click_id=01b3973b-3bdd-11eb-b24e-cd2a8c8feb24",
@@ -211,13 +133,14 @@ var boolStarting = false;
 
 // начать повторы с интервалом 2 сек
 var timerId = setInterval(function() {
-	checkurlTabs();
-	getCountTabs();
+	//checkurlTabs();
+	//getCountTabs();
 	if (boolStarting){	//старт кнопкой
 		op++;
 		if(boolTimerUnBlock){ unBlockTimer ++;}
 		for(var i = 0; i < Programms.length; i++){
 			if(!Programms[i].boolStartingDOGE)	{Programms[i].startintervalDOGE++;}else{
+			/*
 			if(boolTimerUnBlock){
 				
 				if(unBlockTimer > Programms[i].boolingTime){
@@ -226,13 +149,43 @@ var timerId = setInterval(function() {
 						unBlockTimer = 0;
 						boolTimerUnBlock = false;
 					}
-			};}
+			};*/
 			
-			if((Programms[i].startintervalDOGE / Programms[i].intervalDOGE) > 1 && !block && Programms[i].userBool) {
-				Programms[i].start(i); Programms[i].startintervalDOGE = 0;
-				unBlockTimer = 0;			
-				boolTimerUnBlock = true;
-				
+			
+			}
+			if (tekSbor==-1){
+				if((Programms[i].startintervalDOGE / Programms[i].intervalDOGE) > 1 && !block && Programms[i].userBool) {
+					
+					chrome.tabs.query( {currentWindow: true }, 
+							function(tabs) { 
+								//console.log("tabCount", tabs.length);
+								
+									
+									for(var i = 0; i < tabs.length; i++){
+										
+										tab = tabs[i];
+										try{
+											if(!tabidSave.contains(tab.id)){
+												var removetab = true;
+												
+												//console.log(massivTabid);
+												
+												if(removetab) chrome.tabs.remove(tab.id);
+											}
+										}catch(Exc){}
+										
+									}
+								
+							 }
+					 );
+					
+					
+					tekSbor = i;
+					Programms[i].start(i); Programms[i].startintervalDOGE = 0;
+					unBlockTimer = 0;			
+					//boolTimerUnBlock = true;
+					
+				}
 			}
 		}
 	}
@@ -267,10 +220,17 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					}
 				});
 				//console.log(massivTabid);
-				if(removetab) chrome.tabs.remove(sender.tab.id);
+				
+				if (unClose==false){
+					if(removetab) chrome.tabs.remove(sender.tab.id);
+				}
 			}
 		}catch(Exc){}
 	}, 1000);
+	
+	
+	
+	
 	if(request=='Deff83-test'){
 		f_callback(Programms);
 	};
@@ -278,7 +238,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		f_callback(massivnoremove);
 	};
 	if(request=='Deff83-block'){
-		f_callback(block);
+		f_callback(block||tekSbor!=-1);
 	};
 	if(request=='getBoolStartingTrue'){
 		f_callback(boolStarting);
@@ -297,11 +257,20 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	if(request=='clearinfo'){
 		massivnoremove = [];
 	};
+	if(request=='setBoolunBlock'){
+		
+		for(var i = 0; i < Programms.length; i++){
+			Programms[i].boolStartingDOGE = false;
+		}
+		
+		block=false;
+		tekSbor=-1;
+	};
 	
 	
 	
 	if (request.message == 'preload') {
-		if (massivremovef.indexOf(request.src)>-1){
+		/*if (massivremovef.indexOf(request.src)>-1){
 			chrome.tabs.remove(sender.tab.id);
 		}else{
 			if (massivnoremove.indexOf(request.src)==-1){
@@ -311,7 +280,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 			}
 			console.log('Deff83 start preload ', request.src);
 		}
-		
+		*/
 	}
 	
 	for(var i = 0; i < Programms.length; i++){
@@ -333,6 +302,75 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	}
 	
 });
+
+
+function funstart(request, url){
+	if(request=='closeall'){
+		console.log('closeall');
+		
+		chrome.tabs.query( {currentWindow: true }, 
+				function(tabs) { 
+					//console.log("tabCount", tabs.length);
+					
+						
+						for(var i = 0; i < tabs.length; i++){
+							
+							tab = tabs[i];
+							console.log(tab.pendingUrl);
+							console.log(tab.favIconUrl);
+							console.log(tab.url);
+							
+							//https://adbtc.top/favicon.ico
+							
+							if (tab.favIconUrl != url){
+								try{
+									if(!tabidSave.contains(tab.id)){
+										var removetab = true;
+										massivTabid.forEach(function(item, i, arr) {
+											if(item.contains(tab.id)){
+												removetab = false;
+											}
+										});
+										//console.log(massivTabid);
+										
+										if(removetab) chrome.tabs.remove(tab.id);
+									}
+								}catch(Exc){}
+							}
+						}
+					
+				 }
+		 );
+		
+		
+		
+	}
+	if(request=='perekl'){
+		console.log('perekl');
+		chrome.tabs.query( {currentWindow: true }, 
+				function(tabs) { 
+					//console.log("tabCount", tabs.length);
+					
+						
+						for(var i = 0; i < tabs.length; i++){
+							
+							tab = tabs[i];
+							/*console.log(tab.pendingUrl);
+							console.log(tab.favIconUrl);
+							console.log(tab.url);*/
+							
+							//https://adbtc.top/favicon.ico
+							
+							if (tab.favIconUrl == url){
+								chrome.tabs.update(tab.id , {selected: true});
+							}
+						}
+					
+				 }
+		 );
+	}
+	
+}
 
 
 Array.prototype.contains = function(obj) {
