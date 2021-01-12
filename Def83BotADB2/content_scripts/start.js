@@ -34,16 +34,24 @@ massivTabid.push(tabidADETH);
 massivTabid.push(tabidADXRP);
 massivTabid.push(tabidADDASH);
 massivTabid.push(tabidADDOGGE);
+massivTabid.push(tabidADDGB);
+massivTabid.push(tabidADTRX);
+massivTabid.push(tabidADZEC);
+massivTabid.push(tabidADBTC);
 
 
 //-----------------------------------------Programm start--------------------------------------------//ф
-Programms.push(new Programm('adb', 10805, -7060+10805, 320, false, startADB, 100000000, 10000, false));
-Programms.push(new Programm('adLTC', 10805, -6050+10805, 320, false, startADLTC, 1, 98, true));
-Programms.push(new Programm('adBCH', 10805, -5040+10805, 320, false, startADBCH, 1, 324, true));
-Programms.push(new Programm('adETH', 10805, -4030+10805, 320, false, startADETH, 1, 215, true));
-Programms.push(new Programm('adXRP', 10805, -3035+10805, 320, false, startADXRP, 1, 0.305, true));
-Programms.push(new Programm('adDASH', 10805, -2030+10805, 320, false, startADDASH, 1, 106, true));
-Programms.push(new Programm('adDOGE', 10805, -1025+10805, 320, false, startADDOGGE, 1, 0.00287, true));
+Programms.push(new Programm('adb', 13805, -7060+13805, 320, false, startADB, 100000000, 10000, true));
+Programms.push(new Programm('adLTC', 13805, -6050+13805, 320, false, startADLTC, 1, 98, true));
+Programms.push(new Programm('adBCH', 13805, -5040+13805, 320, false, startADBCH, 1, 324, true));
+Programms.push(new Programm('adETH', 13805, -4030+13805, 320, false, startADETH, 1, 215, true));
+Programms.push(new Programm('adXRP', 13805, -3035+13805, 320, false, startADXRP, 1, 0.305, true));
+Programms.push(new Programm('adDASH', 13805, -2530+13805, 320, false, startADDASH, 1, 106, true));
+Programms.push(new Programm('adDOGE', 13805, -2025+13805, 320, false, startADDOGGE, 1, 0.00287, true));
+Programms.push(new Programm('adDGB', 13805, -1525+13805, 320, false, startADDGB, 1, 0.02, true));
+Programms.push(new Programm('adTRX', 13805, -1025+13805, 320, false, startADTRX, 1, 0.02, true));
+Programms.push(new Programm('adZEC', 13805, -525+13805, 320, false, startADZEC, 1, 70, true));
+Programms.push(new Programm('adBTC', 13805, -525+13805, 320, false, startADBTC, 1, 10000, true));
 
 
 
@@ -325,15 +333,7 @@ function funstart(request, url){
 							if (tab.favIconUrl != url){
 								try{
 									if(!tabidSave.contains(tab.id)){
-										var removetab = true;
-										massivTabid.forEach(function(item, i, arr) {
-											if(item.contains(tab.id)){
-												removetab = false;
-											}
-										});
-										//console.log(massivTabid);
-										
-										if(removetab) chrome.tabs.remove(tab.id);
+										 chrome.tabs.remove(tab.id);
 									}
 								}catch(Exc){}
 							}
