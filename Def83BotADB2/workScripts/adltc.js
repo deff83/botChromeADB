@@ -78,11 +78,16 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				
 				var fragRow = frag.querySelectorAll('div')[1];
-				var fragRow2 = frag.querySelectorAll('div')[7];
+				var fragRow2 = frag.querySelectorAll('div')[0];
+				var fragRow3 = frag.querySelectorAll('div')[5];
+				
+				
+				
 				console.log(fragRow);
 				console.log(fragRow2);
+				console.log(fragRow3);
 				
-				if (fragRow!= null&&fragRow2!=null){
+				if (fragRow!= null&&fragRow2!=null&&fragRow3!=null){
 					
 					//balance card-panel
 					//login
@@ -108,6 +113,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					
 					funstart('closeall', 'https://adltc.cc/images/img/favicon.ico');
 					
+					
+					var Earn_LTC = fragRow2.getElementsByClassName('text-center')[0];
+					
+					if (Earn_LTC==null) {fragRow2 = fragRow3;}
 					
 					var Earn_LTC = fragRow2.getElementsByClassName('text-center')[0];
 					console.log(Earn_LTC);
@@ -154,6 +163,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 								if(noAds!=null&&noAds.textContent=='No ads'){
 									tekSbor = -1;
 									Programms[indexPrLTC].boolStartingDOGE = false;
+									Programms[indexPrLTC].textmessage = "noAds";
 									block = false;
 									if(tabidADLTC.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 									tabidADLTC.remove(sender.tab.id);
@@ -181,6 +191,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 			}catch(Exc){
 				Programms[indexPrLTC].boolStartingDOGE = false;
+				Programms[indexPrLTC].textmessage = "Exc";
 				block = false;
 				console.log(Programms[indexPrLTC].boolStartingDOGE);
 				console.log(Exc);

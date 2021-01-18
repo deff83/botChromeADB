@@ -2,11 +2,14 @@
 try{
 	//alert('tyt');
 	
+	//alert(document.getElementsByClassName("row")[2].innerHTML);
 	
-	clickButton("TagName", "a", 13);
+	//clickButton("ClassName", "btn btn-primary btn-large", 0);
+	
+	hideDiv("ClassName", "col s12 text-center", -1);
+	//setURL('https://adltc.cc/surf');
 	
 	
-	//setURL('https://freeb.tc/login');
 	//writeField("Name", "username", 0, "waiss2019")
 	//writeField("Name", "pass_word", 0, "0704galaxArt")
 	//
@@ -26,7 +29,7 @@ try{
 	
 
 	
-}catch(Exc){alert(Exc);};
+}catch(Exc){};
 
 
 

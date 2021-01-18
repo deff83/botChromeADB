@@ -36,6 +36,13 @@
 	margin:10px;
 	background-color: #ff9999dd
 }
+.progress-noads{
+	position:relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;
+	margin:10px;
+	background-color: #99ff99dd
+}
 .progress-otkluch{
 	position:relative;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
@@ -135,6 +142,17 @@ html{
 	line-height: 1.33333;
 	text-align:center;
 }
+.textMes{
+	font-family: "Anton script=latin rev=2"; 
+	font-size: 8px; 
+	font-style: normal; 
+	font-weight: 400; 
+	line-height: 1.33333;
+	text-align:center;
+}
+
+
+
 .blocInforRemoveUrl{
 	position:relative;
 	font-family: "Anton script=latin rev=2"; 

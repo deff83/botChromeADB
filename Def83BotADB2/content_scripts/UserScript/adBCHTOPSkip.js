@@ -2,11 +2,14 @@
 try{
 	//alert('tyt');
 	
+	//alert(document.getElementsByClassName("row")[2].innerHTML);
 	
-	clickButton("TagName", "a", 13);
+	clickButtonInDIV("ClassName", "card-panel z-depth-3", 0, "TagName", "a", 0);
+	// clickButtonInDIV("ClassName", "row", 3, "TagName", "a", 0);
+	
+	//setURL('https://adltc.cc/surf');
 	
 	
-	//setURL('https://freeb.tc/login');
 	//writeField("Name", "username", 0, "waiss2019")
 	//writeField("Name", "pass_word", 0, "0704galaxArt")
 	//
@@ -26,7 +29,7 @@ try{
 	
 
 	
-}catch(Exc){alert(Exc);};
+}catch(Exc){};
 
 
 

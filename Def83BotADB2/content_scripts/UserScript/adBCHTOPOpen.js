@@ -2,11 +2,14 @@
 try{
 	//alert('tyt');
 	
+	//alert(document.getElementsByClassName("row")[2].innerHTML);
 	
-	clickButton("TagName", "a", 13);
+	clickButton("Id", "nachat", 0);
 	
 	
-	//setURL('https://freeb.tc/login');
+	//setURL('https://adltc.cc/surf');
+	
+	
 	//writeField("Name", "username", 0, "waiss2019")
 	//writeField("Name", "pass_word", 0, "0704galaxArt")
 	//

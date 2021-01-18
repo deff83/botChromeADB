@@ -137,8 +137,9 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 										chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/adbOpenFiat.js'});
 									}
 								}
-							}catch(Exc){}
-							first = false;
+								first = false;
+							}catch(Exc){console.log(Exc);}
+							
 						}
 						
 						
@@ -205,14 +206,25 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 										}
 									}
 								}catch(Exc){
-									console.log(Exc);
-									//если нет кнопки открыть 
-									tekSbor = -1;
-									Programms[indexPr].boolStartingDOGE = false;
-									block = false;
-									if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-									tabidADB.remove(sender.tab.id);
-									return;
+									
+									
+									var balancetext = fragRowBalance.getElementsByClassName('balance card-panel')[0];
+									
+									if (balancetext!=null){
+									
+										console.log(Exc);
+										//если нет кнопки открыть 
+										tekSbor = -1;
+										Programms[indexPr].boolStartingDOGE = false;
+										Programms[indexPr].textmessage = "noAds";
+										block = false;
+										if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+										tabidADB.remove(sender.tab.id);
+										return;
+									}
+									
+									
+									
 									}
 								
 							}
@@ -220,13 +232,17 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 							
 							
 							//если нет кнопки открыть 
-							
-							
-							tekSbor = -1;
-							Programms[indexPr].boolStartingDOGE = false;
-							block = false;
-							if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-							tabidADB.remove(sender.tab.id);
+							var balancetext = fragRowBalance.getElementsByClassName('balance card-panel')[0];
+									
+									if (balancetext!=null){
+										
+										tekSbor = -1;
+										Programms[indexPr].boolStartingDOGE = false;
+										Programms[indexPr].textmessage = "noAds";
+										block = false;
+										if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+										tabidADB.remove(sender.tab.id);
+									}
 						}
 						
 					}, 2000);
@@ -237,90 +253,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				
 				
-				/*
 				
-				
-				var succses = frag.getElementById('BodyPlaceholder_SuccessfulClaimPanel');
-				if(succses!=null){
-					//если успешно
-					console.log(succses.getElementsByTagName('b')[0].innerHTML);
-					if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id))  chrome.tabs.remove(sender.tab.id);
-					tabidADB.remove(sender.tab.id);
-					console.log('succses');
-					Programms[indexPr].boolStartingDOGE = false;
-					block = false;
-					return;
-				}
-				//Timer
-				var timer = frag.getElementById('PageLayout').getElementsByClassName('faucetValue')[0];
-				if(timer == null){};
-				//console.log('timer'+timer.innerHTML);
-				try {
-				
-					if(! (timer.innerHTML == 'masleey@mail.ru')){
-						f_callback('reload'); 
-						console.log('reload');
-						return;
-					}
-				}catch(Exc){
-					console.log(Exc);
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/noScrit.js'});
-					return;
-				}
-				//выход по баланс
-				var balance = frag.getElementById('Navigation').getElementsByTagName('span')[1].getElementsByTagName('a')[0].textContent; 
-				if(Programms[indexPr].balance != 0 && Programms[indexPr].balance < parseFloat(balance)){
-					console.log(parseFloat(balance) - Programms[indexPr].balance);
-					Programms[indexPr].balance = parseFloat(balance);
-					Programms[indexPr].boolStartingDOGE = false;
-					block = false;
-					if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-					tabidADB.remove(sender.tab.id);
-					return;
-				}
-				
-				console.log(Programms[indexPr].balance);
-				Programms[indexPr].balance = parseFloat(balance);
-				console.log(Programms[indexPr].balance);
-				
-				
-				//проверка ненулевого клейма
-				var claimnow = frag.getElementById('Faucet').getElementsByTagName('span')[0].textContent;
-				console.log(claimnow);
-				if(claimnow == "0.00000000"){
-					poschetDOGE = poschetDOGE + 1;
-					if (poschetDOGE<20){
-						f_callback('reload'); 
-						console.log('reload');
-					}else{
-						Programms[indexPr].boolStartingDOGE = false;
-						block = false;
-						if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-						tabidADB.remove(sender.tab.id);
-					}
-					
-					return;
-				}
-				poschetDOGE = 0;
-				//доступность кнопки
-				console.log(request.html);
-				var divClaim = frag.getElementById('Faucet').getElementsByClassName('btn btn-coin btn-lg')[0];
-				var styleinputdivClaim = divClaim.getElementsByTagName('span')[0].getAttribute('style');
-				console.log(styleinputdivClaim == null);
-				if (styleinputdivClaim == null){
-					//если кнопка доступна
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/moonDOGE.js'});
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
-				}else{
-					
-					if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-					tabidADB.remove(sender.tab.id);
-					Programms[indexPr].boolStartingDOGE = false;
-					block = false;
-				}*/
 			}catch(Exc){
 				Programms[indexPr].boolStartingDOGE = false;
+				Programms[indexPr].textmessage = "Exc";
 				block = false;
 				console.log(Programms[indexPr].boolStartingDOGE);
 				console.log(Exc);

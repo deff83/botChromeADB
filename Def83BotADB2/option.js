@@ -24,7 +24,7 @@ function click(){
 
 
 function creatDivForProgress(prog, i){
-	var divcreate = "<div id='progress"+i+"' class='progress'><input type='checkbox'  class='checkbox'><div class='content'><div class='progressbar'></div><div class='textProgress'>"+prog.name + "</div><div class='balance'></div><div class='balanceUSD'></div></div></div>";
+	var divcreate = "<div id='progress"+i+"' class='progress'><input type='checkbox'  class='checkbox'><div class='content'><div class='progressbar'></div><div class='textProgress'>"+prog.name + "</div><div class='balance'></div><div class='balanceUSD'></div><div class='textMes'>"+prog.textmessage+"</div></div></div>";
 	
 	return divcreate;
 }
@@ -48,7 +48,11 @@ function updateDivForProgress(prog, i){
 	if(prog.boolStartingDOGE){
 		document.getElementById("progress"+i).className = 'progress-nenorm';
 	}else{
-		document.getElementById("progress"+i).className = 'progress';
+		if(prog.textmessage == "noAds"){
+		document.getElementById("progress"+i).className = 'progress-noads';
+		}else{
+			document.getElementById("progress"+i).className = 'progress';
+		}
 	}
 	
 	
@@ -62,6 +66,12 @@ function updateDivForProgress(prog, i){
 	balanceProgress.innerHTML = (parseFloat(prog.balance) / prog.delited);
 	var balanceProgress = document.getElementById('progress'+i).getElementsByClassName('content')[0].getElementsByClassName('balanceUSD')[0];
 	balanceProgress.innerHTML =  Math.floor((parseFloat(prog.balance) / prog.delited)*prog.multUSD*100)/100 + "$";
+	var messProgress = document.getElementById('progress'+i).getElementsByClassName('content')[0].getElementsByClassName('textMes')[0];
+	messProgress.innerHTML =  prog.textmessage;
+	
+	
+	
+	
 	var checkboxProgress = document.getElementById('progress'+i).getElementsByClassName('checkbox')[0];
 	if (prog.userBool){
 		checkboxProgress.checked = true;

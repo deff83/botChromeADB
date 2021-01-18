@@ -12,6 +12,7 @@ var Programm = function (name, intervalDOGE, startintervalDOGE, boolingTime, boo
 	this.multUSD = multUSD;
 	this.userBool = true;
 	this.boolStart = boolStart;
+	this.textmessage = "null";
 }
 
 var tekSbor = -1;
@@ -38,6 +39,7 @@ massivTabid.push(tabidADDGB);
 massivTabid.push(tabidADTRX);
 massivTabid.push(tabidADZEC);
 massivTabid.push(tabidADBTC);
+massivTabid.push(tabidADBCHTOP);
 
 
 //-----------------------------------------Programm start--------------------------------------------//ф
@@ -52,6 +54,7 @@ Programms.push(new Programm('adDGB', 13805, -1525+13805, 320, false, startADDGB,
 Programms.push(new Programm('adTRX', 13805, -1025+13805, 320, false, startADTRX, 1, 0.02, true));
 Programms.push(new Programm('adZEC', 13805, -525+13805, 320, false, startADZEC, 1, 70, true));
 Programms.push(new Programm('adBTC', 13805, -525+13805, 320, false, startADBTC, 1, 10000, true));
+Programms.push(new Programm('adBCHTOP', 13805, -525+13805, 320, false, startBCHTOP, 1, 324, true));
 
 
 
@@ -189,6 +192,7 @@ var timerId = setInterval(function() {
 					
 					
 					tekSbor = i;
+					Programms[i].textmessage = "start...";
 					Programms[i].start(i); Programms[i].startintervalDOGE = 0;
 					unBlockTimer = 0;			
 					//boolTimerUnBlock = true;
@@ -293,6 +297,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	for(var i = 0; i < Programms.length; i++){
 		if(request=='startClick '+i){
+			
+			Programms[i].textmessage = "start...";
 			Programms[i].start(i); Programms[i].startintervalDOGE = 0;
 			unBlockTimer = 0;			
 			boolTimerUnBlock = true;
@@ -313,6 +319,53 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 
 
 function funstart(request, url){
+	
+	//closeallhost
+	if(request=='closeallhost'){
+		console.log('closeallhost');
+		
+		chrome.tabs.query( {currentWindow: true }, 
+				function(tabs) { 
+					console.log("tabCount", tabs.length);
+					
+						
+						for(var i = 0; i < tabs.length; i++){
+							
+							tab = tabs[i];
+							console.log(tab.pendingUrl);
+							console.log(tab.favIconUrl);
+							console.log(tab.url);
+							console.log(tab.url.split('/')[2])
+							
+							//https://adbtc.top/favicon.ico
+							
+							if (tab.url.split('/')[2] != url){
+								try{
+									if(!tabidSave.contains(tab.id)){
+										var removetab = true;
+										massivTabid.forEach(function(item, i, arr) {
+											if(item.contains(tab.id)){
+												removetab = false;
+											}
+										});
+										//console.log(massivTabid);
+										
+										if(removetab) chrome.tabs.remove(tab.id);
+									}
+								}catch(Exc){}
+							}
+						}
+					
+				 }
+		 );
+		
+	//}, 3000);
+		
+		
+	}
+	
+	
+	
 	if(request=='closeall'){
 		console.log('closeall');
 		
@@ -333,7 +386,15 @@ function funstart(request, url){
 							if (tab.favIconUrl != url){
 								try{
 									if(!tabidSave.contains(tab.id)){
-										 chrome.tabs.remove(tab.id);
+										var removetab = true;
+										massivTabid.forEach(function(item, i, arr) {
+											if(item.contains(tab.id)){
+												removetab = false;
+											}
+										});
+										//console.log(massivTabid);
+										
+										if(removetab) chrome.tabs.remove(tab.id);
 									}
 								}catch(Exc){}
 							}
@@ -342,6 +403,7 @@ function funstart(request, url){
 				 }
 		 );
 		
+	//}, 3000);
 		
 		
 	}
@@ -362,6 +424,31 @@ function funstart(request, url){
 							//https://adbtc.top/favicon.ico
 							
 							if (tab.favIconUrl == url){
+								chrome.tabs.update(tab.id , {selected: true});
+							}
+						}
+					
+				 }
+		 );
+	}
+	
+	if(request=='pereklhost'){
+		console.log('pereklhost');
+		chrome.tabs.query( { }, 
+				function(tabs) { 
+					console.log("tabCount", tabs.length);
+					
+						
+						for(var i = 0; i < tabs.length; i++){
+							
+							tab = tabs[i];
+							console.log(tab.pendingUrl);
+							console.log(tab.favIconUrl);
+							console.log(tab.url);
+							
+							//https://adbtc.top/favicon.ico
+							
+							if (tab.url.split('/')[2] == url){
 								chrome.tabs.update(tab.id , {selected: true});
 							}
 						}

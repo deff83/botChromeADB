@@ -171,6 +171,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 								if(noAds!=null&&noAds.textContent=='No ads'){
 									tekSbor = -1;
 									Programms[indexPrZEC].boolStartingDOGE = false;
+									Programms[indexPrZEC].textmessage = "noAds";
 									block = false;
 									if(tabidADZEC.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 									tabidADZEC.remove(sender.tab.id);
@@ -198,6 +199,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 			}catch(Exc){
 				Programms[indexPrZEC].boolStartingDOGE = false;
+				Programms[indexPrZEC].textmessage = "Exc";
 				block = false;
 				console.log(Programms[indexPrZEC].boolStartingDOGE);
 				console.log(Exc);

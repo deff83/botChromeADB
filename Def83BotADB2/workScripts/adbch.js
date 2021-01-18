@@ -79,8 +79,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				
 				var fragRow = frag.querySelectorAll('div')[1];
-				var fragRow2 = frag.querySelectorAll('div')[7];
-				var fragRow3 = frag.querySelectorAll('div')[8];
+				var fragRow2 = frag.querySelectorAll('div')[0];
+				var fragRow3 = frag.querySelectorAll('div')[5];
 				
 				
 				
@@ -170,6 +170,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 								if(noAds!=null&&noAds.textContent=='No ads'){
 									tekSbor = -1;
 									Programms[indexPrBCH].boolStartingDOGE = false;
+									Programms[indexPrBCH].textmessage = "noAds";
 									block = false;
 									if(tabidADBCH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 									tabidADBCH.remove(sender.tab.id);
@@ -197,6 +198,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 			}catch(Exc){
 				Programms[indexPrBCH].boolStartingDOGE = false;
+				Programms[indexPrBCH].textmessage = "Exc";
 				block = false;
 				console.log(Programms[indexPrBCH].boolStartingDOGE);
 				console.log(Exc);
