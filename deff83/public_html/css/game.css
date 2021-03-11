@@ -1,0 +1,105 @@
+* {
+margin: 0px;
+padding: 0px;
+}
+
+.panel {
+	margin: 0;
+	font-family: sans-serif;
+	box-sizing: border-box;
+	width: 950px;
+	background-image: url('../object/chat/1.png');
+	background-repeat: no-repeat;
+	height: 137px;
+	padding: 12px 0px 0px 12px;
+	margin: 70% auto;
+}
+
+.chat {
+margin: 0px;
+padding: 0px;
+width: 50%;
+height: 90px;
+background: #fbfbfb;
+box-shadow: 0 3px #ccc;
+border-radius: 4px;
+}
+
+.pole {
+  transform-style: preserve-3d;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+   overflow:hidden;
+	z-index: 1;
+}
+.poler{
+   animation: rotate 3s infinite ease-in-out;
+   position: relative;
+}
+.ground {
+  
+  left:140px;
+	z-index: 2;
+	position: absolute;
+
+	background-color: #0000ff;
+
+}
+
+.side {
+  position: absolute;
+  border: 0px solid white;
+  opacity: 0.7;
+  
+}
+.left_ground {
+    transform: rotateX(20deg) rotateZ(0deg) rotateY(-45deg) translateY(575px) translateX(430px) translateZ(96px);
+    width: 670px;
+    height: 100px;
+    background-image: url('../object/groundedge.png')
+}
+.right_ground {
+    transform: rotateX(20deg) rotateZ(0deg) rotateY(45deg) translateY(575px) translateX(-430px) translateZ(96px);
+    width: 670px;
+    height: 100px;
+    background-image: url('../object/groundedge.png');
+	background-repeat: repeat-x;
+
+}
+.top_ground {
+    transform: rotateX(70deg) rotateZ(45deg) rotateY(0deg);
+    width: 670px;
+    height: 670px;
+    background: #9999ff;
+    background-image: url('../object/groundtop.jpg')
+}
+@keyframes rotate {
+  0%, 100% {
+    top:150px;
+  }
+  50% {
+    top:170px;
+  }
+  
+}
+.infotext{
+	position: absolute;
+	color: #ffffff;
+	font:  bold 10px Arial, serif;
+}
+.playeer{
+	position: absolute;
+	background-color: #ff0000;
+	width: 50px;
+	height: 50px;
+
+	z-index: 10;
+}
+.home {
+    position: absolute;
+    left: 370px;
+    top: 100px;
+    z-index: 3;
+}

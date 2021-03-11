@@ -1,0 +1,228 @@
+body{
+	background-image: url('/img/fon5.jpg');
+	background-repeat: repeat;
+	
+}
+.octo img {
+	height: 230px;
+	max-height: 230px;
+}
+.fullscreen{
+	display:block;
+}
+.middelscreen{
+	display:none;
+}
+.minscreen{
+	display:none;
+}
+.kolon{
+	position:absolute;
+	left: 300px;
+}
+.kolon2{
+	position:absolute;
+	right: 0px;
+}
+@media screen and (max-width: 1020px){
+	.fullscreen{
+		display:none;
+	}
+	.middelscreen{
+		display:block;
+	}
+	.minscreen{
+		display:none;
+	}
+}
+@media screen and (max-width: 600px){
+	.fullscreen{
+		display:none;
+	}
+	.middelscreen{
+		display:none;
+	}
+	.minscreen{
+		display:block;
+	}
+	.textmin{
+		font-size:10px;
+	}
+}
+@media screen and (max-width: 930px){
+	.kolon{
+		left: -25px;
+	}
+	.kolon2{
+		right: 0px;
+	}
+}
+@media screen and (max-width: 520px){
+	.kolon img{
+		max-height: 230px;
+	}
+	.kolon2 img{
+		max-height: 230px;
+	}
+	.octo img {
+		max-height: 230px;
+	}
+}
+
+.vert{
+	position: relative;
+	
+}
+
+.left{
+
+	overflow:auto;
+	float:left;
+	flex: 0 1 300px;
+	}
+.top {
+	flex: 1 1 600px;
+	overflow:auto;
+	position: relative;
+	
+}
+.mainobl{
+	z-index: 1;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+main{
+	
+	
+	
+
+}
+.alert {
+
+	border-bottom-color: #70a123;
+
+display:flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+ul#menu{
+	list-style-type: none;
+	margin: 0;
+	padding: 2px;
+}
+ul#menu li a:hover{
+	border-style: groove;
+	background: #e6e6ff;
+}
+ul#menu li a {
+	color: #555522;
+	background: #f5f5ff;
+	display: block;
+	border-style: ridge;
+	border-width: 5px;
+	border-color: #eeeef0;
+	padding: 10px;
+}
+ul#menu li a span {
+	font-size: 18px;
+	text-decoration: none;
+	display: block;
+}
+.clear{
+	clear: both;
+}
+.bottom{
+	float: left;
+	box-sizing: border-box;
+	overflow:hidden;
+	width:100%;
+	background: #ffffff;
+	padding: 10px;
+}
+.advertising{
+	float: right;
+	width:100%;
+	padding: 10px;
+
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	box-sizing: border-box;
+}
+footer{
+	display:flex; justify-content: space-around; flex-wrap: wrap;
+}
+.footer-col{
+	float: left;
+
+}
+.text{
+
+	background: #ffffff;
+	padding: 10px;
+	border-style: ridge;
+	border-width: 5px;
+	border-color: #eeeef0;
+	opacity:0;
+	transition: 1s; /*Скорость*/
+	animation: show 3s 1; /* Указываем название анимации, её время и количество повторов*/
+	animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+/* animation-delay: 1s;  Задержка перед началом */
+}
+.textwrong{
+
+	background: #ffcccc;
+	padding: 10px;
+	border-style: ridge;
+	border-width: 5px;
+	border-color: #eeeef0;
+	opacity:0;
+	transition: 1s; /*Скорость*/
+	animation: show 3s 1; /* Указываем название анимации, её время и количество повторов*/
+	animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+/* animation-delay: 1s;  Задержка перед началом */
+}
+
+
+
+@keyframes show{
+	0%{
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+.stat_game{	/*правая игровая панель*/
+	color: #555522;
+	background: #ffffff;
+	display: block;
+	border-style: ridge;
+	border-width: 5px;
+	border-color: #eeeef0;
+	padding: 10px;
+}
+.error{
+	background: #ffefef;
+	padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ff0000;
+}
+.errornot{
+	background: #efffef;
+	padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #00ff00;
+}
+.center{
+
+
+}
+.textmin{
+	 
+}
+	
