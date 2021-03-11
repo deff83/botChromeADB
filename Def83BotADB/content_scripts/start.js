@@ -68,6 +68,14 @@ massivTabid.push(tabidHourlyAds);
 massivTabid.push(tabidFreeBTCW);
 massivTabid.push(tabidBitFaucet);
 massivTabid.push(tabidClaimFreeBTC);
+massivTabid.push(tabidClaimFreeETH);
+massivTabid.push(tabidClaimFreeDOGE);
+massivTabid.push(tabidClaimFreeLTC);
+massivTabid.push(tabidClaimFreeBCH);
+massivTabid.push(tabidClaimFreeDASH);
+massivTabid.push(tabidClaimFreeTRX);
+massivTabid.push(tabidClaimFreeDGB);
+massivTabid.push(tabidClaimFreeUSDT);
 
 
 massivTabid.push(tabidEveXMR);
@@ -78,12 +86,7 @@ massivTabid.push(tabidEveTRX);
 massivTabid.push(tabidEveXRP);
 
 //-----------------------------------------Programm start--------------------------------------------//ф
-Programms.push(new Programm('moonDOGE', 1805, -20+1805, 320, false, moonDOGE, 1, 0.00287, true, false));
-Programms.push(new Programm('moonDASH', 1805, -40+1805, 320, false, moonDASH, 1, 106, true, false));
-Programms.push(new Programm('moonLTC', 1805, -60+1805, 320, false, moonLTC, 1, 98, true, false));
-Programms.push(new Programm('moonBTC', 1805, -80+1805, 320, false, moonBTC, 1, 10000, true, false)) ;
-Programms.push(new Programm('moonBCH', 1805, -80+1805, 320, false, moonBCH, 1, 324, true, false)) ;
-Programms.push(new Programm('BonusBitcoin', 905, -15+905, 320, false, moonBonusBitcoin, 100000000, 0, true, false));
+
 
 //Programms.push(new Programm('LTCfree', 305, -5+305, 320, false, moonLTCfree, 1, 98));
 //Programms.push(new Programm('ETHfree', 305, -5+305, 320, false, moonETHfree, 1, 215));
@@ -91,7 +94,6 @@ Programms.push(new Programm('BonusBitcoin', 905, -15+905, 320, false, moonBonusB
 //Programms.push(new Programm('XRPfree', 305, -5+305, 320, false, moonXRPfree, 1, 0.305));
 //Programms.push(new Programm('BTCfree', 305, -5+305, 320, false, moonBTCfree, 1, 10000));
 
-Programms.push(new Programm('BitFun', 3675, -5+3675, 320, false, moonBitFun, 100000000, 0, true, false));
 Programms.push(new Programm('changeBest.com', 3275, -10+3275, 320, false, moonBestcom, 1, 10000, true, false));
 
 
@@ -134,20 +136,37 @@ Programms.push(new Programm('EarnfreeBCH', 3605, -5+3605, 320, false, moonEarnfr
 // Programms.push(new Programm('BitFaucet', 1805, -5+1805, 320, false, moonBitFaucet, 1, 10000));
 
 
-// Programms.push(new Programm('ClaimFreeBTC-FaucetHub', 25, -5+25, 360, false, moonClaimFreeBTC, 100000000, 10000));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeBTC-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBTC, 100000000, 10000, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeETH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeETH, 100000000, 215, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeDOGE-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDOGE, 100000000, 0.00287, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeLTC-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeLTC, 100000000, 98, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeBCH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBCH, 100000000, 324, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeDASH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDASH, 100000000, 106, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeTRX-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeTRX, 100000000, 0.02, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeDGB-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDGB, 100000000, 0, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeUSDT-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeUSDT, 100000000, 1, true, false));	//MAX CLAIM
 
 
 
-Programms.push(new Programm('EveXMR', 3605, -5+3605, 320, false, moonEveXMR, 1, 91, true, true));
-Programms.push(new Programm('EveDOGGE', 3605, -5+3605, 320, false, moonEveDOGGE, 1, 0.00287, true, true));
-Programms.push(new Programm('EveLTC', 3605, -5+3605, 320, false, moonEveLTC, 1, 98, true, true));
-Programms.push(new Programm('EveBCH', 3605, -5+3605, 320, false, moonEveBCH, 1, 324, true, true));
-Programms.push(new Programm('EveTRX', 3605, -5+3605, 320, false, moonEveTRX, 1, 0.02, true, true));
-Programms.push(new Programm('EveXRP', 3605, -5+3605, 320, false, moonEveXRP, 1, 0.305, true, true));
+Programms.push(new Programm('EveXMR', 3605, -5+3605, 320, false, moonEveXMR, 1, 91, true, false));
+Programms.push(new Programm('EveDOGGE', 3605, -5+3605, 320, false, moonEveDOGGE, 1, 0.00287, true, false));
+Programms.push(new Programm('EveLTC', 3605, -5+3605, 320, false, moonEveLTC, 1, 98, true, false));
+Programms.push(new Programm('EveBCH', 3605, -5+3605, 320, false, moonEveBCH, 1, 324, true, false));
+Programms.push(new Programm('EveTRX', 3605, -5+3605, 320, false, moonEveTRX, 1, 0.02, true, false));
+Programms.push(new Programm('EveXRP', 3605, -5+3605, 320, false, moonEveXRP, 1, 0.305, true, false));
+
+
+Programms.push(new Programm('moonDOGE', 1805, -20+1805, 320, false, moonDOGE, 1, 0.00287, false, false));
+Programms.push(new Programm('moonDASH', 1805, -40+1805, 320, false, moonDASH, 1, 106, false, false));
+Programms.push(new Programm('moonLTC', 1805, -60+1805, 320, false, moonLTC, 1, 98, false, false));
+Programms.push(new Programm('moonBTC', 1805, -80+1805, 320, false, moonBTC, 1, 10000, false, false)) ;
+Programms.push(new Programm('moonBCH', 1805, -80+1805, 320, false, moonBCH, 1, 324, false, false)) ;
+Programms.push(new Programm('BonusBitcoin', 905, -15+905, 320, false, moonBonusBitcoin, 100000000, 0, false, false));
+Programms.push(new Programm('BitFun', 3675, -5+3675, 320, false, moonBitFun, 100000000, 0, false, false));
 
 
 massivremove = ["https://www.bitcoincasino.io/?stag=5483_5fbe7780e4c32ec18cfa0e4d", 
-				"https://luckyfish.io/?c=getstarted","https://binance-charity.co/", "https://www.newsofcd.com/", "https://tfbitcoin.com/", "https://www.bitcoincasino.io/?stag=5483_5fe65eab9f965850e0d12a6b", "https://refpakrtsb.top/L?tag=d_755089m_18639c_c04dbfb7&r=user%2Fregistration.php&pb=2fd0f6616e444e95be6305e0fb3ea477&click_id=01b3973b-3bdd-11eb-b24e-cd2a8c8feb24",
+				"https://luckyfish.io/?c=getstarted","https://binance-charity.co/", "https://www.newsofcd.com/", "https://tfbitcoin.com/", "https://luckyfish.io/?c=getstarted","https://www.bitcoincasino.io/?stag=5483_5fe65eab9f965850e0d12a6b", "https://refpakrtsb.top/L?tag=d_755089m_18639c_c04dbfb7&r=user%2Fregistration.php&pb=2fd0f6616e444e95be6305e0fb3ea477&click_id=01b3973b-3bdd-11eb-b24e-cd2a8c8feb24", "https://f9s6x9j7.stackpathcdn.com/adserv.html?idzone=3483349&sub=6380706",
 
 				"https://refpakrtsb.top/L?tag=d_755089m_18639c_c04dbfb7&r=user%2Fregistration.php&pb=2fd0f6616e444e95be6305e0fb3ea477&click_id=98875421-3ca8-11eb-801e-47e1a95ab5ff"	,
 
@@ -176,8 +195,7 @@ massivremovef = [
 				"clickco.net",
 				"miningcompany.ltd",
 				"pornhubsurvey.com",
-				"coothupu.net",
-				"www.groupian.io","litecoinads.com", "x-1xbet-02480.world", "deepdice.bet", "worldoftanks.ru", "streambucks.io", "scryptcube.com", "www.highrevenuecpm.com", "x-1xbet-67578.world", "btc-sites.com", "apptastic-mobi.g2afse.com", "www.ostlon.com", "installhighly-therenewedfile.best", "s.viifax.com", "x-1xbet-94086.world", "topepisode.com", "cartoonsinfo.com", "axtrader.com", "travelsecurityline.eu", "pokeramazing.com", "cryptonex.xyz", "cryptofans.ru", "www.funnelleadsystem.com", "x-1xbet-78144.world", "startvideo.life", "s.viitok.com", "www.adanaatikhaber.com", "ru.warface.com", "www.tubezaur.com", "itrk.itrkinc.com", "www.my1tube.com", "p.1ts06.top", "www.monkamovies.com", "derevya2sh8ka09.com", "www.porngur.com", "www.ipuss.tv", "arrano.network", "www.youhodler.com", "cosmeticsgenerosity.com", "creative.alxbgo.com", "nyniglinu.pro", "bullx.io", "date-till-late.us","www.myemailtracking.com" , "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "yandex.ru", "bet1-x81025.com", "a.leon.ru", "atani.com", "offer.alibaba.com", "exo.xvideass.top", "musict.ir", "www.musict.ir", "cardinalimprovementscartrige.com", "bet1-x58326.com", "bet1-x62670.com", "bet1-x95895.com", "cas-fast-39.com", "x1.x-casiinox-game.com", "warning.rt.ru", "dnevnienovosti.ru", "www.myemailtracking.com", "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "yandex.ru", "bet1-x81025.com", "a.leon.ru", "edurustoday.ru","mbest.aliexpress.ru", "bet1-x72792.com", "startvideo.fun", "fadsimz.com", "accounts.binancezh.pro", "anyporn.org", "cos.flacon-magazine.com", "searchsecurer.com","bet1-x10847.com", "9k8f9.bemobtrcks.com", "ali2express.com", "kts.visitstats.com", "getdoge.io", "teamsperilous.com", "41upk.bemobtrk.com", "41upk.bemobpath.com", "www.leomax.ru", "gooblesdd.com", "lofepsypti.pro", "dschat.club", "www.crucerosmediterraneo.travel", "login.bitlocity.io", "bet1-x28746.com", "lp.crypt.casino", "bet1-x20027.com", "liteworld.live", "g5xq2z.mighttrack.com", "apps.apple.com", "leonodikeu9sj10.com", "bitgenerator.online", "www.baby.ru", "globalcrypto.exchange", "purplemining.ltd", "bitstarz1.eu","push.aarth.net", "landing.hentaiheroes.com", "www.adslyoigo.net", "news.gnezdo.ru", "stakecube.net", "www.mgid.com", "bet1-x22216.com", "99airdrops.com","accounts.binance.com", "rt.bongacams13.com","srsly.ru", "www.vokrug.tv", "bet1-x62651.com", "www.catala-reinon.es", "www.xm.com", "beklefkiom.com", "euphe-gun.com", "crawlarchive1120.com", "theonlygames.com", "www.google.com", "spbinvestment.ru", "bit-sitess.com", "crsed.net", "bet1-x31759.com", "www.purplemining.ltd","artisany.net", "bet1-x78464.com", "cryptotabbrowser.com", "newsurveyrus.typeform.com", "cryptoware.biz", "rsafrwd.com", "adverdirect.com", "fb.ru", "www.youtube.com", "kto-chto-gde.ru", "hyip.money", "p.1ts18.top", "code4us.com", "prizebox.org", "inbound.trilema.com", "epicmotoring.com","pegloang.com", "www.aaxpro.com", "belaya2shu1ba1.com", "rabota-doma.org", "cryptocoinsad.com","bet1-x24022.com", "mediasama.com", "see.xxx", "www.toprevenuecpmnetwork.com", "adbtc.io", "twndo77864.com", "ru.4game.com", "united-family.org", "cretgate.com", "cointools.info", "catermich.pro", "r.rips.icu", "pinednews.ru", "tq.adventurefeeds.com", "bet1-x99511.com", "link.securewebservices.ch", "www.gaming-adult.com","best.aliexpress.ru", "hq-sex-tube.com", "ru.leon9c7as1no.com", "www.bestrevenuenetwork.com", "www.pornofrant.com", "ws.exchange", "best2020-games-web1.com", "starcontent.monster", "grtposh.com", "www.cuntempire.com", "apps6.cointraffic.io", "mellowads.com", "todaybrings.ru", "unicom24.ru", "rt.pornhubpremium.com", "www.myincomeclub.com", "nexo.io", "m2mdonations2.com", "ruvi.tv", "betfury.io", "www.watermine.io", "bet1-x00495.com", "track.adsplay.in", "eu.4game.com", "disturbedaccruesurfaces.com", "rtyznd.com", "gilc.ru", "ivnx.ru", "btb88.com", "vidox.net", "smartme.cash","cuntwars.com", "installlatest-theintenselyfile.best", "yougotacheck.com", "x-1xbet-74927.world", "lywyjashu.pro", "stythewagro.pro", "kotikinar2ko8tiki09.com", "pushwelcome.com", "www.elegantthemes.com", "prpops.com"
+				"coothupu.net", "salmon.games", "wilfulpessimistic.com", "x-1xbet-11831.world", "streamtv.by", "trovabious.pro", "alfik-fik.com", "app.simplefx.com", "minersgarden.com", "x-1xbet-53596.world", "bestanimegame.com", "storecompletely-thenewestfile.best", "districtbaloneywhiskers.com", "happy-porn.com", "app.simplefx.com", "bestanimegame.com", "tilltucked.com", "x-1xbet-53596.world", "s.viifan.com", "tentmess.com", "streamtv.by", "x-1xbet-16640.world", 	"www.groupian.io","litecoinads.com", "x-1xbet-02480.world", "deepdice.bet", "worldoftanks.ru", "streambucks.io", "scryptcube.com", "www.highrevenuecpm.com", "x-1xbet-67578.world", "btc-sites.com", "apptastic-mobi.g2afse.com", "www.ostlon.com", "installhighly-therenewedfile.best", "s.viifax.com", "x-1xbet-94086.world", "topepisode.com", "cartoonsinfo.com", "axtrader.com", "travelsecurityline.eu", "pokeramazing.com", "cryptonex.xyz", "cryptofans.ru", "www.funnelleadsystem.com", "x-1xbet-78144.world", "startvideo.life", "s.viitok.com", "www.adanaatikhaber.com", "ru.warface.com", "www.tubezaur.com", "itrk.itrkinc.com", "www.my1tube.com", "p.1ts06.top", "www.monkamovies.com", "derevya2sh8ka09.com", "www.porngur.com", "www.ipuss.tv", "arrano.network", "www.youhodler.com", "cosmeticsgenerosity.com", "creative.alxbgo.com", "nyniglinu.pro", "bullx.io", "date-till-late.us","www.myemailtracking.com" , "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "yandex.ru", "bet1-x81025.com", "a.leon.ru", "atani.com", "offer.alibaba.com", "exo.xvideass.top", "musict.ir", "www.musict.ir", "cardinalimprovementscartrige.com", "bet1-x58326.com", "bet1-x62670.com", "bet1-x95895.com", "cas-fast-39.com", "x1.x-casiinox-game.com", "warning.rt.ru", "dnevnienovosti.ru", "www.myemailtracking.com", "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "yandex.ru", "bet1-x81025.com", "a.leon.ru", "edurustoday.ru","mbest.aliexpress.ru", "bet1-x72792.com", "startvideo.fun", "fadsimz.com", "accounts.binancezh.pro", "anyporn.org", "cos.flacon-magazine.com", "searchsecurer.com","bet1-x10847.com", "9k8f9.bemobtrcks.com", "ali2express.com", "kts.visitstats.com", "getdoge.io", "teamsperilous.com", "41upk.bemobtrk.com", "41upk.bemobpath.com", "www.leomax.ru", "gooblesdd.com", "lofepsypti.pro", "dschat.club", "www.crucerosmediterraneo.travel", "login.bitlocity.io", "bet1-x28746.com", "lp.crypt.casino", "bet1-x20027.com", "liteworld.live", "g5xq2z.mighttrack.com", "apps.apple.com", "leonodikeu9sj10.com", "bitgenerator.online", "www.baby.ru", "globalcrypto.exchange", "purplemining.ltd", "bitstarz1.eu","push.aarth.net", "landing.hentaiheroes.com", "www.adslyoigo.net", "news.gnezdo.ru", "stakecube.net", "www.mgid.com", "bet1-x22216.com", "99airdrops.com","accounts.binance.com", "rt.bongacams13.com","srsly.ru", "www.vokrug.tv", "bet1-x62651.com", "www.catala-reinon.es", "www.xm.com", "beklefkiom.com", "euphe-gun.com", "crawlarchive1120.com", "theonlygames.com", "www.google.com", "spbinvestment.ru", "bit-sitess.com", "crsed.net", "bet1-x31759.com", "www.purplemining.ltd","artisany.net", "bet1-x78464.com", "cryptotabbrowser.com", "newsurveyrus.typeform.com", "cryptoware.biz", "rsafrwd.com", "adverdirect.com", "fb.ru", "www.youtube.com", "kto-chto-gde.ru", "hyip.money", "p.1ts18.top", "code4us.com", "prizebox.org", "inbound.trilema.com", "epicmotoring.com","pegloang.com", "www.aaxpro.com", "belaya2shu1ba1.com", "rabota-doma.org", "cryptocoinsad.com","bet1-x24022.com", "mediasama.com", "see.xxx", "www.toprevenuecpmnetwork.com", "adbtc.io", "twndo77864.com", "ru.4game.com", "united-family.org", "cretgate.com", "cointools.info", "catermich.pro", "r.rips.icu", "pinednews.ru", "tq.adventurefeeds.com", "bet1-x99511.com", "link.securewebservices.ch", "www.gaming-adult.com","best.aliexpress.ru", "hq-sex-tube.com", "ru.leon9c7as1no.com", "www.bestrevenuenetwork.com", "www.pornofrant.com", "ws.exchange", "best2020-games-web1.com", "starcontent.monster", "grtposh.com", "www.cuntempire.com", "apps6.cointraffic.io", "mellowads.com", "todaybrings.ru", "unicom24.ru", "rt.pornhubpremium.com", "www.myincomeclub.com", "nexo.io", "m2mdonations2.com", "ruvi.tv", "betfury.io", "www.watermine.io", "bet1-x00495.com", "track.adsplay.in", "eu.4game.com", "disturbedaccruesurfaces.com", "rtyznd.com", "gilc.ru", "ivnx.ru", "btb88.com", "vidox.net", "smartme.cash","cuntwars.com", "installlatest-theintenselyfile.best", "yougotacheck.com", "x-1xbet-74927.world", "lywyjashu.pro", "stythewagro.pro", "kotikinar2ko8tiki09.com", "pushwelcome.com", "www.elegantthemes.com", "prpops.com", "x-1xbet-28171.world", "rzypgzojdan.com", "rt.bongacams20.com", "coinpot.in", "best.aliexpress.com", "s.viitrn.com", "aetejxolo.com", "dollarsurvey.org", "promo.stormgain.com", "asxemfnwbrmpdp.com", "zwnxzckwihg.com", "freebitco.in", "nopapmyzyjiqnc.com", "zdcuivnen.com", "adsbitcoin.io"
 				];
 
 function checkurlTabs(){
@@ -212,9 +230,36 @@ function getCountTabs(){
 				if (tabs.length == 1){
 					block = false;
 					for(var i = 0; i < Programms.length; i++){
-						if (Programms[i].name == "ClaimFreeBTC-FaucetHub"){
+						if (Programms[i].name == "ClaimFreeBTC-FaucetPay"){
 							Programms[i].boolStartingDOGE = false;
 						}
+						if (Programms[i].name == "ClaimFreeETH-FaucetPay"){
+							Programms[i].boolStartingDOGE = false;
+						}
+						if (Programms[i].name == "ClaimFreeDOGE-FaucetPay"){
+							Programms[i].boolStartingDOGE = false;
+						}
+						if (Programms[i].name == "ClaimFreeLTC-FaucetPay"){
+							Programms[i].boolStartingDOGE = false;
+						}
+						if (Programms[i].name == "ClaimFreeBCH-FaucetPay"){
+							Programms[i].boolStartingDOGE = false;
+						}
+						if (Programms[i].name == "ClaimFreeDASH-FaucetPay"){
+							Programms[i].boolStartingDOGE = false;
+						}
+						if (Programms[i].name == "ClaimFreeTRX-FaucetPay"){
+							Programms[i].boolStartingDOGE = false;
+						}
+						if (Programms[i].name == "ClaimFreeDGB-FaucetPay"){
+							Programms[i].boolStartingDOGE = false;
+						}
+						if (Programms[i].name == "ClaimFreeUSDT-FaucetPay"){
+							Programms[i].boolStartingDOGE = false;
+						}
+						
+
+						
 					}
 				}
 			 }

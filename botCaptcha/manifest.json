@@ -1,0 +1,34 @@
+{
+   "background": {
+      "scripts": [ "background/main.js" ]
+   },
+   "browser_action": {
+      "chrome_style": true,
+      "default_icon": {
+         "16": "icons/icon_default.png"
+      },
+      "default_popup": "options/main.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content/main.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "description": "Verify Google ReCaptcha V2 automatically with  solving services",
+   "icons": {
+      "128": "icons/icon_default128.png",
+      "16": "icons/icon_default16.png",
+      "48": "icons/icon_default48.png"
+   },
+   
+   "manifest_version": 2,
+   "name": "MyCaptcha Solver",
+   "options_ui": {
+      "chrome_style": true,
+      "page": "options/main.html"
+   },
+   "permissions": [ "storage", "tabs", "http://api.endcaptcha.com/*", "https://bcsapi.xyz/*", "http://api.deathbycaptcha.com/2captcha/*", "https://2captcha.com/*", "http://imagetyperz.com/*", "https://imagetyperz.com/*", "http://captchatypers.com/*", "https://api.anti-captcha.com/createTask/", "https://api.anti-captcha.com/getTaskResult/", "https://api.solverecaptcha.com/", "https://api.captchadecoder.com/decode" ],
+   
+   "version": "6.4",
+   "web_accessible_resources": [ "icons/icon.png", "icons/check.png" ]
+}

@@ -39,8 +39,21 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	
 	if(request.src == 'adbch.top'){
+		getCountTab(sender.tab.id);
+		
 		console.log('startMes');
-		if(!tabidADBCHTOP.contains(sender.tab.id))tabidADBCHTOP.push(sender.tab.id);
+		unClose = true;
+		setTimeout(function() {
+			console.log(iCount);
+			if (iCount>1) {
+				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/CloseHide.js'});
+				setTimeout(function() {
+					try{chrome.tabs.remove(sender.tab.id);}catch(Exc){}
+				}, 100000);
+				return;
+			}
+			
+			if(!tabidADBCHTOP.contains(sender.tab.id))tabidADBCHTOP.push(sender.tab.id);
 		
 			setTimeout(function() {
 			try{
@@ -88,9 +101,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					if (Earn_LTC!=null){
 						if (Earn_LTC.textContent=='Получайте Bitcoin Cash за просмотр сайтов'){
 							//
+							
 							//chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/adBCHTOPHide.js'});
 							var openBut = frag.getElementById('nachat');
-							
+							console.log(openBut);
 							// 
 							
 							
@@ -104,8 +118,18 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 								try{
 									var openName = fragRow2.getElementsByClassName('flow-text')[0].textContent;
 									if(openName==nameOpen){
-										
+										console.log('skip');
+										unClose = true;
 										chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/adBCHTOPSkip.js'});
+										setTimeout(function() {
+											
+											//и переключится на сайт adb
+											funstart('pereklhost', 'adbch.top');
+											
+											
+											
+											
+											}, 15000);
 										return;
 									}
 									
@@ -131,6 +155,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 								
 								return;
 							}else{
+								
+								console.log('123');
 								unClose = false;
 								//No ads
 								var noAds = fragRow2.getElementsByTagName('h3')[0];
@@ -157,8 +183,9 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 							unClose = false;
 							var noAds = fragRow2.getElementsByTagName('h5')[1];
 							
+							console.log(noAds.textContent);
 							
-							if(noAds!=null&&noAds.textContent.split(',')[0]=='Вы просмотрели все сайты на данный момент'){
+							if(noAds!=null&&(noAds.textContent.split(',')[0]=='Вы просмотрели все сайты на данный момент'||noAds.textContent.split(',')[0]=='Заработка в опросах.')){
 								tekSbor = -1;
 								Programms[indexPrBCHTOP].boolStartingDOGE = false;
 								Programms[indexPrBCHTOP].textmessage = "noAds";
@@ -377,7 +404,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 			}
 			
-			}, 2000);
+			}, 5000);
+			}, 1000);
 			
 	}
 	if(tabidADBCHTOP.contains(sender.tab.id)){	//если во вкладке где был ADB другой адрес

@@ -24,10 +24,16 @@ try{
 	hideDiv("TagName", "nav", -1);
 	hideDiv("Id", "skrit", -1);
 */
+hideDiv("Id", "captcha-adspace", -1);
+
+
+drawDIVUser('1', "clickButton('ClassName', 'btn btn-block btn-primary text-uppercase', 1); setTimeout(function() {	location.reload()}, 5s000);");
+
+/*
 	setTimeout(function() {
 		drawDIVUserN('3', "document.getElementById('userpanel').innerHTML = '<img src=http://ipic.su/7yFUh4.png width=50px height=50px onclick = clickButtonAnd()>'", ["clickButtonInDIV('ClassName', 'antibotlinks', 0, 'TagName', 'a', 0);", "clickButtonInDIV('ClassName', 'antibotlinks', 1, 'TagName', 'a', 0);", "clickButtonInDIV('ClassName', 'antibotlinks', 2, 'TagName', 'a', 0);", "clickButtonInDIV('ClassName', 'antibotlinks', 3, 'TagName', 'a', 0);"], " clickButton('ClassName', 'btn btn-block btn-primary text-uppercase', 1);", "document.location.href = 'https://claimfreecoins.io/bitcoin-faucet/';");
 	}	, 5000);
-	
+	*/
 	
 	
 	

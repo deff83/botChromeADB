@@ -322,6 +322,7 @@ function funstart(request, url){
 	
 	//closeallhost
 	if(request=='closeallhost'){
+		closetabsall(3);
 		console.log('closeallhost');
 		
 		chrome.tabs.query( {currentWindow: true }, 
@@ -367,6 +368,7 @@ function funstart(request, url){
 	
 	
 	if(request=='closeall'){
+		closetabsall(3);
 		console.log('closeall');
 		
 		chrome.tabs.query( {currentWindow: true }, 
@@ -457,6 +459,44 @@ function funstart(request, url){
 		 );
 	}
 	
+}
+
+
+function closetabsall(col){
+	chrome.tabs.query( {currentWindow: true }, 
+				function(tabs) { 
+					//console.log("tabCount", tabs.length);
+					
+						
+						for(var i = 0; i < tabs.length; i++){
+							if (i>col-1) chrome.tabs.remove(tab.id);
+						}
+				}
+				);
+}
+
+iCount = -1;
+
+function getCountTab(idt){
+	
+	chrome.tabs.query( { }, 
+				function(tabs) { 
+					
+					
+						
+						for(var i = 0; i < tabs.length; i++){
+							
+							tab = tabs[i];
+
+							if (tab.id == idt){
+								iCount = i;
+								//break;
+							}
+						}
+					
+				 }
+		 );
+
 }
 
 

@@ -3,8 +3,9 @@ try{
 	//alert('tyt');
 	
 	//alert(document.getElementsByClassName("row")[2].innerHTML);
-	
-	clickButtonInDIV("ClassName", "card-panel z-depth-3", 0, "TagName", "a", 0);
+	setTimeout(function() {
+		clickButton("Id", "nachat", 0);
+	}, 5000);
 	// clickButtonInDIV("ClassName", "row", 3, "TagName", "a", 0);
 	
 	//setURL('https://adltc.cc/surf');

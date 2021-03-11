@@ -4,7 +4,7 @@
 
 
 try{
-	setURL('https://claimfreecoins.io/bitcoin-faucet/?captcha=recaptcha');
+	setURL('https://claimfreecoins.io/free-bitcoin/?captcha=recaptcha');
 	//writeField("Name", "address", 0, "3HaimfxYgsjXwqpYcQK1entSm2HyMJx39E")
 	//writeField("Name", "password", 0, "0704galaxArt")
 	/*setTimeout(function() {

@@ -6,7 +6,7 @@ try{
 	
 	//clickButton("ClassName", "btn btn-primary btn-large", 0);
 	
-	hideDiv("ClassName", "col s12 text-center", -1);
+	//hideDiv("ClassName", "col s12 text-center", -1);
 	//setURL('https://adltc.cc/surf');
 	
 	

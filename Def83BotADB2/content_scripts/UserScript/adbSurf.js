@@ -3,7 +3,7 @@ try{
 	//alert('tyt');
 	
 	
-	clickButton("TagName", "a", 13);
+	clickButton("TagName", "a", 14);
 	
 	
 	//setURL('https://freeb.tc/login');

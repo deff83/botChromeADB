@@ -82,6 +82,7 @@ function clickButtonInDIV(getElementDIV, nameDIV, countDIV, getElement, name, co
 }
 
 function drawDIVSkrit(type){
+	if (type=='1'){
 	var d=document.createElement('div');
 	d.style.position = 'fixed';
 	d.style.width = '20%';
@@ -91,9 +92,24 @@ function drawDIVSkrit(type){
 	d.style.bottom = '0px';
 	d.style.background = '';
 	d.style.zIndex = 2147483646;
-	d.innerHTML = '<div style="width:100%; height:100%; text-align:center; background: linear-gradient(0deg,#000000  ,#210055 );"><div id="skritText" style=" font-family: Anton script=latin rev=2; font-size: 150px; font-style: normal; 	font-weight: 400; 	color: #0000ff;">Wait.<br>Do not close the page. </div><div style=" font-family: Anton script=latin rev=2; font-size: 20px; font-style: normal; 	font-weight: 400; 	color: #0000ff;">When you close the page, the process does not stop.</div></div><div style="position:absolute; left:0px; bottom:50px;"><img src="http://ipic.su/7yFYuH" width="50px" height="50px" /></div>';
+	d.innerHTML = '<div style="width:100%; height:100%; text-align:center; background: linear-gradient(0deg,#000000  ,#210055 );"><div id="skritText" style=" font-family: Anton script=latin rev=2; font-size: 80px; font-style: normal; 	font-weight: 400; 	color: #0000ff;">Wait.<br>Do not close the page. </div><div style=" font-family: Anton script=latin rev=2; font-size: 20px; font-style: normal; 	font-weight: 400; 	color: #0000ff;">When you close the page, the process does not stop.</div></div><div style="position:absolute; left:0px; bottom:50px;"><img src="http://ipic.su/7yFYuH" width="50px" height="50px" /></div>';
 	document.body.appendChild(d);
 	//hideReklammBan();
+	}
+	if (type=='2'){
+		var d=document.createElement('div');
+		d.style.position = 'fixed';
+		d.style.width = '100%';
+		d.style.height = '100%';
+		d.id = 'skrit';
+		d.style.left = '0px';
+		d.style.bottom = '0px';
+		d.style.background = '';
+		d.style.zIndex = 2147483646;
+		d.innerHTML = '<div style="width:100%; height:100%; text-align:center; background: linear-gradient(0deg,#000000  ,#210055 );"><div id="skritText" style=" font-family: Anton script=latin rev=2; font-size: 80px; font-style: normal; 	font-weight: 200; 	color: #0000ff;">Wait.<br>The start is not made from the main page. </div><div style=" font-family: Anton script=latin rev=2; font-size: 20px; font-style: normal; 	font-weight: 400; 	color: #0000ff;"> Close all tabs before options.js, and run the script from the main page.</div></div><div style="position:absolute; left:0px; bottom:50px;"><img src="http://ipic.su/7yFYuH" width="50px" height="50px" /></div>';
+		document.body.appendChild(d);
+		//hideReklammBan();
+	}
 }
 
 function drawDIVUser(type, onclickStr){

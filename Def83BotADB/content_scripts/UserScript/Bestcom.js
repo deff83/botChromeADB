@@ -27,6 +27,9 @@ try{
 
 	drawDIVUser('1', "clickButton('Id', 'bonus_button', 0);");
 	
+	//setTimeout(function() {	location.reload()}, 2000);
+	
+	
 
 	
 }catch(Exc){alert(Exc);};

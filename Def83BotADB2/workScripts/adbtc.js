@@ -50,8 +50,26 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	}
 	
 	if(request.src == 'surfingbtc.cc'){
+		
+		getCountTab(sender.tab.id);
+		
 		console.log('startMes');
-		if(!tabidADBTC.contains(sender.tab.id))tabidADBTC.push(sender.tab.id);
+		unClose = true;
+		setTimeout(function() {
+			console.log(iCount);
+			if (iCount>1) {
+				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/CloseHide.js'});
+				setTimeout(function() {
+					try{chrome.tabs.remove(sender.tab.id);}catch(Exc){}
+				}, 100000);
+				return;
+			}
+			
+			if(!tabidADBTC.contains(sender.tab.id))tabidADBTC.push(sender.tab.id);
+		
+		
+		
+		
 			try{
 				//console.log('Deff83 moonDOGE', request);
 				let frag = document.createRange().createContextualFragment(request.html);
@@ -207,7 +225,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				tabidADBTC.remove(sender.tab.id);
 				
 			}
-			
+			}, 1000);
 	}
 	if(tabidADBTC.contains(sender.tab.id)){	//если во вкладке где был ADB другой адрес
 		if(request.src != 'surfingbtc.cc'){
@@ -223,6 +241,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 			}
 		}
 	}
+	
 });
 //chrome.tabs.onUpdated.addListener(function(tabidADBTC, changeInfo, tab){
 //	console.log(tab);console.log(tabidADBTC);

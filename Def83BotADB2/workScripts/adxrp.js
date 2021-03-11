@@ -50,8 +50,22 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	}
 	
 	if(request.src == 'adxrp.cc'){
+		getCountTab(sender.tab.id);
+		
 		console.log('startMes');
-		if(!tabidADXRP.contains(sender.tab.id))tabidADXRP.push(sender.tab.id);
+		unClose = true;
+		setTimeout(function() {
+			console.log(iCount);
+			if (iCount>1) {
+				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/CloseHide.js'});
+				setTimeout(function() {
+					try{chrome.tabs.remove(sender.tab.id);}catch(Exc){}
+				}, 100000);
+				return;
+			}
+			
+			if(!tabidADXRP.contains(sender.tab.id))tabidADXRP.push(sender.tab.id);
+			
 			try{
 				//console.log('Deff83 moonDOGE', request);
 				let frag = document.createRange().createContextualFragment(request.html);
@@ -207,7 +221,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				tabidADXRP.remove(sender.tab.id);
 				
 			}
-			
+			}, 1000);
 	}
 	if(tabidADXRP.contains(sender.tab.id)){	//если во вкладке где был ADB другой адрес
 		if(request.src != 'adxrp.cc'){
