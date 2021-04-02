@@ -12,12 +12,13 @@
         {
             "matches": [ "<all_urls>" ],
             "js": [ "content_scripts/content.js" ],
-            "run_at": "document_end"
+            "run_at": "document_start"
         },
 		{
             "matches": [ "<all_urls>" ],
             "js": [ "content_scripts/function.js", "content_scripts/contentstart.js" ]
-            
+            ,
+            "run_at": "document_start"
         }
     ],
 	

@@ -126,10 +126,11 @@ function getCountTabs(){
 				if (tabs.length == 1){
 					block = false;
 					for(var i = 0; i < Programms.length; i++){
-						if (Programms[i].name == "ClaimFreeBTC-FaucetHub"){
+						
 							Programms[i].boolStartingDOGE = false;
-						}
+						
 					}
+					tekSbor=-1
 				}
 			 }
 	 );
@@ -145,7 +146,7 @@ var boolStarting = false;
 // начать повторы с интервалом 2 сек
 var timerId = setInterval(function() {
 	//checkurlTabs();
-	//getCountTabs();
+	getCountTabs();
 	if (boolStarting){	//старт кнопкой
 		op++;
 		if(boolTimerUnBlock){ unBlockTimer ++;}

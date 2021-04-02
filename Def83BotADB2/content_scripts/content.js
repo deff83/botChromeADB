@@ -4,7 +4,7 @@
 
 
 
-window.onload = init;
+
 
 /*
 function drawDIVGround(left, top, width, height, angle, ground){
@@ -38,6 +38,9 @@ var ObjPage = function(message, html, src){
 }
 
 function init(){
+	
+	setTimeout(function() {
+	
 	console.log("initing");
 	//alert('тут1');
 	/*
@@ -54,7 +57,7 @@ function init(){
 				if(message == 'reload2') setTimeout(function() {init(); }	, 5000);
 			});
 		
-	
+	}	, 3000)
 	
 }
 
@@ -78,6 +81,6 @@ preload();
 
 
 
-
+init();
 
 
