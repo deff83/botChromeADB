@@ -124,10 +124,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					
 					if (index!=null){
 						//Начать зарабатывать биткоины
-						//console.log(index.textContent);
-						//console.log('Начать зарабатывать биткоины');
+						console.log(index.textContent);
+						//console.log('Начать зарабатывать');
 						
-						if (index.textContent=='Начать зарабатывать биткоины'){
+						if (index.textContent=='Начать зарабатывать'){
 							
 							chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/adbSurf.js'});
 							return;

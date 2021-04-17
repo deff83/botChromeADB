@@ -94,7 +94,7 @@ massivTabid.push(tabidEveXRP);
 //Programms.push(new Programm('XRPfree', 305, -5+305, 320, false, moonXRPfree, 1, 0.305));
 //Programms.push(new Programm('BTCfree', 305, -5+305, 320, false, moonBTCfree, 1, 10000));
 
-Programms.push(new Programm('changeBest.com', 3275, -10+3275, 320, false, moonBestcom, 1, 10000, true, false));
+Programms.push(new Programm('changeBest.com', 3275, -10+3275, 320, false, moonBestcom, 1, 10000, false, false));
 
 
 
@@ -111,8 +111,8 @@ Programms.push(new Programm('freeETH', 3605, -120+3605, 320, false, moonfreeETH,
 
 Programms.push(new Programm('EarnfreeLTC', 3605, -0+3605, 320, false, moonEarnfreeLTC, 1, 98, true, false));
 Programms.push(new Programm('EarnfreeETH', 3605, -5+3605, 320, false, moonEarnfreeETH, 1, 215, true, false));
-Programms.push(new Programm('EarnfreeDOGE', 3605, -5+3605, 320, false, moonEarnfreeDOGE, 1, 0.00287, true, false));	
-Programms.push(new Programm('EarnfreeDASH', 3605, -5+3605, 320, false, moonEarnfreeDASH, 1, 106, true, false));
+Programms.push(new Programm('EarnfreeDOGE', 3605, -5+3605, 320, false, moonEarnfreeDOGE, 1, 0.00287, false, false));	
+Programms.push(new Programm('EarnfreeDASH', 3605, -5+3605, 320, false, moonEarnfreeDASH, 1, 106, false, false));
 
 //Programms.push(new Programm('EarnfreeETC', 3605, -5+3605, 320, false, moonEarnfreeETC, 1, 6.10));
 //Programms.push(new Programm('EarnfreeZEC', 3605, -5+3605, 320, false, moonEarnfreeZEC, 1, 57));
@@ -136,24 +136,24 @@ Programms.push(new Programm('EarnfreeBCH', 3605, -5+3605, 320, false, moonEarnfr
 // Programms.push(new Programm('BitFaucet', 1805, -5+1805, 320, false, moonBitFaucet, 1, 10000));
 
 
-Programms.push(new Programm('ClaimFreeBTC-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBTC, 100000000, 10000, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeETH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeETH, 100000000, 215, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeDOGE-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDOGE, 100000000, 0.00287, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeLTC-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeLTC, 100000000, 98, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeBCH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBCH, 100000000, 324, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeDASH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDASH, 100000000, 106, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeTRX-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeTRX, 100000000, 0.02, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeDGB-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDGB, 100000000, 0, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeUSDT-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeUSDT, 100000000, 1, true, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeBTC-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBTC, 100000000, 10000, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeETH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeETH, 100000000, 215, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeDOGE-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDOGE, 100000000, 0.00287, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeLTC-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeLTC, 100000000, 98, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeBCH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBCH, 100000000, 324, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeDASH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDASH, 100000000, 106, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeTRX-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeTRX, 100000000, 0.02, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeDGB-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDGB, 100000000, 0, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeUSDT-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeUSDT, 100000000, 1, false, false));	//MAX CLAIM
 
 
 
-Programms.push(new Programm('EveXMR', 3605, -5+3605, 320, false, moonEveXMR, 1, 91, true, false));
-Programms.push(new Programm('EveDOGGE', 3605, -5+3605, 320, false, moonEveDOGGE, 1, 0.00287, true, false));
-Programms.push(new Programm('EveLTC', 3605, -5+3605, 320, false, moonEveLTC, 1, 98, true, false));
-Programms.push(new Programm('EveBCH', 3605, -5+3605, 320, false, moonEveBCH, 1, 324, true, false));
-Programms.push(new Programm('EveTRX', 3605, -5+3605, 320, false, moonEveTRX, 1, 0.02, true, false));
-Programms.push(new Programm('EveXRP', 3605, -5+3605, 320, false, moonEveXRP, 1, 0.305, true, false));
+Programms.push(new Programm('EveXMR', 3605, -5+3605, 320, false, moonEveXMR, 1, 91, false, false));
+Programms.push(new Programm('EveDOGGE', 3605, -5+3605, 320, false, moonEveDOGGE, 1, 0.00287, false, false));
+Programms.push(new Programm('EveLTC', 3605, -5+3605, 320, false, moonEveLTC, 1, 98, false, false));
+Programms.push(new Programm('EveBCH', 3605, -5+3605, 320, false, moonEveBCH, 1, 324, false, false));
+Programms.push(new Programm('EveTRX', 3605, -5+3605, 320, false, moonEveTRX, 1, 0.02, false, false));
+Programms.push(new Programm('EveXRP', 3605, -5+3605, 320, false, moonEveXRP, 1, 0.305, false, false));
 
 
 Programms.push(new Programm('moonDOGE', 1805, -20+1805, 320, false, moonDOGE, 1, 0.00287, false, false));

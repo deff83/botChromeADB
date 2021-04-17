@@ -40,11 +40,13 @@ var ObjBack = function(idtab, idsity, images_src, type, host){
  
  
  function ajaxGET(url, callback){
+	 console.log("ajaxGET:"+url);
 	var request = new XMLHttpRequest();
 	
 	request.addEventListener('readystatechange', function() {
 		// если состояния запроса 4 и статус запроса 200 (OK)
 		if ((request.readyState==4) && (request.status==200)) {
+			console.log("ajaxGET_request:"+request.responseText);
 			callback(request.responseText);
 		}
 	});
@@ -229,6 +231,7 @@ chrome.runtime.onMessage.addListener(
 				  if (massTabsCaptcha[sender.tab.id].idsity == 'nothave'){//если ответ от сервера nothave то создать новый
 					   idnew = 1;
 					   massTabsCaptcha[sender.tab.id].images_src = '';
+						return;
 				   }
 				   
 				   //console.log('find solver');
@@ -327,7 +330,7 @@ chrome.runtime.onMessage.addListener(
 				//massTabs.push(sender.tab.id);
 				
 				
-				massTabsCaptcha[sender.tab.id].idsity = 10101;
+				massTabsCaptcha[sender.tab.id].  = 10101;
 				ajaxGET(urlnew, function (response){
 				
 						if(response!='have'){

@@ -97,15 +97,16 @@ function start_solve(){//каждую секунду
 					let image1 = obj_tter.img;
 					if (image1!=images_src_main){pause_count=0;}else{//если картинка поменялась
 						pause_count -= 1;
-						return;
+						
 					};
-					
+					return;
 					
 					
 				}
 				try{
 				if (document.getElementsByClassName('rc-doscaptcha-header-text')[0].textContent=='Повторите попытку позже'){
 					chrome.extension.sendMessage('reload', function (message){});
+					return;
 				}
 				}catch(Exc){}
 				

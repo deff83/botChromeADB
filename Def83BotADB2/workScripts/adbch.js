@@ -56,14 +56,18 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		setTimeout(function() {
 			console.log(iCount);
 			if (iCount>1) {
-				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/CloseHide.js'});
-				setTimeout(function() {
-					try{chrome.tabs.remove(sender.tab.id);}catch(Exc){}
-				}, 100000);
+				//if (boolCounti) {
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/CloseHide.js'});
+					setTimeout(function() {
+						try{chrome.tabs.remove(sender.tab.id);}catch(Exc){}
+					}, 100000);
+				//}else{
+				//	//try{chrome.tabs.remove(sender.tab.id);}catch(Exc){}
+				//}
 				return;
 			}
 			
-			if(!tabidADBTC.contains(sender.tab.id))tabidADBTC.push(sender.tab.id);
+			if(!tabidADBCH.contains(sender.tab.id))tabidADBCH.push(sender.tab.id);
 
 			try{
 				//console.log('Deff83 moonDOGE', request);

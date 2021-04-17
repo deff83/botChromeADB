@@ -477,6 +477,7 @@ function closetabsall(col){
 }
 
 iCount = -1;
+//boolCounti = false;
 
 function getCountTab(idt){
 	
@@ -486,6 +487,11 @@ function getCountTab(idt){
 					
 						
 						for(var i = 0; i < tabs.length; i++){
+							/*
+							if (i==1){
+								boolCounti = true;
+							}*/
+							
 							
 							tab = tabs[i];
 
