@@ -40,21 +40,23 @@ massivTabid.push(tabidADTRX);
 massivTabid.push(tabidADZEC);
 massivTabid.push(tabidADBTC);
 massivTabid.push(tabidADBCHTOP);
+massivTabid.push(tabidADIGM);
 
 
 //-----------------------------------------Programm start--------------------------------------------//ф
-Programms.push(new Programm('adb', 13805, -7060+13805, 320, false, startADB, 100000000, 10000, true));
-Programms.push(new Programm('adLTC', 13805, -6050+13805, 320, false, startADLTC, 1, 98, true));
-Programms.push(new Programm('adBCH', 13805, -5040+13805, 320, false, startADBCH, 1, 324, true));
-Programms.push(new Programm('adETH', 13805, -4030+13805, 320, false, startADETH, 1, 215, true));
-Programms.push(new Programm('adXRP', 13805, -3035+13805, 320, false, startADXRP, 1, 0.305, true));
-Programms.push(new Programm('adDASH', 13805, -2530+13805, 320, false, startADDASH, 1, 106, true));
-Programms.push(new Programm('adDOGE', 13805, -2025+13805, 320, false, startADDOGGE, 1, 0.00287, true));
-Programms.push(new Programm('adDGB', 13805, -1525+13805, 320, false, startADDGB, 1, 0.02, true));
-Programms.push(new Programm('adTRX', 13805, -1025+13805, 320, false, startADTRX, 1, 0.02, true));
-Programms.push(new Programm('adZEC', 13805, -525+13805, 320, false, startADZEC, 1, 70, true));
-Programms.push(new Programm('adBTC', 13805, -525+13805, 320, false, startADBTC, 1, 10000, true));
-Programms.push(new Programm('adBCHTOP', 13805, -525+13805, 320, false, startBCHTOP, 1, 324, true));
+Programms.push(new Programm('adb', 27605, -7060+27605, 320, false, startADB, 100000000, 10000, true));
+Programms.push(new Programm('adLTC', 27605, -6050+27605, 320, false, startADLTC, 1, 98, true));
+Programms.push(new Programm('adBCH', 27605, -5040+27605, 320, false, startADBCH, 1, 324, true));
+Programms.push(new Programm('adETH', 27605, -4030+27605, 320, false, startADETH, 1, 215, true));
+Programms.push(new Programm('adXRP', 27605, -3035+27605, 320, false, startADXRP, 1, 0.305, true));
+Programms.push(new Programm('adDASH', 27605, -2530+27605, 320, false, startADDASH, 1, 106, true));
+Programms.push(new Programm('adDOGE', 27605, -2025+27605, 320, false, startADDOGGE, 1, 0.00287, true));
+Programms.push(new Programm('adDGB', 27605, -1525+27605, 320, false, startADDGB, 1, 0.02, true));
+Programms.push(new Programm('adTRX', 27605, -1025+27605, 320, false, startADTRX, 1, 0.02, true));
+Programms.push(new Programm('adZEC', 27605, -525+27605, 320, false, startADZEC, 1, 70, true));
+Programms.push(new Programm('adBTC', 27605, -525+27605, 320, false, startADBTC, 1, 10000, true));
+Programms.push(new Programm('adBCHTOP', 27605, -525+27605, 320, false, startBCHTOP, 1, 324, true));
+//Programms.push(new Programm('igmoza.', 27605, -525+27605, 320, false, startIGM, 1, 324, true));//http://igmoza.com/
 
 
 

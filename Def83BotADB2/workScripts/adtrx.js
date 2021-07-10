@@ -51,6 +51,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	if(request.src == 'surf-trx.com'){
 		getCountTab(sender.tab.id);
+		chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/Reload200000.js'});
 		
 		console.log('startMes');
 		unClose = true;

@@ -85,8 +85,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/sound.js'});
 				}
 				
-				f_callback('reload'); 
-				console.log('reload');
+				//f_callback('reload'); 
+				//console.log('reload');
 				return;
 				
 				

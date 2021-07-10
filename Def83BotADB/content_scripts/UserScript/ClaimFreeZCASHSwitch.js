@@ -1,9 +1,9 @@
 //скрипт подключаемый
 try{
 	//setURL('https://freeb.tc/login');
-	writeField("Name", "address", 0, "XeXHwJx5q4zAXRd9nLNVyX56qUGKKoWSDZ")
+	//writeField("Name", "address", 0, "3HaimfxYgsjXwqpYcQK1entSm2HyMJx39E")
 	//writeField("Name", "password", 0, "0704galaxArt")
-	clickButton("ClassName", "btn btn-block btn-primary text-uppercase", 0);
+	setURL('https://claimfreecoins.io/free-zcash/?captcha=recaptcha');
 	/*hideDiv("ClassName", "hero-content", -1);
 	hideDiv("ClassName", "btn btn-success", -1);
 	hideDiv("ClassName", "mean-bar", -1);
@@ -21,7 +21,7 @@ try{
 	
 
 	
-}catch(Exc){alert('jk');};
+}catch(Exc){alert('kl');};
 
 
 

@@ -15,7 +15,7 @@ try{
 	
 	writeField("Name", "bonus_purse", 0, "17Mu4RdaMczu1jLmCSp2QXBAt1QHE1p9Ym")
 	
-	document.getElementsByClassName('g-recaptcha-inner')[0].setAttribute("style", "width: 304px; height: 85px;");
+	//document.getElementsByClassName('g-recaptcha-inner')[0].setAttribute("style", "width: 304px; height: 85px;");
 	// 
 	// hideDiv("TagName", "p", -1);
 	// hideDiv("TagName", "h1", -1);
@@ -25,7 +25,7 @@ try{
 	// hideDiv("TagName", "nav", -1);
 	
 
-	drawDIVUser('1', "clickButton('Id', 'bonus_button', 0);");
+	drawDIVUser('1', "clickButton('Id', 'bonus_button', 0); setTimeout(function() {	document.location.href = 'https://www.bestchange.com/'}, 2000);");
 	
 	//setTimeout(function() {	location.reload()}, 2000);
 	

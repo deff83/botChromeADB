@@ -118,7 +118,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					
 					
 					
-					var index = fragRow.getElementsByClassName('btn light-blue darken-4')[0];
+					var index = fragRow.getElementsByClassName('btn brandcolor')[0];
 					
 					//console.log(index);
 					
@@ -149,9 +149,9 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 									
 									console.log(fiatlink.textContent);
 									
-									if(fiatlink.textContent=='Серфинг в сатоши'){
+									if(fiatlink.textContent=='сёрфинг в сатоши'){
 										console.log('tyt');
-										chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/adbOpenFiat.js'});
+										//chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/adbOpenFiat.js'});
 									}
 								}
 								first = false;
@@ -205,6 +205,30 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 						
 						if (selected!=null){
 							//есть капча
+							console.log(selected)
+							
+							
+							var selectedj = fragRow.getElementsByClassName('flow-text')[2];
+							console.log(selectedj);
+							console.log(selectedj.textContent);
+							if (selectedj!=null && selectedj.textContent=='Вы просмотрели все объявления на данный момент, приходите позже. Новые ссылки появляются часто в течение дня. Пользователям с более высоким рейтингом доступно большее количество рекламы.'){
+								console.log("tut");
+								var balancetext = fragRowBalance.getElementsByClassName('balance card-panel')[0];
+									
+									if (balancetext!=null){
+									
+										
+										//если нет кнопки открыть 
+										tekSbor = -1;
+										Programms[indexPr].boolStartingDOGE = false;
+										Programms[indexPr].textmessage = "noAds";
+										block = false;
+										if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+										tabidADB.remove(sender.tab.id);
+										return;
+									}
+							}
+							
 						}else{
 							
 							//col s12 m9
@@ -233,7 +257,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 										//если нет кнопки открыть 
 										tekSbor = -1;
 										Programms[indexPr].boolStartingDOGE = false;
-										Programms[indexPr].textmessage = "noAds";
+										//Programms[indexPr].textmessage = "noAds";
 										block = false;
 										if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 										tabidADB.remove(sender.tab.id);
@@ -255,7 +279,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 										
 										tekSbor = -1;
 										Programms[indexPr].boolStartingDOGE = false;
-										Programms[indexPr].textmessage = "noAds";
+										//Programms[indexPr].textmessage = "noAds";
 										block = false;
 										if(tabidADB.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 										tabidADB.remove(sender.tab.id);

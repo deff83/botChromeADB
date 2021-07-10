@@ -81,6 +81,22 @@ function clickButtonInDIV(getElementDIV, nameDIV, countDIV, getElement, name, co
 	appBanneres[count].click();
 }
 
+function drawDIVCount(count){
+	var d=document.createElement('div');
+	d.style.position = 'fixed';
+	d.style.width = '5%';
+	d.style.height = '5%';
+	d.id = 'countmy';
+	d.style.right = '0px';
+	d.style.bottom = '0px';
+	d.style.background = '';
+	d.style.zIndex = 2147483646;
+	d.innerHTML = '<div style="width:100%; height:100%; text-align:center; background: linear-gradient(0deg,#000000  ,#550021 );" id="mue_lk"><p style="color:#FFFFFF";>'+count+'</p></div>';
+	document.body.appendChild(d);
+}
+
+
+
 function drawDIVSkrit(type){
 	if (type=='1'){
 	var d=document.createElement('div');

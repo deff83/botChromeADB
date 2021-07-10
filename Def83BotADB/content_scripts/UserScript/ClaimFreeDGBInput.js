@@ -1,7 +1,7 @@
 //скрипт подключаемый
 try{
 	//setURL('https://freeb.tc/login');
-	writeField("Name", "address", 0, "D8Arq4qDP3KK8rxE6ESuXkgPEty8RAJp9m")
+	writeField("Name", "address", 0, "D99xXow6tGr5npwqJGhrSj8D2T1LLcv8bM")
 	//writeField("Name", "password", 0, "0704galaxArt")
 	clickButton("ClassName", "btn btn-block btn-primary text-uppercase", 0);
 	/*hideDiv("ClassName", "hero-content", -1);

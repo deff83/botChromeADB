@@ -1,5 +1,5 @@
 var indexPrfreeETH;
-
+var col_freeETH = 0;
 
 var tabidfreeETH = [];
 
@@ -19,6 +19,7 @@ async  function moonfreeETH(indexPrfree){
 		}catch(Exc){} 
 	}
 	console.log("freeETH start");
+	col_freeETH = 0;
 	injectScriptfreeETH('https://www.free-ethereum.io');
 	console.log("freeETH end");
 }
@@ -40,6 +41,19 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		console.log('startMes');
 		if(!tabidfreeETH.contains(sender.tab.id))tabidfreeETH.push(sender.tab.id);
 			try{
+				
+				
+				col_freeETH = col_freeETH + 1;
+				
+				if (col_freeETH < 2) {
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/freeLTCreload.js'});
+					return;
+				}
+				
+				
+				
+				
+				
 				//console.log('Deff83 freeLTC', request);
 				let frag = document.createRange().createContextualFragment(request.html);
 				var login = frag.getElementById('login'); 
@@ -59,6 +73,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					console.log(parseFloat(balance) - Programms[indexPrfreeETH].balance);
 					Programms[indexPrfreeETH].balance = parseFloat(balance);
 					Programms[indexPrfreeETH].boolStartingDOGE = false;
+					col_freeETH = 0;
 					block = false;
 					if(tabidfreeETH.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 					tabidfreeETH.remove(sender.tab.id);
@@ -90,6 +105,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					console.log(second);
 					
 					Programms[indexPrfreeETH].boolStartingDOGE = false;
+					col_freeETH = 0;
 					Programms[indexPrfreeETH].startintervalDOGE = Programms[indexPrfreeETH].intervalDOGE - second;
 					
 					
@@ -112,6 +128,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 			}catch(Exc){
 				Programms[indexPrfreeETH].boolStartingDOGE = false;
+				col_freeETH = 0;
 				block = false;
 				console.log(Programms[indexPrfreeETH].boolStartingDOGE);
 				console.log(Exc);

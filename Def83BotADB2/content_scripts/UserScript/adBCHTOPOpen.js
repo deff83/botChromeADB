@@ -4,7 +4,7 @@ try{
 	
 	//alert(document.getElementsByClassName("row")[2].innerHTML);
 	
-	clickButton("Id", "nachat", 0);
+	clickButton("Id", "btstart", 0);
 	
 	
 	//setURL('https://adltc.cc/surf');

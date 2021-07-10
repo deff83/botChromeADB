@@ -1,5 +1,5 @@
 var indexPrfreeLTC;
-
+var col_freeLTC = 0;
 
 var tabidfreeLTC = [];
 
@@ -19,6 +19,7 @@ async  function moonfreeLTC(indexPrfreeLTCog){
 		}catch(Exc){} 
 	}
 	console.log("freeLTC start");
+	col_freeLTC = 0;
 	injectScriptfreeLTC('https://www.free-litecoin.com');
 	console.log("freeLTC end");
 }
@@ -40,6 +41,16 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		console.log('startMes');
 		if(!tabidfreeLTC.contains(sender.tab.id))tabidfreeLTC.push(sender.tab.id);
 			try{
+				
+				
+				col_freeLTC = col_freeLTC + 1;
+				
+				if (col_freeLTC < 2) {
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/freeLTCreload.js'});
+					return;
+				}
+				//col_freeLTC = 0;
+				
 				//console.log('Deff83 freeLTC', request);
 				let frag = document.createRange().createContextualFragment(request.html);
 				var login = frag.getElementById('login'); 
@@ -59,6 +70,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					console.log(parseFloat(balance) - Programms[indexPrfreeLTC].balance);
 					Programms[indexPrfreeLTC].balance = parseFloat(balance);
 					Programms[indexPrfreeLTC].boolStartingDOGE = false;
+					col_freeLTC = 0;
 					block = false;
 					if(tabidfreeLTC.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 					tabidfreeLTC.remove(sender.tab.id);
@@ -91,6 +103,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					}
 					
 					Programms[indexPrfreeLTC].boolStartingDOGE = false;
+					col_freeLTC = 0;
 					Programms[indexPrfreeLTC].startintervalDOGE = Programms[indexPrfreeLTC].intervalDOGE - second;
 					block = false;
 					if(tabidfreeLTC.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
@@ -109,6 +122,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 			}catch(Exc){
 				Programms[indexPrfreeLTC].boolStartingDOGE = false;
+				col_freeLTC = 0;
 				block = false;
 				console.log(Programms[indexPrfreeLTC].boolStartingDOGE);
 				console.log(Exc);

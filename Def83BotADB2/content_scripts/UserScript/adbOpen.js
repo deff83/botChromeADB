@@ -4,7 +4,7 @@ try{
 	
 	//alert(document.getElementsByClassName("row")[2].innerHTML);
 	
-	clickButtonInDIV("ClassName", "row", 2, "TagName", "a", 2);
+	clickButtonInDIV("ClassName", "row", 3, "TagName", "a", 2);
 	
 	
 	//setURL('https://freeb.tc/login');
@@ -27,7 +27,7 @@ try{
 	
 
 	
-}catch(Exc){alert(Exc);};
+}catch(Exc){alert('tyt');};
 
 
 
