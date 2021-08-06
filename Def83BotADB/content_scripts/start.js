@@ -88,6 +88,25 @@ massivTabid.push(tabidEveBCH);
 massivTabid.push(tabidEveTRX);
 massivTabid.push(tabidEveXRP);
 
+massivTabid.push(tabidCryptoUSDT);
+massivTabid.push(tabidBigBTC);
+massivTabid.push(tabidFC);
+
+massivTabid.push(tabidOurBitco);
+massivTabid.push(tabidOurBitco30);
+massivTabid.push(tabidOurBitco15);
+massivTabid.push(tabidOurBitco5);
+
+massivTabid.push(tabidStarBits);
+massivTabid.push(tabidACPfaucet);
+massivTabid.push(tabidClickCash);
+
+massivTabid.push(tabidBitMoon);
+massivTabid.push(tabidMulticoin);
+massivTabid.push(tabidCryptoWin);
+
+
+
 //-----------------------------------------Programm start--------------------------------------------//ф
 
 
@@ -103,6 +122,23 @@ Programms.push(new Programm('changeBest.com', 3675, -10+3675, 320, false, moonBe
 
 Programms.push(new Programm('freeLTC', 3605, -100+3605, 320, false, moonfreeLTC, 1, 98, true, false));
 Programms.push(new Programm('freeETH', 3605, -120+3605, 320, false, moonfreeETH, 1, 215, true, false));
+
+
+Programms.push(new Programm('BigBTC', 600, -5+600, 320, false, moonBigBTC, 100000000, 10000, true, false));
+Programms.push(new Programm('FC', 1805, -5+1805, 320, false, moonFC, 100000000, 10000, true, false));
+Programms.push(new Programm('Multicoin', 705, -5+705, 320, false, moonMulticoin, 100000000, 10000, true, false));
+Programms.push(new Programm('OurBitco', 3615, -5+3615, 320, false, moonOurBitco, 1, 10000, true, false));	//60
+Programms.push(new Programm('OurBitco30', 1815, -5+1815, 320, false, moonOurBitco30, 1, 0, true, false));	//30
+Programms.push(new Programm('OurBitco15', 915, -5+915, 320, false, moonOurBitco15, 1, 0, true, false));	//30
+Programms.push(new Programm('OurBitco5', 315, -5+315, 320, false, moonOurBitco5, 1, 0, false, false));	//30
+
+Programms.push(new Programm('StarBits', 315, -5+315, 320, false, moonStarBits, 1, 0, false, false));	
+Programms.push(new Programm('ACPfaucet', 1815, -5+1815, 320, false, moonACPfaucet, 1, 0, true, false));	
+Programms.push(new Programm('ClickCash', 1815, -5+1815, 320, false, moonClickCash, 1, 0, false, false));	
+Programms.push(new Programm('BitMoon', 375, -5+375, 320, false, moonBitMoon, 1, 0.0001, true, false));	
+Programms.push(new Programm('CryptoWin', 915, -5+915, 320, false, moonCryptoWin, 100000000, 10000, true, false));	
+
+
 //Programms.push(new Programm('freeBCH', 3605, -140+3605, 320, false, moonfreeBCH, 1, 324));
 //Programms.push(new Programm('freeDOGE', 3605, -150+3605, 320, false, moonfreeDOGE, 1, 0.00287));
 //Programms.push(new Programm('freeETHxyz', 3605, -300+3605, 320, false, moonfreeETHxyz, 1, 215));
@@ -111,17 +147,6 @@ Programms.push(new Programm('freeETH', 3605, -120+3605, 320, false, moonfreeETH,
 //Programms.push(new Programm('freeBTXxyz', 3605, -360+3605, 320, false, moonfreeBTXxyz, 1, 0.00164));
 //Programms.push(new Programm('freeBTCxyz', 3605, -380+3605, 320, false, moonfreeBTCxyz, 1, 10000));
 
-
-Programms.push(new Programm('EarnfreeLTC', 3605, -0+3605, 320, false, moonEarnfreeLTC, 1, 98, false, false));
-Programms.push(new Programm('EarnfreeETH', 3605, -5+3605, 320, false, moonEarnfreeETH, 1, 215, true, false));
-Programms.push(new Programm('EarnfreeDOGE', 3605, -5+3605, 320, false, moonEarnfreeDOGE, 1, 0.00287, false, false));	
-Programms.push(new Programm('EarnfreeDASH', 3605, -5+3605, 320, false, moonEarnfreeDASH, 1, 106, false, false));
-
-//Programms.push(new Programm('EarnfreeETC', 3605, -5+3605, 320, false, moonEarnfreeETC, 1, 6.10));
-//Programms.push(new Programm('EarnfreeZEC', 3605, -5+3605, 320, false, moonEarnfreeZEC, 1, 57));
-
-Programms.push(new Programm('EarnfreeETHSky', 3605, -5+3605, 320, false, moonEarnfreeETHSky, 1, 215, true, false));
-Programms.push(new Programm('EarnfreeBCH', 3605, -5+3605, 320, false, moonEarnfreeBCH, 1, 324, false, false));
 
 // Programms.push(new Programm('DOGEfaucet', 14405, -5+14405, 320, false, moonDOGEfaucet, 1, 0.00287));	//return timer
 // Programms.push(new Programm('DASHfaucet', 14405, -5+14405, 320, false, moonDASHfaucet, 1, 106));	//return timer
@@ -146,7 +171,7 @@ Programms.push(new Programm('ClaimFreeLTC-FaucetPay', 1000, -5+1000, 360, false,
 Programms.push(new Programm('ClaimFreeBCH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBCH, 100000000, 324, true, false));	//MAX CLAIM
 Programms.push(new Programm('ClaimFreeDASH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDASH, 100000000, 106, true, false));	//MAX CLAIM
 Programms.push(new Programm('ClaimFreeBNB-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBNB, 100000000, 106, true, false));	//MAX CLAIM
-Programms.push(new Programm('ClaimFreeFAY-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeFAY, 100000000, 0.01, false, false));	//MAX CLAIM
+Programms.push(new Programm('ClaimFreeFAY-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeFAY, 100000000, 0.01, true, false));	//MAX CLAIM
 Programms.push(new Programm('ClaimFreeZCASH-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeZCASH, 100000000, 106, true, false));	//MAX CLAIM
 Programms.push(new Programm('ClaimFreeTRX-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeTRX, 100000000, 0.02, true, false));	//MAX CLAIM
 Programms.push(new Programm('ClaimFreeDGB-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeDGB, 100000000, 0, true, false));	//MAX CLAIM
@@ -161,6 +186,8 @@ Programms.push(new Programm('EveBCH', 3605, -5+3605, 320, false, moonEveBCH, 1, 
 Programms.push(new Programm('EveTRX', 3605, -5+3605, 320, false, moonEveTRX, 1, 0.02, false, false));
 Programms.push(new Programm('EveXRP', 3605, -5+3605, 320, false, moonEveXRP, 1, 0.305, false, false));
 
+Programms.push(new Programm('CryptoUSDT', 3605, -5+3605, 320, false, moonCryptoUSDT, 1, 1, false, false));
+
 
 Programms.push(new Programm('moonDOGE', 1805, -20+1805, 320, false, moonDOGE, 1, 0.00287, false, false));
 Programms.push(new Programm('moonDASH', 1805, -40+1805, 320, false, moonDASH, 1, 106, false, false));
@@ -168,13 +195,25 @@ Programms.push(new Programm('moonLTC', 1805, -60+1805, 320, false, moonLTC, 1, 9
 Programms.push(new Programm('moonBTC', 1805, -80+1805, 320, false, moonBTC, 1, 10000, false, false)) ;
 Programms.push(new Programm('moonBCH', 1805, -80+1805, 320, false, moonBCH, 1, 324, false, false)) ;
 Programms.push(new Programm('BonusBitcoin', 905, -15+905, 320, false, moonBonusBitcoin, 100000000, 0, false, false));
+
 Programms.push(new Programm('BitFun', 3675, -5+3675, 320, false, moonBitFun, 100000000, 0, false, false));
 
+
+Programms.push(new Programm('EarnfreeLTC', 3605, -0+3605, 320, false, moonEarnfreeLTC, 1, 98, false, false));
+Programms.push(new Programm('EarnfreeETH', 3605, -5+3605, 320, false, moonEarnfreeETH, 1, 215, false, false));
+Programms.push(new Programm('EarnfreeDOGE', 3605, -5+3605, 320, false, moonEarnfreeDOGE, 1, 0.00287, false, false));	
+Programms.push(new Programm('EarnfreeDASH', 3605, -5+3605, 320, false, moonEarnfreeDASH, 1, 106, false, false));
+
+//Programms.push(new Programm('EarnfreeETC', 3605, -5+3605, 320, false, moonEarnfreeETC, 1, 6.10));
+//Programms.push(new Programm('EarnfreeZEC', 3605, -5+3605, 320, false, moonEarnfreeZEC, 1, 57));
+
+Programms.push(new Programm('EarnfreeETHSky', 3605, -5+3605, 320, false, moonEarnfreeETHSky, 1, 215, false, false));
+Programms.push(new Programm('EarnfreeBCH', 3605, -5+3605, 320, false, moonEarnfreeBCH, 1, 324, false, false));
 
 massivremove = ["https://www.bitcoincasino.io/?stag=5483_5fbe7780e4c32ec18cfa0e4d", 
 				"https://luckyfish.io/?c=getstarted","https://binance-charity.co/", "https://www.newsofcd.com/", "https://tfbitcoin.com/", "https://luckyfish.io/?c=getstarted","https://www.bitcoincasino.io/?stag=5483_5fe65eab9f965850e0d12a6b", "https://refpakrtsb.top/L?tag=d_755089m_18639c_c04dbfb7&r=user%2Fregistration.php&pb=2fd0f6616e444e95be6305e0fb3ea477&click_id=01b3973b-3bdd-11eb-b24e-cd2a8c8feb24", "https://f9s6x9j7.stackpathcdn.com/adserv.html?idzone=3483349&sub=6380706",
 
-				"https://refpakrtsb.top/L?tag=d_755089m_18639c_c04dbfb7&r=user%2Fregistration.php&pb=2fd0f6616e444e95be6305e0fb3ea477&click_id=98875421-3ca8-11eb-801e-47e1a95ab5ff"	,
+				"https://refpakrtsb.top/L?tag=d_755089m_18639c_c04dbfb7&r=user%2Fregistration.php&pb=2fd0f6616e444e95be6305e0fb3ea477&click_id=98875421-3ca8-11eb-801e-47e1a95ab5ff"	,"https://www.onehash.com/?utm_source=coinzilla&utm_medium=popunder&campaign=22161010a6a58b14955&zone=579405a891cdea0555&uhash=MFg3K3ZJUVIrdGFtYThkd1gzS3ZvaUpCQldBVjJYZ1FkRWplaloyMDRnVVNzS0duVHIxRkVJdWYxYnpmNkVGS3VDV3FsNS9JRWluMmJNZXFVdm0zdWc5M01WTExkM3FhTHJHSlJDSUMzZjFtdjd4bUJ1Sm02aldlMXpydlZJU2xRQldNSWJnV2twRDlSeTVBUHZXVzQ3QzZIRUR4US90STJmekw2Mmk3L3lmdEpTZ0hSRFhqQU9hMW52V09qbXFvSUs4NDNzRG1FcDBiT2RWczlBb1d0Q2thUTdtVlJnUVhvamlTdmYzMVBvR3JwTFFuYzZxQmRsOHFXN2p6d1pSKytwMzl5NUF1VWlFSEtDY21MVjkzalpUSDNyN2ZUdlBkM1gxcVdJRE9pTGVQbTZJbjdGY0JoSEd1QzBGNDJYZ0kvYXZuV2tsVW1LSXNubzY3SFdZcTRZVUVZSnBRbHNNTUlIZ0d3cTJmcDYwVnVPZDhONVhRZFVFdnBNM3BQL1kxTGJBWDRjc1ErdGFTL05rRVRZcCttUXZSc2dPaDVPc2g2eDVDZCtNVU5aazNKcWdLTmVHVWFtM2RrTG9zemhIS1pFdEc2YWc5VWdPaHVDRzlOdit3NU1FK1dpeU11WnoyTEVPTlZjeFBFSGJ0VEtjbG5tMExHbWs5QWo4eHQxbjlnbE5oUHBONzlmR1hNaEtrcy8xWGFaNDhUeGFESHgrN2hKTHV4elhJN1h1UnN1ZGtIdmdzY0t3MUhsL3FFZ25udm5RMWM1UFBLdDRvcUJlc0EyRE1iRnYwS2xVb3NSUGtIWkQ5Wlp4T01UQVhHU0dXd3YyZWFTY204SzRzN1oxRURqdUdjNXgzZTJ6TlRsekZ6dkxYTDd1Q29TZXR6d1VUWGp1N1I5MUF1ek1CSzB2VVBIS2MzV1FpWGs5TitKMks0ZjIxaXZyQytPQ0ZKUCs4Q2RudXF0dENsZDhEMFZXdkoyc0FyUWVhZXFoQmxIemdra2UxYWt2Ym9zaHI0NENINzBwVnN5QmNsN3FzWEtTNjcwV3BKL3pNSXBtYWg3U25iNWFlSFl2d0hOSWJRQW9UWmlWM3BiN2hORE4ySERxN1V0VzJmVm40cmtONDZQNE5SdE0yb212TmhVVEp1S2JRb2xycDhqanJqUFk0bVNXRG5TZ09mUmhBZEVRZGE2a3loS09tUlJmS3MwVmE3SWxhZ0V4cUFBPT0&utm_content=bigbtc.win&utm_term=%7Bterm%7D&ap=a1b11b784125432e8bc1cd","https://1bestm0d31.com/hwraI6548ebc281e397416427f6d5195c0dc235ec323c?q=Your%20File%20Is%20Ready%20To%20Download&s3=5166282654964252343&s1=933927","https://luckyforbet.com/h/HFkj2WWGhZss4N_vRddt0OeEwXblLkaHaTbbZoloS2zDKtfFFQsYas9wIwlHE7zw8eKoZrwB7GmEma0lykj4y0ZDGMKFqLHyNxc5Wpr8.oO7rl6VqOBWBrTHADauadRvxA4IevUcwPpsoJhQP_eErmBIwkTU0nvOa9kl3PTib.SAbR7umQ320iH7Z0YTlUswAezEqe8t4EW36OYfOvvJcldY8UFjfraHb9yg4y8XpUCcGi9.ZZDYCIZOvWaFmlJfT_FJb7O8NsIccUxQ4Ve.BiuhYOvpT08loYcXQxQJtP1nyjP2yMIiuOuRPOnEWB4lzYI.lgq3tzvJ_qGgcKL2HoX3itXgc3hnMdUElOmty0Yqq.qq",
 
 				"https://kts.visitstats.com/in/935/?katds_ep=jgAebSg1IfFEKBop1QFRX-SeToWo05lvjIXO8nk3DycJx1hEm1qJ7vrxJD-dXDq0dzgnFEeapI8bS2UKdHt_osj3l447ZyVt5HgGtqc6zcBovDysSzX2WCBrqazwwyYE1zAbeMzSd1fr_ijlXGnjFiQ60bX8aKyrVifx1zvxd00oWNyCd_T8CFZqG4RHerg7nwi2nBj_gUuGd_qYklwCQWvl1gZIBxX-yqnYrEMRaRS03VNtCEU6LwV6uBaEYECbQiPy4aFrdzlYv1lGl_4wfY0qdEfE7ZuTU79OFZGOjqjazVu9UpOuEPJmHhvFzDvnHV-rO_mB1CGlu78kBjTonU_zsN8_yNi2lz6L_Mr_sIeUq-78t-iEFGdRMXbGF9WBJ3lXIIe7coQKXtE3AjELVvdJqfPeHr4IAA3phhgBx3LLVSou42xZ2Y7nNQ7uM-U3EqDe_kV-CYBD4sd-55g-QMg2Hk4eqjeO1pqzO88U3N8a15zTJggRrppbt85iRcM54M0kJD1XKCcKLs-30gw-LcM0VILOXZgkTSn3nBX_WuuSv1ZcwO-iwA-fW3Mg1FNQZWlzzMBmiLqC8jKh_9UHfXRd-BR6CxmKZGTV0C4DNS4cxq2aAicqohY8l-tQaH-XaRxnAq3l36HfxLO3u-QZNFiyTd_AV1s4o-5byFVeZ_qPTphqZeIvYQCxXNyY4Isb9FRkOBOAx8dkftpP-BlYM8Bh3jv9ENLlCLwebqPlswH7PAdJRTtmo8aFaJ1h0XcX8E_nrKdNnSKj6_j53hZA2pFAredeAuvdf7J6DZ17XATtiFRPImGPzoGCIHT8jW9_EhDBSmx4pak_88_u88OI5wm2pjUvadwK1ow7SAbjNSIWkmsJj9i7uZMZ6sXuPd9B0kBa4SfMFZREd9UrSlt4IE0JyBK3537Zqcw9o9pmaHDH2qzu-RshiRxUHzdOW4FVYDhC0vmvdhIuY9-D7m6AHp7mBbbIgOFs0LdBr2UAeziTZWNicRYbYeoZ-xEbyW5IpgvNqEBep9vQmoKxl4fo61KD2qanHap0L34co3dJuX-so6s4eBoT54cJ7HLJcJf747DuGCTyYY2Bm316TgiLQOHAw2PXJf2O8lhctu16pmxZDs5o3u4Kki4Ze0oxOJ29BmIg01WElan2mM5xP4j695EIiNIHZP2kM-YG0H2NjuWtsw7QN83a6OkbSxDk5jMXVxgJCwJm17yleCbDANMpUD6a4N5j6En5qeopFGUceuD-ltMz4YaNHfXhGu5gsRxtu51k-47xsN_ktM_taFkLiEPDBSRP22NE0vQmJwbNK4t8m4_nzq2S1K9RVgIvcsKVLOmywSICGNaqSOmfeBNr98ihHCuymDXwz4XegJHv5DNCf1tEdh46stI5ESJQhNjC48xsEzG_diaILHLUW70nQd5d5-rtRQl33ibnvwmP4Q_JgdrUZ-QUJnBXRlSi3sVutFcht8tDJFKiUoB1RlwmAKgAF0Zx-l8nmEikQoGpg6ExFVH7y_dXk77YR_pd3oEeeR1IJ6UBhQd0ytgW8pjmv5EsWRU9s5asyQtGmwr7bkok4kIue695Dd07gxPyo0-fjwW8g1KdNWO69NoOIs-G_CYrHILLE_BQAgXTYQeV1dp56n0Nur2ZgfOqGJoCSJprRuhtBWxyOoOTWekYyf6eY5zykmey_qZgj8Er8zyVD63ifrvyVNHYsd2Z4GBpOSH06xRC5b1yWefdsbe-H1eFXIJrWNsXg4lGCA3S20d23njrf9erwknBfo-kermftOqciMtu3HlwQgVN7cJu88XBD_t71tojDNxym0-KiY7Yce2PWNftGz1gsD8L8v2O1OVHOdaCi25kv89ejdifkC0xaTq2mr3A_1eMxta66uxu8M2p3Po7VFTj7tYgUda1xTmZfisEsQ2SOUXmWHZrWVTJDX2x5rRcWoRHhtVoER4F18ANqjV7PdLeJ7R_RlqFoYU2v5bDKYI7Wn2ea_ACTdooDlQxk9ObFoeH5agq7BkvdHZbbLh3i5_u59zw_7UDXqFopXrkqgYS5v0ObXNHymHn3uBaTsbGEmk2OkWhkVwlJ5jaZ68dKXWLAFFCBYzPUFU4rv_aQW7wCL4zd90Te9IG3o5mlx4RkE1tMdZMT9sm9p8BC_DvB93fC704iXSDZozda1EDSnt5MjKI6dg0hZ7pu0QV2tjMhOyvNRZ9_a3IABBkDduKS6qktltlR_u-d9M5JcDafqX6v66nzMNnoiJ2gbx6soiMQrZp71B3wxMg-ebjIGNze17gaoesYAMftGwpFuH0QMmbHpvi1RrZtyPrdbcallftH3gLYUzOdAfQMR-xx7znyAwzSO1BF2TQFWm_fKqEI8TzcrT53KpSnRJ3lIacuT3w-SZ0Gss7TPK8y-UK5_b4OGYzFuX6q0KetS0fKxjKTIDwK0kq0Jc5taFv_ed5OX0wiAHWruFODMi9hhIJ9rl6w-2MvovTdL91Wp4Iu4o21BnwH3gX9y0-PuAgGN9cuon2gyK6Uj-g58mP2jmZo4zh7VbvzKIUVKO81jb6E1xnmcG5FioIEWVAGESqgPwdE0hNK8C0kvWwFRuumUKvOkeQEnS8puZDt2f1o1CLVDak0M9n1FEHBF9R5XAwGrnq_tQtMWEo3OZLMVzMLNDzuX7_MabtOCgrgHdD_vnokYDY7GRbb08832W99ACaJ_6OHZs9b9JptyRC-43dCFPuvR7HzfOpdJS81iEd4Zu2DHIBC0pqIzOq9PkkW9yk6Ba_03_y2Qlhreui1ilIUKfdRjNZcJUuC7JiSxetOPPl2cRkYwJyBExKwd-yW-1z4M_KEZ8X_5vi8CXEwBwRt58Eqjxrj-MrnJzSPg_OeaW8UyNAQWq8xuAcV-NMg2bmOLwtIBBlwWakT1rgLaocDqlhTOYxIJO7yN2tR2BXyTfHk76ZHTk3CNaHDtrpNd3BA5rr2dP8ONZsr55QWCDQ8xSCvBcNPNRBG_X3qfrYHoivGjKhMp3tBY3_YtnjwPpv1T8WifJn3lnk_gnVwyuVcVRgasZ2rBFMi4JLA4fBI6ouGOB8SKuHdYSRJegzyGG3baHNGFO92H4-m4bQzu3aD-gBQRBCo7PARemljxuKWgl8ywQA8ajofyvONGqJ2n7PYAquOqpJC-sGr7AeIfStO0p9qgdzDU66GIbAQoQ8rykwh4I5VB4Zb-kKGSEvWxOery5SpBYjBxVpI2Do34A_uYmORQM8HOH_7pfbivtbTmWY3MjqZoNjM-YA4SpFRPUX5thtvihMMAISTqQJne3waugCC6G3vTI1qpL8WK5hceMayrrOHLB_i0DxKk788V77RTmOipOZQU6H2o1qEJFKW4RAK7GKyuWR7EqLJNUCsIlAcUXjXChSkZZSk02cX5InXqbeJY_fj2sQ7FZ2QAlcc-VCOdSCqpQGNqtb4W4Z9J1Emtkck6uPVxiw-433Tr6dE6o1PYQlW_bUXdTVfvbM0Z8gVkPPyBjRkZ_eDI3dsnsvziaRWNx_Ph4w0B6PUMa9zujLnwYS8no7lrLIQOBnvNh2J-YsB0fQSiqzpfgrll9zuyyO9NYCX-Uil7jpidjPapQeiSi0tS-lqMdbsLHcc1ccrvrKF0eUFVqmuH3sFmgrs5RJe97QM7v3kMH5vX_Vp5eU7PXdVuMyMZCpN07mOHay2D92koaJMcI-iR7x0th8WMxy5iYivkEA0pX1teKZ208WXd0ydZmwNuKcjf4-LFyDfrOXPKvYcNUyh2yc_aH2Prq1jvbC75nKREnfh2ZOFlXSiq86rgVmNQ5UXk1zKb_p9btOd0NvZIheBhDnMLsWrbJj5D5Cwf8GG2W6peui7TE5vxjgYSHU2LlYLtOiFOHDVCDhUB1TM5mvxgdlXc0zwyVD67BJ74nzu_aSF1jxOYpP5mR-O8vB50Y1XUZ1g_Q16qb0FzxF_NWJxx_DTVtHw8ZXpCoSRK1ujQKkyl9BMt-0UF3Qwc2gyxzG7O-M0h5NzHe9q17KIM_XNi7E711nZyo6m5c1AXH8qt00ZQB6IC88BpnyfrGZZ7BbMVUJFVluboBRBQ20qer3qDirEmZQDYGWKLD-OIvDhRnyyVIJf57UuMO3ltyWimQh6GhTKBRxYjRLk-SYHoWPvsKvLGJFY54uyFEzqht4NaHq6B_90FCfaMNuQPbMoPRZSft-peFqSxrJsI_Gj7dqHZIz4fzMDpnV5wX88YwLYCsq5XEpv4Jh26_ZClIheKNC9WMqKB9LN2P7YUFRzSkh544bAM2AVfk2BH8Mbyyzx00KHns40aiWb4vWvOclfBtVJOX3EmeD9Pj0LN0SPlErGv42hIy0KQxDNOT0ZBOEzv4jawpkg-zudCvLlEVt1FuWP2VRG95DK0yt04jvYwfmbG6JLIePPVuurc6sh9u-hGtNHW7pBqKTkxwcIilOH5th-dZ0MLpXCm5trRgRt3DBOhOq72tp3-9LmuNNXfUj6ZLlOGmlEkXElwEzIJYPZ888WAaALer0Xz2BoWWIGPlrTH-eKyQchGWIRRkS9QIkR12cBUo60_3KmNqKrxAVPxdBOx0gDd-z0TPex1EznK2xn7ipbBOg4LMr--5UsPr6JFVD75A_QwynJuseuUWF2wWwoCehhUifc1zUvygPJr0buDP3p32F-zjpi-S7k1ex-1giiCKtvs-SLeD_n0OAAD9UWKSqjWIw9K_2ieTykFoXErXoyjCBur-h8gyDGjz2ktNoxfcn9Q97g1YiYyQ06sranghXMz-Fw1hVteZ92zkVw5u0l3OK2W9h5WSk8huW9uyPLIP60PUc8uB4t6ZJy6FX4dMhYVYGU3S4aHZIBrxEX_CqNp4xdVGPTUzWCcb1mBtsW5emb95sCFWBhu916Ti4ClNxmDHdcjPJ4zw0h_MavcwEjqC57JjO9x8soxEi4921kaWq6ex9sy7Bx6osX72QAnJV9E6l-xE6jvXCOxvFiFr-a8Ld3TRVN6GJNA0T6rMxLJQv4dzpvYjMC6vhyzueCXE7y9oiZjtr5eh2ZilVvGTbaMx55XgzEphqXmzdWlWr6f9k92cOhtJs7ww0qcB5JfnqiXS3tXrjapXlHh1H-NNLg6-PksG6vhEnMuO6R_kdqmNG4XQL6Eo9CUZYVq6SBcYkaNrl-KToD2AWgNxdLDVaMC_U4yAi8oOVjoh2oI5zsOPZ_AKo8Ht4ZThregeSQUmmyq1DWHuzO1BL4byk7d73EGbcvO9j9b-f1vs1PbjhesjycCvKGHxyqirG9vXHs2WooytFH5sUyXfhJy13DIS97J_AQlXYKtPJQ8J0N4NkwNnv9tmtCNIWbKUrrI6l_aVITSnveEcy6EjTH1l6JOgvqR05k4xkjrkA-w",
 				"https://cdn4ads.com/kj.aspx?x=6583778&r=1120218787&d=1606500124&j=1597407272&g=493&p=%21grQoNQIYe21n5iYLJO3aRv3C4bStViA%2BddOuIjEUHDmh2JUIsNO0o1SBI%2F2cbXrWUDwx5xHFMSoLMaMEZneZyVxDYVTfPS7wtdHCutmbgWY%2FMI8NoqDQjqEvaqMpMBCWttpf8pY8yZctAh801nzILLC6pSc5Xr74MB0SzzRo7u3NDzR98u2IQnPiyrKFtuWA5%2BrkdR%2BYwDSFxh0ICwWbVxk040cf6iZvkpeSkF3QpNmYF3H%2F2lnOzGMq1lA3iCoPdn0IzqruGOPt3HMHgpQ3EczKWcojkMoeqZh%2FWj9VK74nN3x%2FjCTa%2FK8KV25xJA6OGjKRgDv7ZwLDWYSxp6G8d2MEtiRqH8S50UJsGHBHUk205Hp%2FdAtWi91MNHodXhRlqXqKDf%2BSKtGtk%2Fo%2FEIvcO92WuOZgoI3REVBpS%2FrDS9TDMpF9d%2BntUCCIkIk%2FQhj41pK2priDlvCtv9KgEBO2E%2BSCOnBNvkki2E7E74%2FroQ0%3D&s=1536,864,1.02,1566.72,881.28,0&v=&m="

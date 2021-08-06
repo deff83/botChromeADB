@@ -96,6 +96,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					//проверка саксесса
 					
 					var succsesButton = idButtonPoleFaucet.getElementsByClassName('alert alert-success')[0];
+					var dangerField = idButtonPoleFaucet.getElementsByClassName('alert alert-danger')[0];
 					
 					if (succsesButton != null){
 						console.log(succsesButton.textContent);
@@ -105,6 +106,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 						
 						}catch(Exc){}
 						Programms[indexPrClaimFreeTRX].boolStartingDOGE = false;
+						Programms[indexPrClaimFreeTRX].intervalDOGE = 1000;
 						block = false;
 						if(tabidClaimFreeTRX.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 						tabidClaimFreeTRX.remove(sender.tab.id);
@@ -115,6 +117,19 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					//проверка логин кнопки
 					var loginButton = idButtonPoleFaucet.getElementsByTagName('input')[2];
 					if (loginButton != null && loginButton.getAttribute('value')=="Login"){
+						console.log('tyt5');
+						
+						if (dangerField!=null && dangerField.textContent == "You have reached the max claims per day. Please come back tomorow.") {
+							console.log('tyt7');
+							Programms[indexPrClaimFreeTRX].boolStartingDOGE = false;
+							Programms[indexPrClaimFreeTRX].userBool = false;
+							block = false;
+							console.log(Programms[indexPrClaimFreeTRX].boolStartingDOGE);
+							console.log(Exc);
+							if(tabidClaimFreeTRX.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+							tabidClaimFreeTRX.remove(sender.tab.id);
+						}
+						
 						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/ClaimFreeTRXInput.js'});
 						return;
@@ -183,6 +198,18 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 							
 							chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 							chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/ClaimFreeBTC.js'});
+						}
+						console.log('tyt5');
+						//"Your account is locked for 1262 minutes."
+						if (dangerField!=null && dangerField.textContent.split(' ')[3] == "locked") {
+							var min_lock = dangerField.textContent.split(' ')[5];
+							Programms[indexPrClaimFreeTRX].boolStartingDOGE = false;
+							Programms[indexPrClaimFreeTRX].intervalDOGE = min_lock*60 + 10;
+							Programms[indexPrClaimFreeTRX].startintervalDOGE = 0;
+							console.log(Programms[indexPrClaimFreeTRX].intervalDOGE);
+							block = false;						
+							if(tabidClaimFreeTRX.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+							tabidClaimFreeTRX.remove(sender.tab.id);
 						}
 				}
 				return;

@@ -80,11 +80,11 @@ function setProgressBar(i) {
       var n, id, progress;
 
        progress = new CircularProgress({
-        radius: 50,
+        radius: 40,
         strokeStyle: 'black',
         lineCap: 'square',
         lineJoin: 'round',
-        lineWidth: 5,
+        lineWidth: 3,
         shadowBlur: 0,
         shadowColor: 'yellow',
         text: {
@@ -95,7 +95,7 @@ function setProgressBar(i) {
           strokeStyle: 'white',
           lineCap: 'square',
           lineJoin: 'round',
-          lineWidth: 5,
+          lineWidth: 3,
           shadowBlur: 10,
           shadowColor: 'black'
         }
