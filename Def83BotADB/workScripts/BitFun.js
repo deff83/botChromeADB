@@ -33,6 +33,8 @@ function injectScriptBitFun(url) {
 
 //bitfun.co
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'bitfun.co'){
 		//console.log('startMes');
 		if(!tabidBitFun.contains(sender.tab.id))tabidBitFun.push(sender.tab.id);

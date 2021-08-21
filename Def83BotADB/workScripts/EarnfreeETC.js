@@ -35,6 +35,8 @@ function injectScriptEarnfreeETC(url) {
 
 //https://earnfree-ETC.xyz/dashboard
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'earnfree-etc.xyz'){
 		console.log('startMes');
 		if(!tabidEarnfreeETC.contains(sender.tab.id))tabidEarnfreeETC.push(sender.tab.id);

@@ -35,6 +35,8 @@ function injectScriptETHfree(url) {
 
 //ethereumfree.info
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'ethereumfree.info'){
 		console.log('startMes');
 		if(!tabidETHfree.contains(sender.tab.id))tabidETHfree.push(sender.tab.id);

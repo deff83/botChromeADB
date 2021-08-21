@@ -35,6 +35,8 @@ function injectScriptEveDOGGE(url) {
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'evedoge.xyz'){
 		console.log('startMes');
 		if(!tabidEveDOGGE.contains(sender.tab.id))tabidEveDOGGE.push(sender.tab.id);

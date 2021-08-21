@@ -35,6 +35,8 @@ function injectScriptEarnfreeZEC(url) {
 
 //https://earnfree.xyz/ZECboard
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'earnfree.xyz'){
 		console.log('startMes');
 		if(!tabidEarnfreeZEC.contains(sender.tab.id))tabidEarnfreeZEC.push(sender.tab.id);

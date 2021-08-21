@@ -35,6 +35,8 @@ function injectScriptCryptoUSDT(url) {
 
 //ethereumfree.info
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'freetether.com'){
 		console.log('startMes');
 		if(!tabidCryptoUSDT.contains(sender.tab.id))tabidCryptoUSDT.push(sender.tab.id);

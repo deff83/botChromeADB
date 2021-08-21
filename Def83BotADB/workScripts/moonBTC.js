@@ -35,6 +35,8 @@ function injectScriptBTC(url) {
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'moonbit.co.in'){
 		//console.log('startMes');
 		if(!tabidBTC.contains(sender.tab.id))tabidBTC.push(sender.tab.id);

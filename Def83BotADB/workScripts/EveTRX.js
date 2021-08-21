@@ -35,6 +35,8 @@ function injectScriptEveTRX(url) {
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'evetrx.xyz'){
 		console.log('startMes');
 		if(!tabidEveTRX.contains(sender.tab.id))tabidEveTRX.push(sender.tab.id);

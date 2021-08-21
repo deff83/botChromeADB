@@ -35,6 +35,8 @@ function injectScriptDASHfaucet(url) {
 
 //https://dash-faucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'dash-faucet.com'){
 		console.log('startMes');
 		if(!tabidDASHfaucet.contains(sender.tab.id))tabidDASHfaucet.push(sender.tab.id);

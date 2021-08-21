@@ -35,6 +35,8 @@ function injectScriptfreeETHxyz(url) {
 
 //hfreeeth.xyz
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'freeeth.xyz'){
 		console.log('startMes');
 		if(!tabidfreeETHxyz.contains(sender.tab.id))tabidfreeETHxyz.push(sender.tab.id);

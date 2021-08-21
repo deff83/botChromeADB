@@ -35,6 +35,8 @@ function injectScriptPOTfaucet(url) {
 
 //https://potcoin-faucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'potcoin-faucet.com'){
 		console.log('startMes');
 		if(!tabidPOTfaucet.contains(sender.tab.id))tabidPOTfaucet.push(sender.tab.id);

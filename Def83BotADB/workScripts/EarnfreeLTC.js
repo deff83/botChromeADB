@@ -37,6 +37,8 @@ function injectScriptEarnfreeLTC(url) {
 
 //https://earnfree-ltc.xyz/dashboard
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'earnfree-ltc.xyz'){
 		console.log('startMes');
 		if(!tabidEarnfreeLTC.contains(sender.tab.id))tabidEarnfreeLTC.push(sender.tab.id);

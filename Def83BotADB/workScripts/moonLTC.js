@@ -35,6 +35,8 @@ function injectScriptLTC(url) {
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'moonliteco.in'){
 		//console.log('startMes');
 		if(!tabidLTC.contains(sender.tab.id))tabidLTC.push(sender.tab.id);

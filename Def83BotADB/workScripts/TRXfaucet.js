@@ -35,6 +35,8 @@ function injectScriptTRXfaucet(url) {
 
 //https://potcoin-faucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'tron-faucet.com'){
 		console.log('startMes');
 		if(!tabidTRXfaucet.contains(sender.tab.id))tabidTRXfaucet.push(sender.tab.id);

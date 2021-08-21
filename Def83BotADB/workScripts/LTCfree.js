@@ -35,6 +35,8 @@ function injectScriptLTCfree(url) {
 
 //litecoinfree.info
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'litecoinfree.info'){
 		console.log('startMes');
 		if(!tabidLTCfree.contains(sender.tab.id))tabidLTCfree.push(sender.tab.id);

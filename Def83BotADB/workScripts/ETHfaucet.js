@@ -35,6 +35,8 @@ function injectScriptETHfaucet(url) {
 
 //https://ethereum-faucet.org
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'ethereum-faucet.org'){
 		console.log('startMes');
 		if(!tabidETHfaucet.contains(sender.tab.id))tabidETHfaucet.push(sender.tab.id);

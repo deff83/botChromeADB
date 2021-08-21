@@ -35,6 +35,8 @@ function injectScriptfreeBTXxyz(url) {
 
 //freebtx.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'freebtx.com'){
 		console.log('startMes');
 		if(!tabidfreeBTXxyz.contains(sender.tab.id))tabidfreeBTXxyz.push(sender.tab.id);

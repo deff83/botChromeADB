@@ -35,6 +35,8 @@ function injectScriptZECfaucet(url) {
 
 //https:/zec-faucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'zec-faucet.com'){
 		console.log('startMes');
 		if(!tabidZECfaucet.contains(sender.tab.id))tabidZECfaucet.push(sender.tab.id);

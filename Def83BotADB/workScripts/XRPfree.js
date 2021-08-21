@@ -35,6 +35,8 @@ function injectScriptXRPfree(url) {
 
 //ripplefree.info
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'ripplefree.info'){
 		console.log('startMes');
 		if(!tabidXRPfree.contains(sender.tab.id))tabidXRPfree.push(sender.tab.id);

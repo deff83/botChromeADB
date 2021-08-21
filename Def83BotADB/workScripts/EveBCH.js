@@ -35,6 +35,8 @@ function injectScriptEveBCH(url) {
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'evebch.xyz'){
 		console.log('startMes');
 		if(!tabidEveBCH.contains(sender.tab.id))tabidEveBCH.push(sender.tab.id);

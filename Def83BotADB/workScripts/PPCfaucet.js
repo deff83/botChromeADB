@@ -35,6 +35,8 @@ function injectScriptPPCfaucet(url) {
 
 //https://ppc-faucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'ppc-faucet.com'){
 		console.log('startMes');
 		if(!tabidPPCfaucet.contains(sender.tab.id))tabidPPCfaucet.push(sender.tab.id);

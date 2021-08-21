@@ -37,6 +37,8 @@ function injectScriptEarnfreeDOGE(url) {
 
 //https://earnfree-DOGE.xyz/dashboard
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'earnfree-doge.xyz'){
 		console.log('startMes');
 		if(!tabidEarnfreeDOGE.contains(sender.tab.id))tabidEarnfreeDOGE.push(sender.tab.id);

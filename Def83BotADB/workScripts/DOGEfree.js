@@ -35,6 +35,8 @@ function injectScriptDOGEfree(url) {
 
 //dogecoinfree.info
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'dogecoinfree.info'){
 		console.log('startMes');
 		if(!tabidDOGEfree.contains(sender.tab.id))tabidDOGEfree.push(sender.tab.id);

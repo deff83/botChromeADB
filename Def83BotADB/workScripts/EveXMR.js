@@ -35,6 +35,8 @@ function injectScriptEveXMR(url) {
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'evexmr.xyz'){
 		console.log('startMes');
 		if(!tabidEveXMR.contains(sender.tab.id))tabidEveXMR.push(sender.tab.id);

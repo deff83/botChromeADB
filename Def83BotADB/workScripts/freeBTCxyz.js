@@ -35,6 +35,8 @@ function injectScriptfreeBTCxyz(url) {
 
 //steb.us
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'steb.us'){
 		console.log('startMes');
 		if(!tabidfreeBTCxyz.contains(sender.tab.id))tabidfreeBTCxyz.push(sender.tab.id);

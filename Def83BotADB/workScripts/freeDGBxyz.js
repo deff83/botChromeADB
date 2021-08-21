@@ -35,6 +35,8 @@ function injectScriptfreeDGBxyz(url) {
 
 //freedgb.xyz
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'freedgb.xyz'){
 		console.log('startMes');
 		if(!tabidfreeDGBxyz.contains(sender.tab.id))tabidfreeDGBxyz.push(sender.tab.id);

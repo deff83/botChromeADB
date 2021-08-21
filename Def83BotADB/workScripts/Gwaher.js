@@ -45,6 +45,8 @@ function injectScriptGwaher(url) {
 
 //https://claimfreecoins.io
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	//console.log(request.src);
 	if(request.src == 'gwaher.com'){
 		console.log('startMes');

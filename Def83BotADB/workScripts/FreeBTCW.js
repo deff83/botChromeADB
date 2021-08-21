@@ -35,6 +35,8 @@ function injectScriptFreeBTCW(url) {
 
 //https://freeb.tc
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'freeb.tc'){
 		console.log('startMes');
 		if(!tabidFreeBTCW.contains(sender.tab.id))tabidFreeBTCW.push(sender.tab.id);

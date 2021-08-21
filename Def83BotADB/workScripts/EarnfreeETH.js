@@ -37,6 +37,8 @@ function injectScriptEarnfreeETH(url) {
 
 //https://earnfree-ETH.xyz/dashboard
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'earnfree-eth.xyz'){
 		console.log('startMes');
 		if(!tabidEarnfreeETH.contains(sender.tab.id))tabidEarnfreeETH.push(sender.tab.id);

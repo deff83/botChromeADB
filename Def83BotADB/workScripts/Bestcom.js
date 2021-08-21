@@ -37,6 +37,8 @@ function injectScriptBestcom(url) {
 
 //https://www.bestchange.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	//console.log(request.src);
 	if(request.src == 'www.bestchange.com'){
 		console.log('startMes');

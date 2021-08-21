@@ -37,6 +37,8 @@ function injectScriptEarnfreeDASH(url) {
 
 //https://earnfree-DASH.xyz/dashboard
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'earnfree-dash.xyz'){
 		console.log('startMes');
 		if(!tabidEarnfreeDASH.contains(sender.tab.id))tabidEarnfreeDASH.push(sender.tab.id);

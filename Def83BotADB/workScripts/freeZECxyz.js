@@ -35,6 +35,8 @@ function injectScriptfreeZECxyz(url) {
 
 //freezec.xyz
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'freezec.xyz'){
 		console.log('startMes');
 		if(!tabidfreeZECxyz.contains(sender.tab.id))tabidfreeZECxyz.push(sender.tab.id);

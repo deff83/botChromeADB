@@ -37,6 +37,8 @@ function injectScriptEarnfreeETHSky(url) {
 
 //https://sky-eth.com/ETHSkyboard
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'sky-eth.com'){
 		console.log('startMes');
 		if(!tabidEarnfreeETHSky.contains(sender.tab.id))tabidEarnfreeETHSky.push(sender.tab.id);

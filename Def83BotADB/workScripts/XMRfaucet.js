@@ -35,6 +35,8 @@ function injectScriptXMRfaucet(url) {
 
 //https://xmr-faucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'xmr-faucet.com'){
 		console.log('startMes');
 		if(!tabidXMRfaucet.contains(sender.tab.id))tabidXMRfaucet.push(sender.tab.id);

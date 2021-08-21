@@ -35,6 +35,8 @@ function injectScriptLTCfaucet(url) {
 
 //https://litecoin-faucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'litecoin-faucet.com'){
 		console.log('startMes');
 		if(!tabidLTCfaucet.contains(sender.tab.id))tabidLTCfaucet.push(sender.tab.id);

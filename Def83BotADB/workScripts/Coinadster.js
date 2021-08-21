@@ -45,6 +45,8 @@ function injectScriptCoinadster(url) {
 
 //https://claimfreecoins.io  99airdrops.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	//console.log(request.src);
 	if(request.src == 'coinadster.com'){
 		console.log('startMes');

@@ -35,6 +35,8 @@ function injectScriptBTCfree(url) {
 
 //tfbitcoin.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'tfbitcoin.com'){
 		console.log('startMes');
 		if(!tabidBTCfree.contains(sender.tab.id))tabidBTCfree.push(sender.tab.id);

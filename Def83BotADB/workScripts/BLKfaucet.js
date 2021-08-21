@@ -35,6 +35,8 @@ function injectScriptBLKfaucet(url) {
 
 //https://blackcoinfaucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'blackcoinfaucet.com'){
 		console.log('startMes');
 		if(!tabidBLKfaucet.contains(sender.tab.id))tabidBLKfaucet.push(sender.tab.id);

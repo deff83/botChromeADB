@@ -35,6 +35,8 @@ function injectScriptBestru(url) {
 
 //https://www.bestchange.ru
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	//console.log(request.src);
 	if(request.src == 'www.bestchange.ru'){
 		console.log('startMes');

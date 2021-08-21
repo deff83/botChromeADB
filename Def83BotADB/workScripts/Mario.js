@@ -35,6 +35,8 @@ function injectScriptMario(url) {
 
 //hhttps://mariobtc.com/index.php
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	//console.log(request.src);
 	if(request.src == 'mariobtc.com' || request.src == '1ink.cc'){
 		console.log('startMes');

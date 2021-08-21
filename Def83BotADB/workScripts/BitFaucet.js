@@ -38,6 +38,8 @@ function injectScriptBitFaucet(url) {
 var firstTemp = true;
 //https://bitfaucet.app
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'bitfaucet.app'){
 		console.log('startMes');
 		if(!tabidBitFaucet.contains(sender.tab.id))tabidBitFaucet.push(sender.tab.id);

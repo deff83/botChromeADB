@@ -35,6 +35,8 @@ function injectScriptDGBfaucet(url) {
 
 //https://digibytefaucet.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'digibytefaucet.com'){
 		console.log('startMes');
 		if(!tabidDGBfaucet.contains(sender.tab.id))tabidDGBfaucet.push(sender.tab.id);

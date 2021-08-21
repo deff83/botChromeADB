@@ -37,6 +37,8 @@ function injectScriptEarnfreeBCH(url) {
 
 //https://earnfree-BCH.xyz/BCHboard
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	if(request.src == 'earnfree-bch.xyz'){
 		console.log('startMes');
 		if(!tabidEarnfreeBCH.contains(sender.tab.id))tabidEarnfreeBCH.push(sender.tab.id);

@@ -35,6 +35,8 @@ function injectScriptfreeDOGE(url) {
 
 //https://www.free-dogecoin.com/free/
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
+	
+	if (boolStarting == false) {return;}
 	//console.log(request.src);
 	if(request.src == 'www.free-dogecoin.com'){
 		console.log('startMes');
