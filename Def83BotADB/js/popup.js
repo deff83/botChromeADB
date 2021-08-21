@@ -17,11 +17,16 @@ function init(){
 var checkbox1 = document.getElementById('check1');
 var checkbox2 = document.getElementById('check2');
 var checkbox3 = document.getElementById('check3');
+var checkbox4 = document.getElementById('check4');
 
 
 
 checkbox2.onclick = function (){	
 	chrome.extension.sendMessage('setboolactivechangeHigh'+checkbox2.checked, function(backMessage){});
+}
+
+checkbox4.onclick = function (){	
+	chrome.extension.sendMessage('setboolcloseTabs'+checkbox4.checked, function(backMessage){});
 }
 
 
@@ -49,6 +54,10 @@ checkbox3.onclick = function (){
 }
 
 
+
+chrome.extension.sendMessage('getboolcloseTabs', function(backMessage){
+	checkbox4.checked = backMessage;
+});
 
 chrome.extension.sendMessage('getBoolStartingTrue', function(backMessage){
 	checkbox3.checked = backMessage;

@@ -1,7 +1,7 @@
 //скрипт подключаемый
 try{
 
-	drawDIVSkrit('1');
+	//drawDIVSkrit('1');
 	
 
 	
