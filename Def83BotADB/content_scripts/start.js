@@ -535,48 +535,53 @@ function addtimerforcheckurl(){
 }
 addtimerforcheckurl();
 
-// начать повторы с интервалом 2 сек
-var timerId = setInterval(function() {
-	
-	getCountTabs();
-	
-	if (boolStarting){	//старт кнопкой
-		checkurlTabs();
-		set_save_tab();
-		op++;
-		if(boolTimerUnBlock){ unBlockTimer ++;}
-		for(var i = 0; i < Programms.length; i++){
-			
-			if (Programms[i].alreadytrue == true && Programms[i].boolStartingDOGE == true){
-				Programms[i].boolStartingDOGE = false;
-				Programms[i].startintervalDOGE = Programms[i].intervalDOGE - 120;
-			}
-			
-			if(!Programms[i].boolStartingDOGE)	{Programms[i].startintervalDOGE++;}else{
-			if(boolTimerUnBlock){
+
+function startfunction(){
+	// начать повторы с интервалом 2 сек
+	var timerId = setInterval(function() {
+		
+		getCountTabs();
+		
+		if (boolStarting){	//старт кнопкой
+			checkurlTabs();
+			set_save_tab();
+			op++;
+			if(boolTimerUnBlock){ unBlockTimer ++;}
+			for(var i = 0; i < Programms.length; i++){
 				
-				if(unBlockTimer > Programms[i].boolingTime){
-						Programms[i].boolStartingDOGE = false;
-						block = false;
-						unBlockTimer = 0;
-						boolTimerUnBlock = false;
-					}
-			};}
-			
-			if ((Programms[i].startintervalDOGE / Programms[i].intervalDOGE) > 1 && Programms[i].skipblock && Programms[i].userBool){
-				Programms[i].start(i); Programms[i].startintervalDOGE = 0;
-			}
-			
-			
-			if((Programms[i].startintervalDOGE / Programms[i].intervalDOGE) > 1 && !block && Programms[i].userBool && Programms[i].skipblock==false) {
-				Programms[i].start(i); Programms[i].startintervalDOGE = 0;
-				unBlockTimer = 0;			
-				boolTimerUnBlock = true;
+				if (Programms[i].alreadytrue == true && Programms[i].boolStartingDOGE == true){
+					Programms[i].boolStartingDOGE = false;
+					Programms[i].startintervalDOGE = Programms[i].intervalDOGE - 120;
+				}
 				
+				if(!Programms[i].boolStartingDOGE)	{Programms[i].startintervalDOGE++;}else{
+				if(boolTimerUnBlock){
+					
+					if(unBlockTimer > Programms[i].boolingTime){
+							Programms[i].boolStartingDOGE = false;
+							block = false;
+							unBlockTimer = 0;
+							boolTimerUnBlock = false;
+						}
+				};}
+				
+				if ((Programms[i].startintervalDOGE / Programms[i].intervalDOGE) > 1 && Programms[i].skipblock && Programms[i].userBool){
+					Programms[i].start(i); Programms[i].startintervalDOGE = 0;
+				}
+				
+				
+				if((Programms[i].startintervalDOGE / Programms[i].intervalDOGE) > 1 && !block && Programms[i].userBool && Programms[i].skipblock==false) {
+					Programms[i].start(i); Programms[i].startintervalDOGE = 0;
+					unBlockTimer = 0;			
+					boolTimerUnBlock = true;
+					
+				}
 			}
 		}
-	}
-}, 1000);
+	}, 1000);
+
+}
+
 
 //Programms.push(new Programm('changeBest.ru', 86405, -10+86405, 360, false, moonBestru, 1, 0));
 //слушатель событий
@@ -653,9 +658,13 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	};
 	if(request=='setBoolStartingtrue'){
 		boolStarting = true;
+		startfunction();
 	};
 	if(request=='setBoolStartingfalse'){
 		boolStarting = false;
+		try{
+			clearTimeout(timerId);
+		}catch(Exc){}
 	};
 	if(request=='setBoolAllFalse'){
 		for(var i = 0; i < Programms.length; i++){
