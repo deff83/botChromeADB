@@ -27,7 +27,7 @@ async  function moonfreeETH(indexPrfree){
 
 
 function injectScriptfreeETH(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidfreeETH.push(tab.id);
 	
   });
@@ -36,7 +36,7 @@ function injectScriptfreeETH(url) {
 
 //https://www.free-ethereum.io
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'www.free-ethereum.io'){
 		console.log('startMes');
 		if(!tabidfreeETH.contains(sender.tab.id))tabidfreeETH.push(sender.tab.id);

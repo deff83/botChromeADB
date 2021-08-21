@@ -26,7 +26,7 @@ async  function moonCryptoUSDT(indexPrfree){
 
 
 function injectScriptCryptoUSDT(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidCryptoUSDT.push(tab.id);
 	
   });

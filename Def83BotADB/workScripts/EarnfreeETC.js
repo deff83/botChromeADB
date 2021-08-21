@@ -26,7 +26,7 @@ async  function moonEarnfreeETC(indexPrfree){
 
 
 function injectScriptEarnfreeETC(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEarnfreeETC.push(tab.id);
 	
   });

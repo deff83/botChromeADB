@@ -28,7 +28,7 @@ async  function moonEarnfreeBCH(indexPrfree){
 
 
 function injectScriptEarnfreeBCH(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEarnfreeBCH.push(tab.id);
 	
   });

@@ -26,7 +26,7 @@ async  function moonEveBCH(indexPrfree){
 
 
 function injectScriptEveBCH(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEveBCH.push(tab.id);
 	
   });

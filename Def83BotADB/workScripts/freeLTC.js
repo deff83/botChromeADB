@@ -27,7 +27,7 @@ async  function moonfreeLTC(indexPrfreeLTCog){
 
 
 function injectScriptfreeLTC(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidfreeLTC.push(tab.id);
 	
   });
@@ -36,7 +36,7 @@ function injectScriptfreeLTC(url) {
 
 
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'www.free-litecoin.com'){
 		console.log('startMes');
 		if(!tabidfreeLTC.contains(sender.tab.id))tabidfreeLTC.push(sender.tab.id);

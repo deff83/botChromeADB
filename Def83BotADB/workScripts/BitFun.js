@@ -26,7 +26,7 @@ async  function moonBitFun(indexPrBitFunog){
 
 
 function injectScriptBitFun(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBitFun.push(tab.id);
   });
 };

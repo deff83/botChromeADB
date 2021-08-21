@@ -36,7 +36,7 @@ async  function moonClickCash(indexPrfree){
 	
 
 function injectScriptClickCash(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidClickCash.push(tab.id);
 	
   });
@@ -45,7 +45,7 @@ function injectScriptClickCash(url) {
 
 //https://claimfreecoins.io
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'clic.cash'){
 		console.log('startMes');
 		

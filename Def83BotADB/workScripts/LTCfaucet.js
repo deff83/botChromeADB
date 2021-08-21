@@ -26,7 +26,7 @@ async  function moonLTCfaucet(indexPrfree){
 
 
 function injectScriptLTCfaucet(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidLTCfaucet.push(tab.id);
 	
   });

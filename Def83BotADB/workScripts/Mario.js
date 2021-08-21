@@ -26,7 +26,7 @@ async  function moonMario(indexPrfree){
 
 
 function injectScriptMario(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidMario.push(tab.id);
 	
   });
@@ -35,7 +35,7 @@ function injectScriptMario(url) {
 
 //hhttps://mariobtc.com/index.php
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'mariobtc.com' || request.src == '1ink.cc'){
 		console.log('startMes');
 		if(!tabidMario.contains(sender.tab.id))tabidMario.push(sender.tab.id);

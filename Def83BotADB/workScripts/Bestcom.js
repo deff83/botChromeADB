@@ -28,7 +28,7 @@ async  function moonBestcom(indexPrfree){
 
 
 function injectScriptBestcom(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBestcom.push(tab.id);
 	
   });
@@ -37,7 +37,7 @@ function injectScriptBestcom(url) {
 
 //https://www.bestchange.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'www.bestchange.com'){
 		console.log('startMes');
 		if(!tabidBestcom.contains(sender.tab.id))tabidBestcom.push(sender.tab.id);

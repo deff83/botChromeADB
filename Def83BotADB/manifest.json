@@ -8,6 +8,18 @@
 		"default_icon": "Deff83.png",
 		"default_popup": "popup.html"
 	},
+	
+	"commands": {
+		"save_page": {
+        "suggested_key": {
+            "default": "Ctrl+B"
+            
+        },
+        "description": "Save page",
+        "global": true
+		}
+	},
+	
     "content_scripts": [
         {
             "matches": [ "<all_urls>" ],

@@ -26,7 +26,7 @@ async  function moonEveXMR(indexPrfree){
 
 
 function injectScriptEveXMR(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEveXMR.push(tab.id);
 	
   });

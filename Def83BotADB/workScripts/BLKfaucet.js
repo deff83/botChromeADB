@@ -26,7 +26,7 @@ async  function moonBLKfaucet(indexPrfree){
 
 
 function injectScriptBLKfaucet(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBLKfaucet.push(tab.id);
 	
   });

@@ -26,7 +26,7 @@ async  function moonXMRfaucet(indexPrfree){
 
 
 function injectScriptXMRfaucet(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidXMRfaucet.push(tab.id);
 	
   });

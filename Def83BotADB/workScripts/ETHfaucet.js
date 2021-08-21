@@ -26,7 +26,7 @@ async  function moonETHfaucet(indexPrfree){
 
 
 function injectScriptETHfaucet(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidETHfaucet.push(tab.id);
 	
   });

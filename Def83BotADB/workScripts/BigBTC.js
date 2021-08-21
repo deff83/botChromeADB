@@ -36,7 +36,8 @@ async  function moonBigBTC(indexPrfree){
 	
 
 function injectScriptBigBTC(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+ // chrome.tabs.create({url : url, active:false}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBigBTC.push(tab.id);
 	
   });
@@ -45,7 +46,7 @@ function injectScriptBigBTC(url) {
 
 //https://claimfreecoins.io
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'bigbtc.win'){
 		console.log('startMes');
 		

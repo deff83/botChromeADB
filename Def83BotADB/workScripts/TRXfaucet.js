@@ -26,7 +26,7 @@ async  function moonTRXfaucet(indexPrfree){
 
 
 function injectScriptTRXfaucet(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidTRXfaucet.push(tab.id);
 	
   });

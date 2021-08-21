@@ -29,7 +29,7 @@ async  function moonBonusBitcoin(indexPrBonusBitcoinog){
 
 
 function injectScriptBonusBitcoin(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBonusBitcoin.push(tab.id);
   });
 };

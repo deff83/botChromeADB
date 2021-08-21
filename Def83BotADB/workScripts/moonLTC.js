@@ -28,7 +28,7 @@ async  function moonLTC(indexPrLTCog){
 
 
 function injectScriptLTC(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidLTC.push(tab.id);
   });
 };

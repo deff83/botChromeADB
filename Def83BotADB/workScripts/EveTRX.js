@@ -26,7 +26,7 @@ async  function moonEveTRX(indexPrfree){
 
 
 function injectScriptEveTRX(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEveTRX.push(tab.id);
 	
   });

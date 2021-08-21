@@ -1,4 +1,57 @@
 body{
 	width:400px;
 	height:100px;
+	background-color: #ccffff;
+}
+
+.texty{
+	text-align:center;
+	
+	font-family: "Crimson Text script=latin rev=4"; 
+	font-size: 18px; 
+	font-style: normal; 
+	font-weight: 400; 
+	line-height: 1.33333;
+}
+
+.switchdiv{
+	position:relative;
+	display: flex;
+	padding: 5px;
+}
+
+.switch{
+	position:relative;
+	width: 50px;
+	height: 20px;
+	
+}
+
+input[type="checkbox"]{
+	position:absolute;
+	width: 40px;
+	height: 20px;
+	-webkit-appearance:none;
+	outline: none;
+	background: #cccccc;
+	border-radius: 10px;
+	
+}
+
+input:checked[type="checkbox"]{
+	background: #40e551;
+}
+
+input[type="checkbox"]:before{
+	content: '';
+	position:absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	top:0;
+	left:0;
+	background: #fff;
+}
+input:checked[type="checkbox"]:before{
+	left:20px;
 }

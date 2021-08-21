@@ -28,7 +28,7 @@ async  function moonEarnfreeDOGE(indexPrfree){
 
 
 function injectScriptEarnfreeDOGE(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEarnfreeDOGE.push(tab.id);
 	
   });

@@ -28,7 +28,7 @@ async  function moonEarnfreeETH(indexPrfree){
 
 
 function injectScriptEarnfreeETH(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEarnfreeETH.push(tab.id);
 	
   });

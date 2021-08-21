@@ -26,7 +26,7 @@ async  function moonFreeBTCW(indexPrfree){
 
 
 function injectScriptFreeBTCW(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidFreeBTCW.push(tab.id);
 	
   });

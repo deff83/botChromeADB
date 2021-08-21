@@ -26,7 +26,7 @@ async  function moonfreeDGBxyz(indexPrfree){
 
 
 function injectScriptfreeDGBxyz(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidfreeDGBxyz.push(tab.id);
 	
   });

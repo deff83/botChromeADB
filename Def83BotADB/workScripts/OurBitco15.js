@@ -36,7 +36,7 @@ async  function moonOurBitco15(indexPrfree){
 	
 
 function injectScriptOurBitco15(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidOurBitco15.push(tab.id);
 	
   });
@@ -45,7 +45,7 @@ function injectScriptOurBitco15(url) {
 
 //https://claimfreecoins.io
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'ourbitco.in'){
 		console.log('startMes');
 		
@@ -59,6 +59,13 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				//кнопка логин
 				
+				if (colImgOurBitco15 < 2){
+					colImgOurBitco15 = colImgOurBitco15 + 1;
+					f_callback('reload'); 
+					console.log('reload');
+					return;
+				}
+				colImgOurBitco15 = 0;
 				
 				var idBody = frag.getElementById('supporters');
 				//var idlogin = frag.getElementById('login');

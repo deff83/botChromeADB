@@ -36,7 +36,7 @@ async  function moonClaimFreeDASH(indexPrfree){
 	
 
 function injectScriptClaimFreeDASH(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidClaimFreeDASH.push(tab.id);
 	
   });
@@ -45,7 +45,7 @@ function injectScriptClaimFreeDASH(url) {
 
 //https://claimfreecoins.io
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'claimfreecoins.io'){
 		console.log('startMes');
 		try{
@@ -236,6 +236,24 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	}
 	
+	
+	if(request.src == 'doge-mining.win'){
+		console.log('doge-startMes');
+		if(!tabidClaimFreeDASH.contains(sender.tab.id))tabidClaimFreeDASH.push(sender.tab.id);
+		try{
+			chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+			chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/pokaz.js'});
+			let frag = document.createRange().createContextualFragment(request.html);
+			var idcountdown = frag.getElementById('countdown');
+			if (idcountdown!=null){
+				
+				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/DogeMininmg.js'});
+			}
+			
+			
+		}catch(Exc){}
+		return;
+	}
 	
 	
 	if(request.src == 's1.coinmarketwaves.com'){

@@ -26,7 +26,7 @@ async  function moonETHfree(indexPrfree){
 
 
 function injectScriptETHfree(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidETHfree.push(tab.id);
 	
   });

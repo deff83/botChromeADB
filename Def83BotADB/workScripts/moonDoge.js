@@ -28,7 +28,7 @@ async  function moonDOGE(indexPrDOGEog){
 
 
 function injectScriptDOGE(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidDOGE.push(tab.id);
   });
 };

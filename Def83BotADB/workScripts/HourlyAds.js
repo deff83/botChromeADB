@@ -26,7 +26,7 @@ async  function moonHourlyAds(indexPrfree){
 
 
 function injectScriptHourlyAds(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidHourlyAds.push(tab.id);
 	
   });

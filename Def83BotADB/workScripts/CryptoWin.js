@@ -36,7 +36,7 @@ async  function moonCryptoWin(indexPrfree){
 	
 
 function injectScriptCryptoWin(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidCryptoWin.push(tab.id);
 	
   });
@@ -45,7 +45,7 @@ function injectScriptCryptoWin(url) {
 
 //https://claimfreecoins.io  99airdrops.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'cryptowin.io'){
 		console.log('startMes');
 		
@@ -54,8 +54,22 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		try{
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/pokaz.js'});
-				//console.log('Deff83 freeLTC', request);
+				//console.log('Deff83 freeLTC', request); 
 				let frag = document.createRange().createContextualFragment(request.html);
+				
+				
+				var div1 = frag.querySelectorAll('div')[5];
+				console.log(div1);
+				
+				
+				var bal = div1.getElementsByTagName('b')[1];
+				
+				if (bal!=null){
+					console.log(bal.textContent);
+					Programms[indexPrCryptoWin].balance = parseFloat(bal.textContent);
+				}
+				
+				
 				
 				
 				var idusername = frag.getElementById('username');

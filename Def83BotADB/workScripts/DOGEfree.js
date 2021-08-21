@@ -26,7 +26,7 @@ async  function moonDOGEfree(indexPrfree){
 
 
 function injectScriptDOGEfree(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidDOGEfree.push(tab.id);
 	
   });

@@ -36,7 +36,7 @@ async  function moonFC(indexPrfree){
 	
 
 function injectScriptFC(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidFC.push(tab.id);
 	
   });
@@ -45,7 +45,7 @@ function injectScriptFC(url) {
 
 //https://claimfreecoins.io
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'faucetcrypto.net'){
 		console.log('startMes');
 		
@@ -59,8 +59,13 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				var idBody = frag.getElementById('layout-wrapper');
 				
-				var idclaimbutn = idBody.getElementsByClassName('btn btn-primary btn-lg claim-button')[0];
 				
+				if (idBody==null){
+					return;
+				}
+				
+				var idclaimbutn = idBody.getElementsByClassName('btn btn-primary btn-lg claim-button')[0];
+				console.log(idclaimbutn);
 				if(idclaimbutn!= null){
 				
 				//page-topbar
@@ -84,10 +89,16 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					Programms[indexPrFC].startintervalDOGE = Programms[indexPrFC].intervalDOGE - second;
 				}
 				
+				var text_test_d = idBody.getElementsByClassName('lh-1 mb-1 font-weight-bold')[3];
+				if (text_test_d!=null){
+					Programms[indexPrFC].text_test = text_test_d.textContent;
+				
+				
 				Programms[indexPrFC].boolStartingDOGE = false;
 				block = false;
 				if(tabidFC.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 				tabidFC.remove(sender.tab.id);
+				}
 				//кнопка логин
 				
 				/*

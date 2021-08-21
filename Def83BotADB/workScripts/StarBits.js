@@ -36,7 +36,7 @@ async  function moonStarBits(indexPrfree){
 	
 
 function injectScriptStarBits(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidStarBits.push(tab.id);
 	
   });
@@ -45,7 +45,7 @@ function injectScriptStarBits(url) {
 
 //https://claimfreecoins.io  99airdrops.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'starbits.io'){
 		console.log('startMes');
 		
@@ -260,7 +260,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	
 	}
-	
+	/*
 	if(request.src == '99airdrops.com'){
 		if(!tabidStarBits.contains(sender.tab.id))tabidStarBits.push(sender.tab.id);
 		//console.log('tut1');
@@ -274,7 +274,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		}catch(Exc){console.log(Exc);}
 	}
 	
-	
+	*/
 	if(tabidStarBits.contains(sender.tab.id)){	//если во вкладке другой адрес
 		if(request.src != 'starbits.io' && request.src != '99airdrops.com'){
 			tabidStarBits.remove(sender.tab.id);

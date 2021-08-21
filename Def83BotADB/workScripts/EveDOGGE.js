@@ -26,7 +26,7 @@ async  function moonEveDOGGE(indexPrfree){
 
 
 function injectScriptEveDOGGE(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEveDOGGE.push(tab.id);
 	
   });

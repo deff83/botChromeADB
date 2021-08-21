@@ -24,7 +24,7 @@ function click(){
 
 
 function creatDivForProgress(prog, i){
-	var divcreate = "<div id='progress"+i+"' class='progress'><input type='checkbox'  class='checkbox'><div class='content'><div class='progressbar'></div><div class='textProgress'>"+prog.name + "</div><div class='balance'></div><div class='balanceUSD'></div></div></div>";
+	var divcreate = "<div id='progress"+i+"' class='progress'><input type='checkbox'  class='checkbox'><div class='content'><div class='progressbar'></div><div class='textProgress'>"+prog.name + "</div><div class='balance'></div><div class='balanceUSD'></div><div class='testtext'></div></div></div>";
 	
 	return divcreate;
 }
@@ -60,6 +60,9 @@ function updateDivForProgress(prog, i){
 	textProgressBar.innerHTML = updateTextProgress;
 	var balanceProgress = document.getElementById('progress'+i).getElementsByClassName('content')[0].getElementsByClassName('balance')[0];
 	balanceProgress.innerHTML = (parseFloat(prog.balance) / prog.delited);
+	var testtextProgress = document.getElementById('progress'+i).getElementsByClassName('content')[0].getElementsByClassName('testtext')[0];
+	testtextProgress.innerHTML =  prog.text_test;
+	
 	var balanceProgress = document.getElementById('progress'+i).getElementsByClassName('content')[0].getElementsByClassName('balanceUSD')[0];
 	balanceProgress.innerHTML =  Math.floor((parseFloat(prog.balance) / prog.delited)*prog.multUSD*100)/100 + "$";
 	var checkboxProgress = document.getElementById('progress'+i).getElementsByClassName('checkbox')[0];
@@ -80,7 +83,7 @@ function setProgressBar(i) {
       var n, id, progress;
 
        progress = new CircularProgress({
-        radius: 40,
+        radius: 30,
         strokeStyle: 'black',
         lineCap: 'square',
         lineJoin: 'round',
@@ -111,13 +114,14 @@ elementProgressBar.appendChild(progress.el);
 var startButt = document.getElementById("startButt");
 var clearButt = document.getElementById("clearButt");
 var clearInfo = document.getElementById("clearInfo");
+var clearButt1 = document.getElementById("Butt1");
 
 
 
 chrome.extension.sendMessage('getBoolStartingTrue', function(backMessage){
 	if(backMessage){
-		startButt.setAttribute("Style", "display:none");
-		clearButt.setAttribute("Style", "display:none");
+		//startButt.setAttribute("Style", "display:none");
+		document.getElementById("buttonsdiv").setAttribute("Style", "display:none");
 		document.getElementById("infotestStart").setAttribute("Style", "display:none");
 		doTimerForrs();
 	}
@@ -129,11 +133,12 @@ chrome.extension.sendMessage('getBoolStartingTrue', function(backMessage){
 startButt.onclick = function (){
 	
 	document.getElementById("infotestStart").setAttribute("Style", "display:none");
+	document.getElementById("buttonsdiv").setAttribute("Style", "display:none");
 
-	startButt.setAttribute("Style", "display:none");
-	clearButt.setAttribute("Style", "display:none");
+	//startButt.setAttribute("Style", "display:none");
+	//clearButt.setAttribute("Style", "display:none");
 	
-	chrome.extension.sendMessage('setBoolStartingTrue', function(backMessage){});
+	chrome.extension.sendMessage('setBoolStartingtrue', function(backMessage){});
 	for(var i=0; i< proccesesforSt.length; i++){
 		var chec = document.getElementById('checkboxSt'+i).getElementsByTagName('input')[0];
 		console.log(chec.checked);
@@ -154,6 +159,16 @@ clearButt.onclick = function (){
 	});
 	
 }
+
+clearButt1.onclick = function (){
+	chrome.extension.sendMessage('setclearButt1', function(backMessage){
+		
+		location.reload();
+	});
+	
+}
+
+
 
 clearInfo.onclick = function (){
 	chrome.extension.sendMessage('clearinfo', function(backMessage){

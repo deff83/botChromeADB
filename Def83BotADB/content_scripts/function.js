@@ -97,6 +97,23 @@ function drawDIVSkrit(type){
 }
 
 function drawDIVUser(type, onclickStr){
+	if (type == '0'){
+		
+		
+		var d=document.createElement('div');
+		d.style.position = 'fixed';
+		d.style.width = '500px';
+		d.style.height = '40px';
+		d.style.left = '0px';
+		d.style.top = '0px';
+		d.style.background = '#ffffff';
+		d.style.zIndex = 2147483646;
+		document.body.appendChild(d);
+		
+		d.innerHTML = '<div></div><div id="userpaneltext" style="color:#880000; font-size: 20px;">'+onclickStr+'</div>';
+		
+	}
+	
 	if (type == '1'){
 		var script = document.createElement('script');
 		script.setAttribute('type', 'text/javascript');

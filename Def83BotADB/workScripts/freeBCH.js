@@ -26,7 +26,7 @@ async  function moonfreeBCH(indexPrfree){
 
 
 function injectScriptfreeBCH(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidfreeBCH.push(tab.id);
 	
   });
@@ -35,7 +35,7 @@ function injectScriptfreeBCH(url) {
 
 //https://www.free-bcash.com/free/
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'www.free-bcash.com'){
 		console.log('startMes');
 		if(!tabidfreeBCH.contains(sender.tab.id))tabidfreeBCH.push(sender.tab.id);

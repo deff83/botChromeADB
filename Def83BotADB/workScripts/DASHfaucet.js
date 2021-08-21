@@ -26,7 +26,7 @@ async  function moonDASHfaucet(indexPrfree){
 
 
 function injectScriptDASHfaucet(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidDASHfaucet.push(tab.id);
 	
   });

@@ -26,7 +26,7 @@ async  function moonEveLTC(indexPrfree){
 
 
 function injectScriptEveLTC(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidEveLTC.push(tab.id);
 	
   });

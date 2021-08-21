@@ -28,7 +28,7 @@ async  function moonBitFaucet(indexPrfree){
 
 
 function injectScriptBitFaucet(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBitFaucet.push(tab.id);
 	
   });

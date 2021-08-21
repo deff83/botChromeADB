@@ -26,7 +26,7 @@ async  function moonfreeDOGE(indexPrfree){
 
 
 function injectScriptfreeDOGE(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidfreeDOGE.push(tab.id);
 	
   });
@@ -35,7 +35,7 @@ function injectScriptfreeDOGE(url) {
 
 //https://www.free-dogecoin.com/free/
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'www.free-dogecoin.com'){
 		console.log('startMes');
 		if(!tabidfreeDOGE.contains(sender.tab.id))tabidfreeDOGE.push(sender.tab.id);

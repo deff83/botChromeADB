@@ -26,7 +26,7 @@ async  function moonXRPfree(indexPrfree){
 
 
 function injectScriptXRPfree(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidXRPfree.push(tab.id);
 	
   });

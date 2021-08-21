@@ -36,7 +36,7 @@ async  function moonBitMoon(indexPrfree){
 	
 
 function injectScriptBitMoon(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBitMoon.push(tab.id);
 	
   });
@@ -45,7 +45,7 @@ function injectScriptBitMoon(url) {
 
 //https://claimfreecoins.io  99airdrops.com
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+//	console.log(request.src);
 	if(request.src == 'earnbitmoon.club'){
 		console.log('startMes');
 		

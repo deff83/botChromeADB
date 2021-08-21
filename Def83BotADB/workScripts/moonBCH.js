@@ -30,7 +30,7 @@ async  function moonBCH(indexPrBCHog){
 
 
 function injectScriptBCH(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBCH.push(tab.id);
   });
 };

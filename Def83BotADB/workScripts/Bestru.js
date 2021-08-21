@@ -26,7 +26,7 @@ async  function moonBestru(indexPrfree){
 
 
 function injectScriptBestru(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidBestru.push(tab.id);
 	
   });
@@ -35,7 +35,7 @@ function injectScriptBestru(url) {
 
 //https://www.bestchange.ru
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'www.bestchange.ru'){
 		console.log('startMes');
 		if(!tabidBestru.contains(sender.tab.id))tabidBestru.push(sender.tab.id);

@@ -36,7 +36,7 @@ async  function moonMulticoin(indexPrfree){
 	
 
 function injectScriptMulticoin(url) {
-  chrome.tabs.create({url : url}, function(tab) {
+  chrome.tabs.create({url : url, active:false}, function(tab) {
 	tabidMulticoin.push(tab.id);
 	
   });
@@ -45,7 +45,7 @@ function injectScriptMulticoin(url) {
 
 //https://claimfreecoins.io
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
-	console.log(request.src);
+	//console.log(request.src);
 	if(request.src == 'multicoins.net'){
 		console.log('startMes');
 		
@@ -87,6 +87,14 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					var second = minute*60+(secondsfg)*1; 
 					Programms[indexPrMulticoin].startintervalDOGE = Programms[indexPrMulticoin].intervalDOGE - second;
 				}
+				
+				var text_test_d = idBody.getElementsByClassName('lh-1 mb-1 font-weight-bold')[3];
+				console.log(text_test_d);
+				if (text_test_d!=null){
+					Programms[indexPrMulticoin].text_test = text_test_d.textContent;
+				}
+				
+				
 				
 				Programms[indexPrMulticoin].boolStartingDOGE = false;
 				block = false;
