@@ -74,11 +74,14 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					var colImgFeyFaucetTrext = Math.floor(colImgFeyFaucet/2) - 1;
 					var colImgFeyFaucetTrextFey = colImgFeyFaucetTrext * 0.0075;
 					
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+					if (colImgFeyFaucet%2==0){
 					
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', code:'drawDIVUser("0", `count reload: '+colImgFeyFaucetTrext+'('+colImgFeyFaucetTrextFey+'FEY min 0.3FEY)    <a href="https://feyorra.top/dashboard">withrout</a>`);'});
-					
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/FeyFaucet.js'});
+						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+						
+						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', code:'drawDIVUser("0", `count reload: '+colImgFeyFaucetTrext+'('+colImgFeyFaucetTrextFey+'FEY min 0.3FEY)    <a href="https://feyorra.top/dashboard">withrout</a>`);'});
+						
+						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/FeyFaucet.js'});
+					}
 					return;
 				}
 				
