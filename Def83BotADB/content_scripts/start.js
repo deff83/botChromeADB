@@ -321,10 +321,10 @@ massivremovef = [
 				"luckyfish.io",
 				"bitcoincasino.io",
 				"amateurbelles.com",
-				"datsgirl.com",
+				"datsgirl.com","www.google.com", 
 				"rtbme24.com",
 				"thebestgame2020.com",
-				"llink.site",
+				"llink.site", 
 				"eu.dspultra.com",
 				"tokenize.exchange","www.bet365.com",
 				"log.videocampaign.co","luckyforbet.com","dogemining.biz",
@@ -334,7 +334,7 @@ massivremovef = [
 				"clickco.net",
 				"miningcompany.ltd",
 				"pornhubsurvey.com",
-				"coothupu.net", "salmon.games", "wilfulpessimistic.com", "x-1xbet-11831.world", "streamtv.by", "trovabious.pro", "alfik-fik.com", "app.simplefx.com", "minersgarden.com", "x-1xbet-53596.world", "bestanimegame.com", "storecompletely-thenewestfile.best", "districtbaloneywhiskers.com", "happy-porn.com", "app.simplefx.com", "bestanimegame.com", "tilltucked.com", "x-1xbet-53596.world", "s.viifan.com", "tentmess.com", "streamtv.by", "x-1xbet-16640.world", 	"www.groupian.io","litecoinads.com", "x-1xbet-02480.world", "deepdice.bet", "worldoftanks.ru", "streambucks.io", "scryptcube.com", "www.highrevenuecpm.com", "x-1xbet-67578.world", "btc-sites.com", "apptastic-mobi.g2afse.com", "www.ostlon.com", "installhighly-therenewedfile.best", "s.viifax.com", "x-1xbet-94086.world", "topepisode.com", "cartoonsinfo.com", "axtrader.com", "travelsecurityline.eu", "pokeramazing.com", "cryptonex.xyz", "cryptofans.ru", "www.funnelleadsystem.com", "x-1xbet-78144.world", "startvideo.life", "s.viitok.com", "www.adanaatikhaber.com", "ru.warface.com", "www.tubezaur.com", "itrk.itrkinc.com", "www.my1tube.com", "p.1ts06.top", "www.monkamovies.com", "derevya2sh8ka09.com", "www.porngur.com", "www.ipuss.tv", "arrano.network", "www.youhodler.com", "cosmeticsgenerosity.com", "creative.alxbgo.com", "nyniglinu.pro", "bullx.io", "date-till-late.us","www.myemailtracking.com" , "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "bet1-x81025.com", "a.leon.ru", "atani.com", "offer.alibaba.com", "exo.xvideass.top", "musict.ir", "www.musict.ir", "cardinalimprovementscartrige.com", "bet1-x58326.com", "bet1-x62670.com", "bet1-x95895.com", "cas-fast-39.com", "x1.x-casiinox-game.com", "warning.rt.ru", "dnevnienovosti.ru", "www.myemailtracking.com", "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "bet1-x81025.com", "a.leon.ru", "edurustoday.ru","mbest.aliexpress.ru", "bet1-x72792.com", "startvideo.fun", "fadsimz.com", "accounts.binancezh.pro", "anyporn.org", "cos.flacon-magazine.com", "searchsecurer.com","bet1-x10847.com", "9k8f9.bemobtrcks.com", "ali2express.com", "kts.visitstats.com", "getdoge.io", "teamsperilous.com", "41upk.bemobtrk.com", "41upk.bemobpath.com", "www.leomax.ru", "gooblesdd.com", "lofepsypti.pro", "dschat.club", "www.crucerosmediterraneo.travel", "login.bitlocity.io", "bet1-x28746.com", "lp.crypt.casino", "bet1-x20027.com", "liteworld.live", "g5xq2z.mighttrack.com", "apps.apple.com", "leonodikeu9sj10.com", "bitgenerator.online", "www.baby.ru", "globalcrypto.exchange", "purplemining.ltd", "bitstarz1.eu","push.aarth.net", "landing.hentaiheroes.com", "www.adslyoigo.net", "news.gnezdo.ru", "stakecube.net", "www.mgid.com", "bet1-x22216.com", "99airdrops.com","accounts.binance.com", "rt.bongacams13.com","srsly.ru", "www.vokrug.tv", "bet1-x62651.com", "www.catala-reinon.es", "www.xm.com", "beklefkiom.com", "euphe-gun.com", "crawlarchive1120.com", "theonlygames.com", "www.google.com", "spbinvestment.ru", "bit-sitess.com", "crsed.net", "bet1-x31759.com", "www.purplemining.ltd","artisany.net", "bet1-x78464.com", "cryptotabbrowser.com", "newsurveyrus.typeform.com", "cryptoware.biz", "rsafrwd.com", "adverdirect.com", "fb.ru", "www.youtube.com", "kto-chto-gde.ru", "hyip.money", "p.1ts18.top", "code4us.com", "prizebox.org", "inbound.trilema.com", "epicmotoring.com","pegloang.com", "www.aaxpro.com", "belaya2shu1ba1.com", "rabota-doma.org", "cryptocoinsad.com","bet1-x24022.com", "mediasama.com", "see.xxx", "www.toprevenuecpmnetwork.com", "adbtc.io", "twndo77864.com", "ru.4game.com", "united-family.org", "cretgate.com", "cointools.info", "catermich.pro", "r.rips.icu", "pinednews.ru", "tq.adventurefeeds.com", "bet1-x99511.com", "link.securewebservices.ch", "www.gaming-adult.com","best.aliexpress.ru", "hq-sex-tube.com", "ru.leon9c7as1no.com", "www.bestrevenuenetwork.com", "www.pornofrant.com", "ws.exchange", "best2020-games-web1.com", "starcontent.monster", "grtposh.com", "www.cuntempire.com", "apps6.cointraffic.io", "mellowads.com", "todaybrings.ru", "unicom24.ru", "rt.pornhubpremium.com", "www.myincomeclub.com", "nexo.io", "m2mdonations2.com", "ruvi.tv", "betfury.io", "www.watermine.io", "bet1-x00495.com", "track.adsplay.in", "eu.4game.com", "disturbedaccruesurfaces.com", "rtyznd.com", "gilc.ru", "ivnx.ru", "btb88.com", "vidox.net", "smartme.cash","cuntwars.com", "installlatest-theintenselyfile.best", "yougotacheck.com", "x-1xbet-74927.world", "lywyjashu.pro", "stythewagro.pro", "kotikinar2ko8tiki09.com", "pushwelcome.com", "www.elegantthemes.com", "prpops.com", "x-1xbet-28171.world", "rzypgzojdan.com", "rt.bongacams20.com", "best.aliexpress.com", "s.viitrn.com", "aetejxolo.com", "dollarsurvey.org", "promo.stormgain.com", "asxemfnwbrmpdp.com", "zwnxzckwihg.com", "freebitco.in", "nopapmyzyjiqnc.com", "zdcuivnen.com", "adsbitcoin.io"
+				"coothupu.net", "salmon.games", "wilfulpessimistic.com", "x-1xbet-11831.world", "streamtv.by", "trovabious.pro", "alfik-fik.com", "app.simplefx.com", "minersgarden.com", "x-1xbet-53596.world", "bestanimegame.com", "storecompletely-thenewestfile.best", "districtbaloneywhiskers.com", "happy-porn.com", "app.simplefx.com", "bestanimegame.com", "tilltucked.com", "x-1xbet-53596.world", "s.viifan.com", "tentmess.com", "streamtv.by", "x-1xbet-16640.world", 	"www.groupian.io","litecoinads.com", "x-1xbet-02480.world", "deepdice.bet", "worldoftanks.ru", "streambucks.io", "scryptcube.com", "www.highrevenuecpm.com", "x-1xbet-67578.world", "btc-sites.com", "apptastic-mobi.g2afse.com", "www.ostlon.com", "installhighly-therenewedfile.best", "s.viifax.com", "x-1xbet-94086.world", "topepisode.com", "cartoonsinfo.com", "axtrader.com", "travelsecurityline.eu", "pokeramazing.com", "cryptonex.xyz", "cryptofans.ru", "www.funnelleadsystem.com", "x-1xbet-78144.world", "startvideo.life", "s.viitok.com", "www.adanaatikhaber.com", "ru.warface.com", "www.tubezaur.com", "itrk.itrkinc.com", "www.my1tube.com", "p.1ts06.top", "www.monkamovies.com", "derevya2sh8ka09.com", "www.porngur.com", "www.ipuss.tv", "arrano.network", "www.youhodler.com", "cosmeticsgenerosity.com", "creative.alxbgo.com", "nyniglinu.pro", "bullx.io", "date-till-late.us","www.myemailtracking.com" , "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "bet1-x81025.com", "a.leon.ru", "atani.com", "offer.alibaba.com", "exo.xvideass.top", "musict.ir", "www.musict.ir", "cardinalimprovementscartrige.com", "bet1-x58326.com", "bet1-x62670.com", "bet1-x95895.com", "cas-fast-39.com", "x1.x-casiinox-game.com", "warning.rt.ru", "dnevnienovosti.ru", "www.myemailtracking.com", "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "bet1-x81025.com", "a.leon.ru", "edurustoday.ru","mbest.aliexpress.ru", "bet1-x72792.com", "startvideo.fun", "fadsimz.com", "accounts.binancezh.pro", "anyporn.org", "cos.flacon-magazine.com", "searchsecurer.com","bet1-x10847.com", "9k8f9.bemobtrcks.com", "ali2express.com", "kts.visitstats.com", "getdoge.io", "teamsperilous.com", "41upk.bemobtrk.com", "41upk.bemobpath.com", "www.leomax.ru", "gooblesdd.com", "lofepsypti.pro", "dschat.club", "www.crucerosmediterraneo.travel", "login.bitlocity.io", "bet1-x28746.com", "lp.crypt.casino", "bet1-x20027.com", "liteworld.live", "g5xq2z.mighttrack.com", "apps.apple.com", "leonodikeu9sj10.com", "bitgenerator.online", "www.baby.ru", "globalcrypto.exchange", "purplemining.ltd", "bitstarz1.eu","push.aarth.net", "landing.hentaiheroes.com", "www.adslyoigo.net", "news.gnezdo.ru", "stakecube.net", "www.mgid.com", "bet1-x22216.com", "99airdrops.com","accounts.binance.com", "rt.bongacams13.com","srsly.ru", "www.vokrug.tv", "bet1-x62651.com", "www.catala-reinon.es", "www.xm.com", "beklefkiom.com", "euphe-gun.com", "crawlarchive1120.com", "theonlygames.com", "spbinvestment.ru", "bit-sitess.com", "crsed.net", "bet1-x31759.com", "www.purplemining.ltd","artisany.net", "bet1-x78464.com", "cryptotabbrowser.com", "newsurveyrus.typeform.com", "cryptoware.biz", "rsafrwd.com", "adverdirect.com", "fb.ru", "www.youtube.com", "kto-chto-gde.ru", "hyip.money", "p.1ts18.top", "code4us.com", "prizebox.org", "inbound.trilema.com", "epicmotoring.com","pegloang.com", "www.aaxpro.com", "belaya2shu1ba1.com", "rabota-doma.org", "cryptocoinsad.com","bet1-x24022.com", "mediasama.com", "see.xxx", "www.toprevenuecpmnetwork.com", "adbtc.io", "twndo77864.com", "ru.4game.com", "united-family.org", "cretgate.com", "cointools.info", "catermich.pro", "r.rips.icu", "pinednews.ru", "tq.adventurefeeds.com", "bet1-x99511.com", "link.securewebservices.ch", "www.gaming-adult.com","best.aliexpress.ru", "hq-sex-tube.com", "ru.leon9c7as1no.com", "www.bestrevenuenetwork.com", "www.pornofrant.com", "ws.exchange", "best2020-games-web1.com", "starcontent.monster", "grtposh.com", "www.cuntempire.com", "apps6.cointraffic.io", "mellowads.com", "todaybrings.ru", "unicom24.ru", "rt.pornhubpremium.com", "www.myincomeclub.com", "nexo.io", "m2mdonations2.com", "ruvi.tv", "betfury.io", "www.watermine.io", "bet1-x00495.com", "track.adsplay.in", "eu.4game.com", "disturbedaccruesurfaces.com", "rtyznd.com", "gilc.ru", "ivnx.ru", "btb88.com", "vidox.net", "smartme.cash","cuntwars.com", "installlatest-theintenselyfile.best", "yougotacheck.com", "x-1xbet-74927.world", "lywyjashu.pro", "stythewagro.pro", "kotikinar2ko8tiki09.com", "pushwelcome.com", "www.elegantthemes.com", "prpops.com", "x-1xbet-28171.world", "rzypgzojdan.com", "rt.bongacams20.com", "best.aliexpress.com", "s.viitrn.com", "aetejxolo.com", "dollarsurvey.org", "promo.stormgain.com", "asxemfnwbrmpdp.com", "zwnxzckwihg.com", "freebitco.in", "nopapmyzyjiqnc.com", "zdcuivnen.com", "adsbitcoin.io"
 				];
 
 function set_save_tab(){
@@ -513,7 +513,7 @@ var unBlockTimer = 0;
 var boolTimerUnBlock = false;
 var boolStarting = false;
 var timerIdLow = null;
-
+var timerId = null;
 
 function addtimerforcheckurl(){
 	
@@ -538,8 +538,13 @@ addtimerforcheckurl();
 
 
 function startfunction(){
+	
+	if (timerId!=null){
+		clearTimeout(timerId);
+	}
+	if (boolStarting==false) return;
 	// начать повторы с интервалом 2 сек
-	var timerId = setInterval(function() {
+	timerId = setInterval(function() {
 		
 		
 		
@@ -677,9 +682,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	};
 	if(request=='setBoolStartingfalse'){
 		boolStarting = false;
-		try{
-			clearTimeout(timerId);
-		}catch(Exc){}
+		startfunction();
 	};
 	if(request=='setBoolAllFalse'){
 		for(var i = 0; i < Programms.length; i++){
@@ -706,18 +709,18 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	
 	if (request.message == 'preload') {
-		
-		if (massivremovef.indexOf(request.src)>-1){
-			chrome.tabs.remove(sender.tab.id);
-		}else{
-			if (massivnoremove.indexOf(request.src)==-1){
-				if (whiteurl.indexOf(request.src)==-1){
-					massivnoremove.push(request.src);
+		if (boolcloseTabs) {
+			if (massivremovef.indexOf(request.src)>-1){
+				chrome.tabs.remove(sender.tab.id);
+			}else{
+				if (massivnoremove.indexOf(request.src)==-1){
+					if (whiteurl.indexOf(request.src)==-1){
+						massivnoremove.push(request.src);
+					}
 				}
+				console.log('Deff83 start preload ', request.src);
 			}
-			console.log('Deff83 start preload ', request.src);
 		}
-		
 		
 	}
 	
