@@ -483,7 +483,7 @@ public class ScreenShot {
 			g.fillRect(i*w/wsize+(w/wsize)/2, hsize-(int)((high-minPrice)*koeff_Y), 1, (int)((high-low)*koeff_Y));
 
 			g.setColor(Config.grey_light);
-			g.fillRect(i*w/wsize, hsize-200 - (int)((vol)*100/(maxVol)), w/wsize, (int)((vol)*100/(maxVol)));
+			g.fillRect(i*w/wsize, hsize-60 - (int)((vol)*100/(maxVol)), w/wsize, (int)((vol)*100/(maxVol)));
 
 			//System.out.println(i*w/wsize+" / "+(int)((open-minPrice)*koeff_Y)+" / "+w/wsize+" / "+(int)((open-close)*koeff_Y));
 			//System.out.println(open+" "+close);
