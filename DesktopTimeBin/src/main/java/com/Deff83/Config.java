@@ -5,7 +5,7 @@ import java.awt.*;
 public class Config {
 
     private static String my_folder = "C:\\Users\\1";
-   // private static String my_folder = "C:\\Users\\Deff83";
+  // private static String my_folder = "C:\\Users\\Deff83";
 
     public static String url_file = my_folder+"\\Desktop\\screen\\saldo.txt";
     public static String img_file = my_folder+"\\Desktop\\screen\\save0";
@@ -15,6 +15,7 @@ public class Config {
     public static Color green = new Color(37, 255, 124);
     public static Color red = new Color(255, 37, 121);
     public static Color grey = new Color(42, 42, 42);
+    public static Color grey_light = new Color(122, 122, 122);
 
 
 }

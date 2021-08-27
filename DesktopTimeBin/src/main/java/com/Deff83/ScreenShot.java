@@ -411,6 +411,7 @@ public class ScreenShot {
 		List<Candlestick> listGraf =  apiBinance.getGraf(mass_para[0], interval_candl, (int) (wsize-0.15*wsize), null, null);
 		double maxPrice = Double.parseDouble(listGraf.get(0).getOpen());
 		double minPrice = maxPrice;
+		double maxVol = 0.0;
 		g.setColor(Color.WHITE);
 
 		//TODO min max price
@@ -428,6 +429,8 @@ public class ScreenShot {
 			double low = Double.parseDouble(candl.getLow());
 			if(low>maxPrice) maxPrice=low;
 			if(low<minPrice) minPrice=low;
+			double vol = Double.parseDouble(candl.getVolume());
+			if (maxVol<vol) maxVol = vol;
 		}
 		double koeff_Y = hsize/(maxPrice-minPrice);
 
@@ -438,7 +441,7 @@ public class ScreenShot {
 
 				Candlestick candl = listGraf.get(i);
 				analize.analize_bar(candl, i);
-				System.out.println(candl.getVolume());
+
 			}
 			System.out.println("here");
 			bool_analise = false;
@@ -463,6 +466,7 @@ public class ScreenShot {
 		for (int i = 0; i<listGraf.size(); i++) {
 
 			Candlestick candl = listGraf.get(i);
+			double vol = Double.parseDouble(candl.getVolume());
 
 			double open = Double.parseDouble(candl.getOpen());
 			double close = Double.parseDouble(candl.getClose());
@@ -477,6 +481,10 @@ public class ScreenShot {
 				
 			}
 			g.fillRect(i*w/wsize+(w/wsize)/2, hsize-(int)((high-minPrice)*koeff_Y), 1, (int)((high-low)*koeff_Y));
+
+			g.setColor(Config.grey_light);
+			g.fillRect(i*w/wsize, hsize-200 - (int)((vol)*100/(maxVol)), w/wsize, (int)((vol)*100/(maxVol)));
+
 			//System.out.println(i*w/wsize+" / "+(int)((open-minPrice)*koeff_Y)+" / "+w/wsize+" / "+(int)((open-close)*koeff_Y));
 			//System.out.println(open+" "+close);
 			
