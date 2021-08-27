@@ -14,7 +14,7 @@ public class Config {
 
     public static Color green = new Color(37, 255, 124);
     public static Color red = new Color(255, 37, 121);
-    public static Color grey = new Color(77, 77, 77);
+    public static Color grey = new Color(42, 42, 42);
 
 
 }

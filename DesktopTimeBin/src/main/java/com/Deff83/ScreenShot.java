@@ -444,17 +444,18 @@ public class ScreenShot {
 			bool_analise = false;
 		}
 		List<PatternMy>  listj = analize.getList();
-		Font font_my = new Font("Arial", Font.BOLD|Font.ITALIC, 8);
+		Font font_my = new Font("Arial", Font.BOLD|Font.ITALIC, 9);
 		g.setFont(font_my);
 		for (int i = 0; i<listj.size(); i++) {
 			PatternMy patternMy = listj.get(i);
 			int time_my = patternMy.getTime_int();
 
 			try {
-				g.setColor(analize.getColorAnalize(patternMy.getSymbol()));
-				g.drawString(patternMy.getSymbol(), time_my*w/wsize, 300);
+
 				g.setColor(Config.grey);
 				g.fillRect(time_my*w/wsize+(w/wsize)/2, 0, 1, hsize);
+				g.setColor(analize.getColorAnalize(patternMy.getSymbol()));
+				g.drawString(patternMy.getSymbol(), time_my*w/wsize, 300);
 			}catch (Exception e){};
 		}
 
