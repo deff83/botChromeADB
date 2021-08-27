@@ -426,10 +426,10 @@ public class ScreenShot {
 			double high = Double.parseDouble(candl.getHigh());
 			double low = Double.parseDouble(candl.getLow());
 			if((open-close)>=0) {
-				g.setColor(Color.RED);
+				g.setColor(Config.red);
 				g.fillRect(i*w/wsize, hsize-(int)((open-minPrice)*koeff_Y), w/wsize, (int)((open-close)*koeff_Y));
 			}else {
-				g.setColor(Color.GREEN);
+				g.setColor(Config.green);
 				g.fillRect(i*w/wsize, hsize-(int)((close-minPrice)*koeff_Y), w/wsize, (int)((close-open)*koeff_Y));
 				
 			}
