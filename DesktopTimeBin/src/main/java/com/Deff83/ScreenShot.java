@@ -7,6 +7,8 @@ import javax.imageio.ImageIO;
 
 //import org.json.JSONObject;
 
+import com.Deff83.Analize.Analize;
+import com.Deff83.Analize.PatternMy;
 import com.Deff83.Binance.APIBinance;
 import com.binance.api.client.domain.market.Candlestick;
 import com.binance.api.client.domain.market.CandlestickInterval;
@@ -34,6 +36,10 @@ import java.security.NoSuchAlgorithmException;
 public class ScreenShot {
 	private SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
 	private APIBinance apiBinance = APIBinance.getinstance();
+
+	private Analize analize = new Analize();
+	private boolean bool_analise = true;
+
 	public ScreenShot() {
 		// TODO Auto-generated constructor stub
 	}
@@ -103,6 +109,11 @@ public class ScreenShot {
 		Font font = new Font("Arial", Font.BOLD|Font.ITALIC, 100);
 		g.setFont(font);
 		g.drawString(formatter.format(now.getTime()), 800, 200);
+		//System.out.println(now.getTime().getHours());
+		//System.out.println(now.getTime().getMinutes());
+		if (now.getTime().getHours()==4 && now.getTime().getMinutes()==0){
+			bool_analise = true;
+		}
 	}
 
 	private void drawBitTable(Graphics g, int w, int h) {
@@ -402,7 +413,7 @@ public class ScreenShot {
 		double minPrice = maxPrice;
 		g.setColor(Color.WHITE);
 
-
+		//TODO min max price
 
 		for (Candlestick candl:listGraf) {
 			double open = Double.parseDouble(candl.getOpen());
@@ -419,8 +430,39 @@ public class ScreenShot {
 			if(low<minPrice) minPrice=low;
 		}
 		double koeff_Y = hsize/(maxPrice-minPrice);
+
+		//TODO analize
+		if (bool_analise ||  analize.getList().size() == 0) {
+			analize.clearList();
+			for (int i = 0; i < listGraf.size(); i++) {
+
+				Candlestick candl = listGraf.get(i);
+				analize.analize_bar(candl, i);
+				System.out.println(candl.getVolume());
+			}
+			System.out.println("here");
+			bool_analise = false;
+		}
+		List<PatternMy>  listj = analize.getList();
+		Font font_my = new Font("Arial", Font.BOLD|Font.ITALIC, 8);
+		g.setFont(font_my);
+		for (int i = 0; i<listj.size(); i++) {
+			PatternMy patternMy = listj.get(i);
+			int time_my = patternMy.getTime_int();
+
+			try {
+				g.setColor(analize.getColorAnalize(patternMy.getSymbol()));
+				g.drawString(patternMy.getSymbol(), time_my*w/wsize, 300);
+				g.setColor(Config.grey);
+				g.fillRect(time_my*w/wsize+(w/wsize)/2, 0, 1, hsize);
+			}catch (Exception e){};
+		}
+
+		// TODO paint graf
 		for (int i = 0; i<listGraf.size(); i++) {
+
 			Candlestick candl = listGraf.get(i);
+
 			double open = Double.parseDouble(candl.getOpen());
 			double close = Double.parseDouble(candl.getClose());
 			double high = Double.parseDouble(candl.getHigh());
@@ -434,11 +476,11 @@ public class ScreenShot {
 				
 			}
 			g.fillRect(i*w/wsize+(w/wsize)/2, hsize-(int)((high-minPrice)*koeff_Y), 1, (int)((high-low)*koeff_Y));
-			System.out.println(i*w/wsize+" / "+(int)((open-minPrice)*koeff_Y)+" / "+w/wsize+" / "+(int)((open-close)*koeff_Y));
-			System.out.println(open+" "+close);
+			//System.out.println(i*w/wsize+" / "+(int)((open-minPrice)*koeff_Y)+" / "+w/wsize+" / "+(int)((open-close)*koeff_Y));
+			//System.out.println(open+" "+close);
 			
 		}
-		
+
 		/*try {
 			String statuse = apiBinance.getStatuse();
 			
