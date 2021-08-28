@@ -5,6 +5,7 @@ public class SaveProhod {
     private double price = 0;
     private int time = 0;
     private boolean poglosh = false;
+    private int typepogl = 1;
 
     public int getTime() {
         return time;
@@ -36,5 +37,13 @@ public class SaveProhod {
 
     public void setPoglosh(boolean poglosh) {
         this.poglosh = poglosh;
+    }
+
+    public int getTypepogl() {
+        return typepogl;
+    }
+
+    public void setTypepogl(int typepogl) {
+        this.typepogl = typepogl;
     }
 }

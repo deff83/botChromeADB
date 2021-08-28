@@ -499,10 +499,11 @@ public class ScreenShot {
 				g.fillRect(time_my * w / wsize, hsize-60, w/wsize, 5);
 
 				g.setColor(Config.grey);
-				if (boolpogl) g.setColor(Config.green);
-				if (boolpogl==false) g.setColor(Config.red);
-
-				g.fillRect(time_my * w / wsize, hsize-55, w/wsize, 5);
+				if (boolpogl) {
+					g.setColor(Config.green);
+					if ((saveProhod.getTypepogl() == 2)) g.setColor(Config.red);
+					g.fillRect(time_my * w / wsize, hsize - 55, w / wsize, 5);
+				}
 				if (change_trand != booltrand) {
 				try {
 					SaveProhod saveProhodpre = saveProhodList.get(i-1);

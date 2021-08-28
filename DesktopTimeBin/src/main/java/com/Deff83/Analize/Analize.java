@@ -57,6 +57,8 @@ public class Analize {
 
         if (Math.abs(telo1)>Math.abs(telo2) && Math.signum(telo2)!=Math.signum(telo1)){
             saveProhod.setPoglosh(true);
+            if (telo1>0) saveProhod.setTypepogl(2);
+
         }
 
         double high1 = Double.parseDouble(candl1.getHigh());
