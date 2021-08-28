@@ -4,6 +4,7 @@ import java.awt.*;
 
 public class Config {
 
+
     private static String my_folder = "C:\\Users\\1";
     private static String my_folder2 = "C:\\Users\\Deff83";
 
@@ -16,6 +17,9 @@ public class Config {
     public static Color red = new Color(255, 37, 121);
     public static Color grey = new Color(42, 42, 42);
     public static Color grey_light = new Color(122, 122, 122);
+    public static Color blue = new Color(0, 66, 121);
+    public static Color blue_dark = new Color(0, 143, 255);
+
 
     public static void change_folder(){
         url_file = my_folder2+"\\Desktop\\screen\\saldo.txt";

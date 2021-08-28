@@ -2,6 +2,7 @@ package com.Deff83.Analize;
 
 public class PatternMy {
 
+    private AnalNum analNum = AnalNum.NULL;
     private String symbol = "";
     private int time_int = 0;
 
@@ -9,9 +10,10 @@ public class PatternMy {
         this.symbol = symbol;
     }
 
-    public PatternMy(String symbol, int time_int) {
+    public PatternMy(String symbol, int time_int, AnalNum analNum) {
         this.symbol = symbol;
         this.time_int = time_int;
+        this.analNum = analNum;
     }
 
     public String getSymbol() {
@@ -30,10 +32,19 @@ public class PatternMy {
         this.time_int = time_int;
     }
 
+    public AnalNum getType() {
+        return analNum;
+    }
+
+    public void setType(AnalNum type) {
+        this.analNum = type;
+    }
+
     @Override
     public String toString() {
         return "PatternMy{" +
-                "symbol='" + symbol + '\'' +
+                "type=" + analNum +
+                ", symbol='" + symbol + '\'' +
                 ", time_int=" + time_int +
                 '}';
     }

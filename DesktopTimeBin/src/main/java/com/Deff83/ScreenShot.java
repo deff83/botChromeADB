@@ -7,8 +7,10 @@ import javax.imageio.ImageIO;
 
 //import org.json.JSONObject;
 
+import com.Deff83.Analize.AnalNum;
 import com.Deff83.Analize.Analize;
 import com.Deff83.Analize.PatternMy;
+import com.Deff83.Analize.SaveProhod;
 import com.Deff83.Binance.APIBinance;
 import com.binance.api.client.domain.market.Candlestick;
 import com.binance.api.client.domain.market.CandlestickInterval;
@@ -39,6 +41,8 @@ public class ScreenShot {
 
 	private Analize analize = new Analize();
 	private boolean bool_analise = true;
+	private String inter_para_ch = "";
+	private String interStr_ch = "";
 
 	public ScreenShot() {
 		// TODO Auto-generated constructor stub
@@ -411,6 +415,12 @@ public class ScreenShot {
 
 		//System.out.println(interStr);
 
+		if (!inter_para_ch.equals(inter_para)||!interStr_ch.equals(interStr)){
+			inter_para_ch=inter_para;
+			interStr_ch=inter_para;
+			analize.clearList();
+		}
+
 		int hsize = h;
 		int wsize = 400;
 
@@ -451,7 +461,9 @@ public class ScreenShot {
 
 				Candlestick candl = listGraf.get(i);
 				analize.analize_bar(candl, i);
-
+				try {
+					analize.trand(listGraf.get(i), listGraf.get(i-1), i);
+				}catch (Exception e){}
 			}
 			System.out.println("here");
 			bool_analise = false;
@@ -462,13 +474,51 @@ public class ScreenShot {
 		for (int i = 0; i<listj.size(); i++) {
 			PatternMy patternMy = listj.get(i);
 			int time_my = patternMy.getTime_int();
-
+			AnalNum analNum = patternMy.getType();
 			try {
+				if (analNum==AnalNum.SINGLE) {
+					g.setColor(Config.grey);
+					g.fillRect(time_my * w / wsize + (w / wsize) / 2, 0, 1, hsize);
+					g.setColor(analize.getColorAnalize(patternMy.getSymbol()));
+					g.drawString(patternMy.getSymbol(), time_my * w / wsize, 300);
+				}
+			}catch (Exception e){};
+		}
+		List<SaveProhod>  saveProhodList = analize.getSaveProhodList();
+		boolean change_trand = true;
+		for (int i = 0; i<saveProhodList.size(); i++) {
+			SaveProhod saveProhod = saveProhodList.get(i);
+			int time_my = saveProhod.getTime();
+			boolean booltrand = saveProhod.isUp_down();
+			boolean boolpogl = saveProhod.isPoglosh();
+			double pr = saveProhod.getPrice();
+			try {
+				g.setColor(Config.grey);
+				if (booltrand) g.setColor(Config.green);
+				if (booltrand==false) g.setColor(Config.red);
+				g.fillRect(time_my * w / wsize, hsize-60, w/wsize, 5);
 
 				g.setColor(Config.grey);
-				g.fillRect(time_my*w/wsize+(w/wsize)/2, 0, 1, hsize);
-				g.setColor(analize.getColorAnalize(patternMy.getSymbol()));
-				g.drawString(patternMy.getSymbol(), time_my*w/wsize, 300);
+				if (boolpogl) g.setColor(Config.green);
+				if (boolpogl==false) g.setColor(Config.red);
+
+				g.fillRect(time_my * w / wsize, hsize-55, w/wsize, 5);
+				if (change_trand != booltrand) {
+				try {
+					SaveProhod saveProhodpre = saveProhodList.get(i-1);
+
+						g.setColor(Config.blue);
+						if(boolpogl)g.setColor(Config.blue_dark);
+
+						g.fillOval(saveProhodpre.getTime() * w / wsize-4, hsize - (int) ((saveProhodpre.getPrice() - minPrice) * koeff_Y) - 5, 10, 10);
+
+
+				}catch (Exception e){}
+					change_trand = booltrand;
+				}
+
+
+
 			}catch (Exception e){};
 		}
 
