@@ -53,8 +53,18 @@ public class ScreenShot {
 		BufferedImage buffer = new BufferedImage(w, h, BufferedImage.TYPE_BYTE_INDEXED);
 		
 		Graphics g = buffer.getGraphics();
-		File fileimg = new File(Config.imgfon_file);
-		BufferedImage img =  ImageIO.read(fileimg);
+		File fileimg = null;
+		BufferedImage img = null;
+		//TODO change folder
+		try {
+			fileimg = new File(Config.imgfon_file);
+			img = ImageIO.read(fileimg);
+		}catch (Exception e){
+			Config.change_folder();
+			fileimg = new File(Config.imgfon_file);
+			img = ImageIO.read(fileimg);
+		}
+
 		g.drawImage(img , 0, 0,w,h, null);
 		g.setColor(Color.WHITE);
 		//g.fillRect(850, 100, 300, 300);
