@@ -579,7 +579,7 @@ public class ScreenShot {
 
 
 					if (otkat_pre_green!=-1) {
-						g.setColor(Config.green);
+						g.setColor(Config.green_light);
 						g.drawLine(time_pre_green* w / wsize, hsize-400+(int)(otkat_pre_green*100), savePr_i.getTime()* w / wsize,hsize-400+(int)(per_otkat * 100));
 						//g.fillRect(savePr_i.getTime() * w / wsize, hsize - 400, w / wsize, ((int) (per_otkat * 100)));
 
@@ -588,7 +588,7 @@ public class ScreenShot {
 					time_pre_green = savePr_i.getTime();
 				}else {
 					if (otkat_pre_red!=-1) {
-						g.setColor(Config.red);
+						g.setColor(Config.red_light);
 						//g.drawLine(, , , );
 						g.drawLine(time_pre_red* w / wsize, hsize-400+(int)(otkat_pre_red*100), savePr_i.getTime()* w / wsize,hsize-400+(int)(per_otkat * 100));
 						//g.fillRect(savePr_i.getTime() * w / wsize, hsize - 400, w / wsize, ((int) (per_otkat * 100)));

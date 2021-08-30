@@ -16,12 +16,14 @@ public class Config {
 
     public static Color green = new Color(37, 255, 124);
     public static Color red = new Color(255, 37, 121);
+    public static Color green_light = new Color(47, 255, 0);
+    public static Color red_light = new Color(255, 0, 0);
     public static Color grey = new Color(42, 42, 42);
     public static Color grey_light = new Color(122, 122, 122);
     public static Color blue = new Color(0, 66, 121);
     public static Color blue_dark = new Color(0, 143, 255);
     public static Color yellow_dark = new Color(58, 46, 0);
-    public static Color yellow = new Color(101, 80, 0);
+    public static Color yellow = new Color(140, 110, 0);
 
     public static int num_analize_end = 5;
 
