@@ -8,8 +8,14 @@ import java.util.List;
 
 public class Analize {
     private List<PatternMy>  list = new ArrayList<>();
-
     private List<SaveProhod>  saveProhodList = new ArrayList<>();
+
+    private boolean bool_end = false;
+
+    private List<PatternMy>  list_end = new ArrayList<>();
+    private List<SaveProhod>  saveProhodList_end = new ArrayList<>();
+
+    private List<SaveProhod> saveProhodList_only_points = new ArrayList<>();
 
     public void analize_bar(Candlestick candl, int time_int){
         double open = Double.parseDouble(candl.getOpen());
@@ -32,18 +38,27 @@ public class Analize {
         double telom = Math.abs(telo);
 
         if (hvost_up > telom * 2 &&  hvost_down<(telom/1)){
-            list.add(new PatternMy("M", time_int, AnalNum.SINGLE));
+            if (bool_end){
+                list_end.add(new PatternMy("M", time_int, AnalNum.SINGLE));
+            }else {
+                list.add(new PatternMy("M", time_int, AnalNum.SINGLE));
+            }
         }
 
         if (hvost_down > telom * 2 &&  hvost_up<(telom/1)){
-            list.add(new PatternMy("P", time_int, AnalNum.SINGLE));
+            if (bool_end){
+                list_end.add(new PatternMy("P", time_int, AnalNum.SINGLE));
+            }else {
+                list.add(new PatternMy("P", time_int, AnalNum.SINGLE));
+            }
         }
 
 
     }
 
     public void trand(Candlestick candl1, Candlestick candl2, int i) {
-        int tek_size = saveProhodList.size();
+        List<SaveProhod> saveProhodList_loc = getSaveProhodList();
+        int tek_size = saveProhodList_loc.size();
         SaveProhod saveProhod = new SaveProhod();
         saveProhod.setTime(i);
 
@@ -81,10 +96,10 @@ public class Analize {
         if ((high1<high2 && low1>low2)||(high1>high2 && low1<low2)) {
             //System.out.println("tyt"+i);
             try {
-                saveProhod.setUp_down(saveProhodList.get(tek_size-1).isUp_down());
+                saveProhod.setUp_down(saveProhodList_loc.get(tek_size-1).isUp_down());
                 if((high1>high2 && low1<low2)){
                     //System.out.println("tyt2"+saveProhodList.get(tek_size-1).isUp_down());
-                    if(saveProhodList.get(tek_size-1).isUp_down()){
+                    if(saveProhodList_loc.get(tek_size-1).isUp_down()){
                         saveProhod.setPrice(high1);
                     }else{
                         saveProhod.setPrice(low1);
@@ -93,7 +108,7 @@ public class Analize {
                 }
                 if((high1<high2 && low1>low2)){
                    // System.out.println("tyt3"+saveProhodList.get(tek_size-1).isUp_down());
-                        saveProhod.setPrice(saveProhodList.get(tek_size-1).getPrice());
+                        saveProhod.setPrice(saveProhodList_loc.get(tek_size-1).getPrice());
 
 
                 }
@@ -108,12 +123,19 @@ public class Analize {
 
 
         //saveProhod.setPrice(low1);
-
-        saveProhodList.add(saveProhod);
+        if (bool_end){
+            saveProhodList_end.add(saveProhod);
+        }else {
+            saveProhodList.add(saveProhod);
+        }
     }
 
+
     public List<SaveProhod> getSaveProhodList() {
-        return saveProhodList;
+        List<SaveProhod> saveProhodList_loc = new ArrayList<>();
+        saveProhodList_loc.addAll(saveProhodList);
+        saveProhodList_loc.addAll(saveProhodList_end);
+        return saveProhodList_loc;
     }
 
     public List<PatternMy> getList() {
@@ -121,9 +143,13 @@ public class Analize {
     }
 
     public void clearList() {
-
-        this.list = new ArrayList<>();
-        this.saveProhodList = new ArrayList<>();
+        if (bool_end) {
+            this.list_end = new ArrayList<>();
+            this.saveProhodList_end = new ArrayList<>();
+        }else{
+            this.list = new ArrayList<>();
+            this.saveProhodList = new ArrayList<>();
+        }
     }
 
     public Color getColorAnalize(String symbol){
@@ -132,5 +158,20 @@ public class Analize {
         return col;
     }
 
+    public boolean isBool_end() {
+        return bool_end;
+    }
+
+    public void setBool_end(boolean bool_end) {
+        this.bool_end = bool_end;
+    }
+
+    public List<SaveProhod> getSaveProhodList_only_points() {
+        return saveProhodList_only_points;
+    }
+
+    public void setSaveProhodList_only_points(List<SaveProhod> saveProhodList_only_points) {
+        this.saveProhodList_only_points = saveProhodList_only_points;
+    }
 
 }

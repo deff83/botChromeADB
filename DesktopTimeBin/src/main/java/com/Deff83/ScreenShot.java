@@ -455,19 +455,37 @@ public class ScreenShot {
 		double koeff_Y = hsize/(maxPrice-minPrice);
 
 		//TODO analize
-		if (bool_analise ||  analize.getList().size() == 0) {
-			analize.clearList();
-			for (int i = 0; i < listGraf.size(); i++) {
+		int num_anal_end = Config.num_analize_end;
+		try {
+			if (bool_analise || analize.getList().size() == 0) {
+				analize.setBool_end(false);
+				analize.clearList();
+				for (int i = 0; i < listGraf.size()-num_anal_end; i++) {
 
+					Candlestick candl = listGraf.get(i);
+					analize.analize_bar(candl, i);
+					try {
+						analize.trand(listGraf.get(i), listGraf.get(i - 1), i);
+					} catch (Exception e) {
+					}
+				}
+				System.out.println("here");
+				bool_analise = false;
+			}
+		}catch (Exception e){}
+		//analize end
+		analize.setBool_end(true);
+		analize.clearList();
+		if(listGraf.size()>num_anal_end) {
+			for (int i = listGraf.size()-num_anal_end; i < listGraf.size(); i++) {
 				Candlestick candl = listGraf.get(i);
 				analize.analize_bar(candl, i);
 				try {
 					analize.trand(listGraf.get(i), listGraf.get(i-1), i);
 				}catch (Exception e){}
 			}
-			System.out.println("here");
-			bool_analise = false;
 		}
+		//draw analize
 		List<PatternMy>  listj = analize.getList();
 		Font font_my = new Font("Arial", Font.BOLD|Font.ITALIC, 9);
 		g.setFont(font_my);
@@ -485,6 +503,8 @@ public class ScreenShot {
 			}catch (Exception e){};
 		}
 		List<SaveProhod>  saveProhodList = analize.getSaveProhodList();
+
+		analize.setSaveProhodList_only_points(new ArrayList<>());
 		boolean change_trand = true;
 		for (int i = 0; i<saveProhodList.size(); i++) {
 			SaveProhod saveProhod = saveProhodList.get(i);
@@ -510,6 +530,15 @@ public class ScreenShot {
 
 						g.setColor(Config.blue);
 						if(boolpogl)g.setColor(Config.blue_dark);
+						SaveProhod anal_save =  new SaveProhod();
+						anal_save.setPrice(saveProhodpre.getPrice());
+						anal_save.setUp_down(saveProhodpre.isUp_down());
+						anal_save.setTime(saveProhodpre.getTime());
+						anal_save.setTypepogl(saveProhod.getTypepogl());
+						anal_save.setPoglosh(saveProhod.isPoglosh());
+
+
+					analize.getSaveProhodList_only_points().add(anal_save);
 
 						g.fillOval(saveProhodpre.getTime() * w / wsize-4, hsize - (int) ((saveProhodpre.getPrice() - minPrice) * koeff_Y) - 5, 10, 10);
 
@@ -523,6 +552,89 @@ public class ScreenShot {
 			}catch (Exception e){};
 		}
 
+		List<SaveProhod> savePr = new ArrayList<>(analize.getSaveProhodList_only_points());
+		SaveProhod tek_preds = new SaveProhod();
+		tek_preds.setPrice(Double.parseDouble(listGraf.get(listGraf.size()-1).getClose()));
+		tek_preds.setUp_down(!savePr.get(savePr.size()-1).isUp_down());
+		tek_preds.setTime(listGraf.size());
+		savePr.add(tek_preds);
+		double price_pre2_an = 0;
+		double price_pre1_an = 0;
+		try {
+			double otkat_pre_green = -1;
+			double otkat_pre_red = -1;
+			int time_pre_green = -1;
+			int time_pre_red = -1;
+
+			for (int i = 2; i < savePr.size(); i++) {
+				SaveProhod savePr_i = savePr.get(i);
+				SaveProhod savePr_i_pre1 = savePr.get(i - 1);
+				SaveProhod savePr_i_pre2 = savePr.get(i - 2);
+				double per_otkat = (-savePr_i.getPrice()+savePr_i_pre1.getPrice())/(savePr_i_pre1.getPrice()-savePr_i_pre2.getPrice());
+				savePr_i.setPer_otkat(per_otkat);
+				price_pre1_an = savePr_i_pre1.getPrice();
+				price_pre2_an = savePr_i_pre2.getPrice();
+				if(savePr_i.isUp_down()) {
+
+
+
+					if (otkat_pre_green!=-1) {
+						g.setColor(Config.green);
+						g.drawLine(time_pre_green* w / wsize, hsize-400+(int)(otkat_pre_green*100), savePr_i.getTime()* w / wsize,hsize-400+(int)(per_otkat * 100));
+						//g.fillRect(savePr_i.getTime() * w / wsize, hsize - 400, w / wsize, ((int) (per_otkat * 100)));
+
+					}
+					otkat_pre_green = per_otkat;
+					time_pre_green = savePr_i.getTime();
+				}else {
+					if (otkat_pre_red!=-1) {
+						g.setColor(Config.red);
+						//g.drawLine(, , , );
+						g.drawLine(time_pre_red* w / wsize, hsize-400+(int)(otkat_pre_red*100), savePr_i.getTime()* w / wsize,hsize-400+(int)(per_otkat * 100));
+						//g.fillRect(savePr_i.getTime() * w / wsize, hsize - 400, w / wsize, ((int) (per_otkat * 100)));
+
+					}
+					otkat_pre_red = per_otkat;
+					time_pre_red= savePr_i.getTime();
+				}
+
+
+
+
+			}
+			int f_ot = 38;
+			int d_ot = 62;
+			int t_ot = 100;
+			int ch_ot = 162;
+			int ch2_ot = 238;
+			Font font = new Font("Arial", Font.PLAIN, 15);
+			g.setFont(font);
+			g.setColor(Config.yellow_dark);
+			g.drawLine(0, hsize-400+f_ot, 350* w / wsize,hsize-400+f_ot);
+			g.drawString((price_pre1_an-(f_ot)*(price_pre1_an-price_pre2_an)/100)+"", 100, hsize-402+f_ot);
+
+			g.drawLine(0, hsize-400+d_ot, 350* w / wsize,hsize-400+d_ot);
+			g.drawString((price_pre1_an-(d_ot)*(price_pre1_an-price_pre2_an)/100)+"", 100, hsize-402+d_ot);
+
+			g.drawLine(0, hsize-400+t_ot, 350* w / wsize,hsize-400+t_ot);
+			g.drawString((price_pre1_an-(t_ot)*(price_pre1_an-price_pre2_an)/100)+"", 100, hsize-402+t_ot);
+
+			g.drawLine(0, hsize-400+ch_ot, 350* w / wsize,hsize-400+ch_ot);
+			g.drawString((price_pre1_an-(ch_ot)*(price_pre1_an-price_pre2_an)/100)+"", 100, hsize-402+ch_ot);
+
+			g.drawLine(0, hsize-400+ch2_ot, 350* w / wsize,hsize-400+ch2_ot);
+			g.drawString((price_pre1_an-(ch2_ot)*(price_pre1_an-price_pre2_an)/100)+"", 100, hsize-402+ch2_ot);
+
+			g.drawLine(0, hsize-400, 350* w / wsize,hsize-400);
+			g.drawString((price_pre1_an-(0/100)*(price_pre1_an-price_pre2_an))+"", 100, hsize-402+0);
+
+			g.setColor(Config.yellow);
+			g.drawLine(0, hsize-(int)(((price_pre1_an-(ch2_ot)*(price_pre1_an-price_pre2_an)/100)-minPrice)*koeff_Y), 350* w / wsize,hsize-(int)(((price_pre1_an-(ch2_ot)*(price_pre1_an-price_pre2_an)/100)-minPrice)*koeff_Y));
+
+
+		}catch (Exception e){}
+		System.out.println(savePr);
+		//System.out.println(analize.getSaveProhodList_only_points());
 		// TODO paint graf
 		for (int i = 0; i<listGraf.size(); i++) {
 
