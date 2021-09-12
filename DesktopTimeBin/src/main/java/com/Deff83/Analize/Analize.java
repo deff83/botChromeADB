@@ -149,7 +149,13 @@ public class Analize {
         }else{
             this.list = new ArrayList<>();
             this.saveProhodList = new ArrayList<>();
+            this.list_end = new ArrayList<>();
+            this.saveProhodList_end = new ArrayList<>();
+            /*
+            */
         }
+        this.saveProhodList_only_points = new ArrayList<>();
+
     }
 
     public Color getColorAnalize(String symbol){

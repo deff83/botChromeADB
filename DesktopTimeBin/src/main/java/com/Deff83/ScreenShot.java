@@ -12,6 +12,7 @@ import com.Deff83.Analize.Analize;
 import com.Deff83.Analize.PatternMy;
 import com.Deff83.Analize.SaveProhod;
 import com.Deff83.Binance.APIBinance;
+import com.Deff83.Planet.Moon;
 import com.binance.api.client.domain.market.Candlestick;
 import com.binance.api.client.domain.market.CandlestickInterval;
 import com.binance.api.client.domain.market.TickerStatistics;
@@ -38,6 +39,7 @@ import java.security.NoSuchAlgorithmException;
 public class ScreenShot {
 	private SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
 	private APIBinance apiBinance = APIBinance.getinstance();
+	private Moon moon = Moon.getinstance();
 
 	private Analize analize = new Analize();
 	private boolean bool_analise = true;
@@ -98,6 +100,7 @@ public class ScreenShot {
 			case 4:
 				drawBitoc(g,w,h);
 				drawTime(g);
+				drawMoon(g);
 				break;
 			case 5:
 				drawBitTable(g, w, h);
@@ -118,7 +121,32 @@ public class ScreenShot {
 	}
 
 	private void drawTime(Graphics g){
+		Date date=new Date();
 		Calendar now = Calendar.getInstance();
+		now.setTime(date);
+		g.setColor(Color.WHITE);
+		Font font = new Font("Arial", Font.BOLD|Font.ITALIC, 100);
+		g.setFont(font);
+		g.drawString(formatter.format(now.getTime()), 800, 200);
+		//System.out.println(now.getTime().getHours());
+		//System.out.println(now.getTime().getMinutes());
+		if (now.getTime().getHours()==4 && now.getTime().getMinutes()==0){
+			System.out.println("tyt2");
+			bool_analise = true;
+		}
+	}
+	private void drawMoon(Graphics g){
+		//System.out.println(now_d.get(Calendar.DAY_OF_MONTH));
+		String phase = moon.getPhase();
+		//System.out.println(phase);
+
+		g.setColor(Color.WHITE);
+		Font font = new Font("Arial", Font.BOLD|Font.ITALIC, 20);
+		g.setFont(font);
+		g.drawString("Moon: " + phase, 820, 110);
+
+
+		/*Calendar now = Calendar.getInstance();
 		g.setColor(Color.WHITE);
 		Font font = new Font("Arial", Font.BOLD|Font.ITALIC, 100);
 		g.setFont(font);
@@ -127,8 +155,11 @@ public class ScreenShot {
 		//System.out.println(now.getTime().getMinutes());
 		if (now.getTime().getHours()==4 && now.getTime().getMinutes()==0){
 			bool_analise = true;
-		}
+		}*/
 	}
+
+
+
 
 	private void drawBitTable(Graphics g, int w, int h) {
 		String table_para = "";
@@ -414,10 +445,13 @@ public class ScreenShot {
 		}
 
 		//System.out.println(interStr);
-
+		System.out.println(inter_para_ch+":"+inter_para);
+		System.out.println(interStr_ch+":"+interStr);
 		if (!inter_para_ch.equals(inter_para)||!interStr_ch.equals(interStr)){
+			System.out.println("tyt3");
 			inter_para_ch=inter_para;
-			interStr_ch=inter_para;
+			interStr_ch=interStr;
+			analize.setBool_end(false);
 			analize.clearList();
 		}
 
@@ -458,6 +492,10 @@ public class ScreenShot {
 		int num_anal_end = Config.num_analize_end;
 		try {
 			if (bool_analise || analize.getList().size() == 0) {
+				System.out.println("tyt");
+				try {
+					moon.getZapros();
+				}catch (Exception e){e.printStackTrace();};
 				analize.setBool_end(false);
 				analize.clearList();
 				for (int i = 0; i < listGraf.size()-num_anal_end; i++) {
@@ -633,7 +671,7 @@ public class ScreenShot {
 
 
 		}catch (Exception e){}
-		System.out.println(savePr);
+		//System.out.println(savePr);
 		//System.out.println(analize.getSaveProhodList_only_points());
 		// TODO paint graf
 		for (int i = 0; i<listGraf.size(); i++) {
