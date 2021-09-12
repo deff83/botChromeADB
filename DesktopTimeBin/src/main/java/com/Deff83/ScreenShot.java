@@ -119,7 +119,7 @@ public class ScreenShot {
 		return buffer;
 	
 	}
-
+	//TODO draw time
 	private void drawTime(Graphics g){
 		Date date=new Date();
 		Calendar now = Calendar.getInstance();
@@ -135,13 +135,14 @@ public class ScreenShot {
 			bool_analise = true;
 		}
 	}
+	//TODO draw moon
 	private void drawMoon(Graphics g){
 		//System.out.println(now_d.get(Calendar.DAY_OF_MONTH));
 		String phase = moon.getPhase();
 		//System.out.println(phase);
 
 		g.setColor(Color.WHITE);
-		Font font = new Font("Arial", Font.BOLD|Font.ITALIC, 20);
+		Font font = new Font("Arial", Font.ITALIC, 12);
 		g.setFont(font);
 		g.drawString("Moon: " + phase, 820, 110);
 
