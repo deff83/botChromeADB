@@ -17,6 +17,7 @@ try{
 	hideDiv("ClassName", "col-md-6 col-xl-3 mb-3 mb-xl-3", -1);
 	hideDiv("ClassName", "alert-warning align-middle text-center noty pt-1 pb-1", -1);
 	
+	window.scroll(0,2050);
 	
 	/*hideDiv("ClassName", "notdisplaytablet", -1);
 	hideDiv("ClassName", "btn btn-success", -1);

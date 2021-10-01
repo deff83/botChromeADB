@@ -91,7 +91,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					Programms[indexPrEMHub].startintervalDOGE = Programms[indexPrEMHub].intervalDOGE - second;
 				}
 				
-				var text_test_d = idBody.getElementsByClassName('lh-1 mb-1 font-weight-bold')[3];
+				var text_test_d = idBody.getElementsByClassName('lh-1 mb-1 font-weight-bold')[2];
 				if (text_test_d!=null){
 					Programms[indexPrEMHub].text_test = text_test_d.textContent;
 				

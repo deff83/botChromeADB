@@ -10,6 +10,12 @@ try{
 	//}, 2000);
 	
 	
+	window.scroll(0,2050);
+	setTimeout(function() {	
+	
+	clickButton("ClassName", "btn btn-warning btn-lg waves-effect waves-light claim-button", 0);
+	}, 7000);
+	
 	hideDiv("Id", "fixedbanner", -1);
 	hideDiv("Id", "page-topbar", -1);
 	hideDiv("ClassName", "vertical-menu mm-active", -1);

@@ -87,6 +87,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					
 					var minute = idminute;
 					console.log(minute);
+					if(minute==null)return;
 					var second = minute*60+65; 
 					
 					console.log(second);

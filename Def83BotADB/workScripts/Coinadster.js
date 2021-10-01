@@ -60,6 +60,14 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				let frag = document.createRange().createContextualFragment(request.html);
 				
 				var idclaimFaucet = frag.getElementById('claymFaucet');
+				Programms[indexPrCoinadster].text_test = '5000';
+				
+				var idchallengeform = frag.getElementById('challenge-form');
+				if(idchallengeform!=null){
+					return;
+				}
+				
+				
 				
 				console.log(idclaimFaucet);
 				

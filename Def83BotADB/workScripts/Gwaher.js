@@ -59,21 +59,23 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				//console.log('Deff83 freeLTC', request);
 				let frag = document.createRange().createContextualFragment(request.html);
 				
-				var idBody = frag.getElementById('layout-wrapper');
+				var idBodyHead = frag.getElementById('header');
 				
 				
-				if (idBody==null){
+				if (idBodyHead==null){
 					return;
 				}
 				
-				var idclaimbutn = idBody.getElementsByClassName('btn btn-warning btn-lg btn-block claim-button')[0];
+				var idBody = frag.querySelectorAll('main')[0];
+				
+				var idclaimbutn = idBody.getElementsByClassName('btn common-custom-bg btn-lg claim-button')[0];
 				console.log(idclaimbutn);
 				if(idclaimbutn!= null){
 				
 				//page-topbar
 				
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/Gwaher.js'});
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/GwaherAuto.js'});
 					return;
 				}
 				
@@ -89,14 +91,29 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					
 					var second = minute*60+(secondsfg)*1; 
 					Programms[indexPrGwaher].startintervalDOGE = Programms[indexPrGwaher].intervalDOGE - second;
-					
+					/*
 					Programms[indexPrGwaher].boolStartingDOGE = false;
 					block = false;
 					if(tabidGwaher.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
 					tabidGwaher.remove(sender.tab.id);
-					
+					*/
 					
 				}
+				
+				
+				var text_test_d = idBody.getElementsByClassName('col-md-6 col-xl-6')[1];
+				console.log(text_test_d);
+				if (text_test_d!=null){
+					Programms[indexPrGwaher].text_test = text_test_d.textContent;
+				
+				
+				Programms[indexPrGwaher].boolStartingDOGE = false;
+				block = false;
+				if(tabidPrGwaher.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+				tabidPrGwaher.remove(sender.tab.id);
+				}
+				
+				
 				
 				
 				var idtokenBalance = frag.getElementById('tokenBalance');

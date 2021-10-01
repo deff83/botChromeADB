@@ -9,6 +9,7 @@ try{
 	//clickButton("ClassName", "button", 1);
 	//}, 2000);
 	window.scroll(0,500);
+	hideDiv("ClassName", "bg-dark shadow fixed-a", -1);
 	
 	/*
 	setTimeout(function() {

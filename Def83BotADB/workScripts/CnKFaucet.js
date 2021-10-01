@@ -29,7 +29,7 @@ async  function moonCnKFaucet(indexPrfree){
 	boolOneClaim2 = true;
 	boolOneButOne = 0;
 	console.log("CnKFaucet start");
-	injectScriptCnKFaucet('https://cnkfaucet.hostb.pl/faucet');
+	injectScriptCnKFaucet('https://cnkfaucet.com/faucet');
 	console.log("CnKFaucet end");
 }
 
@@ -47,8 +47,8 @@ function injectScriptCnKFaucet(url) {
 chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	if (boolStarting == false) {return;}
-	//console.log(request.src);
-	if(request.src == 'cnkfaucet.hostb.pl'){
+	//console.log(request.src); 
+	if(request.src == 'cnkfaucet.com'){
 		console.log('startMes');
 		
 		if(!tabidCnKFaucet.contains(sender.tab.id))tabidCnKFaucet.push(sender.tab.id);
@@ -59,8 +59,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				//console.log('Deff83 freeLTC', request);
 				let frag = document.createRange().createContextualFragment(request.html);
 				
-				var idBody = frag.getElementById('layout-wrapper');
-				
+				//var idBody = frag.getElementById('layout-wrapper');
+				var idBody = frag.querySelectorAll('div')[0];
 				
 				if (idBody==null){
 					return;
@@ -91,7 +91,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					Programms[indexPrCnKFaucet].startintervalDOGE = Programms[indexPrCnKFaucet].intervalDOGE - second;
 				}
 				
-				var text_test_d = idBody.getElementsByClassName('lh-1 mb-1 font-weight-bold')[3];
+				var text_test_d = idBody.getElementsByClassName('card-text')[3];
 				if (text_test_d!=null){
 					Programms[indexPrCnKFaucet].text_test = text_test_d.textContent;
 				
@@ -270,7 +270,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	
 	if(tabidCnKFaucet.contains(sender.tab.id)){	//если во вкладке другой адрес
-		if(request.src != 'cnkfaucet.hostb.pl'){
+		if(request.src != 'cnkfaucet.com'){
 			tabidCnKFaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
 			if(tabidCnKFaucet.length == 0){

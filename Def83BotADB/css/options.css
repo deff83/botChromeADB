@@ -11,6 +11,12 @@
 	background-color: #ffffffdd;
 	z-index: 1000;
 }
+
+.textcaptcha{
+	text-align:right;
+	
+}
+
 .checkbox{
 	position:absolute;
 	left:0px;
@@ -25,22 +31,32 @@
 .progress{
 	position:relative;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
-    padding: 5px;
-	margin:10px;
+    padding-left: 5px;
+	padding-right: 5px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:5px;
+	margin-bottom:5px;
 	background-color: #ffffffdd
 }
 .progress-nenorm{
 	position:relative;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
     padding: 5px;
-	margin:10px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:5px;
+	margin-bottom:5px;
 	background-color: #ff9999dd
 }
 .progress-otkluch{
 	position:relative;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
     padding: 5px;
-	margin:10px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:5px;
+	margin-bottom:5px;
 	background-color: #ff555555
 }
 .textProgress{

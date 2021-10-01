@@ -24,7 +24,7 @@ hideDiv("ClassName", "coinzilla", -1);
 hideDiv("ClassName", "navbar navbar-expand-lg navbar-dark fixed-top bottom-border", -1);
 
 
-window.scroll(0,2050);
+window.scroll(0,2150);
 
 
 drawDIVUser('1', "location.reload();");

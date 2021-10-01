@@ -11,6 +11,7 @@ try{
 	//clickButtonInDIV("ClassName", "flex items-center justify-center h-full", 0, "TagName", "button", 0);
 	//window.scroll(0,50);
 	hideDiv("TagName", "span", -1);
+	hideDiv("TagName", "ins", -1);
 	/*
 	setTimeout(function() {
 		location.reload();

@@ -59,7 +59,11 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				//console.log('Deff83 freeLTC', request);
 				let frag = document.createRange().createContextualFragment(request.html);
 				
+				//console.log(request.html);
+				
+				
 				var idclaimFaucet = frag.getElementById('claimFaucet');
+				Programms[indexPrBigZone].text_test = '1';
 				
 				console.log(idclaimFaucet);
 				
@@ -70,6 +74,8 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					if (coins!=null){
 						var col_coin = coins.textContent.replace(',','').split(' ')[0];
 						Programms[indexPrBigZone].balance = parseFloat(col_coin);
+						
+						Programms[indexPrBigZone].text_test = Math.floor((parseFloat(col_coin)*0.00000015)*100000000)/100000000;
 					}
 				}
 				
@@ -81,9 +87,12 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 						console.log(buttonclaimFaucet.textContent);
 						
 						if (buttonclaimFaucet.textContent.split(' ')[1]=='Roll'){
+							if (colImgBigZone<2){
 							chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 							chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/BigZone.js'});
-							return;
+							}
+							colImgBigZone = colImgBigZone + 1;
+							//return;
 						}
 					}						
 				}
@@ -112,6 +121,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 						var second = minutes * 60 + seconds*1 + 65;
 						console.log(second);
 						Programms[indexPrBigZone].startintervalDOGE = Programms[indexPrBigZone].intervalDOGE - second;
+						Programms[indexPrBigZone].boolStartingDOGE = false;
+						block = false;
+						if(tabidBigZone.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+						tabidBigZone.remove(sender.tab.id);
 					}
 				}
 				
@@ -121,10 +134,38 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				}
 				
 				
-				Programms[indexPrBigZone].boolStartingDOGE = false;
-				block = false;
-				if(tabidBigZone.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-				tabidBigZone.remove(sender.tab.id);
+				var idfaucetMessage = frag.getElementById('faucetMessage');
+				console.log(idfaucetMessage);
+				/*
+				chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/BigZoneReload.js'});
+					//return;
+					return;
+				/*
+				*/
+				
+				if(idfaucetMessage==null){
+					
+					return;
+				}
+				
+				// Congratulations, your lucky number was 75,299 and you won 11.44 Bits!
+				//  Please wait...
+				//
+				console.log(idfaucetMessage.textContent.split(' ')[2]);
+				if (idfaucetMessage.textContent.split(' ')[2]=='your'){
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/BigZoneReload.js'});
+					//return;
+					return;
+				}
+				
+				
+				f_callback('reload3'); 
+				console.log('reload3');
+				return;
+				
+				
 				/*
 				var idbox4 = frag.getElementById('box4');
 				if(idbox4!= null){

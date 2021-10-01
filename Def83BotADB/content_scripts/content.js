@@ -49,6 +49,7 @@ function init(){
 			chrome.extension.sendMessage(new ObjPage('content' , document.documentElement.innerHTML, window.location.hostname), function (message){
 				if(message == 'reload') setTimeout(function() {init(); }	, 1000);
 				if(message == 'reload2') setTimeout(function() {init(); }	, 5000);
+				if(message == 'reload3') setTimeout(function() {init(); }	, 3000);
 			});
 		
 	

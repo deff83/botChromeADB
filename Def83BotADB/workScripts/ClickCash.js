@@ -60,6 +60,11 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				var idBody = frag.getElementById('layout-wrapper');
 				
+				
+				if(idBody== null){
+					return;
+				}
+				
 				var idclaimbutn = idBody.getElementsByClassName('btn btn-primary btn-lg claim-button')[0];
 				
 				if(idclaimbutn!= null){
@@ -77,33 +82,37 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				var idminute = frag.getElementById('minute');
 				var idsecond = frag.getElementById('second');
 				
+				
 				if(idminute!= null && idsecond!=null){
 					
 					var minute = idminute.textContent;
 					var secondsfg = idsecond.textContent;
 					
 					
-					var second = minute*60+(secondsfg)*1+0; 
-					
-					
-					
-					
+					var second = minute*60+(secondsfg)*1; 
 					Programms[indexPrClickCash].startintervalDOGE = Programms[indexPrClickCash].intervalDOGE - second;
 				}
 				
-				var unlock = idBody.getElementsByClassName('btn btn-primary w-md')[0]
-				if(unlock!= null && unlock.textContent=='Unlock'){
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/ClickCash.js'});
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/pokaz.js'});
-
-					return;
-				}
+				var text_test_d = idBody.getElementsByClassName('col-md-6 col-xl-3 mb-3 mb-xl-3')[3];
+				if (text_test_d!=null){
+					Programms[indexPrClickCash].text_test = text_test_d.textContent;
 				
-				Programms[indexPrClickCash].boolStartingDOGE = false;
-				block = false;
-				if(tabidClickCash.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-				tabidClickCash.remove(sender.tab.id);
+					
+					Programms[indexPrClickCash].boolStartingDOGE = false;
+					block = false;
+					if(tabidClickCash.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+					tabidClickCash.remove(sender.tab.id);
+				}
+				//кнопка логин
+							
+				var idtokenBalance = frag.getElementById('tokenBalance');
+				if(idtokenBalance!=null){
+					
+					Programms[indexPrClickCash].boolStartingDOGE = false;
+					block = false;
+					if(tabidClickCash.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+					tabidClickCash.remove(sender.tab.id);
+				}
 				//кнопка логин
 				
 				/*

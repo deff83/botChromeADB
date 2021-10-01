@@ -18,6 +18,7 @@ var checkbox1 = document.getElementById('check1');
 var checkbox2 = document.getElementById('check2');
 var checkbox3 = document.getElementById('check3');
 var checkbox4 = document.getElementById('check4');
+var checkbox5 = document.getElementById('check5');
 
 
 
@@ -27,6 +28,10 @@ checkbox2.onclick = function (){
 
 checkbox4.onclick = function (){	
 	chrome.extension.sendMessage('setboolcloseTabs'+checkbox4.checked, function(backMessage){});
+}
+
+checkbox5.onclick = function (){	
+	chrome.extension.sendMessage('setboolallopen'+checkbox5.checked, function(backMessage){});
 }
 
 
@@ -69,6 +74,10 @@ chrome.extension.sendMessage('getboolactivechange', function(backMessage){
 
 chrome.extension.sendMessage('getboolactivechangeHigh', function(backMessage){
 	checkbox2.checked = backMessage;
+});
+
+chrome.extension.sendMessage('getboolallopen', function(backMessage){
+	checkbox5.checked = backMessage;
 });
 
 

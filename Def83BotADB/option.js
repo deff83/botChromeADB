@@ -24,7 +24,7 @@ function click(){
 
 
 function creatDivForProgress(prog, i){
-	var divcreate = "<div id='progress"+i+"' class='progress'><input type='checkbox'  class='checkbox'><div class='content'><div class='progressbar'></div><div class='textProgress'>"+prog.name + "</div><div class='balance'></div><div class='balanceUSD'></div><div class='testtext'></div></div></div>";
+	var divcreate = "<div id='progress"+i+"' class='progress'><input type='checkbox'  class='checkbox'><div class='textcaptcha'></div><div class='content'><div class='progressbar'></div><div class='textProgress'>"+prog.name + "</div><div class='balance'></div><div class='balanceUSD'></div><div class='testtext'></div></div></div>";
 	
 	return divcreate;
 }
@@ -62,6 +62,20 @@ function updateDivForProgress(prog, i){
 	balanceProgress.innerHTML = (parseFloat(prog.balance) / prog.delited);
 	var testtextProgress = document.getElementById('progress'+i).getElementsByClassName('content')[0].getElementsByClassName('testtext')[0];
 	testtextProgress.innerHTML =  prog.text_test;
+	var textcaptchaProgress = document.getElementById('progress'+i).getElementsByClassName('textcaptcha')[0];
+	if (prog.text_captcha!=null) textcaptchaProgress.innerHTML =  prog.text_captcha;
+	
+	//console.log(prog.text_captcha);
+	if (prog.text_captcha!=null){
+		if (prog.text_captcha.includes('v3')){
+		
+			document.getElementById('progress'+i).style.border = "3px dashed green";
+		}
+		if (prog.text_captcha.includes('v2')){
+		
+			document.getElementById('progress'+i).style.border = "1px solid blue";
+		}
+	}
 	
 	var balanceProgress = document.getElementById('progress'+i).getElementsByClassName('content')[0].getElementsByClassName('balanceUSD')[0];
 	balanceProgress.innerHTML =  Math.floor((parseFloat(prog.balance) / prog.delited)*prog.multUSD*100)/100 + "$";
@@ -115,6 +129,9 @@ var startButt = document.getElementById("startButt");
 var clearButt = document.getElementById("clearButt");
 var clearInfo = document.getElementById("clearInfo");
 var clearButt1 = document.getElementById("Butt1");
+
+var save1 = document.getElementById("save1");
+var save2 = document.getElementById("save2");
 
 
 
@@ -178,6 +195,23 @@ clearInfo.onclick = function (){
 	
 }
 
+save1.onclick = function (){
+	chrome.extension.sendMessage('save1', function(backMessage){
+		
+		location.reload();
+	});
+	
+}
+
+save2.onclick = function (){
+	chrome.extension.sendMessage('save2', function(backMessage){
+		
+		location.reload();
+	});
+	
+}
+
+
 function doTimerForrs(){
 	
 	setInterval(function (){
@@ -202,9 +236,15 @@ function doTimerForrs(){
 					
 					
 					updatePage(backMessage);
+					
+					var text_countVkl = "";
 					for(var i=0; i< backMessage.length; i++){
 						updateDivForProgress(backMessage[i], i);
+						if (backMessage[i].userBool) text_countVkl = text_countVkl + i + ", "
 					}
+					
+					
+					updatecountVkl(text_countVkl);
 					
 				}
 			});
@@ -212,6 +252,9 @@ function doTimerForrs(){
 		chrome.extension.sendMessage('Deff83-infortest', function(backMessage){
 				updateRemoveUrl(backMessage);
 			});
+		
+			
+			
 			
 	}, 5000);
 	
@@ -219,6 +262,14 @@ function doTimerForrs(){
 
 }
 
+
+
+function updatecountVkl(text_countVkl){
+	var countVkl = document.getElementById('countVkl');
+	
+	
+	countVkl.innerHTML =  text_countVkl;
+}
 
 function updateRemoveUrl(backMassage){
 	var removeUrl = document.getElementById('removeUrl');

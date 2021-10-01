@@ -12,6 +12,8 @@ try{
 	//window.scroll(0,200);
 	
 	hideDiv("TagName", "span", -1);
+	hideDiv("TagName", "ins", -1);
+	//hideDiv("ClassName", "adsbygoogle", -1);
 	
 	
 	

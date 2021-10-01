@@ -8,7 +8,7 @@ try{
 	//writeField("ClassName", "pass-input", 0, "0704galaxArt")
 	//clickButton("ClassName", "button", 1);
 	//}, 2000);
-	window.scroll(0,100);
+
 	
 	hideDiv("Id", "fixedbanner", -1);
 	hideDiv("Id", "page-topbar", -1);
@@ -23,7 +23,7 @@ try{
 	hideDiv("ClassName", "col-xl-4 mb-4", -1);
 	hideDiv("ClassName", "col-lg-4", -1);
 	hideDiv("ClassName", "alert-warning align-middle text-center noty pt-1 pb-1", -1);
-	
+		window.scroll(0,400);
 	
 	/*hideDiv("ClassName", "notdisplaytablet", -1);
 	hideDiv("ClassName", "btn btn-success", -1);

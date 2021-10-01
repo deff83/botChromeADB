@@ -12,7 +12,7 @@ try{
 	
 	//clickButtonInDIV("ClassName", "flex items-center justify-center h-full", 0, "TagName", "button", 0);
 	
-	
+	console.log('tytno');
 	/*
 	setTimeout(function() {
 		location.reload();

@@ -15,7 +15,7 @@ try{
 	hideDiv("ClassName", "vertical-menu mm-active", -1);
 	hideDiv("ClassName", "ads", -1);
 	hideDiv("ClassName", "col-md-6 col-xl-3 mb-3 mb-xl-3", -1);
-	hideDiv("ClassName", "col-lg-4", -1);
+	hideDiv("ClassName", "col-md-6 col-xl-4 mb-4 mb-xl-4", -1);
 	hideDiv("ClassName", "alert-warning align-middle text-center noty pt-1 pb-1", -1);
 	
 	

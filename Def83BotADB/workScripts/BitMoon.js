@@ -60,6 +60,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				let frag = document.createRange().createContextualFragment(request.html);
 				
 				var idclaimFaucet = frag.getElementById('claimFaucet');
+				Programms[indexPrBitMoon].text_test = '2000';
 				
 				console.log(idclaimFaucet);
 				

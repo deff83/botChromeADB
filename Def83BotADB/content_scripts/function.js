@@ -268,12 +268,34 @@ function rotateDIV(div, deg){
     div.style.oTransform      = 'rotate('+deg+'deg)'; 
     div.style.transform       = 'rotate('+deg+'deg)'; 
 }
-function hideReklammBan(){
-	var elems = document.body.getElementsByTagName('div');
+
+var no_skrit_massive = ["reCAPTCHA", "проверка recaptcha"];
+
+//zin = 999999 9999998 2147483647
+function hideReklammBan(zin){
+	
+	if (zin==null) zin = 2147483647;
+	
+	var elems = document.getElementsByTagName('div');
 	
 	 for (var i = 0; i<elems.length; i++) {
 		 var zIndx = elems[i].style.zIndex;
-		 if (zIndx == 2147483647){
+		 if (zIndx == zin){//2147483647
+			 console.log(elems[i])
+			 elems[i].setAttribute('style', 'display:none');
+			 
+		 }
+	 }
+	 
+	elems = document.getElementsByTagName('iframe');
+	
+	
+	 for (var i = 0; i<elems.length; i++) {
+		  console.log(elems[i].title);
+	  
+		  
+		 var zIndx = elems[i].style.zIndex;
+		 if (zIndx == zin && no_skrit_massive.contains(elems[i].title)==false){//2147483647
 			 console.log(elems[i])
 			 elems[i].setAttribute('style', 'display:none');
 			 
@@ -283,6 +305,38 @@ function hideReklammBan(){
 	 
 	 
 }
+
+function hideDivIsk(getElement, name, count){
+	var appBanneres;
+	switch(getElement){
+		case "Name":
+			appBanneres = document.getElementsByName(name); 
+		break;
+		case "ClassName":
+			appBanneres = document.getElementsByClassName(name); 
+		break;
+		case "Id":
+			appBanneres = document.getElementById(name); 
+			if(appBanneres != null)
+				appBanneres.setAttribute('style','display:none;');
+			return;
+		break;
+		case "TagName":
+			appBanneres = document.getElementsByTagName(name); 
+		break;
+	}
+	if(count== -1){
+		for (var i = 0; i < appBanneres.length; i++) { 
+			appBanneres[i].setAttribute('style','display:none;');
+		}
+	}else{
+		appBanneres[count].setAttribute('style','display:none;');
+	}
+};
+
+
+
+
 function setURL(url){
 	document.location.href = url;
 }
@@ -311,8 +365,21 @@ function writeField(getElement, name, count, textcont){
 
 
 
+Array.prototype.contains = function(obj) {
+    var i = this.length;
+    while (i--) {
+        if (this[i] === obj) {
+			
+            return true;
+        }
+    }
+	
+    return false;
+}
 
 
+
+hideReklammBan(2147483647);
 
 
 

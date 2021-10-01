@@ -1,6 +1,7 @@
 var indexPrSimpleBits;
 
 var colImgSimpleBits = 0;
+var boolOneClaimSimpleBits = false;
 var boolOneClaim = true;
 var boolOneClaim2 = true;
 
@@ -25,6 +26,7 @@ async  function moonSimpleBits(indexPrfree){
 	Programms[indexPrSimpleBits].boolStartingDOGE = true;
 	
 	colImgSimpleBits = 0;
+	boolOneClaimSimpleBits = false;
 	boolOneClaim = true;
 	boolOneClaim2 = true;
 	boolOneButOne = 0;
@@ -109,8 +111,19 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				var idclaim = idBody.getElementsByClassName('flex py-2 flex-col items-center justify-center')[0];
 				console.log(idclaim);
 				if(idclaim!= null){
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
-					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/SimpleBits.js'});
+					if (colImgSimpleBits<2 && boolOneClaimSimpleBits==false){
+						console.log('auto');
+						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/SimpleBitsAuto.js'});
+						colImgSimpleBits=colImgSimpleBits+1;
+						console.log(colImgSimpleBits);
+					}else{
+						console.log('no_auto');
+						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+						chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/SimpleBits.js'});
+						boolOneClaimSimpleBits = true;
+						colImgSimpleBits = 0;
+					}
 					
 					return;
 				}

@@ -1,4 +1,4 @@
-var Programm = function (name, intervalDOGE, startintervalDOGE, boolingTime, boolStartingDOGE, startf, delited, multUSD, boolStart, skipblock, alreadytrue, number){
+var Programm = function (name, intervalDOGE, startintervalDOGE, boolingTime, boolStartingDOGE, startf, delited, multUSD, boolStart, skipblock, alreadytrue, number, text_captcha){
 	this.name = name;
 	this.intervalDOGE = intervalDOGE;
 	this.startintervalDOGE = startintervalDOGE;
@@ -17,6 +17,8 @@ var Programm = function (name, intervalDOGE, startintervalDOGE, boolingTime, boo
 	this.text_test = '';
 	this.alreadytrue = alreadytrue;
 	this.number = number;
+	this.text_captcha = text_captcha;
+	
 	
 }
 
@@ -24,6 +26,7 @@ var block = false;
 var boolactivechangeHigh = true;
 var boolactivechange = false;
 var boolcloseTabs = true;
+var boolallopen = false;
 
 var save_id_tab = -1;
 
@@ -150,6 +153,53 @@ massivTabid.push(tabidCoinPayz);
 massivTabid.push(tabidCoinPayUf);
 
 massivTabid.push(tabidCryptoFlare);
+massivTabid.push(tabidZcashF);
+massivTabid.push(tabidFeyTop);
+
+massivTabid.push(tabidClaimTRX);
+massivTabid.push(tabidTRXKing);
+massivTabid.push(tabidBitstaken);
+massivTabid.push(tabidWelov);
+massivTabid.push(tabidFreeGetCoin);
+massivTabid.push(tabidBitDaily);
+massivTabid.push(tabidRocketCryp);
+massivTabid.push(tabidFaucltc);
+massivTabid.push(tabidFaucdoge);
+massivTabid.push(tabidAdsToMon);
+massivTabid.push(tabidF99faucet);
+massivTabid.push(tabidQashBits);
+massivTabid.push(tabidCupreWard);
+massivTabid.push(tabidEarnFast);
+massivTabid.push(tabidLuckyCap);
+massivTabid.push(tabidFauOfBob);
+massivTabid.push(tabidCoinpot);
+massivTabid.push(tabidNitroFa);
+
+massivTabid.push(tabidGeDogeio);
+massivTabid.push(tabidGeBTCio);
+
+massivTabid.push(tabidCoinCet);
+massivTabid.push(tabidCetDash);
+
+massivTabid.push(tabidTiqBet);	//tiquebet.com
+massivTabid.push(tabidMuFaulCet);
+
+massivTabid.push(tabidBitKing);
+massivTabid.push(tabidEthMear);
+massivTabid.push(tabidFreeBNBco);
+
+massivTabid.push(tabidBNBrain);
+massivTabid.push(tabidCoFaucet);
+
+massivTabid.push(tabidBitCoinTrick);
+
+massivTabid.push(tabidTiqueBet);
+
+massivTabid.push(tabidArfaucet);
+massivTabid.push(tabidCrypJunkie);
+massivTabid.push(tabidRewsCash);
+massivTabid.push(tabidPtc4Btc);
+massivTabid.push(tabidBankRollC);
 
 
 
@@ -162,73 +212,124 @@ massivTabid.push(tabidCryptoFlare);
 //Programms.push(new Programm('XRPfree', 305, -5+305, 320, false, moonXRPfree, 1, 0.305));
 //Programms.push(new Programm('BTCfree', 305, -5+305, 320, false, moonBTCfree, 1, 10000));
 //																						   		 \/on.in \/пропуст блока\/всегда не розовый
-Programms.push(new Programm('changeBest.com', 3675, -10+3675, 320, false, moonBestcom, 1, 10000, true, false, false, 0));
+Programms.push(new Programm('changeBest.com', 3675, -10+3675, 320, false, moonBestcom, 1, 10000, true, false, false, 0, "h2"));
 
 
 
-Programms.push(new Programm('freeLTC', 4205, -100+4205, 320, false, moonfreeLTC, 1, 98, true, false, false, 0));
-Programms.push(new Programm('freeETH', 4205, -120+4205, 320, false, moonfreeETH, 1, 215, true, false, false, 0));
+Programms.push(new Programm('freeLTC', 4205, -100+4205, 320, false, moonfreeLTC, 1, 98, true, false, false, 0, "h2"));
+Programms.push(new Programm('freeETH', 4205, -120+4205, 320, false, moonfreeETH, 1, 215, true, false, false, 0, "h2"));
 
-
-Programms.push(new Programm('BigBTC', 600, -5+600, 320, false, moonBigBTC, 100000000, 10000, true, true, false, 0));
-Programms.push(new Programm('CryptoWin', 915, -5+915, 320, false, moonCryptoWin, 100000000, 10000, true, true, true, 0));	
-Programms.push(new Programm('BigZone', 1815, -5+1815, 320, false, moonBigZone, 1, 0.00002, true, true, false, 0));
-Programms.push(new Programm('FC', 1805, -5+1805, 320, false, moonFC, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('EMHub', 1805, -5+1805, 320, false, moonEMHub, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('CryptoFlare', 1805, -5+1805, 320, false, moonCryptoFlare, 100000000, 10000, true, false, false, 0));
-
-
-Programms.push(new Programm('Coinfly', 1805, -5+1805, 320, false, moonCoinfly, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('CoinPayz', 1805, -5+1805, 320, false, moonCoinPayz, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('CoinPayUf', 1805, -5+1805, 320, false, moonCoinPayUf, 100000000, 10000, true, false, false, 0));
+Programms.push(new Programm('Arfaucet', 315, -5+315, 320, false, moonArfaucet, 1, 215, true, false, true, 0, "h2 w"));
 
 
 
-Programms.push(new Programm('Speedcoin', 1805, -5+1805, 320, false, moonSpeedcoin, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('S888atosh', 1805, -5+1805, 320, false, moonS888atosh, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('CnKFaucet', 1805, -5+1805, 320, false, moonCnKFaucet, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('FClub', 1805, -5+1805, 320, false, moonFClub, 100000000, 10000, true, false, false, 0));
+Programms.push(new Programm('NitroFa', 705, -5+705, 320, false, moonNitroFa, 1, 215, true, false, false, 0, "h2"));
 
-Programms.push(new Programm('RollBuck', 315, -5+315, 320, false, moonRollBuck, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('Vie', 315, -5+315, 320, false, moonVie, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('Daily', 315, -5+315, 320, false, moonDaily, 100000000, 10000, true, false, false, 0));
+Programms.push(new Programm('FreeBNBco', 705, -5+705, 320, false, moonFreeBNBco, 1, 215, true, false, false, 0, "h2"));
+Programms.push(new Programm('BNBrain', 3615, -5+3615, 320, false, moonBNBrain, 1, 215, true, false, false, 0, "h2"));
 
-Programms.push(new Programm('Bitsfree', 915, -5+915, 320, false, moonBitsfree, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('Monucet', 315, -5+315, 320, false, moonMonucet, 100000000, 10000, true, false, false, 0));
+Programms.push(new Programm('EthMear', 1805, -5+1805, 320, false, moonEthMear, 100000000, 10000, true, false, false, 0, "v2 w"));
 
 
-Programms.push(new Programm('Xbitcoins', 315, -5+315, 320, false, moonXbitcoins, 100000000, 0, true, false, false, 0));
-Programms.push(new Programm('NeoBits', 315, -5+315, 320, false, moonNeoBits, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('CoinFree', 1215, -5+1215, 320, false, moonCoinFree, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('Multicoin', 705, -5+705, 320, false, moonMulticoin, 100000000, 10000, true, false, false, 0));
+
+Programms.push(new Programm('BigBTC', 600, -5+600, 320, false, moonBigBTC, 100000000, 10000, true, true, false, 0, "h2"));
+Programms.push(new Programm('CryptoWin', 915, -5+915, 320, false, moonCryptoWin, 100000000, 10000, true, true, true, 0, "count"));	
+Programms.push(new Programm('BigZone', 1815, -5+1815, 320, false, moonBigZone, 1, 0.00002, true, true, false, 0, "v2 w"));
+Programms.push(new Programm('BitMoon', 375, -5+375, 320, false, moonBitMoon, 1, 0.0001, true, true, false, 0, "v2 w"));		
+Programms.push(new Programm('Coinadster', 615, -5+615, 320, false, moonCoinadster, 1, 0, true, true, false, 0, "v2 w"));	
+Programms.push(new Programm('QashBits', 615, -5+615, 320, false, moonQashBits, 1, 0.00002, true, true, false, 0, "v2 w"));
+Programms.push(new Programm('CupreWard', 1815, -5+1815, 320, false, moonCupreWard, 1, 0.00002, true, true, false, 0, "v2 w"));
+Programms.push(new Programm('EarnFast', 1815, -5+1815, 320, false, moonEarnFast, 1, 0.00002, true, true, false, 0, "v2 w"));
+Programms.push(new Programm('LuckyCap', 1815, -5+1815, 320, false, moonLuckyCap, 1, 0.00002, true, true, false, 0, "v2 w"));
+Programms.push(new Programm('MuFaulCet', 3615, -5+3615, 320, false, moonMuFaulCet, 1, 0.00002, true, true, false, 0, "v2 w"));
+Programms.push(new Programm('BitCoinTrick', 3615, -5+3615, 320, false, moonBitCoinTrick, 1, 0.00002, true, true, false, 0, "v2 w"));
+Programms.push(new Programm('GeDogeio', 1815, -5+1815, 320, false, moonGeDogeio, 1, 0.00002, true, true, true, 0, "v2 w"));
+Programms.push(new Programm('GeBTCio', 1815, -5+1815, 320, false, moonGeBTCio, 1, 0.00002, true, true, true, 0, "v2 w"));
 
 
-Programms.push(new Programm('Gwaher', 905, -5+905, 320, false, moonGwaher, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('FCrypto', 1805, -5+1805, 320, false, moonFCrypto, 100000000, 10000, true, false, false, 0));
-Programms.push(new Programm('OurBitco', 3615, -5+3615, 320, false, moonOurBitco, 1, 10000, false, false, false, 1));	//60
-Programms.push(new Programm('OurBitco30', 1815, -5+1815, 320, false, moonOurBitco30, 1, 0, false, false, false, 1));	//30
-Programms.push(new Programm('OurBitco15', 915, -5+915, 320, false, moonOurBitco15, 1, 0, false, false, false, 1));	//30
-Programms.push(new Programm('OurBitco5', 315, -5+315, 320, false, moonOurBitco5, 1, 0, false, false, false, 0));	//30
+///////////////////////----------------------------V3-----------------------------//////////////////////////
+Programms.push(new Programm('FC', 1805, -5+1805, 320, false, moonFC, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('CryptoFlare', 1805, -5+1805, 320, false, moonCryptoFlare, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('Welov', 1805, -5+1805, 320, false, moonWelov, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('RocketCryp', 1805, -5+1805, 320, false, moonRocketCryp, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('Faucltc', 3615, -5+3615, 320, false, moonFaucltc, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('Faucdoge', 3615, -5+3615, 320, false, moonFaucdoge, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('CrypJunkie', 615, -5+615, 320, false, moonCrypJunkie, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('CoinPayUf', 1805, -5+1805, 320, false, moonCoinPayUf, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('S888atosh', 1805, -5+1805, 320, false, moonS888atosh, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('Vie', 315, -5+315, 320, false, moonVie, 100000000, 10000, true, false, false, 0, "v3 w"));
+Programms.push(new Programm('ZcashF', 905, -5+905, 320, false, moonZcashF, 100000000, 10000, true, false, true, 0, "v3 w"));
+//----------------------------------------------------------------------------------//
+Programms.push(new Programm('Gwaher', 905, -5+905, 320, false, moonGwaher, 100000000, 10000, true, false, false, 0, "v2"));
 
-Programms.push(new Programm('StarBits', 315, -5+315, 320, false, moonStarBits, 1, 0, false, false, false, 0));	
+
+Programms.push(new Programm('LitKing', 3615, -5+3615, 320, false, moonBitKing, 1, 100, true, false, false, 0, "h2 w"));
+
+Programms.push(new Programm('TiqueBet', 3615, -5+3615, 320, false, moonTiqueBet, 100000000, 10000, true, false, false, 0, "v2 w"));
+
+Programms.push(new Programm('RewsCash', 715, -5+715, 320, false, moonRewsCash, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('Ptc4Btc', 715, -5+715, 320, false, moonPtc4Btc, 100000000, 10000, true, false, false, 0, "v2"));
+Programms.push(new Programm('BankRollC', 3715, -5+3715, 320, false, moonBankRollC, 100000000, 10000, true, false, false, 0, "v2 w"));
+
+
+
+//Programms.push(new Programm('CoFaucet', 1805, -5+1805, 320, false, moonCoFaucet, 100000000, 10000, true, false, false, 0, "v2 w"));
+
+//Programms.push(new Programm('TiqBet', 1805, -5+1805, 320, false, moonTiqBet, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('AdsToMon', 1805, -5+1805, 320, false, moonAdsToMon, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('F99faucet', 1805, -5+1805, 320, false, moonF99faucet, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('Coinpot', 1805, -5+1805, 320, false, moonCoinpot, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('CoinCet', 1805, -5+1805, 320, false, moonCoinCet, 100000000, 10000, true, false, false, 0, "h1 w"));
+
+Programms.push(new Programm('CetDash', 1805, -5+1805, 320, false, moonCetDash, 100000000, 10000, true, false, false, 0, "h2 w"));
+
+
+
+Programms.push(new Programm('BitDaily', 1805, -5+1805, 320, false, moonBitDaily, 100000000, 10000, true, false, false, 0, "h1 w"));
+Programms.push(new Programm('FreeGetCoin', 1805, -5+1805, 320, false, moonFreeGetCoin, 100000000, 10000, true, false, false, 0, "h3 w"));
+Programms.push(new Programm('EMHub', 1805, -5+1805, 320, false, moonEMHub, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('ClaimTRX', 105, -5+105, 320, false, moonClaimTRX, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('Bitstaken', 2105, -5+2105, 320, false, moonBitstaken, 100000000, 10000, true, false, false, 0, "h2 w"));
+
+
+
+
+Programms.push(new Programm('Coinfly', 1805, -5+1805, 320, false, moonCoinfly, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('CoinPayz', 1805, -5+1805, 320, false, moonCoinPayz, 100000000, 10000, true, false, false, 0, "img w"));
+
+
+
+Programms.push(new Programm('Speedcoin', 1805, -5+1805, 320, false, moonSpeedcoin, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('CnKFaucet', 1805, -5+1805, 320, false, moonCnKFaucet, 100000000, 10000, true, false, false, 0, "v2"));
+Programms.push(new Programm('FClub', 1805, -5+1805, 320, false, moonFClub, 100000000, 10000, true, false, false, 0, "v2 w"));
+
+Programms.push(new Programm('RollBuck', 315, -5+315, 320, false, moonRollBuck, 100000000, 10000, true, false, false, 0, "h2"));
+Programms.push(new Programm('Daily', 315, -5+315, 320, false, moonDaily, 100000000, 10000, true, false, false, 0, "v2 w"));
+
+Programms.push(new Programm('Bitsfree', 915, -5+915, 320, false, moonBitsfree, 100000000, 10000, true, false, false, 0, "h3 w"));
+Programms.push(new Programm('Monucet', 315, -5+315, 320, false, moonMonucet, 100000000, 10000, true, false, false, 0, "v2 w"));
+
+
+Programms.push(new Programm('ClickCash', 1815, -5+1815, 320, false, moonClickCash, 1, 0, true, false, false, 0, "h3 w"));	
+Programms.push(new Programm('Xbitcoins', 315, -5+315, 320, false, moonXbitcoins, 100000000, 0, true, false, false, 0, "h1 w"));
+Programms.push(new Programm('NeoBits', 315, -5+315, 320, false, moonNeoBits, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('CoinFree', 1515, -5+1515, 320, false, moonCoinFree, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('Multicoin', 705, -5+705, 320, false, moonMulticoin, 100000000, 10000, true, false, false, 0, "v2 w"));
+
+
+Programms.push(new Programm('FCrypto', 1805, -5+1805, 320, false, moonFCrypto, 100000000, 10000, true, false, false, 0, "w"));
+
 Programms.push(new Programm('ACPfaucet', 1815, -5+1815, 320, false, moonACPfaucet, 1, 0, true, false, false, 0));	
-Programms.push(new Programm('ClickCash', 1815, -5+1815, 320, false, moonClickCash, 1, 0, false, false, false, 0));	
-Programms.push(new Programm('BitMoon', 375, -5+375, 320, false, moonBitMoon, 1, 0.0001, true, true, false, 0));		
-Programms.push(new Programm('Coinadster', 615, -5+615, 320, false, moonCoinadster, 1, 0, true, true, false, 0));	
 
-Programms.push(new Programm('SimpleBits', 1815, -5+1815, 320, false, moonSimpleBits, 1, 0.0001, true, false, false, 0));	
-Programms.push(new Programm('GoldenPrice', 1815, -5+1815, 320, false, moonGoldenPrice, 1, 0, true, false, false, 0));	
-Programms.push(new Programm('BlackPrice', 3615, -5+3615, 320, false, moonBlackPrice, 1, 0, true, false, false, 0));	
-Programms.push(new Programm('DogeMate', 3615, -5+3615, 320, false, moonDogeMate, 1, 0, true, false, false, 0));
+Programms.push(new Programm('SimpleBits', 1815, -5+1815, 320, false, moonSimpleBits, 1, 0.0001, true, false, false, 0, "v3"));	
+Programms.push(new Programm('GoldenPrice', 1815, -5+1815, 320, false, moonGoldenPrice, 1, 0, true, false, false, 0, "h1"));	
+Programms.push(new Programm('BlackPrice', 3615, -5+3615, 320, false, moonBlackPrice, 1, 0, true, false, false, 0, "h1"));	
+Programms.push(new Programm('DogeMate', 3615, -5+3615, 320, false, moonDogeMate, 1, 0, true, false, false, 0, "h2"));
 	
-Programms.push(new Programm('XYZfaucetUSDT', 615, -5+615, 320, false, moonXYZfaucetUSDT, 1, 1, false, false, false, 0));	
-Programms.push(new Programm('XYZfaucetDOGE', 615, -5+615, 320, false, moonXYZfaucetDOGE, 1, 1, false, false, false, 0));	
 
-Programms.push(new Programm('SoonBNB', 365, -5+365, 320, false, moonSoonBNB, 1, 1, false, false, false, 0));	
-Programms.push(new Programm('SoonDOGE', 365, -5+365, 320, false, moonSoonDOGE, 1, 1, false, false, false, 0));	
-Programms.push(new Programm('SoonMCryptTRX', 365, -5+365, 320, false, moonMCryptTRX, 1, 1, false, false, false, 0));	
-
-Programms.push(new Programm('FeyFaucet', 1805, -5+1805, 320, false, moonFeyFaucet, 1, 1, false, false, false, 0));	
+Programms.push(new Programm('FeyTop', 1805, -5+1805, 320, false, moonFeyTop, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('TRXKing', 1805, -5+1805, 320, false, moonTRXKing, 100000000, 10000, true, false, false, 0, "v2 w"));
+Programms.push(new Programm('FeyFaucet', 1805, -5+1805, 320, false, moonFeyFaucet, 1, 1, true, false, false, 0, "v2 w"));	
 
 
 //Programms.push(new Programm('freeBCH', 3605, -140+3605, 320, false, moonfreeBCH, 1, 324, false, 0));
@@ -254,6 +355,7 @@ Programms.push(new Programm('FeyFaucet', 1805, -5+1805, 320, false, moonFeyFauce
 // Programms.push(new Programm('HourlyAds', 3605, -5+3605, 320, false, moonHourlyAds, 1, 10000, false, 0));	//return timer
 // Programms.push(new Programm('Freeb.tc', 1805, -5+1805, 320, false, moonFreeBTCW, 1, 10000, false, 0));	//return timer
 // Programms.push(new Programm('BitFaucet', 1805, -5+1805, 320, false, moonBitFaucet, 1, 10000, false, 0));
+Programms.push(new Programm('StarBits', 315, -5+315, 320, false, moonStarBits, 1, 0, false, false, false, 0));	
 
 
 Programms.push(new Programm('ClaimFreeBTC-FaucetPay', 1000, -5+1000, 360, false, moonClaimFreeBTC, 100000000, 10000, false, false, false, 1));	//MAX CLAIM
@@ -272,6 +374,21 @@ Programms.push(new Programm('ClaimFreeUSDT-FaucetPay', 1000, -5+1000, 360, false
 
 Programms.push(new Programm('LitiF', 1805, -5+1805, 320, false, moonLitiF, 100000000, 10000, false, false, false, 0));
 
+
+Programms.push(new Programm('OurBitco', 3615, -5+3615, 320, false, moonOurBitco, 1, 10000, false, false, false, 1));	//60
+Programms.push(new Programm('OurBitco30', 1815, -5+1815, 320, false, moonOurBitco30, 1, 0, false, false, false, 1));	//30
+Programms.push(new Programm('OurBitco15', 915, -5+915, 320, false, moonOurBitco15, 1, 0, false, false, false, 1));	//30
+Programms.push(new Programm('OurBitco5', 315, -5+315, 320, false, moonOurBitco5, 1, 0, false, false, false, 0));	//30
+
+Programms.push(new Programm('XYZfaucetUSDT', 615, -5+615, 320, false, moonXYZfaucetUSDT, 1, 1, false, false, false, 0));	
+Programms.push(new Programm('XYZfaucetDOGE', 615, -5+615, 320, false, moonXYZfaucetDOGE, 1, 1, false, false, false, 0));	
+
+Programms.push(new Programm('SoonBNB', 365, -5+365, 320, false, moonSoonBNB, 1, 1, false, false, false, 0));	
+Programms.push(new Programm('SoonDOGE', 365, -5+365, 320, false, moonSoonDOGE, 1, 1, false, false, false, 0));	
+Programms.push(new Programm('SoonMCryptTRX', 365, -5+365, 320, false, moonMCryptTRX, 1, 1, false, false, false, 0));
+
+
+Programms.push(new Programm('FauOfBob', 3615, -5+3615, 320, false, moonFauOfBob, 1, 0.00002, false, true, false, 0, "v2 w"));
 
 Programms.push(new Programm('EveXMR', 3605, -5+3605, 320, false, moonEveXMR, 1, 91, false, false, false, 0));
 Programms.push(new Programm('EveDOGGE', 3605, -5+3605, 320, false, moonEveDOGGE, 1, 0.00287, false, false, false, 0));
@@ -304,6 +421,13 @@ Programms.push(new Programm('EarnfreeDASH', 3605, -5+3605, 320, false, moonEarnf
 Programms.push(new Programm('EarnfreeETHSky', 3605, -5+3605, 320, false, moonEarnfreeETHSky, 1, 215, false, false, false, 0));
 Programms.push(new Programm('EarnfreeBCH', 3605, -5+3605, 320, false, moonEarnfreeBCH, 1, 324, false, false, false, 0));
 
+
+mass_button_vkl = [[0, 1, 2, 13, 15, 16, 18, 19, 21, 22, 25, 26, 27, 30, 31, 33, 34, 37, 38, 39, 41, 42, 43, 44, 49, 50, 51], 
+					[3, 4, 5, 7, 8, 9, 20, 23, 28, 29, 32, 35, 36, 45, 46, 48],
+					[]
+					];
+
+
 massivremove = ["https://www.bitcoincasino.io/?stag=5483_5fbe7780e4c32ec18cfa0e4d", 
 				"https://luckyfish.io/?c=getstarted","https://binance-charity.co/", "https://www.newsofcd.com/", "https://tfbitcoin.com/", "https://luckyfish.io/?c=getstarted","https://www.bitcoincasino.io/?stag=5483_5fe65eab9f965850e0d12a6b", "https://refpakrtsb.top/L?tag=d_755089m_18639c_c04dbfb7&r=user%2Fregistration.php&pb=2fd0f6616e444e95be6305e0fb3ea477&click_id=01b3973b-3bdd-11eb-b24e-cd2a8c8feb24", "https://f9s6x9j7.stackpathcdn.com/adserv.html?idzone=3483349&sub=6380706","https://onmarshtompor.com/4/3601339/?var=4430419&ab2r=0","https://luckyforbet.com/h/q5muJXfdFx3iFADl6vlH2POZH3e4XR89wg0G5fdi4nB9qekmjgtufD8RHnXDue9KiCVlF3enwYhWIWAtgpvWNa9EXdG8nk8vShX4BxcO9ZNV5qOrq7_wJ8eSzIlEP8fSq9vK_sURPoF5keFjZyYrF6y7Pv3Sg9KVUgNwqQAWfMSDOz3krtoXu_yzw3I3qnQGiqx6NX2D_7rcRqHyqnTCgy7jY4rdzHQlxMzwmkKgwfZzRltA.NZdczObXCzax2eGDpqwy4Li3ZPcQ1hi.bKBAIoeS49b26BTWdF9oqnZke257Kwjmob5vi.PuGusCTZ36IwE2RGOpody1wMhnHMIQ2DTQ.u68owoZ9CFMMJfmkUqq.qq","https://1xbet-813240.top/ru/?tag=s_42282m_355c_%5b%5dMS%5b%5dnull%5b%5dnull%5b%5dgeneral%5b%5digeth25cf6b1458_d27775_l16402_clickunder&pb=4af4bf2b69b04f5484545de344ba50ee&click_id=734699b0-fb5d-11eb-af6d-0b43ce5f0895",
 
@@ -334,7 +458,7 @@ massivremovef = [
 				"clickco.net",
 				"miningcompany.ltd",
 				"pornhubsurvey.com",
-				"coothupu.net", "salmon.games", "wilfulpessimistic.com", "x-1xbet-11831.world", "streamtv.by", "trovabious.pro", "alfik-fik.com", "app.simplefx.com", "minersgarden.com", "x-1xbet-53596.world", "bestanimegame.com", "storecompletely-thenewestfile.best", "districtbaloneywhiskers.com", "happy-porn.com", "app.simplefx.com", "bestanimegame.com", "tilltucked.com", "x-1xbet-53596.world", "s.viifan.com", "tentmess.com", "streamtv.by", "x-1xbet-16640.world", 	"www.groupian.io","litecoinads.com", "x-1xbet-02480.world", "deepdice.bet", "worldoftanks.ru", "streambucks.io", "scryptcube.com", "www.highrevenuecpm.com", "x-1xbet-67578.world", "btc-sites.com", "apptastic-mobi.g2afse.com", "www.ostlon.com", "installhighly-therenewedfile.best", "s.viifax.com", "x-1xbet-94086.world", "topepisode.com", "cartoonsinfo.com", "axtrader.com", "travelsecurityline.eu", "pokeramazing.com", "cryptonex.xyz", "cryptofans.ru", "www.funnelleadsystem.com", "x-1xbet-78144.world", "startvideo.life", "s.viitok.com", "www.adanaatikhaber.com", "ru.warface.com", "www.tubezaur.com", "itrk.itrkinc.com", "www.my1tube.com", "p.1ts06.top", "www.monkamovies.com", "derevya2sh8ka09.com", "www.porngur.com", "www.ipuss.tv", "arrano.network", "www.youhodler.com", "cosmeticsgenerosity.com", "creative.alxbgo.com", "nyniglinu.pro", "bullx.io", "date-till-late.us","www.myemailtracking.com" , "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "bet1-x81025.com", "a.leon.ru", "atani.com", "offer.alibaba.com", "exo.xvideass.top", "musict.ir", "www.musict.ir", "cardinalimprovementscartrige.com", "bet1-x58326.com", "bet1-x62670.com", "bet1-x95895.com", "cas-fast-39.com", "x1.x-casiinox-game.com", "warning.rt.ru", "dnevnienovosti.ru", "www.myemailtracking.com", "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "bet1-x81025.com", "a.leon.ru", "edurustoday.ru","mbest.aliexpress.ru", "bet1-x72792.com", "startvideo.fun", "fadsimz.com", "accounts.binancezh.pro", "anyporn.org", "cos.flacon-magazine.com", "searchsecurer.com","bet1-x10847.com", "9k8f9.bemobtrcks.com", "ali2express.com", "kts.visitstats.com", "getdoge.io", "teamsperilous.com", "41upk.bemobtrk.com", "41upk.bemobpath.com", "www.leomax.ru", "gooblesdd.com", "lofepsypti.pro", "dschat.club", "www.crucerosmediterraneo.travel", "login.bitlocity.io", "bet1-x28746.com", "lp.crypt.casino", "bet1-x20027.com", "liteworld.live", "g5xq2z.mighttrack.com", "apps.apple.com", "leonodikeu9sj10.com", "bitgenerator.online", "www.baby.ru", "globalcrypto.exchange", "purplemining.ltd", "bitstarz1.eu","push.aarth.net", "landing.hentaiheroes.com", "www.adslyoigo.net", "news.gnezdo.ru", "stakecube.net", "www.mgid.com", "bet1-x22216.com", "99airdrops.com","accounts.binance.com", "rt.bongacams13.com","srsly.ru", "www.vokrug.tv", "bet1-x62651.com", "www.catala-reinon.es", "www.xm.com", "beklefkiom.com", "euphe-gun.com", "crawlarchive1120.com", "theonlygames.com", "spbinvestment.ru", "bit-sitess.com", "crsed.net", "bet1-x31759.com", "www.purplemining.ltd","artisany.net", "bet1-x78464.com", "cryptotabbrowser.com", "newsurveyrus.typeform.com", "cryptoware.biz", "rsafrwd.com", "adverdirect.com", "fb.ru", "www.youtube.com", "kto-chto-gde.ru", "hyip.money", "p.1ts18.top", "code4us.com", "prizebox.org", "inbound.trilema.com", "epicmotoring.com","pegloang.com", "www.aaxpro.com", "belaya2shu1ba1.com", "rabota-doma.org", "cryptocoinsad.com","bet1-x24022.com", "mediasama.com", "see.xxx", "www.toprevenuecpmnetwork.com", "adbtc.io", "twndo77864.com", "ru.4game.com", "united-family.org", "cretgate.com", "cointools.info", "catermich.pro", "r.rips.icu", "pinednews.ru", "tq.adventurefeeds.com", "bet1-x99511.com", "link.securewebservices.ch", "www.gaming-adult.com","best.aliexpress.ru", "hq-sex-tube.com", "ru.leon9c7as1no.com", "www.bestrevenuenetwork.com", "www.pornofrant.com", "ws.exchange", "best2020-games-web1.com", "starcontent.monster", "grtposh.com", "www.cuntempire.com", "apps6.cointraffic.io", "mellowads.com", "todaybrings.ru", "unicom24.ru", "rt.pornhubpremium.com", "www.myincomeclub.com", "nexo.io", "m2mdonations2.com", "ruvi.tv", "betfury.io", "www.watermine.io", "bet1-x00495.com", "track.adsplay.in", "eu.4game.com", "disturbedaccruesurfaces.com", "rtyznd.com", "gilc.ru", "ivnx.ru", "btb88.com", "vidox.net", "smartme.cash","cuntwars.com", "installlatest-theintenselyfile.best", "yougotacheck.com", "x-1xbet-74927.world", "lywyjashu.pro", "stythewagro.pro", "kotikinar2ko8tiki09.com", "pushwelcome.com", "www.elegantthemes.com", "prpops.com", "x-1xbet-28171.world", "rzypgzojdan.com", "rt.bongacams20.com", "best.aliexpress.com", "s.viitrn.com", "aetejxolo.com", "dollarsurvey.org", "promo.stormgain.com", "asxemfnwbrmpdp.com", "zwnxzckwihg.com", "freebitco.in", "nopapmyzyjiqnc.com", "zdcuivnen.com", "adsbitcoin.io"
+				"coothupu.net", "salmon.games", "wilfulpessimistic.com", "x-1xbet-11831.world", "streamtv.by", "trovabious.pro", "alfik-fik.com", "app.simplefx.com", "minersgarden.com", "x-1xbet-53596.world", "bestanimegame.com", "storecompletely-thenewestfile.best", "districtbaloneywhiskers.com", "happy-porn.com", "app.simplefx.com", "bestanimegame.com", "tilltucked.com", "x-1xbet-53596.world", "s.viifan.com", "tentmess.com", "streamtv.by", "x-1xbet-16640.world", 	"www.groupian.io","litecoinads.com", "x-1xbet-02480.world", "deepdice.bet", "worldoftanks.ru", "streambucks.io", "scryptcube.com", "www.highrevenuecpm.com", "x-1xbet-67578.world", "btc-sites.com", "apptastic-mobi.g2afse.com", "www.ostlon.com", "installhighly-therenewedfile.best", "s.viifax.com", "x-1xbet-94086.world", "topepisode.com", "cartoonsinfo.com", "axtrader.com", "travelsecurityline.eu", "pokeramazing.com", "cryptonex.xyz", "cryptofans.ru", "www.funnelleadsystem.com", "x-1xbet-78144.world", "startvideo.life", "s.viitok.com", "www.adanaatikhaber.com", "ru.warface.com", "www.tubezaur.com", "itrk.itrkinc.com", "www.my1tube.com", "p.1ts06.top", "www.monkamovies.com", "derevya2sh8ka09.com", "www.porngur.com", "www.ipuss.tv", "arrano.network", "www.youhodler.com", "cosmeticsgenerosity.com", "creative.alxbgo.com", "nyniglinu.pro", "bullx.io", "date-till-late.us","www.myemailtracking.com" , "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "bet1-x81025.com", "a.leon.ru", "atani.com", "offer.alibaba.com", "exo.xvideass.top", "musict.ir", "www.musict.ir", "cardinalimprovementscartrige.com", "bet1-x58326.com", "bet1-x62670.com", "bet1-x95895.com", "cas-fast-39.com", "x1.x-casiinox-game.com", "warning.rt.ru", "dnevnienovosti.ru", "www.myemailtracking.com", "bet1-x92354.com", "midpopedge.com", "www.vipvixen.ru", "splittingpick.com", "bet1-x81025.com", "a.leon.ru", "edurustoday.ru","mbest.aliexpress.ru", "bet1-x72792.com", "startvideo.fun", "fadsimz.com", "accounts.binancezh.pro", "anyporn.org", "cos.flacon-magazine.com", "searchsecurer.com","bet1-x10847.com", "9k8f9.bemobtrcks.com", "ali2express.com", "kts.visitstats.com", "teamsperilous.com", "41upk.bemobtrk.com", "41upk.bemobpath.com", "www.leomax.ru", "gooblesdd.com", "lofepsypti.pro", "dschat.club", "www.crucerosmediterraneo.travel", "login.bitlocity.io", "bet1-x28746.com", "lp.crypt.casino", "bet1-x20027.com", "liteworld.live", "g5xq2z.mighttrack.com", "apps.apple.com", "leonodikeu9sj10.com", "bitgenerator.online", "www.baby.ru", "globalcrypto.exchange", "purplemining.ltd", "bitstarz1.eu","push.aarth.net", "landing.hentaiheroes.com", "www.adslyoigo.net", "news.gnezdo.ru", "stakecube.net", "www.mgid.com", "bet1-x22216.com", "99airdrops.com","accounts.binance.com", "rt.bongacams13.com","srsly.ru", "www.vokrug.tv", "bet1-x62651.com", "www.catala-reinon.es", "www.xm.com", "beklefkiom.com", "euphe-gun.com", "crawlarchive1120.com", "theonlygames.com", "spbinvestment.ru", "bit-sitess.com", "crsed.net", "bet1-x31759.com", "www.purplemining.ltd","artisany.net", "bet1-x78464.com", "cryptotabbrowser.com", "newsurveyrus.typeform.com", "cryptoware.biz", "rsafrwd.com", "adverdirect.com", "fb.ru", "www.youtube.com", "kto-chto-gde.ru", "hyip.money", "p.1ts18.top", "code4us.com", "prizebox.org", "inbound.trilema.com", "epicmotoring.com","pegloang.com", "www.aaxpro.com", "belaya2shu1ba1.com", "rabota-doma.org", "cryptocoinsad.com","bet1-x24022.com", "mediasama.com", "see.xxx", "www.toprevenuecpmnetwork.com", "adbtc.io", "twndo77864.com", "ru.4game.com", "united-family.org", "cretgate.com", "cointools.info", "catermich.pro", "r.rips.icu", "pinednews.ru", "tq.adventurefeeds.com", "bet1-x99511.com", "link.securewebservices.ch", "www.gaming-adult.com","best.aliexpress.ru", "hq-sex-tube.com", "ru.leon9c7as1no.com", "www.bestrevenuenetwork.com", "www.pornofrant.com", "ws.exchange", "best2020-games-web1.com", "starcontent.monster", "grtposh.com", "www.cuntempire.com", "apps6.cointraffic.io", "mellowads.com", "todaybrings.ru", "unicom24.ru", "rt.pornhubpremium.com", "www.myincomeclub.com", "nexo.io", "m2mdonations2.com", "ruvi.tv", "betfury.io", "www.watermine.io", "bet1-x00495.com", "track.adsplay.in", "eu.4game.com", "disturbedaccruesurfaces.com", "rtyznd.com", "gilc.ru", "ivnx.ru", "btb88.com", "vidox.net", "smartme.cash","cuntwars.com", "installlatest-theintenselyfile.best", "yougotacheck.com", "x-1xbet-74927.world", "lywyjashu.pro", "stythewagro.pro", "kotikinar2ko8tiki09.com", "pushwelcome.com", "www.elegantthemes.com", "prpops.com", "x-1xbet-28171.world", "rzypgzojdan.com", "rt.bongacams20.com", "best.aliexpress.com", "s.viitrn.com", "aetejxolo.com", "dollarsurvey.org", "promo.stormgain.com", "asxemfnwbrmpdp.com", "zwnxzckwihg.com", "freebitco.in", "nopapmyzyjiqnc.com", "zdcuivnen.com", "adsbitcoin.io"
 				];
 
 function set_save_tab(){
@@ -376,7 +500,8 @@ function checkurlTabsLow(){
 				var compl = '';
 				var complete_page_id = -1;
 					
-				for(var i = 0; i < tabs.length; i++){
+				//for(var i = 0; i < tabs.length; i++){
+				for(var i = tabs.length-1; i > -1; i--){
 					
 					//console.log('htest  '+tabs[i].status);
 					//console.log('htest  '+(tabs[i].url).split('/')[2]);
@@ -577,7 +702,7 @@ function startfunction(){
 				}
 				
 				
-				if((Programms[i].startintervalDOGE / Programms[i].intervalDOGE) > 1 && !block && Programms[i].userBool && Programms[i].skipblock==false) {
+				if((Programms[i].startintervalDOGE / Programms[i].intervalDOGE) > 1 && (!block||boolallopen) && Programms[i].userBool && Programms[i].skipblock==false) {
 					Programms[i].start(i); Programms[i].startintervalDOGE = 0;
 					unBlockTimer = 0;			
 					boolTimerUnBlock = true;
@@ -638,6 +763,19 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	if(request=='getboolactivechangeHigh'){
 		f_callback(boolactivechangeHigh);
 	};
+	
+	if(request=='setboolallopentrue'){
+		boolallopen = true;
+	};
+	if(request=='setboolallopenfalse'){
+		boolallopen = false;
+	};	
+	if(request=='getboolallopen'){
+		f_callback(boolallopen);
+	};	
+	
+	
+	
 	if(request=='setboolactivechangetrue'){
 		boolactivechange = true;
 		addtimerforcheckurl();
@@ -680,6 +818,9 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		boolStarting = true;
 		startfunction();
 	};
+	if(request=='countmass_button_vkl'){
+		f_callback(mass_button_vkl.length);
+	};
 	if(request=='setBoolStartingfalse'){
 		boolStarting = false;
 		startfunction();
@@ -689,6 +830,35 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 			Programms[i].boolStart = false; 
 		}
 	};
+	
+	if(request=='save1'){
+		
+		for(var i = 0; i < Programms.length; i++){
+			if (mass_button_vkl[1-1].contains(i)){
+				Programms[i].boolStart = true;
+				Programms[i].userBool = true; 
+			}else{
+				Programms[i].boolStart = false;
+				Programms[i].userBool = false; 
+			}
+		}
+	};
+	
+	if(request=='save2'){
+		
+		for(var i = 0; i < Programms.length; i++){
+			if (mass_button_vkl[2-1].contains(i)){
+				Programms[i].boolStart = true;
+				Programms[i].userBool = true;
+				
+			}else{
+				Programms[i].boolStart = false;
+				Programms[i].userBool = false;
+			}
+		}
+	};
+	
+	
 	
 	if(request=='setclearButt1'){
 		for(var i = 0; i < Programms.length; i++){

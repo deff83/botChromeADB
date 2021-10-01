@@ -102,6 +102,15 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				tabidFC.remove(sender.tab.id);
 				}
 				//кнопка логин
+					/*			
+				var idtokenBalance = frag.getElementById('tokenBalance');
+				if(idtokenBalance!=null){
+					
+					Programms[indexPrFC].boolStartingDOGE = false;
+					block = false;
+					if(tabidFC.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+					tabidFC.remove(sender.tab.id);
+				}
 				
 				/*
 				var idBody = frag.getElementById('home');

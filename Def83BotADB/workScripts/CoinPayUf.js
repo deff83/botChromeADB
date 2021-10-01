@@ -109,10 +109,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				var idtokenBalance = frag.getElementById('usdBalance');
 				if(idtokenBalance!=null){
 					
-					Programms[indexPrCnKFaucet].boolStartingDOGE = false;
+					Programms[indexPrCoinPayUf].boolStartingDOGE = false;
 					block = false;
-					if(tabidCnKFaucet.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-					tabidCnKFaucet.remove(sender.tab.id);
+					if(tabidCoinPayUf.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+					tabidCoinPayUf.remove(sender.tab.id);
 				}
 				
 				//кнопка логин

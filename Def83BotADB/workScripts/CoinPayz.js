@@ -69,7 +69,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				
 				
-				var idclaimbutn = idBody.getElementsByClassName('btn btn-primary btn-lg claim-button')[0];
+				var idclaimbutn = idBody.getElementsByClassName('btn btn-warning btn-lg waves-effect waves-light claim-button')[0];
 				console.log(idclaimbutn);
 				if(idclaimbutn!= null){
 				
@@ -91,7 +91,13 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 					
 					
 					var second = minute*60+(secondsfg)*1; 
+					console.log(second);
 					Programms[indexPrCoinPayz].startintervalDOGE = Programms[indexPrCoinPayz].intervalDOGE - second;
+					
+					Programms[indexPrCoinPayz].boolStartingDOGE = false;
+					block = false;
+					if(tabidCoinPayz.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+					tabidCoinPayz.remove(sender.tab.id);
 				}
 				
 				var text_test_d = idBody.getElementsByClassName('col-sm-12 col-lg-6 col-md-6 col-xl-3')[3];
@@ -109,10 +115,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				var idtokenBalance = frag.getElementById('ref-link');
 				if(idtokenBalance!=null){
 					
-					Programms[indexPrCnKFaucet].boolStartingDOGE = false;
+					Programms[indexPrCoinPayz].boolStartingDOGE = false;
 					block = false;
-					if(tabidCnKFaucet.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
-					tabidCnKFaucet.remove(sender.tab.id);
+					if(tabidCoinPayz.contains(sender.tab.id)&&!tabidSave.contains(sender.tab.id)) chrome.tabs.remove(sender.tab.id);
+					tabidCoinPayz.remove(sender.tab.id);
 				}
 				
 				//кнопка логин
