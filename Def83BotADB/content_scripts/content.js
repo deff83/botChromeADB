@@ -57,6 +57,15 @@ function init(){
 }
 
 
+
+
+
+
+
+
+
+
+
 function preload(){
 	chrome.extension.sendMessage(new ObjPage('preload' , document.documentElement.innerHTML, window.location.hostname), function (message){
 

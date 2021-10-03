@@ -4,10 +4,10 @@ try{
 	//setTimeout(function() {	
 	
 	
-	writeField("TagName", "input", 0, "0x9dd7c1c32A072e09Ab581790Ef5ab19ac5A53845");
+	writeField("TagName", "input", 0, "TJdw4UFrydPvgL3UU2iXFZ6vkRqzLwzkeD");
 	
 	
-	window.scroll(0,700);
+	window.scroll(0,500);
 	//writeField("ClassName", "pass-input", 0, "0704galaxArt")
 	//clickButton("ClassName", "button", 1);
 	//}, 2000);

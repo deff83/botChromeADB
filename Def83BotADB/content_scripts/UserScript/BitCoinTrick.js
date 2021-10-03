@@ -42,6 +42,7 @@ setInterval(function() {
 hideReklammBan(999999);
 hideReklammBan(9999998);
 hideReklammBan(2147483647);
+hideReklammBan(1001);
 
 
 

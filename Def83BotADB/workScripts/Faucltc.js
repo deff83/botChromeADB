@@ -59,38 +59,59 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				//console.log('Deff83 freeLTC', request);
 				let frag = document.createRange().createContextualFragment(request.html);
 				
-				var idBody = frag.querySelectorAll('div')[59+3];
-				console.log(idBody);
 				
-				if (idBody==null){
+				var idsign = frag.getElementById('form-signup');
+				if (idsign!=null){
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/FaucltcSign.js'});
 					return;
 				}
+				
+				
+				//---------------------------block Deff83---------------------------------------//
+				var fragment = document.createDocumentFragment();
+				var div_1 = document.createElement('div');
+				div_1.id='deff83';
+				fragment.appendChild(div_1);
+				fragment.getElementById('deff83').appendChild(frag);
+				console.log('Deff83', fragment);
+				frag = fragment;
+				//-----------------------------------------------------------------------------//
+
+				var idBody = frag.getElementById('deff83');
+				if (idBody==null){
+				return;
+				}
+
+				var cloginp = idBody.getElementsByClassName('login')[0];
+				
+				
+				if (cloginp!=null){
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/FaucdogeToLogin.js'});
+					return;
+				}
+
+
+
+
+				
+				var content_box_sltstmp = idBody.getElementsByClassName('content-box sltstmp')[0];
+				
+				if (content_box_sltstmp!=null){
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
+					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/FaucltcToFaucet.js'});
+					return;
+				}
+				
+				
+				
 				var button_claim = idBody.getElementsByClassName('btn btn-success')[0];
 				console.log(button_claim);
 				
 				var danger = idBody.getElementsByClassName('er')[0];
 				
 				
-				for (var i_op = 58; i_op < 65; i_op++) { 
-					
-					//-----------------------------------------------------//				
-					if (danger==null){					
-						idBody = frag.querySelectorAll('div')[i_op];
-						
-						if (idBody!=null){
-							danger = idBody.getElementsByClassName('er')[0];
-						}
-						
-						
-					}
-					if (button_claim==null){					
-						button_claim = idBody.getElementsByClassName('btn btn-success')[0];
-						console.log(button_claim);
-					}
-					
-					console.log(idBody);	
-					
-				}
 				
 				
 				

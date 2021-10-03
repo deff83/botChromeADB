@@ -33,7 +33,12 @@ try{
 
 	drawDIVUser('1', "clickButton('ClassName', 'btn btn-primary btn-lg claim-button', 0);");
 	
-
+	/*
+	setTimeout(function() {	
+	setURL('https://welovecrypto.org/faucet')
+	
+	
+}, 5000);*/
 	
 }catch(Exc){alert(Exc);};
 

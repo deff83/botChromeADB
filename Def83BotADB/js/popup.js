@@ -14,6 +14,12 @@ function init(){
 
 
 
+var save_file1 = document.getElementById('save_file1');
+save_file1.onclick = function (){	
+	chrome.extension.sendMessage('save_file1', function(backMessage){});
+}
+
+
 var checkbox1 = document.getElementById('check1');
 var checkbox2 = document.getElementById('check2');
 var checkbox3 = document.getElementById('check3');

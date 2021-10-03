@@ -74,6 +74,9 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/FC.js'});
+					
+					antibotlink(idBody, request.src);
+					
 					return;
 				}
 				

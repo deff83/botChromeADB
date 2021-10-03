@@ -88,13 +88,13 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				
 				var idclaimFaucet = frag.getElementById('claimFaucet');
-				Programms[indexPrBitCoinTrick].text_test = '1';
+				Programms[indexPrBitCoinTrick].text_test = '5000';
 				
 				console.log(idclaimFaucet);
 				
 				var idsidebarblock = frag.getElementById('sidebar-block');
 				if (idsidebarblock!=null){
-					var coins = idsidebarblock.getElementsByTagName('td')[1];
+					var coins = idsidebarblock.getElementsByClassName('text-primary')[3];
 					console.log(coins);
 					if (coins!=null){
 						var col_coin = coins.textContent.replace(',','').split(' ')[0];

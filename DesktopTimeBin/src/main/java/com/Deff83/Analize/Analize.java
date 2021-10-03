@@ -37,7 +37,7 @@ public class Analize {
 
         double telom = Math.abs(telo);
 
-        if (hvost_up > telom * 2 &&  hvost_down<(telom/1)){
+        if (hvost_up > telom * 2 && hvost_down<(telom/1)){
             if (bool_end){
                 list_end.add(new PatternMy("M", time_int, AnalNum.SINGLE));
             }else {
@@ -45,7 +45,7 @@ public class Analize {
             }
         }
 
-        if (hvost_down > telom * 2 &&  hvost_up<(telom/1)){
+        if (hvost_down > telom * 2 && hvost_up<(telom/1)){
             if (bool_end){
                 list_end.add(new PatternMy("P", time_int, AnalNum.SINGLE));
             }else {
@@ -139,7 +139,10 @@ public class Analize {
     }
 
     public List<PatternMy> getList() {
-        return list;
+        List<PatternMy> list_loc = new ArrayList<>();
+        list_loc.addAll(list);
+        list_loc.addAll(list_end);
+        return list_loc;
     }
 
     public void clearList() {

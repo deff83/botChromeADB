@@ -71,9 +71,12 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				if(idclaimbutn!= null){
 				
 				//page-topbar
-				
+					antibotlink(idBody, request.src);
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/function.js'});
 					chrome.tabs.executeScript(sender.tab.id, {runAt:'document_end', file: 'content_scripts/UserScript/Welov.js'});
+					
+					
+					
 					return;
 				}
 				
