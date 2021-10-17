@@ -168,6 +168,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'earnfree-bch.xyz'){
 			tabidEarnfreeBCH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEarnfreeBCH].alreadytrue == true){
+				Programms[indexPrEarnfreeBCH].startintervalDOGE = Programms[indexPrEarnfreeBCH].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEarnfreeBCH.length == 0){
 				setTimeout(function() {
 					if(tabidEarnfreeBCH.length == 0){

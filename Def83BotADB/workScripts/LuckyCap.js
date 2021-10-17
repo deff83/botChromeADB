@@ -207,6 +207,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'luckycup.xyz'){
 			tabidLuckyCap.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrLuckyCap].alreadytrue == true){
+				Programms[indexPrLuckyCap].startintervalDOGE = Programms[indexPrLuckyCap].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidLuckyCap.length == 0){
 				setTimeout(function() {
 					if(tabidLuckyCap.length == 0){

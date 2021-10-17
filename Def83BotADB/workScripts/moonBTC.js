@@ -158,6 +158,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'moonbit.co.in'){
 			tabidBTC.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBTC].alreadytrue == true){
+				Programms[indexPrBTC].startintervalDOGE = Programms[indexPrBTC].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBTC.length == 0){
 				setTimeout(function() {
 					if(tabidBTC.length == 0){

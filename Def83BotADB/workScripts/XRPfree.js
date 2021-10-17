@@ -131,6 +131,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'ripplefree.info'){
 			tabidXRPfree.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrXRPfree].alreadytrue == true){
+				Programms[indexPrXRPfree].startintervalDOGE = Programms[indexPrXRPfree].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidXRPfree.length == 0){
 				setTimeout(function() {
 					if(tabidXRPfree.length == 0){

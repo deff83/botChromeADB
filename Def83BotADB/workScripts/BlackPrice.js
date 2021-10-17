@@ -358,6 +358,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'blackprice.in'){
 			tabidBlackPrice.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBlackPrice].alreadytrue == true){
+				Programms[indexPrBlackPrice].startintervalDOGE = Programms[indexPrBlackPrice].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBlackPrice.length == 0){
 				setTimeout(function() {
 					if(tabidBlackPrice.length == 0){

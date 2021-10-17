@@ -273,6 +273,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'www.bitstaken.net'){
 			tabidBitstaken.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBitstaken].alreadytrue == true){
+				Programms[indexPrBitstaken].startintervalDOGE = Programms[indexPrBitstaken].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBitstaken.length == 0){
 				setTimeout(function() {
 					if(tabidBitstaken.length == 0){

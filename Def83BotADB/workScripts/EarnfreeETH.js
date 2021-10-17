@@ -168,6 +168,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'earnfree-eth.xyz'){
 			tabidEarnfreeETH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEarnfreeETH].alreadytrue == true){
+				Programms[indexPrEarnfreeETH].startintervalDOGE = Programms[indexPrEarnfreeETH].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEarnfreeETH.length == 0){
 				setTimeout(function() {
 					if(tabidEarnfreeETH.length == 0){

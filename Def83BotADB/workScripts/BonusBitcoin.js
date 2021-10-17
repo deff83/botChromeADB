@@ -193,6 +193,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bonusbitcoin.co'){
 			tabidBonusBitcoin.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBonusBitcoin].alreadytrue == true){
+				Programms[indexPrBonusBitcoin].startintervalDOGE = Programms[indexPrBonusBitcoin].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBonusBitcoin.length == 0){
 				setTimeout(function() {
 					if(tabidBonusBitcoin.length == 0){

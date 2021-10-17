@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'dash-faucet.com'){
 			tabidDASHfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrDASHfaucet].alreadytrue == true){
+				Programms[indexPrDASHfaucet].startintervalDOGE = Programms[indexPrDASHfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidDASHfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidDASHfaucet.length == 0){

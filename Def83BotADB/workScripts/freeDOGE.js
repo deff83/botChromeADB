@@ -108,6 +108,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'www.free-dogecoin.com'){
 			tabidfreeDOGE.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeDOGE].alreadytrue == true){
+				Programms[indexPrfreeDOGE].startintervalDOGE = Programms[indexPrfreeDOGE].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeDOGE.length == 0){
 				setTimeout(function() {
 					if(tabidfreeDOGE.length == 0){

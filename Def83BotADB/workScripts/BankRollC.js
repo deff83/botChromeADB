@@ -146,6 +146,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bankrollclicks.xyz'){
 			tabidBankRollC.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBankRollC].alreadytrue == true){
+				Programms[indexPrBankRollC].startintervalDOGE = Programms[indexPrBankRollC].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBankRollC.length == 0){
 				setTimeout(function() {
 					if(tabidBankRollC.length == 0){

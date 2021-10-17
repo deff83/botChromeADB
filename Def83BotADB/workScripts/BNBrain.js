@@ -74,7 +74,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				return;
 				}
 				
-				var secc = idBody.getElementsByClassName('alert alert-success mb-5')[0];
+				var secc = idBody.getElementsByClassName('alert alert-success')[0];
 				console.log(secc);
 				if(secc!=null){
 					if(secc.textContent.split(' ')[2]=='has'){
@@ -89,7 +89,7 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 						tabidBNBrain.remove(sender.tab.id);
 					}
 				}
-				var dang = idBody.getElementsByClassName('alert alert-danger mb-5')[0];
+				var dang = idBody.getElementsByClassName('alert alert-danger')[0];
 				console.log(dang);
 				if(dang!=null){
 					if(dang.textContent.split(' ')[1]=='must'){
@@ -361,6 +361,10 @@ return;
 		if(request.src != 'bnbrain.club'){
 			tabidBNBrain.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBNBrain].alreadytrue == true){
+				Programms[indexPrBNBrain].startintervalDOGE = Programms[indexPrBNBrain].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBNBrain.length == 0){
 				setTimeout(function() {
 					if(tabidBNBrain.length == 0){

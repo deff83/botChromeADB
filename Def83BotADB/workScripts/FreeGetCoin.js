@@ -270,6 +270,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'freegetcoins.com'){
 			tabidFreeGetCoin.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFreeGetCoin].alreadytrue == true){
+				Programms[indexPrFreeGetCoin].startintervalDOGE = Programms[indexPrFreeGetCoin].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFreeGetCoin.length == 0){
 				setTimeout(function() {
 					if(tabidFreeGetCoin.length == 0){

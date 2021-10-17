@@ -207,6 +207,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'multifaulcet.com'){
 			tabidMuFaulCet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrMuFaulCet].alreadytrue == true){
+				Programms[indexPrMuFaulCet].startintervalDOGE = Programms[indexPrMuFaulCet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidMuFaulCet.length == 0){
 				setTimeout(function() {
 					if(tabidMuFaulCet.length == 0){

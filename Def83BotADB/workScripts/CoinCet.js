@@ -273,6 +273,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'coincet.com'){
 			tabidCoinCet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCoinCet].alreadytrue == true){
+				Programms[indexPrCoinCet].startintervalDOGE = Programms[indexPrCoinCet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCoinCet.length == 0){
 				setTimeout(function() {
 					if(tabidCoinCet.length == 0){

@@ -270,6 +270,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bitdaily.xyz'){
 			tabidBitDaily.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBitDaily].alreadytrue == true){
+				Programms[indexPrBitDaily].startintervalDOGE = Programms[indexPrBitDaily].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBitDaily.length == 0){
 				setTimeout(function() {
 					if(tabidBitDaily.length == 0){

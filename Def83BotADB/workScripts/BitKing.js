@@ -230,6 +230,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'litking.biz'){
 			tabidBitKing.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBitKing].alreadytrue == true){
+				Programms[indexPrBitKing].startintervalDOGE = Programms[indexPrBitKing].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBitKing.length == 0){
 				setTimeout(function() {
 					if(tabidBitKing.length == 0){

@@ -152,6 +152,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bitfun.co'){
 			tabidBitFun.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBitFun].alreadytrue == true){
+				Programms[indexPrBitFun].startintervalDOGE = Programms[indexPrBitFun].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBitFun.length == 0){
 				setTimeout(function() {
 					if(tabidBitFun.length == 0){

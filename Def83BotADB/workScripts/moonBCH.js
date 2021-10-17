@@ -167,6 +167,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'moonbitcoin.cash'){
 			tabidBCH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBCH].alreadytrue == true){
+				Programms[indexPrBCH].startintervalDOGE = Programms[indexPrBCH].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBCH.length == 0){
 				setTimeout(function() {
 					if(tabidBCH.length == 0){

@@ -262,6 +262,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'rollbucks.com'){
 			tabidRollBuck.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrRollBuck].alreadytrue == true){
+				Programms[indexPrRollBuck].startintervalDOGE = Programms[indexPrRollBuck].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidRollBuck.length == 0){
 				setTimeout(function() {
 					if(tabidRollBuck.length == 0){

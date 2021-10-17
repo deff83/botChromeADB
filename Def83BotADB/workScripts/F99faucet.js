@@ -270,6 +270,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != '99faucet.com'){
 			tabidF99faucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrF99faucet].alreadytrue == true){
+				Programms[indexPrF99faucet].startintervalDOGE = Programms[indexPrF99faucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidF99faucet.length == 0){
 				setTimeout(function() {
 					if(tabidF99faucet.length == 0){

@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'doge-faucet.com'){
 			tabidDOGEfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrDOGEfaucet].alreadytrue == true){
+				Programms[indexPrDOGEfaucet].startintervalDOGE = Programms[indexPrDOGEfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidDOGEfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidDOGEfaucet.length == 0){

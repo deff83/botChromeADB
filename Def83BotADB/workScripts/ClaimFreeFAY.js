@@ -328,6 +328,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'claimfreecoins.io' && request.src != 's1.coinmarketwaves.com'){
 			tabidClaimFreeFAY.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrClaimFreeFAY].alreadytrue == true){
+				Programms[indexPrClaimFreeFAY].startintervalDOGE = Programms[indexPrClaimFreeFAY].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidClaimFreeFAY.length == 0){
 				setTimeout(function() {
 					if(tabidClaimFreeFAY.length == 0){

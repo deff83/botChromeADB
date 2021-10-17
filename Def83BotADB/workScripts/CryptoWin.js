@@ -317,6 +317,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'cryptowin.io'){
 			tabidCryptoWin.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCryptoWin].alreadytrue == true){
+				Programms[indexPrCryptoWin].startintervalDOGE = Programms[indexPrCryptoWin].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCryptoWin.length == 0){
 				setTimeout(function() {
 					if(tabidCryptoWin.length == 0){

@@ -358,6 +358,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'goldenprice.in'){
 			tabidGoldenPrice.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrGoldenPrice].alreadytrue == true){
+				Programms[indexPrGoldenPrice].startintervalDOGE = Programms[indexPrGoldenPrice].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidGoldenPrice.length == 0){
 				setTimeout(function() {
 					if(tabidGoldenPrice.length == 0){

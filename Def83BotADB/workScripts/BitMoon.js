@@ -335,6 +335,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'earnbitmoon.club'){
 			tabidBitMoon.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBitMoon].alreadytrue == true){
+				Programms[indexPrBitMoon].startintervalDOGE = Programms[indexPrBitMoon].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBitMoon.length == 0){
 				setTimeout(function() {
 					if(tabidBitMoon.length == 0){

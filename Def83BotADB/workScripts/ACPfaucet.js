@@ -255,6 +255,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'firefaucet.win'){
 			tabidACPfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrACPfaucet].alreadytrue == true){
+				Programms[indexPrACPfaucet].startintervalDOGE = Programms[indexPrACPfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidACPfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidACPfaucet.length == 0){

@@ -309,6 +309,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'feyorra.top'){
 			tabidFeyFaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFeyFaucet].alreadytrue == true){
+				Programms[indexPrFeyFaucet].startintervalDOGE = Programms[indexPrFeyFaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFeyFaucet.length == 0){
 				setTimeout(function() {
 					if(tabidFeyFaucet.length == 0){

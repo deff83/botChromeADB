@@ -275,6 +275,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'coinpayufree.com'){
 			tabidCoinPayUf.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCoinPayUf].alreadytrue == true){
+				Programms[indexPrCoinPayUf].startintervalDOGE = Programms[indexPrCoinPayUf].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCoinPayUf.length == 0){
 				setTimeout(function() {
 					if(tabidCoinPayUf.length == 0){

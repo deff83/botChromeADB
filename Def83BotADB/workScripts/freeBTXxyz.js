@@ -123,6 +123,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'freebtx.com'){
 			tabidfreeBTXxyz.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeBTXxyz].alreadytrue == true){
+				Programms[indexPrfreeBTXxyz].startintervalDOGE = Programms[indexPrfreeBTXxyz].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeBTXxyz.length == 0){
 				setTimeout(function() {
 					if(tabidfreeBTXxyz.length == 0){

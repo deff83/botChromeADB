@@ -270,6 +270,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'adstomoney.com'){
 			tabidAdsToMon.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrAdsToMon].alreadytrue == true){
+				Programms[indexPrAdsToMon].startintervalDOGE = Programms[indexPrAdsToMon].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidAdsToMon.length == 0){
 				setTimeout(function() {
 					if(tabidAdsToMon.length == 0){

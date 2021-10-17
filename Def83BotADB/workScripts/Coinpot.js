@@ -293,6 +293,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'coinpot.in'){
 			tabidCoinpot.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCoinpot].alreadytrue == true){
+				Programms[indexPrCoinpot].startintervalDOGE = Programms[indexPrCoinpot].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCoinpot.length == 0){
 				setTimeout(function() {
 					if(tabidCoinpot.length == 0){

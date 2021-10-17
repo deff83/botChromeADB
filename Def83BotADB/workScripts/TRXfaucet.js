@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'tron-faucet.com'){
 			tabidTRXfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrTRXfaucet].alreadytrue == true){
+				Programms[indexPrTRXfaucet].startintervalDOGE = Programms[indexPrTRXfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidTRXfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidTRXfaucet.length == 0){

@@ -262,6 +262,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'evetrx.xyz'){
 			tabidEveTRX.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEveTRX].alreadytrue == true){
+				Programms[indexPrEveTRX].startintervalDOGE = Programms[indexPrEveTRX].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEveTRX.length == 0){
 				setTimeout(function() {
 					if(tabidEveTRX.length == 0){

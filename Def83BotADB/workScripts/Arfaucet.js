@@ -217,6 +217,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'eth.arfaucet.eu'){
 			tabidArfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrArfaucet].alreadytrue == true){
+				Programms[indexPrArfaucet].startintervalDOGE = Programms[indexPrArfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			 
 			if(tabidArfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidArfaucet.length == 0){

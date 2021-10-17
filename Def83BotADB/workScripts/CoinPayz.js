@@ -61,10 +61,23 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 				
 				
 				var idBody = frag.getElementById('layout-wrapper');
-				
+				console.log(idBody);
 				
 				if (idBody==null){
 					return;
+				}
+				
+				var idqcurconverted = frag.getElementById('qcurconverted');
+				if (idqcurconverted!=null){
+					console.log(idqcurconverted);
+					
+					if(idqcurconverted.textContent==''){
+						f_callback('reload3'); 
+						console.log('reload3');
+						return;
+					}
+					
+					Programms[indexPrCoinPayz].balance = parseFloat(idqcurconverted.textContent);
 				}
 				
 				
@@ -279,16 +292,43 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 	
 	if(tabidCoinPayz.contains(sender.tab.id)){	//если во вкладке другой адрес
 		if(request.src != 'coinpayz.xyz'){
+			
+			
+			
+			
 			tabidCoinPayz.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			
+			
+			
+			if(Programms[indexPrCoinPayz].alreadytrue == true){
+				Programms[indexPrCoinPayz].startintervalDOGE = Programms[indexPrCoinPayz].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCoinPayz.length == 0){
 				setTimeout(function() {
 					if(tabidCoinPayz.length == 0){
-						Programms[indexPrCoinPayz].boolStartingDOGE = false;
-						block = false;
+						console.log('TEST tyt1');
+						
+					
+					Programms[indexPrCoinPayz].boolStartingDOGE = false;
+					block = false;
+						console.log('TEST tyt2:'+second_not_pink_vnut);
+						// Programms[indexPrCoinPayz].boolStartingDOGE = false;
+						// block = false;
+						
+						
+						
+						
 					}
 				}, 5000);
+				
 			}
+			
+				
+			
+			
+			
 		}
 	}
 });

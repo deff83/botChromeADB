@@ -283,6 +283,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'www.1xbitcoins.com'){
 			tabidXbitcoins.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrXbitcoins].alreadytrue == true){
+				Programms[indexPrXbitcoins].startintervalDOGE = Programms[indexPrXbitcoins].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidXbitcoins.length == 0){
 				setTimeout(function() {
 					if(tabidXbitcoins.length == 0){

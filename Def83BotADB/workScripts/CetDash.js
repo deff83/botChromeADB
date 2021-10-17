@@ -270,6 +270,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'getdashcoin.io'){
 			tabidCetDash.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCetDash].alreadytrue == true){
+				Programms[indexPrCetDash].startintervalDOGE = Programms[indexPrCetDash].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCetDash.length == 0){
 				setTimeout(function() {
 					if(tabidCetDash.length == 0){

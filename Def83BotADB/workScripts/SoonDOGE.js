@@ -164,6 +164,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'soondoge.co.in'){
 			tabidSoonDOGE.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrSoonDOGE].alreadytrue == true){
+				Programms[indexPrSoonDOGE].startintervalDOGE = Programms[indexPrSoonDOGE].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidSoonDOGE.length == 0){
 				setTimeout(function() {
 					if(tabidSoonDOGE.length == 0){

@@ -234,6 +234,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bigbtc.win'){
 			tabidBigBTC.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBigBTC].alreadytrue == true){
+				Programms[indexPrBigBTC].startintervalDOGE = Programms[indexPrBigBTC].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBigBTC.length == 0){
 				setTimeout(function() {
 					if(tabidBigBTC.length == 0){

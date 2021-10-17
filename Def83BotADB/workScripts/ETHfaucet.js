@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'ethereum-faucet.org'){
 			tabidETHfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrETHfaucet].alreadytrue == true){
+				Programms[indexPrETHfaucet].startintervalDOGE = Programms[indexPrETHfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidETHfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidETHfaucet.length == 0){

@@ -129,6 +129,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'tfbitcoin.com'){
 			tabidBTCfree.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBTCfree].alreadytrue == true){
+				Programms[indexPrBTCfree].startintervalDOGE = Programms[indexPrBTCfree].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBTCfree.length == 0){
 				setTimeout(function() {
 					if(tabidBTCfree.length == 0){

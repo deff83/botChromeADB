@@ -145,6 +145,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'rewardscash.xyz'){
 			tabidRewsCash.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrRewsCash].alreadytrue == true){
+				Programms[indexPrRewsCash].startintervalDOGE = Programms[indexPrRewsCash].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidRewsCash.length == 0){
 				setTimeout(function() {
 					if(tabidRewsCash.length == 0){

@@ -368,6 +368,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'faucet-ltc.com'){
 			tabidFaucltc.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFaucltc].alreadytrue == true){
+				Programms[indexPrFaucltc].startintervalDOGE = Programms[indexPrFaucltc].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFaucltc.length == 0){
 				setTimeout(function() {
 					if(tabidFaucltc.length == 0){

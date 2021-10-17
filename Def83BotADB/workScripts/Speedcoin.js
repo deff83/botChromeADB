@@ -261,6 +261,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'speedcoins.xyz'){
 			tabidSpeedcoin.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrSpeedcoin].alreadytrue == true){
+				Programms[indexPrSpeedcoin].startintervalDOGE = Programms[indexPrSpeedcoin].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidSpeedcoin.length == 0){
 				setTimeout(function() {
 					if(tabidSpeedcoin.length == 0){

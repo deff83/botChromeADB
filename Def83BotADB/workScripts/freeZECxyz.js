@@ -124,6 +124,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'freezec.xyz'){
 			tabidfreeZECxyz.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeZECxyz].alreadytrue == true){
+				Programms[indexPrfreeZECxyz].startintervalDOGE = Programms[indexPrfreeZECxyz].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeZECxyz.length == 0){
 				setTimeout(function() {
 					if(tabidfreeZECxyz.length == 0){

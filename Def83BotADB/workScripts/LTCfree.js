@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'litecoinfree.info'){
 			tabidLTCfree.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrLTCfree].alreadytrue == true){
+				Programms[indexPrLTCfree].startintervalDOGE = Programms[indexPrLTCfree].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidLTCfree.length == 0){
 				setTimeout(function() {
 					if(tabidLTCfree.length == 0){

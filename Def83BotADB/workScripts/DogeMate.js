@@ -303,6 +303,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'dogemate.com'){
 			tabidDogeMate.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrDogeMate].alreadytrue == true){
+				Programms[indexPrDogeMate].startintervalDOGE = Programms[indexPrDogeMate].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidDogeMate.length == 0){
 				setTimeout(function() {
 					if(tabidDogeMate.length == 0){

@@ -275,6 +275,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'welovecrypto.org'){
 			tabidWelov.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrWelov].alreadytrue == true){
+				Programms[indexPrWelov].startintervalDOGE = Programms[indexPrWelov].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidWelov.length == 0){
 				setTimeout(function() {
 					if(tabidWelov.length == 0){

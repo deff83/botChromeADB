@@ -263,6 +263,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 			
 			tabidEveLTC.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEveLTC].alreadytrue == true){
+				Programms[indexPrEveLTC].startintervalDOGE = Programms[indexPrEveLTC].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEveLTC.length == 0){
 				setTimeout(function() {
 					if(tabidEveLTC.length == 0){

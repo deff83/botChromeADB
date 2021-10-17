@@ -325,6 +325,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'freebinance.co.in'){
 			tabidFreeBNBco.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFreeBNBco].alreadytrue == true){
+				Programms[indexPrFreeBNBco].startintervalDOGE = Programms[indexPrFreeBNBco].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFreeBNBco.length == 0){
 				setTimeout(function() {
 					if(tabidFreeBNBco.length == 0){

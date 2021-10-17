@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'digibytefaucet.com'){
 			tabidDGBfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrDGBfaucet].alreadytrue == true){
+				Programms[indexPrDGBfaucet].startintervalDOGE = Programms[indexPrDGBfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidDGBfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidDGBfaucet.length == 0){

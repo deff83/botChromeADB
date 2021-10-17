@@ -270,6 +270,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'tiquebet.com'){
 			tabidTiqBet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrTiqBet].alreadytrue == true){
+				Programms[indexPrTiqBet].startintervalDOGE = Programms[indexPrTiqBet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidTiqBet.length == 0){
 				setTimeout(function() {
 					if(tabidTiqBet.length == 0){

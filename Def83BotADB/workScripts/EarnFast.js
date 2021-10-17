@@ -206,6 +206,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'earnfaster.xyz'){
 			tabidEarnFast.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEarnFast].alreadytrue == true){
+				Programms[indexPrEarnFast].startintervalDOGE = Programms[indexPrEarnFast].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEarnFast.length == 0){
 				setTimeout(function() {
 					if(tabidEarnFast.length == 0){

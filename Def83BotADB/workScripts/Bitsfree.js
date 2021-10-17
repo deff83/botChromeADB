@@ -261,6 +261,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bitsfree.net'){
 			tabidBitsfree.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBitsfree].alreadytrue == true){
+				Programms[indexPrBitsfree].startintervalDOGE = Programms[indexPrBitsfree].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBitsfree.length == 0){
 				setTimeout(function() {
 					if(tabidBitsfree.length == 0){

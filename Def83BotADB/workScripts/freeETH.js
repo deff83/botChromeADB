@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'www.free-ethereum.io'){
 			tabidfreeETH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeETH].alreadytrue == true){
+				Programms[indexPrfreeETH].startintervalDOGE = Programms[indexPrfreeETH].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeETH.length == 0){
 				setTimeout(function() {
 					if(tabidfreeETH.length == 0){

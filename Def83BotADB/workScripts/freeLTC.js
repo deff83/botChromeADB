@@ -138,6 +138,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'www.free-litecoin.com'){
 			tabidfreeLTC.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeLTC].alreadytrue == true){
+				Programms[indexPrfreeLTC].startintervalDOGE = Programms[indexPrfreeLTC].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeLTC.length == 0){
 				setTimeout(function() {
 					if(tabidfreeLTC.length == 0){

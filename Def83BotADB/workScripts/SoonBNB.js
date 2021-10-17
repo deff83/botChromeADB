@@ -165,6 +165,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'soonbinance.co.in'){
 			tabidSoonBNB.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrSoonBNB].alreadytrue == true){
+				Programms[indexPrSoonBNB].startintervalDOGE = Programms[indexPrSoonBNB].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidSoonBNB.length == 0){
 				setTimeout(function() {
 					if(tabidSoonBNB.length == 0){

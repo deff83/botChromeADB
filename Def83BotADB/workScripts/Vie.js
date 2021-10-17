@@ -268,6 +268,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'viefaucet.com'){
 			tabidVie.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrVie].alreadytrue == true){
+				Programms[indexPrVie].startintervalDOGE = Programms[indexPrVie].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidVie.length == 0){
 				setTimeout(function() {
 					if(tabidVie.length == 0){

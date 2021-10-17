@@ -343,6 +343,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'coinadster.com'){
 			tabidCoinadster.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCoinadster].alreadytrue == true){
+				Programms[indexPrCoinadster].startintervalDOGE = Programms[indexPrCoinadster].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCoinadster.length == 0){
 				setTimeout(function() {
 					if(tabidCoinadster.length == 0){

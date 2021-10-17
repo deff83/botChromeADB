@@ -190,6 +190,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'mariobtc.com' && request.src != '1ink.cc'){
 			tabidMario.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrMario].alreadytrue == true){
+				Programms[indexPrMario].startintervalDOGE = Programms[indexPrMario].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidMario.length == 0){
 				setTimeout(function() {
 					if(tabidMario.length == 0){

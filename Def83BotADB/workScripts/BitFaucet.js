@@ -180,6 +180,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bitfaucet.app'){
 			tabidBitFaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBitFaucet].alreadytrue == true){
+				Programms[indexPrBitFaucet].startintervalDOGE = Programms[indexPrBitFaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBitFaucet.length == 0){
 				setTimeout(function() {
 					if(tabidBitFaucet.length == 0){

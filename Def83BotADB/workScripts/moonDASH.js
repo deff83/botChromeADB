@@ -159,6 +159,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'moondash.co.in'){
 			tabidDASH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrDASH].alreadytrue == true){
+				Programms[indexPrDASH].startintervalDOGE = Programms[indexPrDASH].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidDASH.length == 0){
 				setTimeout(function() {
 					if(tabidDASH.length == 0){

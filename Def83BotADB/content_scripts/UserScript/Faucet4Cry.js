@@ -7,7 +7,7 @@ try{
 	writeField("Name", "address", 0, "MM8QFapG4rtHG5t8qBCCLTakKNDuU5uQui");
 	
 	
-	window.scroll(0,2300);
+	window.scroll(0,2000);
 	//writeField("ClassName", "pass-input", 0, "0704galaxArt")
 	//clickButton("ClassName", "button", 1);
 	//}, 2000);

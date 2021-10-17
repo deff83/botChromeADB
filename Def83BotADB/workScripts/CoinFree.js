@@ -259,6 +259,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'coinfree.info'){
 			tabidCoinFree.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCoinFree].alreadytrue == true){
+				Programms[indexPrCoinFree].startintervalDOGE = Programms[indexPrCoinFree].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCoinFree.length == 0){
 				setTimeout(function() {
 					if(tabidCoinFree.length == 0){

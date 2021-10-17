@@ -154,6 +154,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'hourly-ads.com'){
 			tabidHourlyAds.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrHourlyAds].alreadytrue == true){
+				Programms[indexPrHourlyAds].startintervalDOGE = Programms[indexPrHourlyAds].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidHourlyAds.length == 0){
 				setTimeout(function() {
 					if(tabidHourlyAds.length == 0){

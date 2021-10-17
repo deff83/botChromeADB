@@ -302,6 +302,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'usdtfaucet.xyz'){
 			tabidXYZfaucetUSDT.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrXYZfaucetUSDT].alreadytrue == true){
+				Programms[indexPrXYZfaucetUSDT].startintervalDOGE = Programms[indexPrXYZfaucetUSDT].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidXYZfaucetUSDT.length == 0){
 				setTimeout(function() {
 					if(tabidXYZfaucetUSDT.length == 0){

@@ -13,7 +13,20 @@ try{
 	var event = new Event('change');
 	elem.dispatchEvent(event);
 	*/
-	document.getElementsByName("gateway")[0].options[1].selected = true;
+	
+	
+	
+	
+	
+	//document.getElementsByName("gateway")[0].options[1].selected = true;
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//clickButtonInDIV("Name", "gateway", 0, "TagName", "option", 1);
 	//}, 2000);
@@ -31,7 +44,7 @@ try{
 	hideDiv("ClassName", "alert-warning align-middle text-center noty pt-1 pb-1", -1);
 	
 	*/
-	hideReklammBan();
+	//hideReklammBan();
 	window.scroll(0,950);
 	/*hideDiv("ClassName", "notdisplaytablet", -1);
 	hideDiv("ClassName", "btn btn-success", -1);

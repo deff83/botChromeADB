@@ -198,6 +198,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'qashbits.com'){
 			tabidQashBits.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrQashBits].alreadytrue == true){
+				Programms[indexPrQashBits].startintervalDOGE = Programms[indexPrQashBits].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidQashBits.length == 0){
 				setTimeout(function() {
 					if(tabidQashBits.length == 0){

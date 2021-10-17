@@ -340,6 +340,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'rocketcrypto.io'){
 			tabidRocketCryp.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrRocketCryp].alreadytrue == true){
+				Programms[indexPrRocketCryp].startintervalDOGE = Programms[indexPrRocketCryp].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidRocketCryp.length == 0){
 				setTimeout(function() {
 					if(tabidRocketCryp.length == 0){

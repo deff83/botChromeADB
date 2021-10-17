@@ -273,6 +273,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'feyorra.top'){
 			tabidFeyTop.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFeyTop].alreadytrue == true){
+				Programms[indexPrFeyTop].startintervalDOGE = Programms[indexPrFeyTop].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFeyTop.length == 0){
 				setTimeout(function() {
 					if(tabidFeyTop.length == 0){

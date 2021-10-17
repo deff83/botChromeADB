@@ -129,6 +129,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'ethereumfree.info'){
 			tabidETHfree.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrETHfree].alreadytrue == true){
+				Programms[indexPrETHfree].startintervalDOGE = Programms[indexPrETHfree].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidETHfree.length == 0){
 				setTimeout(function() {
 					if(tabidETHfree.length == 0){

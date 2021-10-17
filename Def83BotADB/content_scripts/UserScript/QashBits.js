@@ -27,6 +27,7 @@ hideDiv("ClassName", "infobox my-4", -1);
 hideDiv("ClassName", "alert alert-info text-center", -1);
 hideDiv("ClassName", "mx-auto", -1);
 hideDiv("ClassName", "lotteryTop", -1);
+hideDiv("ClassName", "alert alert-success text-center", -1);
 
 
 //zin = 999999 9999998 2147483647

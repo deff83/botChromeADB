@@ -169,6 +169,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'sky-eth.com'){
 			tabidEarnfreeETHSky.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEarnfreeETHSky].alreadytrue == true){
+				Programms[indexPrEarnfreeETHSky].startintervalDOGE = Programms[indexPrEarnfreeETHSky].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEarnfreeETHSky.length == 0){
 				setTimeout(function() {
 					if(tabidEarnfreeETHSky.length == 0){

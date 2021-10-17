@@ -339,6 +339,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'getdoge.io'){
 			tabidGeDogeio.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrGeDogeio].alreadytrue == true){
+				Programms[indexPrGeDogeio].startintervalDOGE = Programms[indexPrGeDogeio].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidGeDogeio.length == 0){
 				setTimeout(function() {
 					if(tabidGeDogeio.length == 0){

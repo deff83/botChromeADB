@@ -261,6 +261,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'faucetclub.net'){
 			tabidFClub.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFClub].alreadytrue == true){
+				Programms[indexPrFClub].startintervalDOGE = Programms[indexPrFClub].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFClub.length == 0){
 				setTimeout(function() {
 					if(tabidFClub.length == 0){

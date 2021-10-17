@@ -143,6 +143,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'cryptojunkie.net'){
 			tabidCrypJunkie.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCrypJunkie].alreadytrue == true){
+				Programms[indexPrCrypJunkie].startintervalDOGE = Programms[indexPrCrypJunkie].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCrypJunkie.length == 0){
 				setTimeout(function() {
 					if(tabidCrypJunkie.length == 0){

@@ -301,6 +301,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'dogeion.xyz'){
 			tabidXYZfaucetDOGE.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrXYZfaucetDOGE].alreadytrue == true){
+				Programms[indexPrXYZfaucetDOGE].startintervalDOGE = Programms[indexPrXYZfaucetDOGE].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidXYZfaucetDOGE.length == 0){
 				setTimeout(function() {
 					if(tabidXYZfaucetDOGE.length == 0){

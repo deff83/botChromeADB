@@ -18,7 +18,7 @@ try{
 	hideDiv("ClassName", "alert-warning align-middle text-center noty pt-1 pb-1", -1);
 	
 	
-	hideReklammBan();
+	//hideReklammBan();
 	window.scroll(0,2550);
 	/*hideDiv("ClassName", "notdisplaytablet", -1);
 	hideDiv("ClassName", "btn btn-success", -1);

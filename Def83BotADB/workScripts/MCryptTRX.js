@@ -166,6 +166,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'multicrypt.online'){
 			tabidMCryptTRX.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrMCryptTRX].alreadytrue == true){
+				Programms[indexPrMCryptTRX].startintervalDOGE = Programms[indexPrMCryptTRX].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidMCryptTRX.length == 0){
 				setTimeout(function() {
 					if(tabidMCryptTRX.length == 0){

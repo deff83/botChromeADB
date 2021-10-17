@@ -204,6 +204,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'cupreward.xyz'){
 			tabidCupreWard.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCupreWard].alreadytrue == true){
+				Programms[indexPrCupreWard].startintervalDOGE = Programms[indexPrCupreWard].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCupreWard.length == 0){
 				setTimeout(function() {
 					if(tabidCupreWard.length == 0){

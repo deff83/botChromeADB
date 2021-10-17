@@ -264,6 +264,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != '888satoshis.com'){
 			tabidS888atosh.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrS888atosh].alreadytrue == true){
+				Programms[indexPrS888atosh].startintervalDOGE = Programms[indexPrS888atosh].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidS888atosh.length == 0){
 				setTimeout(function() {
 					if(tabidS888atosh.length == 0){

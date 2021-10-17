@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'litecoin-faucet.com'){
 			tabidLTCfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrLTCfaucet].alreadytrue == true){
+				Programms[indexPrLTCfaucet].startintervalDOGE = Programms[indexPrLTCfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidLTCfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidLTCfaucet.length == 0){

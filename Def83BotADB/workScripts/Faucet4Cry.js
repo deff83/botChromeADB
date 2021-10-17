@@ -153,6 +153,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'faucet4crypto.ru'){
 			tabidFaucet4Cry.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFaucet4Cry].alreadytrue == true){
+				Programms[indexPrFaucet4Cry].startintervalDOGE = Programms[indexPrFaucet4Cry].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFaucet4Cry.length == 0){
 				setTimeout(function() {
 					if(tabidFaucet4Cry.length == 0){

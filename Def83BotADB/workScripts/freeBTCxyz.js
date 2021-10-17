@@ -128,6 +128,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'steb.us'){
 			tabidfreeBTCxyz.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeBTCxyz].alreadytrue == true){
+				Programms[indexPrfreeBTCxyz].startintervalDOGE = Programms[indexPrfreeBTCxyz].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeBTCxyz.length == 0){
 				setTimeout(function() {
 					if(tabidfreeBTCxyz.length == 0){

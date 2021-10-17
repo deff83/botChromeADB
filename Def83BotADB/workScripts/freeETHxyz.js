@@ -124,6 +124,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'freeeth.xyz'){
 			tabidfreeETHxyz.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeETHxyz].alreadytrue == true){
+				Programms[indexPrfreeETHxyz].startintervalDOGE = Programms[indexPrfreeETHxyz].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeETHxyz.length == 0){
 				setTimeout(function() {
 					if(tabidfreeETHxyz.length == 0){

@@ -281,6 +281,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'starbits.io' && request.src != '99airdrops.com'){
 			tabidStarBits.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrStarBits].alreadytrue == true){
+				Programms[indexPrStarBits].startintervalDOGE = Programms[indexPrStarBits].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidStarBits.length == 0){
 				setTimeout(function() {
 					if(tabidStarBits.length == 0){

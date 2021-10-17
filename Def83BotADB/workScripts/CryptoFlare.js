@@ -313,6 +313,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'cryptoflare.net'){
 			tabidCryptoFlare.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCryptoFlare].alreadytrue == true){
+				Programms[indexPrCryptoFlare].startintervalDOGE = Programms[indexPrCryptoFlare].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCryptoFlare.length == 0){
 				setTimeout(function() {
 					if(tabidCryptoFlare.length == 0){

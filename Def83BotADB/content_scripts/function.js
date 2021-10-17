@@ -142,7 +142,7 @@ function drawDIVUser(type, onclickStr){
 		b.setAttribute('value', 'GO');
 		b.setAttribute('onclick', onclickStr);*/
 		//d.appendChild(b);
-		hideReklammBan();
+		//hideReklammBan();
 	}
 	if (type == '2'){
 		
@@ -162,7 +162,7 @@ function drawDIVUser(type, onclickStr){
 		b.setAttribute('value', 'GO');
 		b.setAttribute('onclick', onclickStr);*/
 		//d.appendChild(b);
-		hideReklammBan();
+		//hideReklammBan();
 	}
 	if (type == '3'){
 		
@@ -192,7 +192,7 @@ function drawDIVUser(type, onclickStr){
 			b.setAttribute('value', 'GO');
 			b.setAttribute('onclick', onclickStr);*/
 			//d.appendChild(b);
-			hideReklammBan();
+			//hideReklammBan();
 		}
 	}
 	
@@ -379,7 +379,7 @@ Array.prototype.contains = function(obj) {
 
 
 
-hideReklammBan(2147483647);
+//hideReklammBan(2147483647);
 
 
 

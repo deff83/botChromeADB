@@ -273,6 +273,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'clic.cash'){
 			tabidClickCash.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrClickCash].alreadytrue == true){
+				Programms[indexPrClickCash].startintervalDOGE = Programms[indexPrClickCash].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidClickCash.length == 0){
 				setTimeout(function() {
 					if(tabidClickCash.length == 0){

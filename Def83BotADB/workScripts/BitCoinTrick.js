@@ -235,6 +235,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bitcointricks.com'){
 			tabidBitCoinTrick.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBitCoinTrick].alreadytrue == true){
+				Programms[indexPrBitCoinTrick].startintervalDOGE = Programms[indexPrBitCoinTrick].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBitCoinTrick.length == 0){
 				setTimeout(function() {
 					if(tabidBitCoinTrick.length == 0){

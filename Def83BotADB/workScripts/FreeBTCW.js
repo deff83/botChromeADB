@@ -154,6 +154,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'freeb.tc'){
 			tabidFreeBTCW.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFreeBTCW].alreadytrue == true){
+				Programms[indexPrFreeBTCW].startintervalDOGE = Programms[indexPrFreeBTCW].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFreeBTCW.length == 0){
 				setTimeout(function() {
 					if(tabidFreeBTCW.length == 0){

@@ -202,6 +202,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'faucetofbob.xyz'){
 			tabidFauOfBob.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFauOfBob].alreadytrue == true){
+				Programms[indexPrFauOfBob].startintervalDOGE = Programms[indexPrFauOfBob].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFauOfBob.length == 0){
 				setTimeout(function() {
 					if(tabidFauOfBob.length == 0){

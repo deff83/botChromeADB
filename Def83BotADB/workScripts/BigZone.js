@@ -378,6 +378,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'bigzone.xyz'){
 			tabidBigZone.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBigZone].alreadytrue == true){
+				Programms[indexPrBigZone].startintervalDOGE = Programms[indexPrBigZone].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBigZone.length == 0){
 				setTimeout(function() {
 					if(tabidBigZone.length == 0){

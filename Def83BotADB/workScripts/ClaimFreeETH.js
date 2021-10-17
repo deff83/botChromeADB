@@ -327,6 +327,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'claimfreecoins.io' && request.src != 's1.coinmarketwaves.com'){
 			tabidClaimFreeETH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrClaimFreeETH].alreadytrue == true){
+				Programms[indexPrClaimFreeETH].startintervalDOGE = Programms[indexPrClaimFreeETH].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidClaimFreeETH.length == 0){
 				setTimeout(function() {
 					if(tabidClaimFreeETH.length == 0){

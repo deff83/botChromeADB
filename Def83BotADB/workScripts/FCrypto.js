@@ -293,6 +293,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'faucetcrypto.com'){
 			tabidFCrypto.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrFCrypto].alreadytrue == true){
+				Programms[indexPrFCrypto].startintervalDOGE = Programms[indexPrFCrypto].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidFCrypto.length == 0){
 				setTimeout(function() {
 					if(tabidFCrypto.length == 0){

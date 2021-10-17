@@ -270,6 +270,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'cofaucet.xyz'){
 			tabidCoFaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCoFaucet].alreadytrue == true){
+				Programms[indexPrCoFaucet].startintervalDOGE = Programms[indexPrCoFaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCoFaucet.length == 0){
 				setTimeout(function() {
 					if(tabidCoFaucet.length == 0){

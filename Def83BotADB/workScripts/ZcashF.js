@@ -275,6 +275,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'z-cash.xyz'){
 			tabidZcashF.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrZcashF].alreadytrue == true){
+				Programms[indexPrZcashF].startintervalDOGE = Programms[indexPrZcashF].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidZcashF.length == 0){
 				setTimeout(function() {
 					if(tabidZcashF.length == 0){

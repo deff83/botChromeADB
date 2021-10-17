@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'zec-faucet.com'){
 			tabidZECfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrZECfaucet].alreadytrue == true){
+				Programms[indexPrZECfaucet].startintervalDOGE = Programms[indexPrZECfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidZECfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidZECfaucet.length == 0){

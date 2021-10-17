@@ -260,6 +260,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'monucet.com'){
 			tabidMonucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrMonucet].alreadytrue == true){
+				Programms[indexPrMonucet].startintervalDOGE = Programms[indexPrMonucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidMonucet.length == 0){
 				setTimeout(function() {
 					if(tabidMonucet.length == 0){

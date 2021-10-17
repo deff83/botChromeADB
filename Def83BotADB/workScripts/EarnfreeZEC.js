@@ -161,6 +161,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'earnfree.xyz'){
 			tabidEarnfreeZEC.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEarnfreeZEC].alreadytrue == true){
+				Programms[indexPrEarnfreeZEC].startintervalDOGE = Programms[indexPrEarnfreeZEC].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEarnfreeZEC.length == 0){
 				setTimeout(function() {
 					if(tabidEarnfreeZEC.length == 0){

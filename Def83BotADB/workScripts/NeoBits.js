@@ -257,6 +257,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'neobits.net'){
 			tabidNeoBits.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrNeoBits].alreadytrue == true){
+				Programms[indexPrNeoBits].startintervalDOGE = Programms[indexPrNeoBits].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidNeoBits.length == 0){
 				setTimeout(function() {
 					if(tabidNeoBits.length == 0){

@@ -103,6 +103,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'www.bestchange.ru'){
 			tabidBestru.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBestru].alreadytrue == true){
+				Programms[indexPrBestru].startintervalDOGE = Programms[indexPrBestru].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBestru.length == 0){
 				setTimeout(function() {
 					if(tabidBestru.length == 0){

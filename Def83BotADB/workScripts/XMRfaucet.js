@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'xmr-faucet.com'){
 			tabidXMRfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrXMRfaucet].alreadytrue == true){
+				Programms[indexPrXMRfaucet].startintervalDOGE = Programms[indexPrXMRfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidXMRfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidXMRfaucet.length == 0){

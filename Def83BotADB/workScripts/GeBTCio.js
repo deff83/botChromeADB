@@ -339,6 +339,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'get-bitcoin.net'){
 			tabidGeBTCio.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrGeBTCio].alreadytrue == true){
+				Programms[indexPrGeBTCio].startintervalDOGE = Programms[indexPrGeBTCio].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidGeBTCio.length == 0){
 				setTimeout(function() {
 					if(tabidGeBTCio.length == 0){

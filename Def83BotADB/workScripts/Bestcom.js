@@ -107,6 +107,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'www.bestchange.com'){
 			tabidBestcom.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrBestcom].alreadytrue == true){
+				Programms[indexPrBestcom].startintervalDOGE = Programms[indexPrBestcom].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidBestcom.length == 0){
 				setTimeout(function() {
 					if(tabidBestcom.length == 0){

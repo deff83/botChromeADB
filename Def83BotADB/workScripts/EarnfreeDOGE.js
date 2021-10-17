@@ -168,6 +168,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'earnfree-doge.xyz'){
 			tabidEarnfreeDOGE.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEarnfreeDOGE].alreadytrue == true){
+				Programms[indexPrEarnfreeDOGE].startintervalDOGE = Programms[indexPrEarnfreeDOGE].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEarnfreeDOGE.length == 0){
 				setTimeout(function() {
 					if(tabidEarnfreeDOGE.length == 0){

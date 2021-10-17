@@ -124,6 +124,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'freedgb.xyz'){
 			tabidfreeDGBxyz.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeDGBxyz].alreadytrue == true){
+				Programms[indexPrfreeDGBxyz].startintervalDOGE = Programms[indexPrfreeDGBxyz].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeDGBxyz.length == 0){
 				setTimeout(function() {
 					if(tabidfreeDGBxyz.length == 0){

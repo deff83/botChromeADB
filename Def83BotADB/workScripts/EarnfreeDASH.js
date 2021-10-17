@@ -172,6 +172,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'earnfree-dash.xyz'){
 			tabidEarnfreeDASH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEarnfreeDASH].alreadytrue == true){
+				Programms[indexPrEarnfreeDASH].startintervalDOGE = Programms[indexPrEarnfreeDASH].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEarnfreeDASH.length == 0){
 				setTimeout(function() {
 					if(tabidEarnfreeDASH.length == 0){

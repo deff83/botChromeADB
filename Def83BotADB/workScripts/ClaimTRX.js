@@ -273,6 +273,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'claimtrx.xyz'){
 			tabidClaimTRX.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrClaimTRX].alreadytrue == true){
+				Programms[indexPrClaimTRX].startintervalDOGE = Programms[indexPrClaimTRX].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidClaimTRX.length == 0){
 				setTimeout(function() {
 					if(tabidClaimTRX.length == 0){

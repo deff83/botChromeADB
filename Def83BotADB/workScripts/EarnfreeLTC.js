@@ -168,6 +168,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'earnfree-ltc.xyz'){
 			tabidEarnfreeLTC.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEarnfreeLTC].alreadytrue == true){
+				Programms[indexPrEarnfreeLTC].startintervalDOGE = Programms[indexPrEarnfreeLTC].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEarnfreeLTC.length == 0){
 				setTimeout(function() {
 					if(tabidEarnfreeLTC.length == 0){

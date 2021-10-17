@@ -262,6 +262,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'evexmr.xyz'){
 			tabidEveXMR.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEveXMR].alreadytrue == true){
+				Programms[indexPrEveXMR].startintervalDOGE = Programms[indexPrEveXMR].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEveXMR.length == 0){
 				setTimeout(function() {
 					if(tabidEveXMR.length == 0){

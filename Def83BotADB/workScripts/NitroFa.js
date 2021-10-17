@@ -350,6 +350,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'nitrofaucet.nity.fr'){
 			tabidNitroFa.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrNitroFa].alreadytrue == true){
+				Programms[indexPrNitroFa].startintervalDOGE = Programms[indexPrNitroFa].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidNitroFa.length == 0){
 				setTimeout(function() {
 					if(tabidNitroFa.length == 0){

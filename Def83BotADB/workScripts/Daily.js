@@ -273,6 +273,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'dailyclaim.xyz'){
 			tabidDaily.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrDaily].alreadytrue == true){
+				Programms[indexPrDaily].startintervalDOGE = Programms[indexPrDaily].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidDaily.length == 0){
 				setTimeout(function() {
 					if(tabidDaily.length == 0){

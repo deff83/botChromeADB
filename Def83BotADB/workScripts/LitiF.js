@@ -274,6 +274,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'litefaucet.in'){
 			tabidLitiF.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrLitiF].alreadytrue == true){
+				Programms[indexPrLitiF].startintervalDOGE = Programms[indexPrLitiF].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidLitiF.length == 0){
 				setTimeout(function() {
 					if(tabidLitiF.length == 0){

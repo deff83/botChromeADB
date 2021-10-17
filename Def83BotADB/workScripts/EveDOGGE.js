@@ -262,6 +262,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'evedoge.xyz'){
 			tabidEveDOGGE.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrEveDOGGE].alreadytrue == true){
+				Programms[indexPrEveDOGGE].startintervalDOGE = Programms[indexPrEveDOGGE].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidEveDOGGE.length == 0){
 				setTimeout(function() {
 					if(tabidEveDOGGE.length == 0){

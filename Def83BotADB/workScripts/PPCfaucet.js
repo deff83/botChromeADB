@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'ppc-faucet.com'){
 			tabidPPCfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrPPCfaucet].alreadytrue == true){
+				Programms[indexPrPPCfaucet].startintervalDOGE = Programms[indexPrPPCfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidPPCfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidPPCfaucet.length == 0){

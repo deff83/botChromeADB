@@ -273,6 +273,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'cnkfaucet.com'){
 			tabidCnKFaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCnKFaucet].alreadytrue == true){
+				Programms[indexPrCnKFaucet].startintervalDOGE = Programms[indexPrCnKFaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCnKFaucet.length == 0){
 				setTimeout(function() {
 					if(tabidCnKFaucet.length == 0){

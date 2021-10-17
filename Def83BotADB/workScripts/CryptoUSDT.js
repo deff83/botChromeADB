@@ -200,6 +200,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'freetether.com'){
 			tabidCryptoUSDT.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrCryptoUSDT].alreadytrue == true){
+				Programms[indexPrCryptoUSDT].startintervalDOGE = Programms[indexPrCryptoUSDT].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidCryptoUSDT.length == 0){
 				setTimeout(function() {
 					if(tabidCryptoUSDT.length == 0){

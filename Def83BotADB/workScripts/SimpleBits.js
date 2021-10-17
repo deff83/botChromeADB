@@ -332,6 +332,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'simplebits.io'){
 			tabidSimpleBits.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrSimpleBits].alreadytrue == true){
+				Programms[indexPrSimpleBits].startintervalDOGE = Programms[indexPrSimpleBits].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidSimpleBits.length == 0){
 				setTimeout(function() {
 					if(tabidSimpleBits.length == 0){

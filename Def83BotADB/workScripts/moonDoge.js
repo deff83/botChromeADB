@@ -167,6 +167,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'moondoge.co.in'){
 			tabidDOGE.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrDOGE].alreadytrue == true){
+				Programms[indexPrDOGE].startintervalDOGE = Programms[indexPrDOGE].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidDOGE.length == 0){
 				setTimeout(function() {
 					if(tabidDOGE.length == 0){

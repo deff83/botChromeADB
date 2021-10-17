@@ -317,6 +317,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'ourbitco.in'){
 			tabidOurBitco15.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrOurBitco15].alreadytrue == true){
+				Programms[indexPrOurBitco15].startintervalDOGE = Programms[indexPrOurBitco15].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidOurBitco15.length == 0){
 				setTimeout(function() {
 					if(tabidOurBitco15.length == 0){

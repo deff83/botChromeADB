@@ -108,6 +108,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'www.free-bcash.com'){
 			tabidfreeBCH.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrfreeBCH].alreadytrue == true){
+				Programms[indexPrfreeBCH].startintervalDOGE = Programms[indexPrfreeBCH].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidfreeBCH.length == 0){
 				setTimeout(function() {
 					if(tabidfreeBCH.length == 0){

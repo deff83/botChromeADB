@@ -144,6 +144,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'potcoin-faucet.com'){
 			tabidPOTfaucet.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrPOTfaucet].alreadytrue == true){
+				Programms[indexPrPOTfaucet].startintervalDOGE = Programms[indexPrPOTfaucet].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidPOTfaucet.length == 0){
 				setTimeout(function() {
 					if(tabidPOTfaucet.length == 0){

@@ -157,6 +157,10 @@ chrome.extension.onMessage.addListener(function(request, sender, f_callback){
 		if(request.src != 'moonliteco.in'){
 			tabidLTC.remove(sender.tab.id);
 			chrome.tabs.remove(sender.tab.id);
+			if(Programms[indexPrLTC].alreadytrue == true){
+				Programms[indexPrLTC].startintervalDOGE = Programms[indexPrLTC].intervalDOGE - second_not_pink_vnut;
+			}
+			
 			if(tabidLTC.length == 0){
 				setTimeout(function() {
 					if(tabidLTC.length == 0){
